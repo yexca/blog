@@ -4,22 +4,27 @@ title: '音に感じて - 《僕が死のうと思ったのは》'
 # draft: true
 author: yexca
 date: '2025-01-11T01:10:51+09:00'
-lastmod: '2025-06-14T13:47:07+09:00'
+lastmod: '2025-07-17T21:52:07+09:00'
 categories:
     - 学問探究
 tags:
     - 日本語勉強
 ---
 
-> **音に感じてシリーズ**
->
-> | 曲 | リンク |
-> |:-- | :-- |
-> | 僕が死のうと思ったのは | この記事 |
-> | あくあ色ぱれっと | <https://blog.yexca.net/ja/archives/219> |
-> | 恋の押し売り | <https://blog.yexca.net/ja/archives/220>  |
-> | 17さいのうた | <https://blog.yexca.net/ja/archives/224> |
-> | drop | <https://blog.yexca.net/ja/archives/230> |
+{{< details "音に感じてシリーズ" >}}
+
+| 曲 | 翻訳 | リンク |
+|:-- | :-- | :--|
+| 僕が死のうと思ったのは | 略 | この記事 |
+| あくあ色ぱれっと | 略 | <https://blog.yexca.net/ja/archives/219> |
+| 恋の押し売り | 略 | <https://blog.yexca.net/ja/archives/220> |
+| 17さいのうた | 略 | <https://blog.yexca.net/ja/archives/224> |
+| drop | 恋に落ちた | <https://blog.yexca.net/ja/archives/230> |
+| 生きるを選んだ私へ | 略 | <https://blog.yexca.net/ja/archives/239> |
+| rainy lady | 雨女 | <https://blog.yexca.net/ja/archives/249> |
+| 恋しくなったら手を叩こう | 略 | <https://blog.yexca.net/ja/archives/250> |
+
+{{< /details >}}
 
 ## まえがき
 

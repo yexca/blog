@@ -4,7 +4,7 @@ title: '音有所感 - 《生きるを選んだ私へ》'
 # draft: true
 author: yexca
 date: '2025-03-07T01:26:31+09:00'
-lastmod: '2025-05-27T18:11:07+09:00'
+lastmod: '2025-07-17T21:52:07+09:00'
 categories:
     - 学术探索
 tags:
@@ -43,8 +43,6 @@ tags:
 ## 歌曲视频
 
 {{< youtube T2o73lFMhwQ >}}
-
-貌似因为是音乐版权问题无法引用: <https://youtu.be/T2o73lFMhwQ>
 
 ## 歌词
 
