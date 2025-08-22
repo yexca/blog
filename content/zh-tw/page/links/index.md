@@ -2,6 +2,7 @@
 title: 連結
 slug: /links
 date: 2024-12-27T18:20:25+0900
+lastmod: 2025-08-22T22:57:14+0900
 readingTime: false
 links:
   # - title: GitHub
@@ -17,14 +18,15 @@ links:
     website: /zh-tw/tags
     icon: tags
   - title: "Hiyoung'Blog"
-    description: Hiyoung 的部落格
+    description: "Hiyoung 的部落格 (只有簡體字)"
     website: https://blog.hiyoung.icu/
     image: https://cdn.jsdelivr.net/gh/hiyoung3937/img_hiyoung@master/bolg/bolg_icon.jpg
   - title: "VRChat Docs"
-    description: 對於遊戲 VRchat 所寫的教學文檔
+    description: "對於遊戲 VRchat 所寫的教學文檔 (只有簡體字)"
     website: https://vrchat.yexca.net/
+    image: https://vrchat.yexca.net/favicon.png
   - title: "VRChat 部落格"
-    description: 對於遊戲 VRchat 所寫的教程部落格，內容沒有文檔多
+    description: "對於遊戲 VRchat 所寫的教程部落格，內容沒有文檔多 (只有簡體字)"
     website: https://vrc.yexca.net/
     image: https://vrc.yexca.net/assets/img/auther.jpg
   - title: "Lit Link"

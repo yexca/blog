@@ -2,6 +2,7 @@
 title: Links
 slug: /links
 date: 2024-12-27T18:20:25+0900
+lastmod: 2025-08-22T22:57:14+0900
 readingTime: false
 links:
   # - title: GitHub
@@ -17,14 +18,15 @@ links:
     website: /en/tags
     icon: tags
   - title: "Hiyoung'Blog"
-    description: Hiyoung's Blog
+    description: "Hiyoung's Blog (Only Simplified Chinese)"
     website: https://blog.hiyoung.icu/
     image: https://cdn.jsdelivr.net/gh/hiyoung3937/img_hiyoung@master/bolg/bolg_icon.jpg
   - title: "VRChat Docs"
-    description: The tutorial docs for the game VRChat
+    description: "The tutorial docs for the game VRChat (Only Simplified Chinese)"
     website: https://vrchat.yexca.net/
+    image: https://vrchat.yexca.net/favicon.png
   - title: "VRChat Blog"
-    description: The tutorial for the game VRChat, But the content is less than docs
+    description: "The tutorial for the game VRChat, But the content is less than docs (Only Simplified Chinese)"
     website: https://vrc.yexca.net/
     image: https://vrc.yexca.net/assets/img/auther.jpg
   - title: "Lit Link"

@@ -3,12 +3,12 @@ title: について
 slug: /about
 # description: Hugo, the world's fastest framework for building websites
 date: '2021-11-04T20:20:20+08:00'
+lastmod: '2025-08-22T22:58:14+0900'
 aliases:
   - about-us
   - about-hugo
   - contact
 # license: CC BY-NC-ND
-lastmod: '2024-12-27T16:16:16+09:00'
 comments: false
 menu:
     main: 
@@ -17,7 +17,7 @@ menu:
             icon: user
 ---
 
-> このページは機械翻訳を使っているよ！(๑˃̵ᴗ˂̵)
+> このページは機械翻訳を使ったよ！(๑˃̵ᴗ˂̵)
 
 あぁっ、きた！ [yexca (いえか)](https://blog.yexca.net/ja/) だよ！
 

@@ -2,6 +2,7 @@
 title: リンク
 slug: /links
 date: 2024-12-27T18:20:25+0900
+lastmod: 2025-08-22T22:57:14+0900
 readingTime: false
 links:
   # - title: GitHub
@@ -17,14 +18,15 @@ links:
     website: /ja/tags
     icon: tags
   - title: "Hiyoung'Blog"
-    description: Hiyoung のブログ
+    description: "Hiyoung のブログ (中国語簡体字のみ)"
     website: https://blog.hiyoung.icu/
     image: https://cdn.jsdelivr.net/gh/hiyoung3937/img_hiyoung@master/bolg/bolg_icon.jpg
   - title: "VRChat Docs"
-    description: ゲーム VRChat のチュートリアルドキュメント
+    description: "ゲーム VRChat のチュートリアルドキュメント (中国語簡体字のみ)"
     website: https://vrchat.yexca.net/
+    image: https://vrchat.yexca.net/favicon.png
   - title: "VRChat Blog"
-    description: VRChat ゲームのチュートリアルだが、内容はドキュメントよりも少ない
+    description: "VRChat ゲームのチュートリアルだが、内容はドキュメントよりも少ない (中国語簡体字のみ)"
     website: https://vrc.yexca.net/
     image: https://vrc.yexca.net/assets/img/auther.jpg
   - title: "Lit Link"

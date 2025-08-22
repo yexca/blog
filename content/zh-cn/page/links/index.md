@@ -2,6 +2,7 @@
 title: 链接
 slug: /links
 date: 2024-12-27T18:20:25+0900
+lastmod: 2025-08-22T22:57:14+0900
 readingTime: false
 links:
   # - title: GitHub
@@ -23,6 +24,7 @@ links:
   - title: "VRChat Docs"
     description: 对于游戏 VRchat 所写的教程文档
     website: https://vrchat.yexca.net/
+    image: https://vrchat.yexca.net/favicon.png
   - title: "VRChat 博客"
     description: 对于游戏 VRchat 所写的教程博客，内容没有文档多
     website: https://vrc.yexca.net/

@@ -3,7 +3,7 @@ title: 关于
 slug: /about
 # description: Hugo, the world's fastest framework for building websites
 date: '2021-11-04T20:20:20+08:00'
-lastmod: '2025-03-04T18:42:16+09:00'
+lastmod: '2025-08-22T22:58:14+0900'
 aliases:
   - about-us
   - about-hugo

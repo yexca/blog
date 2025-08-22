@@ -3,7 +3,7 @@ title: 關於
 slug: /about
 # description: Hugo, the world's fastest framework for building websites
 date: '2021-11-04T20:20:20+08:00'
-lastmod: '2024-12-29T00:11:16+09:00'
+lastmod: '2025-08-22T22:58:14+0900'
 aliases:
   - about-us
   - about-hugo
@@ -17,7 +17,7 @@ menu:
             icon: user
 ---
 
-> 此頁面有使用機器翻譯喲 ( ¯\_(ツ)_/¯)
+> 此頁面有使用機器翻譯喲 (๑˃̵ᴗ˂̵)
 
 歡迎!~，我是 [yexca (葉卡)](https://blog.yexca.net/zh-tw/)
 
