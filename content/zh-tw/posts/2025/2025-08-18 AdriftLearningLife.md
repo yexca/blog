@@ -7,7 +7,7 @@ date: '2025-08-18T18:27:12+09:00'
 categories:
     - 生活術式
 tags:
-    - 人生體悟
+    - 生活體悟
 ---
 
 {{< notice >}} 本文由 ChatGPT 翻譯 {{< /notice >}}
