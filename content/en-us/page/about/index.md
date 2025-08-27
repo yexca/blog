@@ -17,7 +17,7 @@ menu:
             icon: user
 ---
 
-> This page used machine translation (๑˃̵ᴗ˂̵)
+> This page was partially machine translated (๑˃̵ᴗ˂̵)
 
 Hi there! I'm [yexca /jɛkɑ/](https://blog.yexca.net/en/)
 

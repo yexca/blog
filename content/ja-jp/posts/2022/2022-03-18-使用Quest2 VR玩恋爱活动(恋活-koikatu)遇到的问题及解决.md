@@ -11,7 +11,7 @@ tags:
     - VR
 ---
 
-{{< notice >}} 本この記事は ChatGPT によって翻訳されました {{< /notice >}}
+{{< notice >}} この記事は ChatGPT によって翻訳されました {{< /notice >}}
 
 ## はじめに
 
