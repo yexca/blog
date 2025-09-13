@@ -140,7 +140,9 @@ details {
 
 @font-face {
   font-family: 'yozai';
-  src: url('/fonts/Yozai-Regular.ttf') format('truetype');
+  src: url('/fonts/Yozai-Regular.woff2') format('woff2'),
+      //  url('/fonts/Yozai-Regular.woff') format('woff'),
+       url('/fonts/Yozai-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
