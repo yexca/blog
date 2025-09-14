@@ -20,7 +20,7 @@ Vue2.x 官网：[国际](https://element.eleme.io/#/zh-CN) [中国大陆](https:
 
 Vue3.x 官网：<https://element-plus.org/zh-CN/#/zh-CN>
 
-## 安装
+## ElementUI 安装
 
 安装 ElementUI 库 (在当前工程的目录下)，命令
 
@@ -110,7 +110,7 @@ Vue Router 是 Vue 的官方路由，组成：
 * `<router-link>`：请求链接组件，浏览器会解析成链接标签
 * `<router-view>`：动态视图组件，用于渲染展示与路由对应的组件
 
-### 安装
+### Axios 安装
 
 命令
 

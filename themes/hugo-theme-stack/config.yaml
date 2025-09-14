@@ -171,19 +171,19 @@ menu:
 
     social:
         - identifier: github
-          name: 0GitHub
+          name: GitHub
           url: https://github.com/yexca
           params:
               icon: brand-github
 
         - identifier: mail
-          name: 1Mail
+          name: Mail
           url: mailto:yexca@duck.com
           params:
               icon: mail
 
         - identifier: telegram
-          name: 2Telegram
+          name: Telegram
           url: https://t.me/yexca
           params:
               icon: telegram
