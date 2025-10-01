@@ -13,7 +13,7 @@ tags:
 
 ## 引言
 
-某大佬给了 Record Tree 的 JSON 文件，那顺势[随便写点东西](https://github.com/yexca/RecordTree_Link)方便一下，记录下忘了的东西 ~~(嗯，还正好是第 256 个文章呢)~~
+某大佬给了 Record Tree 的 JSON 文件，那顺势[随便写点东西](https://github.com/yexca/RecordTreeDownloader-SQLite)方便一下，记录下忘了的东西 ~~(嗯，还正好是第 256 个文章呢)~~
 
 不过我在 [PixivDownloader](https://github.com/yexca/PixivDownloader-SQLite) 也用到了来着，都忘完了属于是
 
