@@ -38,9 +38,9 @@
 
     {{ range $filtered.GroupByDate "2006" }}
     {{ $year := .Key }}
-    <div class="archives-group-year" id="year-{{ $year }}">
+    <div class="archives-group-year" id="{{ $year }}">
         <h2 class="archives-date section-title">
-            <a href="{{ $.RelPermalink }}#year-{{ $year }}">{{ $year }}</a>
+            <a href="{{ $.RelPermalink }}#{{ $year }}">{{ $year }}</a>
         </h2>
 
         {{ range .Pages.GroupByDate "2006-01" }}
@@ -48,9 +48,9 @@
         {{ $monthParts := split $month "-" }} <!-- 分割年份和月份 -->
         {{ $monthNumber := index $monthParts 1 }} <!-- 获取月份部分 -->
         {{ $monthDate := time (printf "%s-%s-01" $year $monthNumber) }} <!-- 使用年份和月份生成日期 -->
-        <div class="archives-group-month" id="month-{{ $month }}">
+        <div class="archives-group-month" id="{{ $month }}">
             <h3 class="archives-date-month">
-                <a href="{{ $.RelPermalink }}#month-{{ $month }}">
+                <a href="{{ $.RelPermalink }}#{{ $month }}">
                     {{ $year }}.{{ $monthNumber }} <!-- 直接使用月份字符串，保持两位数格式 -->
                 </a>
             </h3>
