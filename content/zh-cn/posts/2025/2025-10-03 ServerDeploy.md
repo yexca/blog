@@ -4,6 +4,7 @@ title: '2025 新服务器部署记录'
 # draft: true
 author: yexca
 date: '2025-10-03T10:22:25+09:00'
+lastmod: '2025-10-05T02:18:25+09:00'
 categories:
     - 折腾经验
 tags:
@@ -194,6 +195,10 @@ services:
       - 80:80
       - 443:443
 ```
+
+这里映射 `/var/run/docker.sock` 的原因，Nginx-UI 解释为:
+
+> Nginx UI 官方镜像使用 /var/run/docker.sock 通过 Docker Client API 与主机 Docker Engine 通信。此功能用于在另一个容器中控制 Nginx，并在 Nginx UI 的 OTA 升级期间执行容器替换而非二进制替换，以确保容器依赖项也得到升级。如果您不需要此功能，请向容器添加环境变量 (environment) NGINX_UI_IGNORE_DOCKER_SOCKET=true
 
 ## 其他服务
 
