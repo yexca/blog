@@ -260,7 +260,7 @@ doas mount --make-rshared /
 
 哇，我真的，推荐 node.js 版本 12-14，但是实际构建的时候，运行到某一步骤，提示是 16 以上的特性，我直接用 14 以上 `npm i` 会报错，只好用 13 版本先安装依赖，完成后再复制过来，用 16 版本构建，没想到这样折腾了一下午，不过说实话，这让我学会熟练切换 node.js 版本了属于是 XD
 
-我之前下的一个 IOS 软件，便打开试着连接异常，查看更新记录，提示使用 0.6.14 版本以上，我打手震撼，连忙搜到了我 star 了的 [Number178/kikoeru-express](https://github.com/Number178/kikoeru-express)
+我之前下的一个 IOS 软件，便打开试着连接异常，查看更新记录，提示使用 0.6.14 版本以上，我大受震撼，紧接着搜到了我已经 star 了的 [Number178/kikoeru-express](https://github.com/Number178/kikoeru-express) 😂
 
 {{< /details >}}
 
