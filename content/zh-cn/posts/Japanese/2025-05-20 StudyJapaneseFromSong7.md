@@ -26,6 +26,7 @@ tags:
 | 生きるを選んだ私へ | 致选择活下去的自己 | <https://blog.yexca.net/archives/239> |
 | rainy lady | 雨意未晴 | 本文 |
 | 恋しくなったら手を叩こう | 想谈恋爱的话就拍拍手吧 | <https://blog.yexca.net/archives/250> |
+| pris-magic! | 棱镜魔法! | <https://blog.yexca.net/archives/260> |
 
 {{< /details >}}
 
