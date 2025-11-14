@@ -1,6 +1,4 @@
-> 語言 / Language: [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [繁體中文](README.zh-TW.md)
-
-本文由 ChatGPT 翻譯
+> 语言 / Language: [简体中文](README.zh-CN.md) | [English](README.md) | [日本語](README.ja.md)
 
 # yexca 的部落格
 

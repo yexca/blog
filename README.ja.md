@@ -1,4 +1,4 @@
-> 言語 / Language: [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md) | [繁體中文](README.zh-TW.md)
+> 语言 / Language: [简体中文](README.zh-CN.md) | [English](README.md) | [繁體中文](README.zh-TW.md)
 
 この記事は ChatGPT によって翻訳されました
 
