@@ -1,6 +1,10 @@
 {{ define "body-class" }}template-archives{{ end }}
 {{ define "main" }}
-    {{/*  <header>
+<article class="post post-full card bg-white shadow-sm border-0">
+    {{/*  <header class="post-header text-center">
+        <a class="post-title" href="{{ .RelPermalink }}">归档</a>
+    </header>  */}}
+    <header>
         {{- $taxonomy := $.Site.GetPage "taxonomyTerm" "categories" -}}
         {{- $terms := $taxonomy.Pages -}}
         {{ if $terms }}
@@ -13,56 +17,36 @@
             </div>
         </div>
         {{ end }}
-    </header>  */}}
+    </header>
 
-    {{/*  {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
-    {{ $filtered := ($pages | intersect $notHidden) }}
+    <div class="post-content" id="post_content">
+        <div class='argon-timeline'>
+            {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+            {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
+            {{ $filtered := ($pages | intersect $notHidden) }}
 
-    {{ range $filtered.GroupByDate "2006" }}
-    {{ $id := lower (replace .Key " " "-") }}
-    <div class="archives-group" id="{{ $id }}">
-        <h2 class="archives-date section-title"><a href="{{ $.RelPermalink }}#{{ $id }}">{{ .Key }}</a></h2>
-        <div class="article-list--compact">
-            {{ range .Pages }}
-                {{ partial "article-list/compact" . }}
+            {{/* 按年份分组 */}}
+            {{ range $filtered.GroupByDate "2006" }}
+                {{ $year := .Key }}
+                <div class='argon-timeline-node node-year' id="{{ $year }}">
+                    <div class='argon-timeline-time archive-timeline-year'>
+                        <a href="#{{ $year }}">{{ $year }}</a>
+                    </div>
+                    <div class='argon-timeline-card card bg-gradient-secondary archive-timeline-title'></div>
+                </div>
+
+                {{ range .Pages }}
+                <div class='argon-timeline-node node-post'>
+                    <div class='argon-timeline-time'>{{ .Date.Format "01-02" }}</div>
+                    <div class='argon-timeline-card card bg-gradient-secondary archive-timeline-title'>
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </div>
+                </div>
+                {{ end }}
             {{ end }}
         </div>
     </div>
-    {{ end }}  */}}
+</article>
 
-    {{/*  按照月份分类  */}}
-    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
-    {{ $filtered := ($pages | intersect $notHidden) }}
-
-    {{ range $filtered.GroupByDate "2006" }}
-    {{ $year := .Key }}
-    <div class="archives-group-year" id="{{ $year }}">
-        <h2 class="archives-date section-title">
-            <a href="{{ $.RelPermalink }}#{{ $year }}">{{ $year }}</a>
-        </h2>
-
-        {{ range .Pages.GroupByDate "2006-01" }}
-        {{ $month := .Key }}
-        {{ $monthParts := split $month "-" }} <!-- 分割年份和月份 -->
-        {{ $monthNumber := index $monthParts 1 }} <!-- 获取月份部分 -->
-        {{ $monthDate := time (printf "%s-%s-01" $year $monthNumber) }} <!-- 使用年份和月份生成日期 -->
-        <div class="archives-group-month" id="{{ $month }}">
-            <h3 class="archives-date-month">
-                <a href="{{ $.RelPermalink }}#{{ $month }}">
-                    {{ $year }}.{{ $monthNumber }} <!-- 直接使用月份字符串，保持两位数格式 -->
-                </a>
-            </h3>
-            <div class="article-list--compact">
-                {{ range .Pages }}
-                    {{ partial "article-list/compact" . }}
-                {{ end }}
-            </div>
-        </div>
-        {{ end }}
-    </div>
-    {{ end }}
-
-    {{ partialCached "footer/footer" . }}
+{{ partialCached "footer/footer" . }}
 {{ end }}

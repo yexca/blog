@@ -55,3 +55,94 @@
   font-style: normal;
   font-display: swap;
 }
+
+// archive page
+/* 时间轴主体 */
+.argon-timeline {
+    position: relative;
+    padding: 20px 0 5px 0;
+}
+
+/* 垂直线 */
+.argon-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100px; /* 调整这个值来对齐左侧时间 */
+    width: 4px;
+    background: #FFE4EF;
+    border-radius: 2px;
+}
+
+/* 通用节点 */
+.argon-timeline-node {
+    position: relative;
+    display: flex;
+    align-items: center;
+    // margin-bottom: 20px;
+}
+
+// 年份节点
+.node-year {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+// 文章节点
+/* --- 文章节点样式 --- */
+.node-post {
+    margin-bottom: 10px; /* 文章之间保持较小的间距，显得紧凑 */
+}
+
+.node-post .argon-timeline-card {
+    padding: 8px 15px;   /* 缩小卡片内部内边距，更紧凑 */
+    // background-color: #f7fafc; /* 如果没有渐变色，可以给个淡淡的底色 */
+    border: none;
+}
+
+/* 左侧日期 */
+.argon-timeline-time {
+    width: 80px;
+    min-width: 80px;
+    flex-shrink: 0; // 防止缩小
+    // margin-right: 10px;
+    text-align: right;
+    font-weight: bold;
+    color: #8898aa;
+    // font-size: 0.9rem;
+}
+
+/* 节点圆点 */
+.argon-timeline-node::after {
+    content: '';
+    position: absolute;
+    left: 96px; /* 需与垂直线位置匹配 */
+    width: 12px;
+    height: 12px;
+    background: #F39EB6; /* 主题色 */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* 右侧卡片内容 */
+.argon-timeline-card {
+    margin-left: 40px;
+    padding: 10px 15px;
+    flex-grow: 1;
+    border-radius: 4px;
+}
+
+/* 年份特殊样式 */
+.archive-timeline-year {
+    font-size: 2.5rem;
+    color: var(--card-text-color-tertiary);
+}
+
+// 文章标题
+.archive-timeline-title a {
+    font-size: 1.8rem;            /* 比默认字体稍大一点 */
+    font-weight: 500;             /* 中等粗细 */
+    transition: all 0.2s;
+    text-overflow: ellipsis;
+}
