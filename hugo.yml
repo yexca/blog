@@ -68,6 +68,10 @@ permalinks:
 
 pygmentsUseClasses: true
 
+params:
+  article:
+    math: false
+
 markup:
   highlight:
     noClasses: false
@@ -79,3 +83,9 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block: [['$$', '$$'], ['\\[', '\\]']]
+          inline: [['$', '$'], ['\\(', '\\)']]

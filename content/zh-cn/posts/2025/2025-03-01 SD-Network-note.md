@@ -5,6 +5,7 @@ title: '软件设计师 - 计算机网络部分笔记'
 author: yexca
 date: '2025-03-01T23:28:30+09:00'
 lastmod: '2025-03-04T18:38:28+09:00'
+math: true
 categories:
     - 软考学习
 tags:
