@@ -1,6 +1,6 @@
 ---
 slug: 265
-title: 'docker 启动 mc 服务器'
+title: '使用 docker 搭建 minecraft 服务器'
 # draft: true
 author: yexca
 date: '2026-01-06T20:38:41+09:00'
