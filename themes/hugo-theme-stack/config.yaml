@@ -178,7 +178,7 @@ menu:
 
         - identifier: mail
           name: Mail
-          url: mailto:yexca@duck.com
+          url: mailto:blog@yexca.net
           params:
               icon: mail
 
