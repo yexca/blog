@@ -7,7 +7,7 @@ author: yexca
 # permalink: /archives/67
 views:
     - '256'
-    categories:
+categories:
     - 開発実践
 tags:
     - WordPress
