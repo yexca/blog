@@ -37,7 +37,7 @@ Split the system based on business functions. Each module is developed as an ind
 
 Microservices is a well-designed distributed architecture pattern. Key characteristics:
 
-* [Single Responsibility](https://blog.yexca.net/archives/93#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99): Fine-grained service splitting. Each service corresponds to a unique business capability to avoid redundant development.
+* [Single Responsibility](https://blog.yexca.net/en/archives/93/#object-oriented-design-principles): Fine-grained service splitting. Each service corresponds to a unique business capability to avoid redundant development.
 * Service-Oriented: Services expose business interfaces to the outside.
 * Autonomous: Independent teams, tech stacks, data, and deployment.
 * Strong Isolation: Implement isolation, fault tolerance, and fallbacks for service calls to prevent cascading failures.

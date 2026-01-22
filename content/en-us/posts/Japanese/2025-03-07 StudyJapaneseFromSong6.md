@@ -17,15 +17,15 @@ tags:
 
 | Song Title | Translation | Link |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | I Once Thought I'd Die | <https://blog.yexca.net/archives/214> |
-| あくあ色ぱれっと | Aqua's Color Palette | <https://blog.yexca.net/archives/219> |
-| 恋の押し売り | Pushy Love Sales | <https://blog.yexca.net/archives/220> |
-| 17さいのうた | Song of a 17-Year-Old | <https://blog.yexca.net/archives/224> |
-| drop | Falling in Love | <https://blog.yexca.net/archives/230> |
+| 僕が死のうと思ったのは | I Once Thought I'd Die | <https://blog.yexca.net/en/archives/214> |
+| あくあ色ぱれっと | Aqua's Color Palette | <https://blog.yexca.net/en/archives/219> |
+| 恋の押し売り | Pushy Love Sales | <https://blog.yexca.net/en/archives/220> |
+| 17さいのうた | Song of a 17-Year-Old | <https://blog.yexca.net/en/archives/224> |
+| drop | Falling in Love | <https://blog.yexca.net/en/archives/230> |
 | 生きるを選んだ私へ | To Myself Who Chose to Live | This Article |
-| rainy lady | Rainy Lady | <https://blog.yexca.net/archives/249> |
-| 恋しくなったら手を叩こう | If You Miss Love, Clap Your Hands | <https://blog.yexca.net/archives/250> |
-| pris-magic! | Pris-Magic! | <https://blog.yexca.net/archives/260> |
+| rainy lady | Rainy Lady | <https://blog.yexca.net/en/archives/249> |
+| 恋しくなったら手を叩こう | If You Miss Love, Clap Your Hands | <https://blog.yexca.net/en/archives/250> |
+| pris-magic! | Pris-Magic! | <https://blog.yexca.net/en/archives/260> |
 
 {{< /details >}}
 

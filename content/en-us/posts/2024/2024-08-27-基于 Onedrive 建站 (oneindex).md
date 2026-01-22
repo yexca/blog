@@ -86,7 +86,7 @@ This removes the `?` from your links. You can then access the backend via `yourd
 
 ## Special File Features
 
-~~For Markdown syntax, check my notes~~: [Markdown Notes](https://blog.yexca.net/archives/43)
+~~For Markdown syntax, check my notes~~: [Markdown Notes](https://blog.yexca.net/en/archives/43)
 
 **Add a footer description to a folder:**
 

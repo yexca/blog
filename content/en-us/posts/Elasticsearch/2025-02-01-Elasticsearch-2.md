@@ -19,14 +19,14 @@ tags:
 >
 > | Content                   | Link                                  |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch Basic Operations | <https://blog.yexca.net/archives/226> |
+> | Elasticsearch Basic Operations | <https://blog.yexca.net/en/archives/226> |
 > | Elasticsearch Query Operations | This article |
-> | RestClient Basic Operations | <https://blog.yexca.net/archives/228> |
-> | RestClient Query Operations | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch Data Aggregation | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch Autocomplete | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch Data Synchronization | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch Cluster | <https://blog.yexca.net/archives/235> |
+> | RestClient Basic Operations | <https://blog.yexca.net/en/archives/228> |
+> | RestClient Query Operations | <https://blog.yexca.net/en/archives/229> |
+> | Elasticsearch Data Aggregation | <https://blog.yexca.net/en/archives/231> |
+> | Elasticsearch Autocomplete | <https://blog.yexca.net/en/archives/232> |
+> | Elasticsearch Data Synchronization | <https://blog.yexca.net/en/archives/234> |
+> | Elasticsearch Cluster | <https://blog.yexca.net/en/archives/235> |
 
 The previous article mainly covered ES's data storage features. However, ES truly excels at search and data analysis.
 

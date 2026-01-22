@@ -16,14 +16,14 @@ tags:
 
 | Song Title | Translation | Link |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | I Thought About Dying | <https://blog.yexca.net/archives/214> |
-| あくあ色ぱれっと | Aqua Color Palette | <https://blog.yexca.net/archives/219> |
-| 恋の押し売り | Love Sales Pitch | <https://blog.yexca.net/archives/220> |
-| 17さいのうた | The 17-Year-Old's Song | <https://blog.yexca.net/archives/224> |
-| drop | Falling in Love | <https://blog.yexca.net/archives/230> |
-| 生きるを選んだ私へ | To Myself, Who Chose to Live | <https://blog.yexca.net/archives/239> |
-| rainy lady | Uncleared Rain Vibes | <https://blog.yexca.net/archives/249> |
-| 恋しくなったら手を叩こう | If You Miss Love, Clap Your Hands | <https://blog.yexca.net/archives/250> |
+| 僕が死のうと思ったのは | I Thought About Dying | <https://blog.yexca.net/en/archives/214> |
+| あくあ色ぱれっと | Aqua Color Palette | <https://blog.yexca.net/en/archives/219> |
+| 恋の押し売り | Love Sales Pitch | <https://blog.yexca.net/en/archives/220> |
+| 17さいのうた | The 17-Year-Old's Song | <https://blog.yexca.net/en/archives/224> |
+| drop | Falling in Love | <https://blog.yexca.net/en/archives/230> |
+| 生きるを選んだ私へ | To Myself, Who Chose to Live | <https://blog.yexca.net/en/archives/239> |
+| rainy lady | Uncleared Rain Vibes | <https://blog.yexca.net/en/archives/249> |
+| 恋しくなったら手を叩こう | If You Miss Love, Clap Your Hands | <https://blog.yexca.net/en/archives/250> |
 | pris-magic! | Prism Magic! | This Article |
 
 {{< /details >}}

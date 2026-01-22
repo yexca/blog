@@ -19,7 +19,7 @@ tags:
 
 Microservices calling each other via Feign is a synchronous approach, which comes with some issues.
 
-For example, if you're building a payment service, it might need to integrate code from the order service and warehouse service. Later, if you add an SMS service or a loyalty points service, you'd have to modify the payment code each time. This violates the [Open/Closed Principle](https://blog.yexca.net/archives/93#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99). Plus, you can't do anything else until the request returns, which wastes performance.
+For example, if you're building a payment service, it might need to integrate code from the order service and warehouse service. Later, if you add an SMS service or a loyalty points service, you'd have to modify the payment code each time. This violates the [Open/Closed Principle](https://blog.yexca.net/en/archives/93/#object-oriented-design-principles). Plus, you can't do anything else until the request returns, which wastes performance.
 
 Problems: High coupling, performance degradation, resource waste, cascading failures (if a provider service goes down, all calling services fail too, like dominoes, quickly bringing down the entire microservice cluster).
 

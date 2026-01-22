@@ -13,7 +13,7 @@ tags:
 
 {{< notice >}} This article was translated by gemini-2.5-flash {{< /notice >}}
 
-This article was written around the same time as my [Computer Networks notes](https://blog.yexca.net/archives/236/). Both topics are usually covered together for the exam, so I studied them concurrently.
+This article was written around the same time as my [Computer Networks notes](https://blog.yexca.net/en/archives/236/). Both topics are usually covered together for the exam, so I studied them concurrently.
 
 ## Firewall Technology
 

@@ -16,7 +16,7 @@ tags:
 {{< notice >}} This article was translated by gemini-3-flash-preview {{< /notice >}}
 
 > 2025-05-18 Update  
-> I wrote a SQLite version so you don't have to configure a database. Details: <https://blog.yexca.net/archives/248>
+> I wrote a SQLite version so you don't have to configure a database. Details: <https://blog.yexca.net/en/archives/248>
 
 It took three days to whip up a usable version, though there's no error handling—~~if it crashes, just restart it.~~
 
@@ -24,7 +24,7 @@ Project Link: <https://github.com/yexca/PixivDownloader-MySQL>
 
 ## Introduction
 
-This started with [Recording Downloaded Artist Works in a Database](https://blog.yexca.net/archives/94/). I had a database for tracking my downloaded works, but eventually, I realized I was doing repetitive manual labor. Repetitive tasks are exactly what computers are for. I recently felt like building an app and wasn't satisfied with this one: <https://github.com/yexca/yasumiProject>. Since I had some free time during the holidays, I started writing.
+This started with [Recording Downloaded Artist Works in a Database](https://blog.yexca.net/en/archives/94/). I had a database for tracking my downloaded works, but eventually, I realized I was doing repetitive manual labor. Repetitive tasks are exactly what computers are for. I recently felt like building an app and wasn't satisfied with this one: <https://github.com/yexca/yasumiProject>. Since I had some free time during the holidays, I started writing.
 
 ## Description
 

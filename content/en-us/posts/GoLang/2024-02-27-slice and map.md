@@ -5,7 +5,7 @@ title: 'GoLang Slices'
 author: yexca
 date: 2024-02-27T20:00:00+08:00
 lastmod: 2025-01-28T15:30:18+09:00
-# permalink: /archives/160
+# permalink: /en/archives/160
 categories:
     - Tech Learning
 tags:
@@ -18,15 +18,15 @@ tags:
 
 > **Golang Series**
 >
-> Hello GoLang: <https://blog.yexca.net/archives/154>  
-> GoLang (var and const) Variables and Constants: <https://blog.yexca.net/archives/155>  
-> GoLang (func) Functions: <https://blog.yexca.net/archives/156>  
+> Hello GoLang: <https://blog.yexca.net/en/archives/154>  
+> GoLang (var and const) Variables and Constants: <https://blog.yexca.net/en/archives/155>  
+> GoLang (func) Functions: <https://blog.yexca.net/en/archives/156>  
 > GoLang (slice and map) Slices: This article  
-> GoLang (OOP) Object-Oriented Programming: <https://blog.yexca.net/archives/162>  
-> GoLang (reflect) Reflection: <https://blog.yexca.net/archives/204>  
-> GoLang (struct tag) Struct Tags: <https://blog.yexca.net/archives/205>  
-> GoLang (goroutine) Goroutines: <https://blog.yexca.net/archives/206>  
-> GoLang (channel) Channels: <https://blog.yexca.net/archives/207>  
+> GoLang (OOP) Object-Oriented Programming: <https://blog.yexca.net/en/archives/162>  
+> GoLang (reflect) Reflection: <https://blog.yexca.net/en/archives/204>  
+> GoLang (struct tag) Struct Tags: <https://blog.yexca.net/en/archives/205>  
+> GoLang (goroutine) Goroutines: <https://blog.yexca.net/en/archives/206>  
+> GoLang (channel) Channels: <https://blog.yexca.net/en/archives/207>  
 
 ---
 

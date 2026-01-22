@@ -19,7 +19,7 @@ tags:
 
 Since we've already covered the Windows command line, we can't skip Linux.
 
-Windows article: [Downloading YouTube videos via Command Line](http://blog.yexca.net/archives/52)
+Windows article: [Downloading YouTube videos via Command Line](http://blog.yexca.net/en/archives/52)
 
 ## Download yt-dlp
 
@@ -83,4 +83,4 @@ Breakdown:
 
 ## References
 
-[Batch converting video formats with ffmpeg](http://blog.yexca.net/archives/65) (Wait, do I really need to link my own article?)
+[Batch converting video formats with ffmpeg](http://blog.yexca.net/en/archives/65) (Wait, do I really need to link my own article?)

@@ -20,21 +20,21 @@ tags:
 
 | Song Title | Translation | Link |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | I Once Thought About Ending It All | <https://blog.yexca.net/archives/214> |
-| あくあ色ぱれっと | Aqua's Palette | <https://blog.yexca.net/archives/219> |
-| 恋の押し売り | Love Salesman | <https://blog.yexca.net/archives/220> |
-| 17さいのうた | Song of 17 | <https://blog.yexca.net/archives/224> |
-| drop | Falling in Love | <https://blog.yexca.net/archives/230> |
-| 生きるを選んだ私へ | To My Self Who Chose to Live | <https://blog.yexca.net/archives/239> |
+| 僕が死のうと思ったのは | I Once Thought About Ending It All | <https://blog.yexca.net/en/archives/214> |
+| あくあ色ぱれっと | Aqua's Palette | <https://blog.yexca.net/en/archives/219> |
+| 恋の押し売り | Love Salesman | <https://blog.yexca.net/en/archives/220> |
+| 17さいのうた | Song of 17 | <https://blog.yexca.net/en/archives/224> |
+| drop | Falling in Love | <https://blog.yexca.net/en/archives/230> |
+| 生きるを選んだ私へ | To My Self Who Chose to Live | <https://blog.yexca.net/en/archives/239> |
 | rainy lady | Unsettled Rain | This Article |
-| 恋しくなったら手を叩こう | If You Want to Love, Clap Your Hands | <https://blog.yexca.net/archives/250> |
-| pris-magic! | Pris-magic! | <https://blog.yexca.net/archives/260> |
+| 恋しくなったら手を叩こう | If You Want to Love, Clap Your Hands | <https://blog.yexca.net/en/archives/250> |
+| pris-magic! | Pris-magic! | <https://blog.yexca.net/en/archives/260> |
 
 {{< /details >}}
 
 ## Introduction
 
-My thoughts on this song... well, I already mentioned how I found it in a previous post: <https://blog.yexca.net/archives/243/>. When I first heard it, especially that intro, it felt like it perfectly synced with my headspace at the time.
+My thoughts on this song... well, I already mentioned how I found it in a previous post: <https://blog.yexca.net/en/archives/243/>. When I first heard it, especially that intro, it felt like it perfectly synced with my headspace at the time.
 
 Of course, I’m talking about those first few lines. With my Japanese level back then, I didn't really grasp the rest (honestly, even the translation is a bit fuzzy to me). The overall vibe is one of powerlessness—that "I'm so small" feeling. It's like there are so many amazing people in the world, all shining bright, leaving me both envious and feeling a little pathetic.
 

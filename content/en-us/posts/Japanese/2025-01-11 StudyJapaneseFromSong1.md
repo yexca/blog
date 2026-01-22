@@ -13,6 +13,22 @@ tags:
 
 > This article was partially machine translated
 
+{{< details "Thoughts on Music Series" >}}
+
+| Song Title | Translation | Link |
+| :-- | :-- | :-- |
+| 僕が死のうと思ったのは | I Once Thought I'd Rather Die | This Article |
+| あくあ色ぱれっと | Aqua-Colored Palette | <https://blog.yexca.net/en/archives/219> |
+| 恋の押し売り | Love Push-Selling | <https://blog.yexca.net/en/archives/220> |
+| 17さいのうた | Song of a 17-Year-Old | <https://blog.yexca.net/en/archives/224> |
+| drop | Drop | <https://blog.yexca.net/en/archives/230> |
+| 生きるを選んだ私へ | To the Me Who Chose to Live | <https://blog.yexca.net/en/archives/239> |
+| rainy lady | Rain Still Lingers | <https://blog.yexca.net/en/archives/249> |
+| 恋しくなったら手を叩こう | If You Want to Fall in Love, Clap Your Hands | <https://blog.yexca.net/en/archives/250> |
+| pris-magic! | Prism Magic! | <https://blog.yexca.net/en/archives/260> |
+
+{{< /details >}}
+
 ## Introduction
 
 Is there a a way to study language listening without feeling like you're studying, sometimes you can listen to repeatedly and try shadowing? Isn't that music!

@@ -29,4 +29,4 @@ The email contains three lines. Look for the second line starting with `If this 
 
 Make sure to check the `Expiration` setting for the token. After regenerating it, you'll need to update the configuration in PicX.
 
-For more details, refer to: [Building a Free Image Host with PicX – yexca’Blog](https://blog.yexca.net/archives/27)
+For more details, refer to: [Building a Free Image Host with PicX – yexca’Blog](https://blog.yexca.net/en/archives/27)

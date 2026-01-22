@@ -19,14 +19,14 @@ tags:
 >
 > | Content                    | Link                                  |
 > | :------------------------- | :------------------------------------ |
-> | Elasticsearch Basic Operations | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch Query Operations | <https://blog.yexca.net/archives/227> |
-> | RestClient Basic Operations | <https://blog.yexca.net/archives/228> |
-> | RestClient Query Operations | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch Data Aggregation | <https://blog.yexca.net/archives/231> |
+> | Elasticsearch Basic Operations | <https://blog.yexca.net/en/archives/226> |
+> | Elasticsearch Query Operations | <https://blog.yexca.net/en/archives/227> |
+> | RestClient Basic Operations | <https://blog.yexca.net/en/archives/228> |
+> | RestClient Query Operations | <https://blog.yexca.net/en/archives/229> |
+> | Elasticsearch Data Aggregation | <https://blog.yexca.net/en/archives/231> |
 > | Elasticsearch Autocomplete | This Article |
-> | Elasticsearch Data Synchronization | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch Cluster      | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch Data Synchronization | <https://blog.yexca.net/en/archives/234> |
+> | Elasticsearch Cluster      | <https://blog.yexca.net/en/archives/235> |
 
 When a user types characters into a search box, they expect relevant suggestions. Providing full word completion based on typed letters is what we call autocomplete.
 

@@ -19,14 +19,14 @@ tags:
 >
 > | Content                        | Link                                  |
 > | :----------------------------- | :------------------------------------ |
-> | Elasticsearch Basic Operations | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch Query Operations | <https://blog.yexca.net/archives/227> |
-> | RestClient Basic Operations    | <https://blog.yexca.net/archives/228> |
-> | RestClient Query Operations    | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch Data Aggregation | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch Autocomplete     | <https://blog.yexca.net/archives/232> |
+> | Elasticsearch Basic Operations | <https://blog.yexca.net/en/archives/226> |
+> | Elasticsearch Query Operations | <https://blog.yexca.net/en/archives/227> |
+> | RestClient Basic Operations    | <https://blog.yexca.net/en/archives/228> |
+> | RestClient Query Operations    | <https://blog.yexca.net/en/archives/229> |
+> | Elasticsearch Data Aggregation | <https://blog.yexca.net/en/archives/231> |
+> | Elasticsearch Autocomplete     | <https://blog.yexca.net/en/archives/232> |
 > | Elasticsearch Data Synchronization | This Article |
-> | Elasticsearch Cluster          | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch Cluster          | <https://blog.yexca.net/en/archives/235> |
 
 ES data typically comes from a MySQL database. So, when MySQL data changes, ES also needs to update. This is what we call data synchronization between ES and MySQL.
 

@@ -20,13 +20,13 @@ tags:
 > | Content                    | Link                                  |
 > | :------------------------- | :------------------------------------ |
 > | Elasticsearch Basic Operations | This Article                          |
-> | Elasticsearch Query Operations | <https://blog.yexca.net/archives/227> |
-> | RestClient Basic Operations | <https://blog.yexca.net/archives/228> |
-> | RestClient Query Operations | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch Data Aggregation | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch Autocompletion | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch Data Sync    | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch Cluster      | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch Query Operations | <https://blog.yexca.net/en/archives/227> |
+> | RestClient Basic Operations | <https://blog.yexca.net/en/archives/228> |
+> | RestClient Query Operations | <https://blog.yexca.net/en/archives/229> |
+> | Elasticsearch Data Aggregation | <https://blog.yexca.net/en/archives/231> |
+> | Elasticsearch Autocompletion | <https://blog.yexca.net/en/archives/232> |
+> | Elasticsearch Data Sync    | <https://blog.yexca.net/en/archives/234> |
+> | Elasticsearch Cluster      | <https://blog.yexca.net/en/archives/235> |
 
 Elasticsearch is a super powerful open-source search engine. It helps us quickly find what we need in massive datasets. Combined with Kibana, Logstash, and Beats, it forms the Elastic Stack (ELK). It's widely used in log data analysis, real-time monitoring, and more.
 

@@ -20,7 +20,7 @@ My server's almost up. Renewed it last year, but this year, with all the deals p
 
 Figured I'd give it a shot. Used all my real info, and it actually got approved directly. Sweet!
 
-But then it hit me: the [last time I tinkered with a server](/archives/131/) was back in 2023. Two years zipped by just like that. Time flies, huh?
+But then it hit me: the [last time I tinkered with a server](/en/archives/131/) was back in 2023. Two years zipped by just like that. Time flies, huh?
 
 ## Oracle Linux
 
@@ -177,7 +177,7 @@ Then just 'Add Ingress Rules'.
 
 ## Install Nginx-UI
 
-While my previous article, [Server Deployment Log with Docker](/archives/102/), covered its specific use, new features have emerged with updates.
+While my previous article, [Server Deployment Log with Docker](/en/archives/102/), covered its specific use, new features have emerged with updates.
 
 To allow other containers to control Nginx and for easier updates, new directories need to be mapped. So the `docker-compose.yml` now looks like this:
 

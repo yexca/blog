@@ -84,7 +84,7 @@ pyinstaller my_program.spec
 
 ## Project
 
-Using this method, the software from <https://blog.yexca.net/archives/211> is now packaged into an executable! (Though error handling is still missing.)
+Using this method, the software from <https://blog.yexca.net/en/archives/211> is now packaged into an executable! (Though error handling is still missing.)
 
 ## References
 

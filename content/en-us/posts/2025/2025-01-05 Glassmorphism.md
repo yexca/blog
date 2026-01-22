@@ -55,7 +55,7 @@ By the way, writing articles is troublesome. When I am programming, it distracts
 
 Repository: <https://github.com/yexca/MusicPlayer-Twinkle>
 
-I updated the previous article (Simplified Chinese) <https://blog.yexca.net/archives/116/> and created an example using that method: <https://twinkle.yexca.net>
+I updated the previous article (Simplified Chinese) <https://blog.yexca.net/en/archives/116/> and created an example using that method: <https://twinkle.yexca.net>
 
 ## Card Effect
 

@@ -5,7 +5,7 @@ title: "GoLang Goroutines"
 author: yexca
 date: 2024-12-17T21:16:31+08:00
 lastmod: 2025-01-28T21:11:18+09:00
-# permalink: /archives/206
+# permalink: /en/archives/206
 categories:
     - Tech Learning
 tags:
@@ -18,15 +18,15 @@ tags:
 
 > **Golang Series**
 >
-> Hello GoLang: <https://blog.yexca.net/archives/154>  
-> GoLang (var and const): <https://blog.yexca.net/archives/155>  
-> GoLang (func): <https://blog.yexca.net/archives/156>  
-> GoLang (slice and map): <https://blog.yexca.net/archives/160>  
-> GoLang (OOP): <https://blog.yexca.net/archives/162>  
-> GoLang (reflect): <https://blog.yexca.net/archives/204>  
-> GoLang (struct tag): <https://blog.yexca.net/archives/205>  
+> Hello GoLang: <https://blog.yexca.net/en/archives/154>  
+> GoLang (var and const): <https://blog.yexca.net/en/archives/155>  
+> GoLang (func): <https://blog.yexca.net/en/archives/156>  
+> GoLang (slice and map): <https://blog.yexca.net/en/archives/160>  
+> GoLang (OOP): <https://blog.yexca.net/en/archives/162>  
+> GoLang (reflect): <https://blog.yexca.net/en/archives/204>  
+> GoLang (struct tag): <https://blog.yexca.net/en/archives/205>  
 > GoLang (goroutine): This Article  
-> GoLang (channel): <https://blog.yexca.net/archives/207>  
+> GoLang (channel): <https://blog.yexca.net/en/archives/207>  
 
 ---
 

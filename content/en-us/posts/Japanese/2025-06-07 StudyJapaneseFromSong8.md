@@ -16,15 +16,15 @@ tags:
 
 | Song Title | Translation | Link |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | I Thought About Dying | <https://blog.yexca.net/archives/214> |
-| あくあ色ぱれっと | Aqua-Colored Palette | <https://blog.yexca.net/archives/219> |
-| 恋の押し売り | Love Sales Pitch | <https://blog.yexca.net/archives/220> |
-| 17さいのうた | Song of 17 | <https://blog.yexca.net/archives/224> |
-| drop | Falling in Love | <https://blog.yexca.net/archives/230> |
-| 生きるを選んだ私へ | To Myself Who Chose to Live | <https://blog.yexca.net/archives/239> |
-| rainy lady | Rainy Lady | <https://blog.yexca.net/archives/249> |
+| 僕が死のうと思ったのは | I Thought About Dying | <https://blog.yexca.net/en/archives/214> |
+| あくあ色ぱれっと | Aqua-Colored Palette | <https://blog.yexca.net/en/archives/219> |
+| 恋の押し売り | Love Sales Pitch | <https://blog.yexca.net/en/archives/220> |
+| 17さいのうた | Song of 17 | <https://blog.yexca.net/en/archives/224> |
+| drop | Falling in Love | <https://blog.yexca.net/en/archives/230> |
+| 生きるを選んだ私へ | To Myself Who Chose to Live | <https://blog.yexca.net/en/archives/239> |
+| rainy lady | Rainy Lady | <https://blog.yexca.net/en/archives/249> |
 | 恋しくなったら手を叩こう | When You Miss Someone, Clap Your Hands | This Article |
-| pris-magic! | Prism Magic! | <https://blog.yexca.net/archives/260> |
+| pris-magic! | Prism Magic! | <https://blog.yexca.net/en/archives/260> |
 
 {{< /details >}}
 

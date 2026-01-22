@@ -19,14 +19,14 @@ tags:
 >
 > | Content                       | Link                                  |
 > | :---------------------------- | :------------------------------------ |
-> | Elasticsearch Basic Operations | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch Query Operations | <https://blog.yexca.net/archives/227> |
-> | RestClient Basic Operations   | <https://blog.yexca.net/archives/228> |
+> | Elasticsearch Basic Operations | <https://blog.yexca.net/en/archives/226> |
+> | Elasticsearch Query Operations | <https://blog.yexca.net/en/archives/227> |
+> | RestClient Basic Operations   | <https://blog.yexca.net/en/archives/228> |
 > | RestClient Query Operations   | This Article                          |
-> | Elasticsearch Data Aggregation | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch Autocomplete    | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch Data Sync       | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch Cluster         | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch Data Aggregation | <https://blog.yexca.net/en/archives/231> |
+> | Elasticsearch Autocomplete    | <https://blog.yexca.net/en/archives/232> |
+> | Elasticsearch Data Sync       | <https://blog.yexca.net/en/archives/234> |
+> | Elasticsearch Cluster         | <https://blog.yexca.net/en/archives/235> |
 
 Querying documents also uses the `RestHighLevelClient` object.
 

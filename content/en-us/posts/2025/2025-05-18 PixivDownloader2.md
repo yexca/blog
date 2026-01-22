@@ -22,7 +22,7 @@ Slowly, it sparked that old thought: "Why not just use SQLite?" Seriously, spinn
 
 Project Link: <https://github.com/yexca/PixivDownloader-SQLite>
 
-The GUI is similar to the previous generation; check out <https://blog.yexca.net/archives/211/> for details.
+The GUI is similar to the previous generation; check out <https://blog.yexca.net/en/archives/211/> for details.
 
 ### Configuration
 

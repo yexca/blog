@@ -5,7 +5,7 @@ title: 'GoLang Variables and Constants'
 author: yexca
 date: 2024-02-20T06:41:18+08:00
 lastmod: 2025-01-28T14:57:18+09:00
-# permalink: /archives/155
+# permalink: /en/archives/155
 categories:
     - Technical Learning
 tags:
@@ -18,15 +18,15 @@ tags:
 
 > **GoLang Series**
 >
-> Hello GoLang: <https://blog.yexca.net/archives/154>  
+> Hello GoLang: <https://blog.yexca.net/en/archives/154>  
 > GoLang (var and const) Variables and Constants: This article  
-> GoLang (func) Functions: <https://blog.yexca.net/archives/156>  
-> GoLang (slice and map) Slices: <https://blog.yexca.net/archives/160>  
-> GoLang (OOP) Object-Oriented Programming: <https://blog.yexca.net/archives/162>  
-> GoLang (reflect) Reflection: <https://blog.yexca.net/archives/204>  
-> GoLang (struct tag) Struct Tags: <https://blog.yexca.net/archives/205>  
-> GoLang (goroutine) Goroutines: <https://blog.yexca.net/archives/206>  
-> GoLang (channel) Channels: <https://blog.yexca.net/archives/207>  
+> GoLang (func) Functions: <https://blog.yexca.net/en/archives/156>  
+> GoLang (slice and map) Slices: <https://blog.yexca.net/en/archives/160>  
+> GoLang (OOP) Object-Oriented Programming: <https://blog.yexca.net/en/archives/162>  
+> GoLang (reflect) Reflection: <https://blog.yexca.net/en/archives/204>  
+> GoLang (struct tag) Struct Tags: <https://blog.yexca.net/en/archives/205>  
+> GoLang (goroutine) Goroutines: <https://blog.yexca.net/en/archives/206>  
+> GoLang (channel) Channels: <https://blog.yexca.net/en/archives/207>  
 
 ## Variables
 

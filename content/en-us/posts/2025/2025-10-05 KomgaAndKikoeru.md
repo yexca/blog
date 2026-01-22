@@ -17,13 +17,13 @@ tags:
 
 Google's Gemini Pro subscription comes with 2TiB of space, which naturally got me thinking about tinkering again. So, let's get to it.
 
-But looking back, it's already been three years since [my last tinkering](/archives/73). Time really flies, huh?
+But looking back, it's already been three years since [my last tinkering](/en/archives/73). Time really flies, huh?
 
 ## Manga: Komga
 
 First up is Komga for reading manga. While scanning can be a bit sluggish, the overall user experience is decent.
 
-After all these years, Komga has seen many updates. [My previous article](/archives/71) is no longer reusable. Using docker-compose makes things more portable. Here's the `docker-compose.yml`:
+After all these years, Komga has seen many updates. [My previous article](/en/archives/71) is no longer reusable. Using docker-compose makes things more portable. Here's the `docker-compose.yml`:
 
 ```yaml
 version: '3.0'
@@ -47,7 +47,7 @@ Also, having a [dedicated iOS app Komic](https://pruizlezcano.github.io/komic/) 
 
 ## rclone Mounts Google Drive
 
-Similar to [Microsoft OneDrive](/archives/105), you first need to authenticate in a browser on a Windows machine to get a token.
+Similar to [Microsoft OneDrive](/en/archives/105), you first need to authenticate in a browser on a Windows machine to get a token.
 
 The process is to download rclone, then run the command:
 

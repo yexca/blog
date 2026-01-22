@@ -17,15 +17,15 @@ tags:
 
 | Song Title | Translation | Link |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | I Once Thought I'd Rather Die | <https://blog.yexca.net/archives/214> |
+| 僕が死のうと思ったのは | I Once Thought I'd Rather Die | <https://blog.yexca.net/en/archives/214> |
 | あくあ色ぱれっと | Aqua-Colored Palette | This Article |
-| 恋の押し売り | Love Push-Selling | <https://blog.yexca.net/archives/220> |
-| 17さいのうた | Song of a 17-Year-Old | <https://blog.yexca.net/archives/224> |
-| drop | Drop | <https://blog.yexca.net/archives/230> |
-| 生きるを選んだ私へ | To the Me Who Chose to Live | <https://blog.yexca.net/archives/239> |
-| rainy lady | Rain Still Lingers | <https://blog.yexca.net/archives/249> |
-| 恋しくなったら手を叩こう | If You Want to Fall in Love, Clap Your Hands | <https://blog.yexca.net/archives/250> |
-| pris-magic! | Prism Magic! | <https://blog.yexca.net/archives/260> |
+| 恋の押し売り | Love Push-Selling | <https://blog.yexca.net/en/archives/220> |
+| 17さいのうた | Song of a 17-Year-Old | <https://blog.yexca.net/en/archives/224> |
+| drop | Drop | <https://blog.yexca.net/en/archives/230> |
+| 生きるを選んだ私へ | To the Me Who Chose to Live | <https://blog.yexca.net/en/archives/239> |
+| rainy lady | Rain Still Lingers | <https://blog.yexca.net/en/archives/249> |
+| 恋しくなったら手を叩こう | If You Want to Fall in Love, Clap Your Hands | <https://blog.yexca.net/en/archives/250> |
+| pris-magic! | Prism Magic! | <https://blog.yexca.net/en/archives/260> |
 
 {{< /details >}}
 
@@ -41,7 +41,7 @@ I held back from elaborating further; it's a joyful track. For an idol, this son
 
 I only got into Aqua last year (2024). Hearing this song constantly (during 3D streams), I figured it came after she’d built up some experience, a powerhouse track that just topped the charts. Turns out, it was a debut peak! ('For the Win' was a Bilibili project, so I'll skip that one for now.) All her subsequent idol-style songs were great, actually got me into that whole idol vibe. It even got me into idol concerts (though I'm less keen now after Aqua's graduation).
 
-Also, my translations might differ from others because I often inject my own feelings. So some parts aren't a direct literal translation of the lyrics (same deal with the [previous song](https://blog.yexca.net/archives/214/)). This'll be even clearer in the translation for my ~~possibly next~~ 2024 Song of the Year. Just copying a standard translation feels kinda pointless; when it's something I truly love, I want to leave my own mark ~~(dye it my color)~~.
+Also, my translations might differ from others because I often inject my own feelings. So some parts aren't a direct literal translation of the lyrics (same deal with the [previous song](https://blog.yexca.net/en/archives/214/)). This'll be even clearer in the translation for my ~~possibly next~~ 2024 Song of the Year. Just copying a standard translation feels kinda pointless; when it's something I truly love, I want to leave my own mark ~~(dye it my color)~~.
 
 Anyway, I also want to be dyed in Aqua's colors! She's one of my top three favorites, after all ~~ (Sucks I couldn't get her standee at C105, or Yuuki's either 😭)~~.
 

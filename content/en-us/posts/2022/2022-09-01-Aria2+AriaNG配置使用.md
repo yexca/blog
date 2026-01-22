@@ -203,9 +203,11 @@ Run `HideRun.vbs` (ensure you run the VBS, not the EXE). If there are no errors,
 **Warning:** You can add absolute paths in the VBS script, but the path **must not** contain spaces.
 
 Example of what NOT to do:
+
 ```vbs
 CreateObject("WScript.Shell").Run "C:\Users\he ne\Downloads\aria2c.exe --conf-path=aria2.conf",0
 ```
+
 Because "he ne" contains a space, the system won't recognize it. This often happens with `C:\Program Files (x86)`. To fix this, either remove spaces from the directory or just keep the VBS in the same folder as Aria2 and use the relative path (as shown in the first VBS example).
 
 3. Open `index.html`
@@ -225,5 +227,5 @@ This opens the Startup folder. Drag the `HideRun.vbs` shortcut into this folder 
 - - - - - -
 
 References:
-[Aria2+AriaNG Configuration Guide (Win10)](https://www.higgs.xyz/archives/7/)
+[Aria2+AriaNG Configuration Guide (Win10)](https://www.higgs.xyz/en/archives/7/)
 [AriaNG Documentation](http://ariang.mayswind.net/zh_Hans/)

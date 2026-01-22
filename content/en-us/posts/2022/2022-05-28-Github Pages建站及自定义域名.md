@@ -69,7 +69,7 @@ I use VS Code, so I'll click "Open in Visual Studio Code".
 
 ### Build the Site
 
-Create a `README.md` file and edit it using [Markdown](https://blog.yexca.net/archives/43) (shameless plug for my own Markdown notes).
+Create a `README.md` file and edit it using [Markdown](https://blog.yexca.net/en/archives/43) (shameless plug for my own Markdown notes).
 
 Once edited and saved, go back to GitHub Desktop, click "Commit to main", then click "Push origin".
 

@@ -110,7 +110,7 @@ To find the command you typed, the shell searches through a "path". For commands
 
 Use `echo $PATH` to see the shell's PATH environment variable.
 
-Reference: [Linux bin Directory - yexca’Blog](https://blog.yexca.net/archives/60)
+Reference: [Linux bin Directory - yexca’Blog](https://blog.yexca.net/en/archives/60)
 
 Unlike some other OSs, Linux does not check the current directory for executables by default before searching the path. It only runs an executable in the current directory if it's in the PATH or if you provide an absolute or relative path.
 

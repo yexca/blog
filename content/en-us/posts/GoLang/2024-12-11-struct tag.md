@@ -5,7 +5,7 @@ title: "GoLang Struct Tags"
 author: yexca
 date: 2024-12-11T18:31:18+08:00
 lastmod: 2025-01-28T21:04:18+09:00
-# permalink: /archives/205
+# permalink: /en/archives/205
 categories:
     - Technology
 tags:
@@ -18,15 +18,15 @@ tags:
 
 > **Golang Series**
 >
-> Hello GoLang: <https://blog.yexca.net/archives/154>  
-> GoLang (var and const) Variables and Constants: <https://blog.yexca.net/archives/155>  
-> GoLang (func) Functions: <https://blog.yexca.net/archives/156>  
-> GoLang (slice and map) Slices and Maps: <https://blog.yexca.net/archives/160>  
-> GoLang (OOP) Object-Oriented Programming: <https://blog.yexca.net/archives/162>  
-> GoLang (reflect) Reflection: <https://blog.yexca.net/archives/204>  
+> Hello GoLang: <https://blog.yexca.net/en/archives/154>  
+> GoLang (var and const) Variables and Constants: <https://blog.yexca.net/en/archives/155>  
+> GoLang (func) Functions: <https://blog.yexca.net/en/archives/156>  
+> GoLang (slice and map) Slices and Maps: <https://blog.yexca.net/en/archives/160>  
+> GoLang (OOP) Object-Oriented Programming: <https://blog.yexca.net/en/archives/162>  
+> GoLang (reflect) Reflection: <https://blog.yexca.net/en/archives/204>  
 > GoLang (struct tag) Struct Tags: This Article  
-> GoLang (goroutine) Goroutines: <https://blog.yexca.net/archives/206>  
-> GoLang (channel) Channels: <https://blog.yexca.net/archives/207>  
+> GoLang (goroutine) Goroutines: <https://blog.yexca.net/en/archives/206>  
+> GoLang (channel) Channels: <https://blog.yexca.net/en/archives/207>  
 
 ---
 

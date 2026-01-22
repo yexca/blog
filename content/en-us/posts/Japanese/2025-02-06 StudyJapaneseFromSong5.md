@@ -17,23 +17,15 @@ tags:
 
 | Song Title | Translation | Link |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | I Wanted To Die | <https://blog.yexca.net/archives/214> |
-| 曾经我也想过一了百了 | There were times I also thought of ending it all | <https://blog.yexca.net/archives/214> |
-| あくあ色ぱれっと | Aqua-Colored Palette | <https://blog.yexca.net/archives/219> |
-| aqua 的调色盘 | Aqua's Palette | <https://blog.yexca.net/archives/219> |
-| 恋の押し売り | Love Sales Pitch | <https://blog.yexca.net/archives/220> |
-| 恋爱推销 | Love Promotion | <https://blog.yexca.net/archives/220> |
-| 17さいのうた | Song of 17 | <https://blog.yexca.net/archives/224> |
-| 17 岁的歌 | Song of a 17-Year-Old | <https://blog.yexca.net/archives/224> |
+| 僕が死のうと思ったのは | I Wanted To Die | <https://blog.yexca.net/en/archives/214> |
+| あくあ色ぱれっと | Aqua-Colored Palette | <https://blog.yexca.net/en/archives/219> |
+| 恋の押し売り | Love Sales Pitch | <https://blog.yexca.net/en/archives/220> |
+| 17さいのうた | Song of 17 | <https://blog.yexca.net/en/archives/224> |
 | drop | Falling in Love | This Article |
-| 生きるを選んだ私へ | To the Me Who Chose to Live | <https://blog.yexca.net/archives/239> |
-| 致选择活下去的自己 | To Myself Who Chose to Live | <https://blog.yexca.net/archives/239> |
-| rainy lady | rainy lady | <https://blog.yexca.net/archives/249> |
-| 雨意未晴 | Still Rainy | <https://blog.yexca.net/archives/249> |
-| 恋しくなったら手を叩こう | If You Miss Love, Clap Your Hands | <https://blog.yexca.net/archives/250> |
-| 想谈恋爱的话就拍拍手吧 | If You Wanna Fall in Love, Clap Your Hands | <https://blog.yexca.net/archives/250> |
-| pris-magic! | pris-magic! | <https://blog.yexca.net/archives/260> |
-| 棱镜魔法! | Prism Magic! | <https://blog.yexca.net/archives/260> |
+| 生きるを選んだ私へ | To the Me Who Chose to Live | <https://blog.yexca.net/en/archives/239> |
+| rainy lady | rainy lady | <https://blog.yexca.net/en/archives/249> |
+| 恋しくなったら手を叩こう | If You Miss Love, Clap Your Hands | <https://blog.yexca.net/en/archives/250> |
+| pris-magic! | pris-magic! | <https://blog.yexca.net/en/archives/260> |
 
 {{< /details >}}
 

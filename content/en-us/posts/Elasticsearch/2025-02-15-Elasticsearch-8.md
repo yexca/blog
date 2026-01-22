@@ -18,13 +18,13 @@ tags:
 >
 > | Content                   | Link                                  |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch Basic Operations | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch Query Operations | <https://blog.yexca.net/archives/227> |
-> | RestClient Basic Operations | <https://blog.yexca.net/archives/228> |
-> | RestClient Query Operations | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch Data Aggregation | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch Autocomplete | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch Data Sync | <https://blog.yexca.net/archives/234> |
+> | Elasticsearch Basic Operations | <https://blog.yexca.net/en/archives/226> |
+> | Elasticsearch Query Operations | <https://blog.yexca.net/en/archives/227> |
+> | RestClient Basic Operations | <https://blog.yexca.net/en/archives/228> |
+> | RestClient Query Operations | <https://blog.yexca.net/en/archives/229> |
+> | Elasticsearch Data Aggregation | <https://blog.yexca.net/en/archives/231> |
+> | Elasticsearch Autocomplete | <https://blog.yexca.net/en/archives/232> |
+> | Elasticsearch Data Sync | <https://blog.yexca.net/en/archives/234> |
 > | Elasticsearch Cluster | This Article |
 
 A standalone ES setup for data storage inevitably faces two issues: massive data storage and single point of failure.
