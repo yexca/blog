@@ -26,16 +26,6 @@ tags:
 
 {{< /details >}}
 
-> **音に感じてシリーズ**
->
-> | 曲 | リンク |
-> |:-- | :-- |
-> | 僕が死のうと思ったのは | <https://blog.yexca.net/ja/archives/214> |
-> | あくあ色ぱれっと | この記事 |
-> | 恋の押し売り | <https://blog.yexca.net/ja/archives/220>  |
-> | 17さいのうた | <https://blog.yexca.net/ja/archives/224> |
-> | drop | <https://blog.yexca.net/ja/archives/230> |
-
 ## まえがき
 
 また歌詞だけ書こう、次回何か日本語で感想を書くほうがいいかな。

@@ -55,9 +55,9 @@ body{
 
 プロジェクトのリング: <https://github.com/yexca/MusicPlayer-Twinkle>
 
-顺便更新了下之前的文章 <https://blog.yexca.net/archives/116/> 用此方法加了个示例: <https://twinkle.yexca.net>
+顺便更新了下之前的文章 <https://blog.yexca.net/ja/archives/116/> 用此方法加了个示例: <https://twinkle.yexca.net>
 
-ところで、以前の文章も更新したよ (簡体字中国語で) <https://blog.yexca.net/archives/116/> その方法で例を作った: <https://twinkle.yexca.net>
+ところで、以前の文章も更新したよ (簡体字中国語で) <https://blog.yexca.net/ja/archives/116/> その方法で例を作った: <https://twinkle.yexca.net>
 
 ## カード効果
 

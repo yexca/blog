@@ -4,7 +4,7 @@ title: '『崩壊：スターレイル』国際サーバーの分流ルール'
 date: '2023-05-16T23:13:21+08:00'
 author: yexca
 layout: post
-permalink: /archives/107
+# permalink: /archives/107
 views:
     - '32'
 categories:

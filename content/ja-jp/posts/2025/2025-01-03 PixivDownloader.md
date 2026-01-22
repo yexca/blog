@@ -16,7 +16,7 @@ tags:
 {{< notice >}} この記事は ChatGPT によって翻訳されました {{< /notice >}}
 
 > 2025-05-18 更新  
-> SQLite版も書いた。もうデータベース設定しなくていい：<https://blog.yexca.net/archives/248>
+> SQLite版も書いた。もうデータベース設定しなくていい：<https://blog.yexca.net/ja/archives/248>
 
 3日かけてとりあえず動くやつを作ってみた。  
 ただしエラー処理はしてないから、バグったら ~~再起動してね~~。
@@ -25,7 +25,7 @@ GitHub リポジトリはこちら：<https://github.com/yexca/PixivDownloader-M
 
 ## はじめに
 
-これは [ダウンロード済みのイラストを DB に記録する](https://blog.yexca.net/archives/94/) ってところから始まってて、  
+これは [ダウンロード済みのイラストを DB に記録する](https://blog.yexca.net/ja/archives/94/) ってところから始まってて、  
 ずっと同じ作業してるのアホらしくなって「コンピュータにやらせよう」ってなったんだよね。
 
 たまたま最近「プログラム作りたいな」って思ってたし、  

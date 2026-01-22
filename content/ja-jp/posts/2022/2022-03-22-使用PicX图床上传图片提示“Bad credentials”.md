@@ -30,4 +30,4 @@ tags:
 その時、`Expiration`（トークンの有効期限）の設定を忘れないようにね。
 再作成した後は、PicX 側で画像ホスティングの設定を更新（リセット）する必要があるよ。
 
-詳しい手順はここを参考にしてね：[PicX で自分専用の無料画像ホスティングを作る – yexca’Blog](https://blog.yexca.net/archives/27)
+詳しい手順はここを参考にしてね：[PicX で自分専用の無料画像ホスティングを作る – yexca’Blog](https://blog.yexca.net/ja/archives/27)

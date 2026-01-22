@@ -80,7 +80,7 @@ systemctl start docker
 
 ### Cookie の取得
 
-米遊社のCookie取得方法については、この記事を参考にしてね：[原神 樹脂確認/通知 – yexca'Blog](https://yexca.xyz/archives/12)
+米遊社のCookie取得方法については、この記事を参考にしてね：[原神 樹脂確認/通知 – yexca'Blog](https://yexca.xyz/ja/archives/12)
 
 **注意**：Cookie には `account_id` と `cookie_token` の2つのフィールドが含まれている必要があるよ。
 

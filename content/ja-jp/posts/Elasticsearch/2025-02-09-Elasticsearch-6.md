@@ -19,14 +19,14 @@ tags:
 >
 > | 内容                   | リンク                                |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch 基本操作 | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch 検索操作 | <https://blog.yexca.net/archives/227> |
-> | RestClient 基本操作 | <https://blog.yexca.net/archives/228> |
-> | RestClient 検索操作 | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch データ集計 | <https://blog.yexca.net/archives/231> |
+> | Elasticsearch 基本操作 | <https://blog.yexca.net/ja/archives/226> |
+> | Elasticsearch 検索操作 | <https://blog.yexca.net/ja/archives/227> |
+> | RestClient 基本操作 | <https://blog.yexca.net/ja/archives/228> |
+> | RestClient 検索操作 | <https://blog.yexca.net/ja/archives/229> |
+> | Elasticsearch データ集計 | <https://blog.yexca.net/ja/archives/231> |
 > | Elasticsearch オートコンプリート | この記事 |
-> | Elasticsearch データ同期 | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch クラスター | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch データ同期 | <https://blog.yexca.net/ja/archives/234> |
+> | Elasticsearch クラスター | <https://blog.yexca.net/ja/archives/235> |
 
 ユーザーが検索ボックスに文字を入力したときに、その文字に関連する検索候補を表示し、入力された文字に基づいて単語を補完する機能、それがオートコンプリートだよ。
 

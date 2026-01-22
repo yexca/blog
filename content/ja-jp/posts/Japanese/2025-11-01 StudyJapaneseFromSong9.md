@@ -16,14 +16,14 @@ tags:
 
 | 曲名 | 翻訳 | リンク |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | 僕も死のうと思ったことはあった | <https://blog.yexca.net/archives/214> |
-| あくあ色ぱれっと | あくあのパレット | <https://blog.yexca.net/archives/219> |
-| 恋の押し売り | 恋の押し売り | <https://blog.yexca.net/archives/220> |
-| 17さいのうた | 17歳の歌 | <https://blog.yexca.net/archives/224> |
-| drop | 恋に落ちる | <https://blog.yexca.net/archives/230> |
-| 生きるを選んだ私へ | 生きることを選んだ私へ | <https://blog.yexca.net/archives/239> |
-| rainy lady | 雨模様のレディ | <https://blog.yexca.net/archives/249> |
-| 恋しくなったら手を叩こう | 恋しくなったら手を叩こう | <https://blog.yexca.net/archives/250> |
+| 僕が死のうと思ったのは | 僕も死のうと思ったことはあった | <https://blog.yexca.net/ja/archives/214> |
+| あくあ色ぱれっと | あくあのパレット | <https://blog.yexca.net/ja/archives/219> |
+| 恋の押し売り | 恋の押し売り | <https://blog.yexca.net/ja/archives/220> |
+| 17さいのうた | 17歳の歌 | <https://blog.yexca.net/ja/archives/224> |
+| drop | 恋に落ちる | <https://blog.yexca.net/ja/archives/230> |
+| 生きるを選んだ私へ | 生きることを選んだ私へ | <https://blog.yexca.net/ja/archives/239> |
+| rainy lady | 雨模様のレディ | <https://blog.yexca.net/ja/archives/249> |
+| 恋しくなったら手を叩こう | 恋しくなったら手を叩こう | <https://blog.yexca.net/ja/archives/250> |
 | pris-magic! | プリズムマジック！ | 本記事 |
 
 {{< /details >}}

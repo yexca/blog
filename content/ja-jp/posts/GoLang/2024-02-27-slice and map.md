@@ -5,7 +5,7 @@ title: 'GoLang スライス'
 author: yexca
 date: 2024-02-27T20:00:00+08:00
 lastmod: 2025-01-28T15:30:18+09:00
-# permalink: /archives/160
+# permalink: /ja/archives/160
 categories:
     - 技術研修
 tags:
@@ -18,15 +18,15 @@ tags:
 >
 > **Golang シリーズ**
 >
-> Hello GoLang: <https://blog.yexca.net/ja/archives/154>  
-> GoLang (var and const) 変数と定数: <https://blog.yexca.net/ja/archives/155>  
-> GoLang (func) 関数: <https://blog.yexca.net/ja/archives/156>  
+> Hello GoLang: <https://blog.yexca.net/ja/ja/archives/154>  
+> GoLang (var and const) 変数と定数: <https://blog.yexca.net/ja/ja/archives/155>  
+> GoLang (func) 関数: <https://blog.yexca.net/ja/ja/archives/156>  
 > GoLang (slice and map) スライス: この記事  
-> GoLang (OOP) オブジェクト指向: <https://blog.yexca.net/ja/archives/162>  
-> GoLang (reflect) リフレクション: <https://blog.yexca.net/ja/archives/204>  
-> GoLang (struct tag) 構造タグ: <https://blog.yexca.net/ja/archives/205>  
-> GoLang (goroutine) ゴルーチン: <https://blog.yexca.net/ja/archives/206>  
-> GoLang (channel) チャンネル: <https://blog.yexca.net/ja/archives/207>  
+> GoLang (OOP) オブジェクト指向: <https://blog.yexca.net/ja/ja/archives/162>  
+> GoLang (reflect) リフレクション: <https://blog.yexca.net/ja/ja/archives/204>  
+> GoLang (struct tag) 構造タグ: <https://blog.yexca.net/ja/ja/archives/205>  
+> GoLang (goroutine) ゴルーチン: <https://blog.yexca.net/ja/ja/archives/206>  
+> GoLang (channel) チャンネル: <https://blog.yexca.net/ja/ja/archives/207>  
 
 ---
 

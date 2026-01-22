@@ -19,14 +19,14 @@ tags:
 >
 > | 内容                   | リンク                                |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch 基本操作 | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch クエリ操作 | <https://blog.yexca.net/archives/227> |
+> | Elasticsearch 基本操作 | <https://blog.yexca.net/ja/archives/226> |
+> | Elasticsearch クエリ操作 | <https://blog.yexca.net/ja/archives/227> |
 > | RestClient 基本操作 | 本文 |
-> | RestClient クエリ操作 | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch データ集計 | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch オートコンプリート | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch データ同期 | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch クラスター | <https://blog.yexca.net/archives/235> |
+> | RestClient クエリ操作 | <https://blog.yexca.net/ja/archives/229> |
+> | Elasticsearch データ集計 | <https://blog.yexca.net/ja/archives/231> |
+> | Elasticsearch オートコンプリート | <https://blog.yexca.net/ja/archives/232> |
+> | Elasticsearch データ同期 | <https://blog.yexca.net/ja/archives/234> |
+> | Elasticsearch クラスター | <https://blog.yexca.net/ja/archives/235> |
 
 ESの公式は、ESを操作するための様々な言語のクライアントを提供しているんだ。これらのクライアントの核は、DSLステートメントを組み立てて、HTTPリクエストを通じてESに送信することだよ。
 

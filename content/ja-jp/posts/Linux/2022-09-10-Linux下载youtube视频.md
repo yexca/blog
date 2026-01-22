@@ -4,7 +4,7 @@ title: LinuxでYouTube動画をダウンロードする方法
 date: '2022-09-10T19:29:58+08:00'
 author: yexca
 # layout: post
-# permalink: /archives/68
+# permalink: /ja/archives/68
 views:
     - '330'
 categories:
@@ -19,7 +19,7 @@ tags:
 
 Windowsのコマンドライン版があるなら、Linux版がないわけないよね。
 
-Windows版の記事はこちら：[コマンドラインでYouTube動画をダウンロードする](http://blog.yexca.net/archives/52)
+Windows版の記事はこちら：[コマンドラインでYouTube動画をダウンロードする](http://blog.yexca.net/ja/archives/52)
 
 ## yt-dlpをダウンロードする
 
@@ -83,4 +83,4 @@ vi config
 
 ## 参考記事
 
-[ffmpegで動画形式を一括変換する](http://blog.yexca.net/archives/65) ~~というか、自分の記事をわざわざリンクする意味あるのかな（笑）~~
+[ffmpegで動画形式を一括変換する](http://blog.yexca.net/ja/archives/65) ~~というか、自分の記事をわざわざリンクする意味あるのかな（笑）~~

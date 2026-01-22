@@ -19,7 +19,7 @@ tags:
 {{< details "音に感じてシリーズ" >}}
 
 | 曲 | 翻訳 | リンク |
-|:-- | :-- | :--|
+| :-- | :-- | :-- |
 | 僕が死のうと思ったのは | 略 | <https://blog.yexca.net/ja/archives/214> |
 | あくあ色ぱれっと | 略 | <https://blog.yexca.net/ja/archives/219> |
 | 恋の押し売り | 略 | <https://blog.yexca.net/ja/archives/220> |

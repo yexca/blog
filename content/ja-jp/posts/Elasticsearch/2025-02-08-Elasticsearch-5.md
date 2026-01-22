@@ -19,14 +19,14 @@ tags:
 >
 > | 内容                   | リンク                                  |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch 基礎操作 | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch クエリ操作 | <https://blog.yexca.net/archives/227> |
-> | RestClient 基礎操作 | <https://blog.yexca.net/archives/228> |
-> | RestClient クエリ操作 | <https://blog.yexca.net/archives/229> |
+> | Elasticsearch 基礎操作 | <https://blog.yexca.net/ja/archives/226> |
+> | Elasticsearch クエリ操作 | <https://blog.yexca.net/ja/archives/227> |
+> | RestClient 基礎操作 | <https://blog.yexca.net/ja/archives/228> |
+> | RestClient クエリ操作 | <https://blog.yexca.net/ja/archives/229> |
 > | Elasticsearch データアグリゲーション | この記事 |
-> | Elasticsearch 自動補完 | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch データ同期 | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch クラスター | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch 自動補完 | <https://blog.yexca.net/ja/archives/232> |
+> | Elasticsearch データ同期 | <https://blog.yexca.net/ja/archives/234> |
+> | Elasticsearch クラスター | <https://blog.yexca.net/ja/archives/235> |
 
 [アグリゲーション (aggregations)](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) を使うと、データの統計、分析、演算がすごく簡単にできちゃうんだ。例えばこんな感じ:
 

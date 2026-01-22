@@ -63,7 +63,7 @@ Github Desktop を起動し、ログイン後に空フォルダを選択し、�
 
 ### サイトの作成
 
-`README.md` を作成して [Markdown](https://blog.yexca.net/archives/43) で編集します（~~ついでに自分の Markdown ノートも見てね~~）。
+`README.md` を作成して [Markdown](https://blog.yexca.net/ja/archives/43) で編集します（~~ついでに自分の Markdown ノートも見てね~~）。
 
 編集後に保存し、`Github Desktop` で `Commit to main` を押し、続けて `Push origin` をクリックします。
 

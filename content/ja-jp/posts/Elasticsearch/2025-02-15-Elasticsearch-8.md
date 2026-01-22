@@ -18,13 +18,13 @@ tags:
 >
 > | 内容                   | リンク                                  |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch 基本操作 | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch 検索操作 | <https://blog.yexca.net/archives/227> |
-> | RestClient 基本操作 | <https://blog.yexca.net/archives/228> |
-> | RestClient 検索操作 | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch データ集約 | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch オートコンプリート | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch データ同期 | <https://blog.yexca.net/archives/234> |
+> | Elasticsearch 基本操作 | <https://blog.yexca.net/ja/archives/226> |
+> | Elasticsearch 検索操作 | <https://blog.yexca.net/ja/archives/227> |
+> | RestClient 基本操作 | <https://blog.yexca.net/ja/archives/228> |
+> | RestClient 検索操作 | <https://blog.yexca.net/ja/archives/229> |
+> | Elasticsearch データ集約 | <https://blog.yexca.net/ja/archives/231> |
+> | Elasticsearch オートコンプリート | <https://blog.yexca.net/ja/archives/232> |
+> | Elasticsearch データ同期 | <https://blog.yexca.net/ja/archives/234> |
 > | Elasticsearch クラスター | この記事 |
 
 ESを単体でデータ保存に使うと、どうしても二つの問題に直面するんだ。大量のデータ保存と単一障害点の問題だね。

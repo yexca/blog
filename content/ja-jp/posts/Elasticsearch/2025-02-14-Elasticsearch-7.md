@@ -19,14 +19,14 @@ tags:
 >
 > | 内容                   | リンク                                  |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch 基本操作 | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch 検索操作 | <https://blog.yexca.net/archives/227> |
-> | RestClient 基本操作 | <https://blog.yexca.net/archives/228> |
-> | RestClient 検索操作 | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch データ集計 | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch オートコンプリート | <https://blog.yexca.net/archives/232> |
+> | Elasticsearch 基本操作 | <https://blog.yexca.net/ja/archives/226> |
+> | Elasticsearch 検索操作 | <https://blog.yexca.net/ja/archives/227> |
+> | RestClient 基本操作 | <https://blog.yexca.net/ja/archives/228> |
+> | RestClient 検索操作 | <https://blog.yexca.net/ja/archives/229> |
+> | Elasticsearch データ集計 | <https://blog.yexca.net/ja/archives/231> |
+> | Elasticsearch オートコンプリート | <https://blog.yexca.net/ja/archives/232> |
 > | Elasticsearch データ同期 | この記事 |
-> | Elasticsearch クラスター | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch クラスター | <https://blog.yexca.net/ja/archives/235> |
 
 Elasticsearch のデータは MySQL データベースから来てるんだ。だから、MySQL のデータが変わったら、Elasticsearch もそれに合わせて変わる必要があるんだよね。これが Elasticsearch と MySQL の間のデータ同期だよ。
 

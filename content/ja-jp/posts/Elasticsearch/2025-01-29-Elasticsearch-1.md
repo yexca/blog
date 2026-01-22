@@ -20,13 +20,13 @@ tags:
 > | 内容                   | リンク                                  |
 > | :--------------------- | :------------------------------------ |
 > | Elasticsearch の基本操作 | この記事                                  |
-> | Elasticsearch 検索操作 | <https://blog.yexca.net/archives/227> |
-> | RestClient の基本操作 | <https://blog.yexca.net/archives/228> |
-> | RestClient 検索操作 | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch データ集計 | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch オートコンプリート | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch データ同期 | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch クラスター | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch 検索操作 | <https://blog.yexca.net/ja/archives/227> |
+> | RestClient の基本操作 | <https://blog.yexca.net/ja/archives/228> |
+> | RestClient 検索操作 | <https://blog.yexca.net/ja/archives/229> |
+> | Elasticsearch データ集計 | <https://blog.yexca.net/ja/archives/231> |
+> | Elasticsearch オートコンプリート | <https://blog.yexca.net/ja/archives/232> |
+> | Elasticsearch データ同期 | <https://blog.yexca.net/ja/archives/234> |
+> | Elasticsearch クラスター | <https://blog.yexca.net/ja/archives/235> |
 
 Elasticsearchって、めちゃくちゃ強力なオープンソース検索エンジンなんだ。膨大なデータの中から、必要なものをサッと見つけるのに役立ってくれるよ。kibana、Logstash、Beatsと組み合わせると、elastic stack（ELK）になるんだ。ログデータ分析とか、リアルタイム監視みたいな分野で広く使われてるんだよね。
 

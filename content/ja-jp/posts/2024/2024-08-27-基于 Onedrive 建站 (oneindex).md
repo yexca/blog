@@ -86,7 +86,7 @@ ApacheやNginxのrewrite設定をする（Wordpressの設定をそのまま使�
 
 ## 特殊ファイルで機能を追加
 
-~~Markdownの書き方はこの記事を参考にしてみてね~~：[Markdownメモ](https://blog.yexca.net/archives/43)
+~~Markdownの書き方はこの記事を参考にしてみてね~~：[Markdownメモ](https://blog.yexca.net/ja/archives/43)
 
 **フォルダの下部に説明を追加する:**
 

@@ -12,7 +12,9 @@ tags:
 image: 'https://github.com/yexca/picx-images-hosting/raw/master/2025/04-FromCardEnthusiastToArchitect/250422-JP.3d4zmh3vn7.webp'
 ---
 
-> この記事の一部は機械翻訳を使ったよ
+
+
+{{< notice >}} この記事の一部は機械翻訳を使ったよ {{< /notice >}}
 
 > みんながカード使ってるからって、全員が還元目的ってわけじゃない。システム作ってる人だって、全員がエンジニアなわけでもない。
 > たまにいるんだよね、カード切ってるのに設計者っぽいやつ。システム組んでるのに、生活感があるやつ。

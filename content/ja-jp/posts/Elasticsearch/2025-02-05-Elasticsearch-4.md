@@ -19,14 +19,14 @@ tags:
 >
 > | 内容                   | リンク                                  |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch の基本操作 | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch のクエリ操作 | <https://blog.yexca.net/archives/227> |
-> | RestClient の基本操作 | <https://blog.yexca.net/archives/228> |
+> | Elasticsearch の基本操作 | <https://blog.yexca.net/ja/archives/226> |
+> | Elasticsearch のクエリ操作 | <https://blog.yexca.net/ja/archives/227> |
+> | RestClient の基本操作 | <https://blog.yexca.net/ja/archives/228> |
 > | RestClient のクエリ操作 | 本文 |
-> | Elasticsearch のデータ集約 | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch のオートコンプリート | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch のデータ同期 | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch クラスター | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch のデータ集約 | <https://blog.yexca.net/ja/archives/231> |
+> | Elasticsearch のオートコンプリート | <https://blog.yexca.net/ja/archives/232> |
+> | Elasticsearch のデータ同期 | <https://blog.yexca.net/ja/archives/234> |
+> | Elasticsearch クラスター | <https://blog.yexca.net/ja/archives/235> |
 
 ドキュメントのクエリも同じく RestHighLevelClient オブジェクトを使うよ。
 

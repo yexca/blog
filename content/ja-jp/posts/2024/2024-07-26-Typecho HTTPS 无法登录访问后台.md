@@ -27,7 +27,7 @@ Docker 以前の通常構成では問題なかったので、Docker ネットワ
 
 ```php
 define('__TYPECHO_SECURE__', true);
-````
+```
 
 これでコンテナを再起動すれば OK。
 

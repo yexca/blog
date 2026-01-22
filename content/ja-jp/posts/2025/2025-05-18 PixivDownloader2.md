@@ -22,7 +22,7 @@ tags:
 
 項目地址: <https://github.com/yexca/PixivDownloader-SQLite>
 
-GUI は前バージョンと似てるから、<https://blog.yexca.net/archives/211/> を見ればわかる。
+GUI は前バージョンと似てるから、<https://blog.yexca.net/ja/archives/211/> を見ればわかる。
 
 ### 設定について
 
@@ -74,7 +74,7 @@ DB 構造の違いで、直接 SELECT して INSERT 文として出力するの�
 SELECT ID, name, downloadedDate, lastDownloadID, url
 FROM pic 
 WHERE platform = 'pixiv';
-~~~
+```
 
 出力は SQL の INSERT 文にしてね（Dataflare ってツールがその機能ある）。
 

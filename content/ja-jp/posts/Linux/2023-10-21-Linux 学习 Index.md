@@ -4,7 +4,7 @@ slug: 129
 title: Linux 学習インデックス
 author: yexca
 date: 2023-10-21T14:18:15+08:00
-# permalink: /archives/129
+# permalink: /ja/archives/129
 categories:
     - 技術学習
 tags:
@@ -28,29 +28,29 @@ Linux の歴史。まとめ：Linux 最高。
 
 * 第2章 完璧な Linux デスクトップを作る
 
-で、その結果 [Fedora デスクトップいじり](https://blog.yexca.net/archives/74) を書いたんだ。
+で、その結果 [Fedora デスクトップいじり](https://blog.yexca.net/ja/archives/74) を書いたんだ。
 
 ---
 
 ## 第2部：Linux パワーユーザーになる
 
-* [第3章 シェルを使う](https://blog.yexca.net/archives/69)
+* [第3章 シェルを使う](https://blog.yexca.net/ja/archives/69)
 
 シェルの使い方と変数について。
 
-* [第4章 ファイルシステム内を移動する](https://blog.yexca.net/archives/75)
+* [第4章 ファイルシステム内を移動する](https://blog.yexca.net/ja/archives/75)
 
 ファイル関連のシェルコマンド、メタ文字、ファイルの権限。
 
-* [第5章 テキストファイルを扱う](https://blog.yexca.net/archives/78)
+* [第5章 テキストファイルを扱う](https://blog.yexca.net/ja/archives/78)
 
 vi エディタ、ファイル検索 (`locate` 、`find` 、`grep`)。
 
-* [第6章 実行中のプロセスを管理する](https://blog.yexca.net/archives/79)
+* [第6章 実行中のプロセスを管理する](https://blog.yexca.net/ja/archives/79)
 
 プロセスの一覧表示、プロセスの強制終了、プロセスの制限。
 
-* [第7章 簡単なシェルスクリプトを書く](https://blog.yexca.net/archives/81)
+* [第7章 簡単なシェルスクリプトを書く](https://blog.yexca.net/ja/archives/81)
 
 シェルスクリプトの構文をいくつか。
 
@@ -58,7 +58,7 @@ vi エディタ、ファイル検索 (`locate` 、`find` 、`grep`)。
 
 ## 第3部 Linux システム管理者の仲間入り
 
-* [第8章 システム管理を学ぶ](https://blog.yexca.net/archives/82)
+* [第8章 システム管理を学ぶ](https://blog.yexca.net/ja/archives/82)
 
 /etc 配下の設定ファイルについて。
 
@@ -66,15 +66,15 @@ vi エディタ、ファイル検索 (`locate` 、`find` 、`grep`)。
 
 記事はないよ。個人向けの GUI やコマンドラインでのインストール、企業での一括インストールについて。
 
-* [第10章 ソフトウェアの入手と管理](https://blog.yexca.net/archives/83)
+* [第10章 ソフトウェアの入手と管理](https://blog.yexca.net/ja/archives/83)
 
 RPM と DEB パッケージ、`yum` 、`rpm` 、`dnf` 、`apt` コマンド。
 
-* [第11章 ユーザーアカウントの作成](https://blog.yexca.net/archives/84)
+* [第11章 ユーザーアカウントの作成](https://blog.yexca.net/ja/archives/84)
 
 ユーザーアカウントとグループアカウントの管理。
 
-* [第12章 ディスクとファイルシステムの管理](https://blog.yexca.net/archives/85)
+* [第12章 ディスクとファイルシステムの管理](https://blog.yexca.net/ja/archives/85)
 
 ファイルシステムの作成、LVM 論理ボリューム、ファイルシステムのマウント。
 

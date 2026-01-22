@@ -84,7 +84,7 @@ pyinstaller my_program.spec
 
 ## 実際のプロジェクト
 
-この方法で、[このソフト](https://blog.yexca.net/archives/211) を exe にできた
+この方法で、[このソフト](https://blog.yexca.net/ja/archives/211) を exe にできた  
  ~~（でもまだエラーハンドリング入れてない）~~
 
 ## 参考記事

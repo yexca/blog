@@ -106,7 +106,7 @@ Linux にログインすると、システムは君のユーザー名、グル�
 
 `echo $PATH` で、今の shell の環境変数 PATH を確認できるよ。
 
-参考：[Linuxのbinディレクトリについて - yexca'Blog](https://blog.yexca.net/archives/60)
+参考：[Linuxのbinディレクトリについて - yexca'Blog](https://blog.yexca.net/ja/archives/60)
 
 他のOSと違って、Linux はデフォルトではカレントディレクトリ (今いる場所) を探しに行かないんだ。すぐに PATH を検索し始める。カレントディレクトリにあるファイルを実行したいなら、PATH に追加するか、相対パスや絶対パスで指定する必要があるよ。
 
