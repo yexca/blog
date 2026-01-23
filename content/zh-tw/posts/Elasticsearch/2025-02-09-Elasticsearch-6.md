@@ -19,14 +19,14 @@ tags:
 >
 > | 內容                   | 連結                                  |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch 基礎操作 | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch 查詢操作 | <https://blog.yexca.net/archives/227> |
-> | RestClient 基礎操作 | <https://blog.yexca.net/archives/228> |
-> | RestClient 查詢操作 | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch 資料聚合 | <https://blog.yexca.net/archives/231> |
+> | Elasticsearch 基礎操作 | <https://blog.yexca.net/zh-tw/archives/226> |
+> | Elasticsearch 查詢操作 | <https://blog.yexca.net/zh-tw/archives/227> |
+> | RestClient 基礎操作 | <https://blog.yexca.net/zh-tw/archives/228> |
+> | RestClient 查詢操作 | <https://blog.yexca.net/zh-tw/archives/229> |
+> | Elasticsearch 資料聚合 | <https://blog.yexca.net/zh-tw/archives/231> |
 > | Elasticsearch 自動補齊 | 本文 |
-> | Elasticsearch 資料同步 | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch 叢集 | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch 資料同步 | <https://blog.yexca.net/zh-tw/archives/234> |
+> | Elasticsearch 叢集 | <https://blog.yexca.net/zh-tw/archives/235> |
 
 當使用者在搜尋框輸入字元時，應該提示與該字元相關的搜尋項目，根據輸入的字母提供完整的詞彙功能，這就是自動補齊。
 

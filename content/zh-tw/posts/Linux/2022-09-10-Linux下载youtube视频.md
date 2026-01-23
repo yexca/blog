@@ -4,7 +4,7 @@ title: Linux 下載 YouTube 影片
 date: '2022-09-10T19:29:58+08:00'
 author: yexca
 # layout: post
-# permalink: /archives/68
+# permalink: /zh-tw/archives/68
 views:
     - '330'
 categories:
@@ -19,7 +19,7 @@ tags:
 
 既然都有 Win 命令列了，那怎麼能沒有 Linux 呢？
 
-Windows 的文章：[命令列下載 YouTube 影片](http://blog.yexca.net/archives/52)
+Windows 的文章：[命令列下載 YouTube 影片](http://blog.yexca.net/zh-tw/archives/52)
 
 ## 下載 yt-dlp
 
@@ -83,4 +83,4 @@ vi config
 
 ## 參考文章
 
-[FFmpeg 批次轉換影片格式](http://blog.yexca.net/archives/65) ~~話說自己的文章有必要放連結嗎~~
+[FFmpeg 批次轉換影片格式](http://blog.yexca.net/zh-tw/archives/65) ~~話說自己的文章有必要放連結嗎~~

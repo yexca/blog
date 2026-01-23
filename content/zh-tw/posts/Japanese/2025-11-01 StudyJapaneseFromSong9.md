@@ -1,6 +1,6 @@
 ---
 slug: 260
-title: '音樂有感 - 《pris-magic!》'
+title: '音有所感 - 《pris-magic!》'
 # draft: true
 author: yexca
 date: '2025-11-01T14:30:01+09:00'
@@ -16,14 +16,14 @@ tags:
 
 | 歌曲名稱 | 翻譯 | 連結 |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | 曾經我也想過一了百了 | <https://blog.yexca.net/archives/214> |
-| あくあ色ぱれっと | aqua 的調色盤 | <https://blog.yexca.net/archives/219> |
-| 恋の押し売り | 戀愛推銷 | <https://blog.yexca.net/archives/220> |
-| 17さいのうた | 17 歲的歌 | <https://blog.yexca.net/archives/224> |
-| drop | 墜入愛河 | <https://blog.yexca.net/archives/230> |
-| 生きるを選んだ私へ | 致選擇活下去的自己 | <https://blog.yexca.net/archives/239> |
-| rainy lady | 雨意未晴 | <https://blog.yexca.net/archives/249> |
-| 恋しくなったら手を叩こう | 如果想談戀愛的話就拍拍手吧 | <https://blog.yexca.net/archives/250> |
+| 僕が死のうと思ったのは | 曾經我也想過一了百了 | <https://blog.yexca.net/zh-tw/archives/214> |
+| あくあ色ぱれっと | aqua 的調色盤 | <https://blog.yexca.net/zh-tw/archives/219> |
+| 恋の押し売り | 戀愛推銷 | <https://blog.yexca.net/zh-tw/archives/220> |
+| 17さいのうた | 17 歲的歌 | <https://blog.yexca.net/zh-tw/archives/224> |
+| drop | 墜入愛河 | <https://blog.yexca.net/zh-tw/archives/230> |
+| 生きるを選んだ私へ | 致選擇活下去的自己 | <https://blog.yexca.net/zh-tw/archives/239> |
+| rainy lady | 雨意未晴 | <https://blog.yexca.net/zh-tw/archives/249> |
+| 恋しくなったら手を叩こう | 想談戀愛的話就拍拍手吧 | <https://blog.yexca.net/zh-tw/archives/250> |
 | pris-magic! | 稜鏡魔法! | 本文 |
 
 {{< /details >}}

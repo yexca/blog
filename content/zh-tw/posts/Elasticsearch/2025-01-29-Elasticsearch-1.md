@@ -20,13 +20,13 @@ tags:
 > | 內容                   | 連結                                  |
 > | :--------------------- | :------------------------------------ |
 > | Elasticsearch 基礎操作 | 本文                                  |
-> | Elasticsearch 查詢操作 | <https://blog.yexca.net/archives/227> |
-> | RestClient 基礎操作 | <https://blog.yexca.net/archives/228> |
-> | RestClient 查詢操作 | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch 資料聚合 | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch 自動補齊 | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch 資料同步 | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch 叢集 | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch 查詢操作 | <https://blog.yexca.net/zh-tw/archives/227> |
+> | RestClient 基礎操作 | <https://blog.yexca.net/zh-tw/archives/228> |
+> | RestClient 查詢操作 | <https://blog.yexca.net/zh-tw/archives/229> |
+> | Elasticsearch 資料聚合 | <https://blog.yexca.net/zh-tw/archives/231> |
+> | Elasticsearch 自動補齊 | <https://blog.yexca.net/zh-tw/archives/232> |
+> | Elasticsearch 資料同步 | <https://blog.yexca.net/zh-tw/archives/234> |
+> | Elasticsearch 叢集 | <https://blog.yexca.net/zh-tw/archives/235> |
 
 Elasticsearch 是一款非常強大的開源搜尋引擎軟體，可以幫助我們從海量資料中快速找到需要的內容。結合 Kibana、Logstash、Beats，也就是 Elastic Stack (ELK)。被廣泛應用在日誌資料分析、即時監控等領域。
 

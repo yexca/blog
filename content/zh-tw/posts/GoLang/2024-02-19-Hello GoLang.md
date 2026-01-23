@@ -5,7 +5,7 @@ title: 'Hello GoLang'
 author: yexca
 date: 2024-02-19T07:58:37+08:00
 lastmod: 2025-01-28T13:57:18+09:00
-# permalink: /archives/154
+# permalink: /zh-tw/archives/154
 categories:
     - 技術學習
 tags:
@@ -19,14 +19,14 @@ tags:
 > **Golang 系列**
 >
 > Hello GoLang: 本文  
-> GoLang (var and const) 變數與常數: <https://blog.yexca.net/archives/155>  
-> GoLang (func) 函式: <https://blog.yexca.net/archives/156>  
-> GoLang (slice and map) 切片: <https://blog.yexca.net/archives/160>  
-> GoLang (OOP) 物件導向: <https://blog.yexca.net/archives/162>  
-> GoLang (reflect) 反射: <https://blog.yexca.net/archives/204>  
-> GoLang (struct tag) 結構體標籤: <https://blog.yexca.net/archives/205>  
-> GoLang (goroutine) Go 協程: <https://blog.yexca.net/archives/206>  
-> GoLang (channel) 通道: <https://blog.yexca.net/archives/207>  
+> GoLang (var and const) 變數與常數: <https://blog.yexca.net/zh-tw/archives/155>  
+> GoLang (func) 函式: <https://blog.yexca.net/zh-tw/archives/156>  
+> GoLang (slice and map) 切片: <https://blog.yexca.net/zh-tw/archives/160>  
+> GoLang (OOP) 物件導向: <https://blog.yexca.net/zh-tw/archives/162>  
+> GoLang (reflect) 反射: <https://blog.yexca.net/zh-tw/archives/204>  
+> GoLang (struct tag) 結構體標籤: <https://blog.yexca.net/zh-tw/archives/205>  
+> GoLang (goroutine) Go 協程: <https://blog.yexca.net/zh-tw/archives/206>  
+> GoLang (channel) 通道: <https://blog.yexca.net/zh-tw/archives/207>  
 
 ---
 

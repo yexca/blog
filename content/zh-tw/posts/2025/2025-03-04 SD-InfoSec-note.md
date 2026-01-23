@@ -13,7 +13,7 @@ tags:
 
 {{< notice >}} 本文由 gemini-2.5-flash 翻譯 {{< /notice >}}
 
-同[電腦網路的筆記](https://blog.yexca.net/archives/236/)的編寫時間，畢竟考試這兩部分在一起，都是同時學習的
+同[電腦網路的筆記](https://blog.yexca.net/zh-tw/archives/236/)的編寫時間，畢竟考試這兩部分在一起，都是同時學習的
 
 ## 防火牆技術
 

@@ -22,7 +22,7 @@ tags:
 
 專案位址：<https://github.com/yexca/PixivDownloader-SQLite>
 
-GUI 跟前一代差不多，可以參考 <https://blog.yexca.net/archives/211/>
+GUI 跟前一代差不多，可以參考 <https://blog.yexca.net/zh-tw/archives/211/>
 
 ### 設定說明
 

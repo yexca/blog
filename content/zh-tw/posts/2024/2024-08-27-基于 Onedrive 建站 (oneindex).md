@@ -86,7 +86,7 @@ OneDrive Directory Index，不佔用伺服器空間，不走伺服器流量，�
 
 ## 特殊檔案實現功能
 
-~~Markdown 語法可參考我寫的文章~~：[Markdown 筆記](https://blog.yexca.net/archives/43)
+~~Markdown 語法可參考我寫的文章~~：[Markdown 筆記](https://blog.yexca.net/zh-tw/archives/43)
 
 **在資料夾底部添加說明:**
 

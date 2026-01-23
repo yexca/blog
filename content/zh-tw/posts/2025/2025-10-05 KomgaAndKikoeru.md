@@ -17,13 +17,13 @@ tags:
 
 Google 的 Gemini Pro 訂閱附帶 2TiB 的空間，這又讓我想到了折騰，那就說做就做吧
 
-不過再一看，[之前的折騰](/archives/73)已經過去三年了啊，時間過得確實有點快耶
+不過再一看，[之前的折騰](/zh-tw/archives/73)已經過去三年了啊，時間過得確實有點快耶
 
 ## 漫畫 Komga
 
 首先是看漫畫的 Komga，雖然掃描的時候卡卡的，但使用體驗其實還不錯吧
 
-時隔多年，Komga 更新了不少，[之前的文章](/archives/71) 已經無法重複使用，同時使用 docker-compose 更加方便，`docker-compose.yml` 如下
+時隔多年，Komga 更新了不少，[之前的文章](/zh-tw/archives/71) 已經無法重複使用，同時使用 docker-compose 更加方便，`docker-compose.yml` 如下
 
 ```yaml
 version: '3.0'
@@ -47,7 +47,7 @@ services:
 
 ## rclone 掛載 Google Drive
 
-和[微軟 OneDrive](/archives/105) 類似，需要先在 Windows 平台瀏覽器認證取得 Token
+和[微軟 OneDrive](/zh-tw/archives/105) 類似，需要先在 Windows 平台瀏覽器認證取得 Token
 
 具體流程就是下載好後執行指令
 

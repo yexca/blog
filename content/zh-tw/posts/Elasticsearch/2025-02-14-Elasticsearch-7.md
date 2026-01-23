@@ -19,14 +19,14 @@ tags:
 >
 > | 內容                   | 連結                                  |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch 基礎操作 | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch 查詢操作 | <https://blog.yexca.net/archives/227> |
-> | RestClient 基礎操作 | <https://blog.yexca.net/archives/228> |
-> | RestClient 查詢操作 | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch 資料聚合 | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch 自動補齊 | <https://blog.yexca.net/archives/232> |
+> | Elasticsearch 基礎操作 | <https://blog.yexca.net/zh-tw/archives/226> |
+> | Elasticsearch 查詢操作 | <https://blog.yexca.net/zh-tw/archives/227> |
+> | RestClient 基礎操作 | <https://blog.yexca.net/zh-tw/archives/228> |
+> | RestClient 查詢操作 | <https://blog.yexca.net/zh-tw/archives/229> |
+> | Elasticsearch 資料聚合 | <https://blog.yexca.net/zh-tw/archives/231> |
+> | Elasticsearch 自動補齊 | <https://blog.yexca.net/zh-tw/archives/232> |
 > | Elasticsearch 資料同步 | 本文 |
-> | Elasticsearch 叢集 | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch 叢集 | <https://blog.yexca.net/zh-tw/archives/235> |
 
 Elasticsearch 的資料來自 MySQL 資料庫，因此當 MySQL 資料發生變動時，Elasticsearch 也必須跟著變動，這就是 Elasticsearch 與 MySQL 之間的資料同步。
 

@@ -4,7 +4,7 @@ title: 原神自動簽到 (Linux 伺服器 Docker)
 date: '2022-06-09T13:33:42+08:00'
 author: yexca
 # layout: post
-# permalink: /archives/47
+# permalink: /zh-tw/archives/47
 views:
     - '700'
 categories:
@@ -80,7 +80,7 @@ systemctl start docker
 
 ### Cookie 獲取
 
-獲取米遊社 Cookie 請參考：[原神樹脂查看/推播 – yexca'Blog](https://yexca.xyz/archives/12)
+獲取米遊社 Cookie 請參考：[原神樹脂查看/推播 – yexca'Blog](https://blog.yexca.net/zh-tw/archives/12)
 
 **注意**：Cookie 應包含 `account_id` 和 `cookie_token` 兩個欄位
 

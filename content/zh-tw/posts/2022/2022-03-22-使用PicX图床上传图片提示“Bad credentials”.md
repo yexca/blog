@@ -4,7 +4,7 @@ title: '使用 PicX 圖床上傳圖片提示 "Bad credentials"'
 date: '2022-03-22T16:30:12+08:00'
 author: yexca
 # layout: post
-# permalink: /archives/35
+# permalink: /zh-tw/archives/35
 views:
     - '374'
 categories:
@@ -29,4 +29,4 @@ tags:
 注意設定 `Expiration` 即 Token 期限。  
 重新建立後需要在 PicX 將圖床設定重置一下。
 
-具體參考：[使用PicX自建免費圖床 – yexca’Blog](https://blog.yexca.net/archives/27)
+具體參考：[使用PicX自建免費圖床 – yexca’Blog](https://blog.yexca.net/zh-tw/archives/27)

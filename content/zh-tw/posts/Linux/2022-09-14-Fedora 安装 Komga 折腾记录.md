@@ -167,6 +167,6 @@ sudo yum install firewall-config
 
 [Fedora 防火牆配置 - 上官飛鴻 - 博客園](https://www.cnblogs.com/jackadam/p/9483381.html)
 
-[原神自動簽到 (Linux 伺服器 Docker) - yexca'Blog](http://blog.yexca.net/archives/47)
+[原神自動簽到 (Linux 伺服器 Docker) - yexca'Blog](http://blog.yexca.net/zh-tw/archives/47)
 
 [Fedora 打開 8080 端口_chunqi zhi 的博客 - CSDN 博客](https://blog.csdn.net/zhichunqi/article/details/80488567)

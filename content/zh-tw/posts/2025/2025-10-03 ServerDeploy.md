@@ -20,7 +20,7 @@ tags:
 
 那就試試看吧，全套真實資料，居然直接就申請成功了，可喜可賀
 
-不過突然又想到[上次折騰伺服器](/archives/131/)還是 2023 年啊，一晃兩年過去了，時間過得真快啊
+不過突然又想到[上次折騰伺服器](/zh-tw/archives/131/)還是 2023 年啊，一晃兩年過去了，時間過得真快啊
 
 ## Oracle Linux
 
@@ -177,7 +177,7 @@ sudo firewall-cmd --zone=public --remove-port=8080/tcp --permanent
 
 ## 安裝 Nginx-UI
 
-雖然之前的文章 [伺服器用 Docker 部署紀錄](/archives/102/) 提到了具體使用方式，但是隨著更新有了新功能
+雖然之前的文章 [伺服器用 Docker 部署紀錄](/zh-tw/archives/102/) 提到了具體使用方式，但是隨著更新有了新功能
 
 為了支援其他容器控制 Nginx 和方便更新，需要映射新目錄，所以 `docker-compose.yml` 變成了
 

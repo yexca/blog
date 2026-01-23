@@ -19,14 +19,14 @@ tags:
 >
 > | 內容                   | 連結                                  |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch 基礎操作 | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch 查詢操作 | <https://blog.yexca.net/archives/227> |
+> | Elasticsearch 基礎操作 | <https://blog.yexca.net/zh-tw/archives/226> |
+> | Elasticsearch 查詢操作 | <https://blog.yexca.net/zh-tw/archives/227> |
 > | RestClient 基礎操作 | 本文 |
-> | RestClient 查詢操作 | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch 資料聚合 | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch 自動補齊 | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch 資料同步 | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch 叢集 | <https://blog.yexca.net/archives/235> |
+> | RestClient 查詢操作 | <https://blog.yexca.net/zh-tw/archives/229> |
+> | Elasticsearch 資料聚合 | <https://blog.yexca.net/zh-tw/archives/231> |
+> | Elasticsearch 自動補齊 | <https://blog.yexca.net/zh-tw/archives/232> |
+> | Elasticsearch 資料同步 | <https://blog.yexca.net/zh-tw/archives/234> |
+> | Elasticsearch 叢集 | <https://blog.yexca.net/zh-tw/archives/235> |
 
 ES 官方提供了各種不同語言的客戶端，用來操作 ES。這些客戶端的本質就是組裝 DSL 語句，透過 HTTP 請求傳送給 ES。
 

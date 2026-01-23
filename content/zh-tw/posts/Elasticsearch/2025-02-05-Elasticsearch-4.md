@@ -19,14 +19,14 @@ tags:
 >
 > | 內容                   | 連結                                  |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch 基礎操作 | <https://blog.yexca.net/archives/226> |
-> | Elasticsearch 查詢操作 | <https://blog.yexca.net/archives/227> |
-> | RestClient 基礎操作 | <https://blog.yexca.net/archives/228> |
+> | Elasticsearch 基礎操作 | <https://blog.yexca.net/zh-tw/archives/226> |
+> | Elasticsearch 查詢操作 | <https://blog.yexca.net/zh-tw/archives/227> |
+> | RestClient 基礎操作 | <https://blog.yexca.net/zh-tw/archives/228> |
 > | RestClient 查詢操作 | 本文 |
-> | Elasticsearch 資料彙總 | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch 自動補齊 | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch 資料同步 | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch 叢集 | <https://blog.yexca.net/archives/235> |
+> | Elasticsearch 資料彙總 | <https://blog.yexca.net/zh-tw/archives/231> |
+> | Elasticsearch 自動補齊 | <https://blog.yexca.net/zh-tw/archives/232> |
+> | Elasticsearch 資料同步 | <https://blog.yexca.net/zh-tw/archives/234> |
+> | Elasticsearch 叢集 | <https://blog.yexca.net/zh-tw/archives/235> |
 
 文件的查詢相同地使用 RestHighLevelClient 物件
 

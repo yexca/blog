@@ -80,7 +80,7 @@ systemctl start docker
 
 ### Getting the Cookie
 
-To get your miHoYo Cookie, refer to: [Genshin Resin Tracker/Push – yexca'Blog](https://yexca.xyz/en/archives/12)
+To get your miHoYo Cookie, refer to: [Genshin Resin Tracker/Push – yexca'Blog](https://blog.yexca.net/en/archives/12)
 
 **Note**: The Cookie must include the `account_id` and `cookie_token` fields.
 

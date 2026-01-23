@@ -55,7 +55,7 @@ body{
 
 專案地址: <https://github.com/yexca/MusicPlayer-Twinkle>
 
-順便更新了之前的文章 (簡體中文) <https://blog.yexca.net/archives/116/> 用這個方法加了一個範例: <https://twinkle.yexca.net>
+順便更新了之前的文章 <https://blog.yexca.net/zh-tw/archives/116/> 用這個方法加了一個範例: <https://twinkle.yexca.net>
 
 ## 卡片效果
 

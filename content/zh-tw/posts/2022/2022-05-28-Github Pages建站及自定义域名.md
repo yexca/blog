@@ -69,7 +69,7 @@ git config --global user.email "yexca@duck.com"
 
 ### 建立網站
 
-這裡直接建立一個 `README.md` 檔案使用 [Markdown 編輯](https://blog.yexca.net/archives/43) (~~這裡順便放一個我寫的 Markdown 筆記~~)。
+這裡直接建立一個 `README.md` 檔案使用 [Markdown 編輯](https://blog.yexca.net/zh-tw/archives/43) (~~這裡順便放一個我寫的 Markdown 筆記~~)。
 
 編輯完成並儲存後，在 `GitHub Desktop` 點擊 `Commit to main`，然後點擊右方 `Push origin` 即可。
 

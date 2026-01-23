@@ -17,16 +17,16 @@ tags:
 
 > **Elasticsearch 系列**
 >
-> | 內容                   | 連結                                  |
+> | 內容 | 連結 |
 > | :--------------------- | :------------------------------------ |
-> | Elasticsearch 基礎操作 | <https://blog.yexca.net/archives/226> |
+> | Elasticsearch 基礎操作 | <https://blog.yexca.net/zh-tw/archives/226> |
 > | Elasticsearch 查詢操作 | 本文 |
-> | RestClient 基礎操作 | <https://blog.yexca.net/archives/228> |
-> | RestClient 查詢操作 | <https://blog.yexca.net/archives/229> |
-> | Elasticsearch 資料彙總 | <https://blog.yexca.net/archives/231> |
-> | Elasticsearch 自動補齊 | <https://blog.yexca.net/archives/232> |
-> | Elasticsearch 資料同步 | <https://blog.yexca.net/archives/234> |
-> | Elasticsearch 叢集 | <https://blog.yexca.net/archives/235> |
+> | RestClient 基礎操作 | <https://blog.yexca.net/zh-tw/archives/228> |
+> | RestClient 查詢操作 | <https://blog.yexca.net/zh-tw/archives/229> |
+> | Elasticsearch 資料彙總 | <https://blog.yexca.net/zh-tw/archives/231> |
+> | Elasticsearch 自動補齊 | <https://blog.yexca.net/zh-tw/archives/232> |
+> | Elasticsearch 資料同步 | <https://blog.yexca.net/zh-tw/archives/234> |
+> | Elasticsearch 叢集 | <https://blog.yexca.net/zh-tw/archives/235> |
 
 上一篇文章主要介紹了 Elasticsearch 的資料儲存功能，但 Elasticsearch 最擅長的還是搜尋和資料分析。
 

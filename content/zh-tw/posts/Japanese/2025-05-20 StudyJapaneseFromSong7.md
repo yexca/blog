@@ -18,23 +18,23 @@ tags:
 
 {{< details "音有所感系列" >}}
 
-| 歌曲名 | 翻譯 | 連結 |
+| 歌曲名稱 | 翻譯 | 連結 |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | 曾經我也想過一了百了 | <https://blog.yexca.net/archives/214> |
-| あくあ色ぱれっと | aqua 的調色盤 | <https://blog.yexca.net/archives/219> |
-| 恋の押し売り | 戀愛推銷 | <https://blog.yexca.net/archives/220> |
-| 17さいのうた | 17 歲的歌 | <https://blog.yexca.net/archives/224> |
-| drop | 墜入愛河 | <https://blog.yexca.net/archives/230> |
-| 生きるを選んだ私へ | 致選擇活下去的自己 | <https://blog.yexca.net/archives/239> |
+| 僕が死のうと思ったのは | 曾經我也想過一了百了 | <https://blog.yexca.net/zh-tw/archives/214> |
+| あくあ色ぱれっと | aqua 的調色盤 | <https://blog.yexca.net/zh-tw/archives/219> |
+| 恋の押し売り | 戀愛推銷 | <https://blog.yexca.net/zh-tw/archives/220> |
+| 17さいのうた | 17 歲的歌 | <https://blog.yexca.net/zh-tw/archives/224> |
+| drop | 墜入愛河 | <https://blog.yexca.net/zh-tw/archives/230> |
+| 生きるを選んだ私へ | 致選擇活下去的自己 | <https://blog.yexca.net/zh-tw/archives/239> |
 | rainy lady | 雨意未晴 | 本文 |
-| 恋しくなったら手を叩こう | 想談戀愛的話就拍拍手吧 | <https://blog.yexca.net/archives/250> |
-| pris-magic! | 稜鏡魔法! | <https://blog.yexca.net/archives/260> |
+| 恋しくなったら手を叩こう | 想談戀愛的話就拍拍手吧 | <https://blog.yexca.net/zh-tw/archives/250> |
+| pris-magic! | 稜鏡魔法! | <https://blog.yexca.net/zh-tw/archives/260> |
 
 {{< /details >}}
 
 ## 引言
 
-這首歌的感受……怎麼說呢，其實遇到它的來歷，已經在之前那篇文章也寫過了：<https://blog.yexca.net/archives/243/>。當時第一次聽到這首歌的時候，特別是開頭那一段，就有種和我當時心境完全重合的感覺
+這首歌的感受……怎麼說呢，其實遇到它的來歷，已經在之前那篇文章也寫過了：<https://blog.yexca.net/zh-tw/archives/243/>。當時第一次聽到這首歌的時候，特別是開頭那一段，就有種和我當時心境完全重合的感覺
 
 當然，我指的是開頭那幾句。後面的部分，以我當時的日語水平其實聽不太明白 ~~(說實話翻譯也不是很明白)~~，整體給人的感覺就是一種無力感，也可能是那種「自己好渺小」的感受吧，像是這個世界上厲害的人太多了，都閃閃發光，真是既羨慕又覺得自己有點可悲
 

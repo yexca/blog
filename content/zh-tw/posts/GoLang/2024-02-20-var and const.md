@@ -5,7 +5,7 @@ title: 'GoLang 變數與常數'
 author: yexca
 date: 2024-02-20T06:41:18+08:00
 lastmod: 2025-01-28T14:57:18+09:00
-# permalink: /archives/155
+# permalink: /zh-tw/archives/155
 categories:
     - 技術學習
 tags:
@@ -18,15 +18,15 @@ tags:
 
 > **Golang 系列**
 >
-> Hello GoLang: <https://blog.yexca.net/archives/154>  
+> Hello GoLang: <https://blog.yexca.net/zh-tw/archives/154>  
 > GoLang (var and const) 變數與常數: 本文  
-> GoLang (func) 函式: <https://blog.yexca.net/archives/156>  
-> GoLang (slice and map) 切片: <https://blog.yexca.net/archives/160>  
-> GoLang (OOP) 物件導向: <https://blog.yexca.net/archives/162>  
-> GoLang (reflect) 反射: <https://blog.yexca.net/archives/204>  
-> GoLang (struct tag) 結構體標籤: <https://blog.yexca.net/archives/205>  
-> GoLang (goroutine) Goroutine: <https://blog.yexca.net/archives/206>  
-> GoLang (channel) 通道: <https://blog.yexca.net/archives/207>  
+> GoLang (func) 函式: <https://blog.yexca.net/zh-tw/archives/156>  
+> GoLang (slice and map) 切片: <https://blog.yexca.net/zh-tw/archives/160>  
+> GoLang (OOP) 物件導向: <https://blog.yexca.net/zh-tw/archives/162>  
+> GoLang (reflect) 反射: <https://blog.yexca.net/zh-tw/archives/204>  
+> GoLang (struct tag) 結構體標籤: <https://blog.yexca.net/zh-tw/archives/205>  
+> GoLang (goroutine) Goroutine: <https://blog.yexca.net/zh-tw/archives/206>  
+> GoLang (channel) 通道: <https://blog.yexca.net/zh-tw/archives/207>  
 
 ## 變數
 

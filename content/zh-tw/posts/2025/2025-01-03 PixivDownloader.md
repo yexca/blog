@@ -16,7 +16,7 @@ tags:
 {{< notice >}} 本文由 gemini-3-flash-preview 翻譯 {{< /notice >}}
 
 > 2025-05-18 更新  
-> 我寫了一個 SQLite 版的，不用設定資料庫了，詳細資訊請訪問: <https://blog.yexca.net/archives/248>
+> 我寫了一個 SQLite 版的，不用設定資料庫了，詳細資訊請訪問: <https://blog.yexca.net/zh-tw/archives/248>
 
 耗時三天寫出了一個大概能用的版本，不過沒有做錯誤處理 ~~遇到錯誤直接重啟吧~~
 
@@ -24,7 +24,7 @@ tags:
 
 ## 引言
 
-這要從[資料庫紀錄已下載繪師作品](https://blog.yexca.net/archives/94/)開始說起了，當時我弄了一個資料庫紀錄我下載過的作品，時間久了之後，覺得這玩意是在做重複作業啊，說到重複作業那必然是交給電腦來做啊，正好最近不經意間產生了撰寫程式的想法，也正好對其不滿意: <https://github.com/yexca/yasumiProject>，同時又是過年比較空閒，這就開寫。
+這要從[資料庫紀錄已下載繪師作品](https://blog.yexca.net/zh-tw/archives/94/)開始說起了，當時我弄了一個資料庫紀錄我下載過的作品，時間久了之後，覺得這玩意是在做重複作業啊，說到重複作業那必然是交給電腦來做啊，正好最近不經意間產生了撰寫程式的想法，也正好對其不滿意: <https://github.com/yexca/yasumiProject>，同時又是過年比較空閒，這就開寫。
 
 ## 說明
 

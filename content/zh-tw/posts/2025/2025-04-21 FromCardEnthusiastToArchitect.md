@@ -12,7 +12,7 @@ tags:
 image: 'https://github.com/yexca/picx-images-hosting/raw/master/2025/04-FromCardEnthusiastToArchitect/250422-TC.13lz2zi90i.webp'
 ---
 
-> 此頁面有使用機器翻譯喲
+{{< notice >}} 此頁面有使用機器翻譯喲 {{< /notice >}}
 
 > 並不是所有刷卡的人都是羊毛黨，也不是所有設計系統的人都是工程師。有些人，刷卡像在設計，設計系統像在過生活
 

@@ -4,7 +4,7 @@ title: 'Linux 學習 第三章 使用 shell'
 date: '2022-09-12T15:04:10+08:00'
 author: yexca
 # layout: post
-# permalink: /archives/69
+# permalink: /zh-tw/archives/69
 views:
     - '305'
 categories:
@@ -110,7 +110,7 @@ ls --hide=Desktop
 
 透過 `echo $PATH` 以查看 shell 的環境變數 PATH。
 
-參考：[Linux 下 bin 目錄 - yexca‘Blog](https://blog.yexca.net/archives/60)
+參考：[Linux 下 bin 目錄 - yexca'Blog](https://blog.yexca.net/zh-tw/archives/60)
 
 與其他一些作業系統不同的是，預設情況下，在搜尋路徑之前，Linux 並不會為了查找執行檔而檢查目前目錄，而是馬上開始搜尋路徑，只有在執行檔位於 PATH 環境變數或者給定了執行檔的絕對路徑或相對路徑時，才會執行目前目錄的執行檔。
 

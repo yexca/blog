@@ -84,7 +84,7 @@ pyinstaller my_program.spec
 
 ## 專案
 
-透過這種方式，已經把 <https://blog.yexca.net/archives/211> 的軟體打包成執行檔了 ~~(雖然還是沒做錯誤處理)~~
+透過這種方式，已經把 <https://blog.yexca.net/zh-tw/archives/211> 的軟體打包成執行檔了 ~~(雖然還是沒做錯誤處理)~~
 
 ## 參考文章
 
