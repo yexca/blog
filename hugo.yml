@@ -27,7 +27,7 @@ languages:
     disabled: false
     languageCode: 'zh-tw'
     languageDirection: 'ltr'
-    languageName: '繁體中文'
+    languageName: '正體中文'
     title: "yexca'Blog"
     weight: 2
     params:
