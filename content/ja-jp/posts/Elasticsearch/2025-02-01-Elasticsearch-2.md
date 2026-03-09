@@ -320,11 +320,11 @@ GET /hotel/_search
 
 ESでは、初期にはTF-IDFアルゴリズムがスコア計算に使われていたんだ。
 
-![image](https://jsd.cdn.zzko.cn/gh/yexca/image_hosting@master/2024/01-SpringCloud/image-20210721190152134.z026lthgfsw.webp)
+![image](https://github.com/yexca/picx-images-hosting/raw/master/2024/01-SpringCloud/image-20210721190152134.z026lthgfsw.webp)
 
 TF-IDFアルゴリズムには欠点があって、タームの頻度が高くなるほどドキュメントのスコアも高くなって、単一のタームがドキュメントに与える影響が大きすぎたんだ。5.1バージョン以降は、アルゴリズムがBM25アルゴリズムに変わり、単一のタームのスコアには上限が設けられるようになったよ。
 
-![image](https://jsd.cdn.zzko.cn/gh/yexca/image_hosting@master/2024/01-SpringCloud/image-20210721190416214.erx3gt63494.webp)
+![image](https://github.com/yexca/picx-images-hosting/raw/master/2024/01-SpringCloud/image-20210721190416214.erx3gt63494.webp)
 
 ### スコア計算関数クエリ
 

@@ -320,11 +320,11 @@ When using a `match` query, document results are scored based on their relevance
 
 In ES, the scoring algorithm used in earlier versions was TF-IDF.
 
-![image](https://jsd.cdn.zzko.cn/gh/yexca/image_hosting@master/2024/01-SpringCloud/image-20210721190152134.z026lthgfsw.webp)
+![image](https://github.com/yexca/picx-images-hosting/raw/master/2024/01-SpringCloud/image-20210721190152134.z026lthgfsw.webp)
 
 The TF-IDF algorithm had a flaw: higher term frequency led to higher document scores, giving a single term too much influence. After version 5.1, the algorithm was changed to BM25, which gives a maximum limit to a single term's score.
 
-![image](https://jsd.cdn.zzko.cn/gh/yexca/image_hosting@master/2024/01-SpringCloud/image-20210721190416214.erx3gt63494.webp)
+![image](https://github.com/yexca/picx-images-hosting/raw/master/2024/01-SpringCloud/image-20210721190416214.erx3gt63494.webp)
 
 ### Function Score Query
 

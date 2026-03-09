@@ -318,11 +318,11 @@ GET /hotel/_search
 
 在 es 中，早期使用的打分算法是 TF-IDF 算法
 
-![image](https://jsd.cdn.zzko.cn/gh/yexca/image_hosting@master/2024/01-SpringCloud/image-20210721190152134.z026lthgfsw.webp)
+![image](https://github.com/yexca/picx-images-hosting/raw/master/2024/01-SpringCloud/image-20210721190152134.z026lthgfsw.webp)
 
 TF-IDF 算法有缺陷，就是词条频率越高，文档得分也会越高，单个词条对文档影响较大。在 5.1 版本之后，算法改为 BM25 算法，会让单个词条的算分有一个上限
 
-![image](https://jsd.cdn.zzko.cn/gh/yexca/image_hosting@master/2024/01-SpringCloud/image-20210721190416214.erx3gt63494.webp)
+![image](https://github.com/yexca/picx-images-hosting/raw/master/2024/01-SpringCloud/image-20210721190416214.erx3gt63494.webp)
 
 ### 算分函数查询
 

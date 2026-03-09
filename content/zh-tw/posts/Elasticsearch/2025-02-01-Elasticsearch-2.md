@@ -320,11 +320,11 @@ GET /hotel/_search
 
 在 Elasticsearch 中，早期使用的評分演算法是 TF-IDF 演算法。
 
-![image](https://jsd.cdn.zzko.cn/gh/yexca/image_hosting@master/2024/01-SpringCloud/image-20210721190152134.z026lthgfsw.webp)
+![image](https://github.com/yexca/picx-images-hosting/raw/master/2024/01-SpringCloud/image-20210721190152134.z026lthgfsw.webp)
 
 TF-IDF 演算法有缺陷，就是詞條頻率越高，文件得分也會越高，單個詞條對文件影響較大。在 5.1 版本之後，演算法改為 BM25 演算法，會讓單個詞條的算分有一個上限。
 
-![image](https://jsd.cdn.zzko.cn/gh/yexca/image_hosting@master/2024/01-SpringCloud/image-20210721190416214.erx3gt63494.webp)
+![image](https://github.com/yexca/picx-images-hosting/raw/master/2024/01-SpringCloud/image-20210721190416214.erx3gt63494.webp)
 
 ### 算分函數查詢
 
