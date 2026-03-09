@@ -182,11 +182,11 @@ menu:
           params:
               icon: mail
 
-        - identifier: telegram
-          name: Telegram
-          url: https://t.me/yexca
-          params:
-              icon: telegram
+        # - identifier: telegram
+        #   name: Telegram
+        #   url: https://t.me/yexca
+        #   params:
+        #       icon: telegram
 
         # - identifier: rss
         #   name: 3RSS
