@@ -1,30 +1,31 @@
 ---
 slug: 260
-title: '音のひらめき - 『pris-magic!』'
+title: '音に感じて - 『pris-magic!』'
 # draft: true
 author: yexca
 date: '2025-11-01T14:30:01+09:00'
 categories:
-    - 学びの探求
+    - 学問探究
 tags:
-    - 日本語学習
+    - 日本語勉強
 ---
 
 {{< notice >}} この記事は gemini-2.5-flash によって翻訳されました {{< /notice >}}
 
-{{< details "音のひらめきシリーズ" >}}
+{{< details "音に感じてシリーズ" >}}
 
-| 曲名 | 翻訳 | リンク |
+| 曲 | 翻訳 | リンク |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | 僕も死のうと思ったことはあった | <https://blog.yexca.net/ja/archives/214> |
-| あくあ色ぱれっと | あくあのパレット | <https://blog.yexca.net/ja/archives/219> |
-| 恋の押し売り | 恋の押し売り | <https://blog.yexca.net/ja/archives/220> |
-| 17さいのうた | 17歳の歌 | <https://blog.yexca.net/ja/archives/224> |
-| drop | 恋に落ちる | <https://blog.yexca.net/ja/archives/230> |
-| 生きるを選んだ私へ | 生きることを選んだ私へ | <https://blog.yexca.net/ja/archives/239> |
-| rainy lady | 雨模様のレディ | <https://blog.yexca.net/ja/archives/249> |
-| 恋しくなったら手を叩こう | 恋しくなったら手を叩こう | <https://blog.yexca.net/ja/archives/250> |
-| pris-magic! | プリズムマジック！ | 本記事 |
+| 僕が死のうと思ったのは | 略 | この記事 |
+| あくあ色ぱれっと | 略 | [/ja/archives/219](/ja/archives/219) |
+| 恋の押し売り | 略 | [/ja/archives/220](/ja/archives/220) |
+| 17さいのうた | 略 | [/ja/archives/224](/ja/archives/224) |
+| drop | 恋に落ちた | [/ja/archives/230](/ja/archives/230) |
+| 生きるを選んだ私へ | 略 | [/ja/archives/239](/ja/archives/239) |
+| rainy lady | 雨女 | [/ja/archives/249](/ja/archives/249) |
+| 恋しくなったら手を叩こう | 略 | [/ja/archives/250](/ja/archives/250) |
+| pris-magic! | プリズムマジック！ | [/ja/archives/260](/ja/archives/260) |
+| こんなに素晴らしい世界で | 略 | [/ja/archives/270](/ja/archives/270) |
 
 {{< /details >}}
 

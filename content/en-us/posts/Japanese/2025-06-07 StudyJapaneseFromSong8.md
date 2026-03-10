@@ -1,32 +1,34 @@
 ---
 slug: 250
-title: 'Sound Vibes - "When You Miss Someone, Clap Your Hands"'
+title: 'Echoes of Emotion - "恋しくなったら手を叩こう"'
 # draft: true
 author: yexca
 date: '2025-06-07T01:09:19+09:00'
 categories:
-    - Academic Exploration
+    - Academic Notes
 tags:
-    - Japanese Learning
+    - Japanese
 ---
 
 {{< notice >}} This article was translated by gemini-2.5-flash {{< /notice >}}
 
-{{< details "Sound Vibes Series" >}}
+{{< details "Thoughts on Music Series" >}}
 
 | Song Title | Translation | Link |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | I Thought About Dying | <https://blog.yexca.net/en/archives/214> |
-| あくあ色ぱれっと | Aqua-Colored Palette | <https://blog.yexca.net/en/archives/219> |
-| 恋の押し売り | Love Sales Pitch | <https://blog.yexca.net/en/archives/220> |
-| 17さいのうた | Song of 17 | <https://blog.yexca.net/en/archives/224> |
-| drop | Falling in Love | <https://blog.yexca.net/en/archives/230> |
-| 生きるを選んだ私へ | To Myself Who Chose to Live | <https://blog.yexca.net/en/archives/239> |
-| rainy lady | Rainy Lady | <https://blog.yexca.net/en/archives/249> |
-| 恋しくなったら手を叩こう | When You Miss Someone, Clap Your Hands | This Article |
-| pris-magic! | Prism Magic! | <https://blog.yexca.net/en/archives/260> |
+| 僕が死のうと思ったのは | I Once Thought I'd Rather Die | [/en/archives/214](/en/archives/214) |
+| あくあ色ぱれっと | Aqua-Colored Palette | [/en/archives/219](/en/archives/219) |
+| 恋の押し売り | Love Push-Selling | [/en/archives/220](/en/archives/220) |
+| 17さいのうた | Song of a 17-Year-Old | [/en/archives/224](/en/archives/224) |
+| drop | Drop | <https://blog.yexca.net/en/archives/230> |
+| 生きるを選んだ私へ | To the Me Who Chose to Live | [/en/archives/239](/en/archives/239) |
+| rainy lady | Rain Still Lingers | [/en/archives/249](/en/archives/249) |
+| 恋しくなったら手を叩こう | If You Want to Fall in Love, Clap Your Hands | [/en/archives/250](/en/archives/250) |
+| pris-magic! | Prism Magic! | [/en/archives/260](/en/archives/260) |
+| こんなに素晴らしい世界で | In Such a Wonderful World | [/en/archives/270](/en/archives/270) |
 
 {{< /details >}}
+
 
 ## Intro
 

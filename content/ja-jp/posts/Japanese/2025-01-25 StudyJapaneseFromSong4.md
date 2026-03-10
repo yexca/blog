@@ -1,6 +1,6 @@
 ---
 slug: 224
-title: '音に感じて - 《17さいのうた》'
+title: '音に感じて - 『17さいのうた』'
 # draft: true
 author: yexca
 date: '2025-01-25T16:57:49+09:00'
@@ -15,14 +15,16 @@ tags:
 
 | 曲 | 翻訳 | リンク |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | 略 | <https://blog.yexca.net/ja/archives/214> |
-| あくあ色ぱれっと | 略 | <https://blog.yexca.net/ja/archives/219> |
-| 恋の押し売り | 略 | <https://blog.yexca.net/ja/archives/220> |
-| 17さいのうた | 略 | この記事 |
-| drop | 恋に落ちた | <https://blog.yexca.net/ja/archives/230> |
-| 生きるを選んだ私へ | 略 | <https://blog.yexca.net/ja/archives/239> |
-| rainy lady | 雨女 | <https://blog.yexca.net/ja/archives/249> |
-| 恋しくなったら手を叩こう | 略 | <https://blog.yexca.net/ja/archives/250> |
+| 僕が死のうと思ったのは | 略 | この記事 |
+| あくあ色ぱれっと | 略 | [/ja/archives/219](/ja/archives/219) |
+| 恋の押し売り | 略 | [/ja/archives/220](/ja/archives/220) |
+| 17さいのうた | 略 | [/ja/archives/224](/ja/archives/224) |
+| drop | 恋に落ちた | [/ja/archives/230](/ja/archives/230) |
+| 生きるを選んだ私へ | 略 | [/ja/archives/239](/ja/archives/239) |
+| rainy lady | 雨女 | [/ja/archives/249](/ja/archives/249) |
+| 恋しくなったら手を叩こう | 略 | [/ja/archives/250](/ja/archives/250) |
+| pris-magic! | プリズムマジック！ | [/ja/archives/260](/ja/archives/260) |
+| こんなに素晴らしい世界で | 略 | [/ja/archives/270](/ja/archives/270) |
 
 {{< /details >}}
 

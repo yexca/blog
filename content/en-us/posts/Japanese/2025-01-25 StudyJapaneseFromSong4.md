@@ -1,31 +1,32 @@
 ---
 slug: 224
-title: 'Musical Feelings - "17-sai no Uta"'
+title: 'Echoes of Emotion - "17さいのうた"'
 # draft: true
 author: yexca
 date: '2025-01-25T16:57:49+09:00'
 lastmod: '2025-05-27T18:11:07+09:00'
 categories:
-    - Academic Exploration
+    - Academic Notes
 tags:
-    - Japanese Learning
+    - Japanese
 ---
 
 {{< notice >}} This article was translated by gemini-3-flash-preview {{< /notice >}}
 
-{{< details "Musical Feelings Series" >}}
+{{< details "Thoughts on Music Series" >}}
 
-| Song Name | Translation | Link |
+| Song Title | Translation | Link |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | I Once Thought About Ending It All | <https://blog.yexca.net/en/archives/214> |
-| あくあ色ぱれっと | Aqua's Palette | <https://blog.yexca.net/en/archives/219> |
-| 恋の押し売り | Forced Love | <https://blog.yexca.net/en/archives/220> |
-| 17さいのうた | 17-Year-Old's Song | This Article |
-| drop | Falling in Love | <https://blog.yexca.net/en/archives/230> |
-| 生きるを選んだ私へ | To My Self Who Chose to Live | <https://blog.yexca.net/en/archives/239> |
-| rainy lady | The Rain Hasn't Cleared | <https://blog.yexca.net/en/archives/249> |
-| 恋しくなったら手を叩こう | Clap Your Hands if You Want to Fall in Love | <https://blog.yexca.net/en/archives/250> |
-| pris-magic! | Pris-Magic! | <https://blog.yexca.net/en/archives/260> |
+| 僕が死のうと思ったのは | I Once Thought I'd Rather Die | [/en/archives/214](/en/archives/214) |
+| あくあ色ぱれっと | Aqua-Colored Palette | [/en/archives/219](/en/archives/219) |
+| 恋の押し売り | Love Push-Selling | [/en/archives/220](/en/archives/220) |
+| 17さいのうた | Song of a 17-Year-Old | [/en/archives/224](/en/archives/224) |
+| drop | Drop | <https://blog.yexca.net/en/archives/230> |
+| 生きるを選んだ私へ | To the Me Who Chose to Live | [/en/archives/239](/en/archives/239) |
+| rainy lady | Rain Still Lingers | [/en/archives/249](/en/archives/249) |
+| 恋しくなったら手を叩こう | If You Want to Fall in Love, Clap Your Hands | [/en/archives/250](/en/archives/250) |
+| pris-magic! | Prism Magic! | [/en/archives/260](/en/archives/260) |
+| こんなに素晴らしい世界で | In Such a Wonderful World | [/en/archives/270](/en/archives/270) |
 
 {{< /details >}}
 
