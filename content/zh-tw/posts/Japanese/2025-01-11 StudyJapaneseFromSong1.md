@@ -17,16 +17,16 @@ tags:
 
 | 歌曲名稱 | 翻譯 | 連結 |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | 曾經我也想過一了百了 | [/zh-tw/archives/214](/zh-tw/archives/214) |
-| あくあ色ぱれっと | aqua 的調色盤 | [/zh-tw/archives/219](/zh-tw/archives/219) |
-| 恋の押し売り | 戀愛推銷 | [/zh-tw/archives/220](/zh-tw/archives/220) |
-| 17さいのうた | 17 歲的歌 | [/zh-tw/archives/224](/zh-tw/archives/224) |
-| drop | 墜入愛河 | [/zh-tw/archives/230](/zh-tw/archives/230) |
-| 生きるを選んだ私へ | 致選擇活下去的自己 | [/zh-tw/archives/239](/zh-tw/archives/239) |
-| rainy lady | 雨意未晴 | [/zh-tw/archives/249](/zh-tw/archives/249) |
-| 恋しくなったら手を叩こう | 想談戀愛的話就拍拍手吧 | [/zh-tw/archives/250](/zh-tw/archives/250) |
-| pris-magic! | 稜鏡魔法! | [/zh-tw/archives/260](/zh-tw/archives/260) |
-| こんなに素晴らしい世界で | 在這如此美妙的世界 | [/zh-tw/archives/270](/zh-tw/archives/270) |
+| 僕が死のうと思ったのは | 曾經我也想過一了百了 | <https://blog.yexca.net/zh-tw/archives/214> |
+| あくあ色ぱれっと | aqua 的調色盤 | <https://blog.yexca.net/zh-tw/archives/219> |
+| 恋の押し売り | 戀愛推銷 | <https://blog.yexca.net/zh-tw/archives/220> |
+| 17さいのうた | 17 歲的歌 | <https://blog.yexca.net/zh-tw/archives/224> |
+| drop | 墜入愛河 | <https://blog.yexca.net/zh-tw/archives/230> |
+| 生きるを選んだ私へ | 致選擇活下去的自己 | <https://blog.yexca.net/zh-tw/archives/239> |
+| rainy lady | 雨意未晴 | <https://blog.yexca.net/zh-tw/archives/249> |
+| 恋しくなったら手を叩こう | 想談戀愛的話就拍拍手吧 | <https://blog.yexca.net/zh-tw/archives/250> |
+| pris-magic! | 稜鏡魔法! | <https://blog.yexca.net/zh-tw/archives/260> |
+| こんなに素晴らしい世界で | 在這如此美妙的世界 | <https://blog.yexca.net/zh-tw/archives/270> |
 
 {{< /details >}}
 

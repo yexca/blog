@@ -15,16 +15,16 @@ tags:
 
 | 歌曲名 | 翻译 | 链接 |
 | :-- | :-- | :-- |
-| 僕が死のうと思ったのは | 曾经我也想过一了百了 | [/archives/214](/archives/214) |
-| あくあ色ぱれっと | aqua 的调色盘 | [/archives/219](/archives/219) |
-| 恋の押し売り | 恋爱推销 | [/archives/220](/archives/220) |
-| 17さいのうた | 17 岁的歌 | [/archives/224](/archives/224) |
-| drop | 坠入爱河 | [/archives/230](/archives/230) |
-| 生きるを選んだ私へ | 致选择活下去的自己 | [/archives/239](/archives/239) |
-| rainy lady | 雨意未晴 | [/archives/249](/archives/249) |
-| 恋しくなったら手を叩こう | 想谈恋爱的话就拍拍手吧 | [/archives/250](/archives/250) |
-| pris-magic! | 棱镜魔法! | [/archives/260](/archives/260) |
-| こんなに素晴らしい世界で | 在这如此美妙的世界 | [/archives/270](/archives/270) |
+| 僕が死のうと思ったのは | 曾经我也想过一了百了 | <https://blog.yexca.net/archives/214> |
+| あくあ色ぱれっと | aqua 的调色盘 | <https://blog.yexca.net/archives/219> |
+| 恋の押し売り | 恋爱推销 | <https://blog.yexca.net/archives/220> |
+| 17さいのうた | 17 岁的歌 | <https://blog.yexca.net/archives/224> |
+| drop | 坠入爱河 | <https://blog.yexca.net/archives/230> |
+| 生きるを選んだ私へ | 致选择活下去的自己 | <https://blog.yexca.net/archives/239> |
+| rainy lady | 雨意未晴 | <https://blog.yexca.net/archives/249> |
+| 恋しくなったら手を叩こう | 想谈恋爱的话就拍拍手吧 | <https://blog.yexca.net/archives/250> |
+| pris-magic! | 棱镜魔法! | <https://blog.yexca.net/archives/260> |
+| こんなに素晴らしい世界で | 在这如此美妙的世界 | <https://blog.yexca.net/archives/270> |
 
 {{< /details >}}
 
