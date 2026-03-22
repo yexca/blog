@@ -1,0 +1,19 @@
+{
+    "name": "yexca-blog",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "HUGO_VERSION": "0.140.1"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "budparr.language-hugo-vscode", // Hugo 语法高亮
+                "ritwickdey.LiveServer"         // 实时预览辅助
+            ]
+        }
+    },
+
+    "remoteUser": "vscode"
+}
