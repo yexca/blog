@@ -79,9 +79,9 @@ You have to fill your own tank before you have the capacity to love others healt
 
 I saw a great quote in a video that fits this theme perfectly:
 
-> Sometimes doing things requires a price.
-> When the price is low enough, it's just a casual gesture.
-> When you can afford it, it's called an attempt.
+> Sometimes doing things requires a price.  
+> When the price is low enough, it's just a casual gesture.  
+> When you can afford it, it's called an attempt.  
 > When you can't afford it, getting it right is called courage; getting it wrong is called recklessness.
 >
 > Source: <https://youtu.be/LvbGmCF07e4>
