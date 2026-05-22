@@ -17,6 +17,10 @@ links:
     description: 所有的標籤
     website: /zh-tw/tags
     icon: tags
+  - title: "linF Blog & Music"
+    description: "LinF 的部落格 (只有簡體字)"
+    website: https://linf.0617234.xyz/
+    image: https://linf.0617234.xyz/uploads/images/1779467078265-tkp4dc.png
   - title: "Hiyoung'Blog"
     description: "Hiyoung 的部落格 (只有簡體字)"
     website: https://blog.hiyoung.icu/

@@ -17,6 +17,10 @@ links:
     description: All Tags
     website: /en/tags
     icon: tags
+  - title: "linF Blog & Music"
+    description: "LinF's Blog (Only Simplified Chinese)"
+    website: https://linf.0617234.xyz/
+    image: https://linf.0617234.xyz/uploads/images/1779467078265-tkp4dc.png
   - title: "Hiyoung'Blog"
     description: "Hiyoung's Blog (Only Simplified Chinese)"
     website: https://blog.hiyoung.icu/

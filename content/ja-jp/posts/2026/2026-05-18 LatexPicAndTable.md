@@ -74,7 +74,7 @@ tags:
     \hfill
     \begin{minipage}{0.45\textwidth}
         \centering
-        \includegraphics[width=0.4\textwidth]{pic2.png}
+        \includegraphics[width=\textwidth]{pic2.png}
         \caption{pic2 の説明}
         \label{fig:pic2}
     \end{minipage}

@@ -17,8 +17,12 @@ links:
     description: 所有标签
     website: /tags
     icon: tags
+  - title: "linF Blog & Music"
+    description: "LinF 的博客"
+    website: https://linf.0617234.xyz/
+    image: https://linf.0617234.xyz/uploads/images/1779467078265-tkp4dc.png
   - title: "Hiyoung'Blog"
-    description: Hiyoung 的博客
+    description: "Hiyoung 的博客"
     website: https://blog.hiyoung.icu/
     image: https://cdn.jsdelivr.net/gh/hiyoung3937/img_hiyoung@master/bolg/bolg_icon.jpg
   - title: "VRChat Docs"
@@ -30,7 +34,7 @@ links:
     website: https://vrc.yexca.net/
     image: https://vrc.yexca.net/assets/img/auther.jpg
   - title: "Lit Link"
-    description: 我做了什么
+    description: "我做了什么"
     website: https://lit.link/yexca
 menu:
     main: 

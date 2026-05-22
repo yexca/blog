@@ -17,6 +17,10 @@ links:
     description: 全てのタグ
     website: /ja/tags
     icon: tags
+  - title: "linF Blog & Music"
+    description: "LinF のブログ (中国語簡体字のみ)"
+    website: https://linf.0617234.xyz/
+    image: https://linf.0617234.xyz/uploads/images/1779467078265-tkp4dc.png
   - title: "Hiyoung'Blog"
     description: "Hiyoung のブログ (中国語簡体字のみ)"
     website: https://blog.hiyoung.icu/
