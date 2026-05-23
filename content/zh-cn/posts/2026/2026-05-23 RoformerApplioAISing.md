@@ -4,6 +4,7 @@ title: '使用 Roformer 与 Applio 进行 AI 翻唱'
 # draft: true
 author: yexca
 date: '2026-05-23T03:00:06+09:00'
+lastmod: 2026-05-23T17:50:02+0900
 categories:
     - 折腾经验
 tags:
@@ -282,7 +283,7 @@ Save Every Epoch 保持默认 10 即可
 
 Total Epoch 推荐 200-300，一般数据集在这个轮数下会比较好 (大概 220-250 是最优模型，具体可从这个地方向上或向下尝试)
 
-调整完成后同意条款，创建索引 (Generate Index) 后开始训练 (Start Training)
+调整完成后同意条款，开始训练 (Start Training) 完成后创建索引 (Generate Index)
 
 ### 推理
 

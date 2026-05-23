@@ -2,7 +2,7 @@
 title: Links
 slug: /links
 date: 2024-12-27T18:20:25+0900
-lastmod: 2025-08-22T22:57:14+0900
+lastmod: 2026-05-23T17:50:02+0900
 readingTime: false
 links:
   # - title: GitHub
@@ -18,7 +18,7 @@ links:
     website: /en/tags
     icon: tags
   - title: "linF Blog & Music"
-    description: "LinF's Blog (Only Simplified Chinese)"
+    description: "LinF's Blog"
     website: https://linf.0617234.xyz/
     image: https://linf.0617234.xyz/uploads/images/1779467078265-tkp4dc.png
   - title: "Hiyoung'Blog"

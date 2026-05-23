@@ -4,6 +4,7 @@ title: 'RoformerとApplioを使ったAIカバー曲の作り方'
 # draft: true
 author: yexca
 date: '2026-05-23T03:00:06+09:00'
+lastmod: 2026-05-23T17:50:02+0900
 categories:
     - 試行錯誤
 tags:
@@ -284,7 +285,7 @@ git clone https://github.com/IAHispano/Applio.git
 
 「Total Epoch」は200〜300がおすすめ。一般的なデータセットなら、このくらいのエポック数で良い結果が出るよ（だいたい220〜250エポックあたりが一番良いモデルになることが多い。ここを基準に増やしたり減らしたりしてみてね）。
 
-調整が終わったら規約に同意して、インデックスを作成（Generate Index）してからトレーニングを開始（Start Training）しよう。
+調整が終わったら規約に同意して、トレーニングを開始（Start Training）しよう。その後、インデックスを作成（Generate Index）しよう。
 
 ### 推論（ボイスチェンジの適用）
 

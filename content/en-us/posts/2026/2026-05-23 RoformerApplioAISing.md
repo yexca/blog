@@ -4,6 +4,7 @@ title: 'AI Covers with Roformer and Applio'
 # draft: true
 author: yexca
 date: '2026-05-23T03:00:06+09:00'
+lastmod: 2026-05-23T17:50:02+0900
 categories:
     - Tweaks
 tags:
@@ -284,7 +285,7 @@ Keep "Save Every Epoch" at the default `10`.
 
 Set "Total Epoch" to 200-300. This range usually yields the best results (around 220-250 epochs is often the sweet spot).
 
-Agree to the terms, click "Generate Index", and then click "Start Training".
+Agree to the terms, click "Start Training", and then click "Generate Index".
 
 ### Inference
 
