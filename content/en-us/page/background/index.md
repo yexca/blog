@@ -17,7 +17,7 @@ comments: false
 
 > This page uses machine translation ( ¯\_(ツ)_/¯)
 
-## 引言
+## Intro
 
 Due to my low technical ability, this site has crashed and reinstalled many times. This page will start from the background used after using the theme [Argon](https://github.com/solstice23/argon-theme)
 
@@ -25,7 +25,7 @@ After migrating to Jekyll, it is a bit troublesome to use background images for 
 
 Emmm, although the blog system has been changed, there is still no application scenario
 
-## 正文
+## Image
 
 2022.01.30 | Author：[MISSILE228](https://www.pixiv.net/users/429077) | PID：[82542737](https://www.pixiv.net/artworks/82542737)
 
