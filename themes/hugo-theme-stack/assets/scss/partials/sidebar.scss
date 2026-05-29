@@ -21,14 +21,15 @@
     --sidebar-panel-padding: 18px;
     --emoji-size: 40px;
     --emoji-font-size: 20px;
+    --sidebar-sticky-top: 0px;
 
     @include respond(md) {
         width: auto;
         margin-top: var(--main-top-padding);
         margin-bottom: var(--main-top-padding);
-        height: calc(100vh - var(--main-top-padding) * 2);
-        max-height: calc(100vh - var(--main-top-padding) * 2);
-        overflow-y: auto;
+        height: auto;
+        max-height: none;
+        overflow-y: visible;
     }
 
     @include respond(2xl) {
@@ -39,7 +40,7 @@
     }
 
     &.sticky {
-        top: 0;
+        top: var(--sidebar-sticky-top);
     }
 
     &.compact {

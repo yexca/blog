@@ -12,6 +12,7 @@ import createElement from 'ts/createElement';
 import StackColorScheme from 'ts/colorScheme';
 import { setupScrollspy } from 'ts/scrollspy';
 import { setupSmoothAnchors } from "ts/smoothAnchors";
+import { setupStickySidebar } from "ts/stickySidebar";
 
 let Stack = {
     init: () => {
@@ -19,6 +20,7 @@ let Stack = {
          * Bind menu event
          */
         menu();
+        setupStickySidebar();
 
         const articleContent = document.querySelector('.article-content') as HTMLElement;
         if (articleContent) {
