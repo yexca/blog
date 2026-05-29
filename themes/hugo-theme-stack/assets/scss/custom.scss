@@ -22,7 +22,7 @@
 
 .post-tags a {
     display: inline-block;
-    background-color: var(--card-background-color-secondary); /* 暗灰色背景，和深色模式搭配 */
+    background-color: var(--card-background-secondary);
     color: var(--card-text-color-tertiary);
     font-size: 0.85em;
     padding: 0.2em 0.6em;
@@ -30,13 +30,13 @@
     // margin-right: 0.5em;
     // margin-bottom: 0.3em;
     text-decoration: none;
-    border: 1px solid var(--card-border-color, #ddd);
+    border: 1px solid var(--card-border-color);
     transition: background-color 0.3s, color 0.3s;
 }
 
 .post-tags a:hover {
-    background-color: #555; /* hover变亮一点 */
-    color: #fff;
+    background-color: var(--card-background-selected);
+    color: var(--card-text-color-main);
 }
 
 // mjx-container[jax="CHTML"][display="true"] {
@@ -131,6 +131,13 @@
     padding: 10px 15px;
     flex-grow: 1;
     border-radius: 4px;
+}
+
+.archive-page-card {
+    background-color: var(--card-background);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow-l1);
+    padding: var(--card-padding);
 }
 
 /* 年份特殊样式 */

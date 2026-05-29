@@ -14,16 +14,18 @@
 details {
     margin: 1.5em 0; /* 上下留白，与段落分隔 */
     padding: 1rem;
-    border: 1px solid #e0e0e0; /* 浅灰色边框 */
+    border: 1px solid var(--card-border-color); /* 浅灰色边框 */
     border-radius: 8px; /* 轻微的圆角 */
-    background-color: var(--body-background); /* 浅灰色背景，稍微区别于白色正文 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 轻微的阴影效果 */
+    background-color: var(--card-background-secondary); /* 浅灰色背景，稍微区别于白色正文 */
+    box-shadow: var(--shadow-l1); /* 轻微的阴影效果 */
+    backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+    -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
     transition: all 0.3s ease; /* 过渡效果，提升交互体验 */
 
     /* 鼠标悬停时的效果 */
     &:hover {
-        border-color: #cccccc; /* 边框颜色变深 */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影增强 */
+        border-color: var(--card-separator-color); /* 边框颜色变深 */
+        box-shadow: var(--shadow-l2); /* 阴影增强 */
     }
 }
 
@@ -64,7 +66,7 @@ details[open] > summary::before {
 details > div {
     margin-top: 1rem; /* 与摘要行保持距离 */
     padding-top: 1rem; /* 内容顶部内边距 */
-    border-top: 1px dashed #e0e0e0; /* 使用虚线分隔线，更轻盈 */
+    border-top: 1px dashed var(--card-separator-color); /* 使用虚线分隔线，更轻盈 */
     line-height: 1.6; /* 增加行高，提升可读性 */
     color: var(--card-text-color-main) /* 内容文字颜色稍浅 */
     /* 确保内容不会溢出 */

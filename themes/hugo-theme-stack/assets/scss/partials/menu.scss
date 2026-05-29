@@ -130,26 +130,17 @@
 #main-menu {
     list-style: none;
     overflow-y: auto;
-    flex-grow: 1;
+    flex: 0 0 auto;
     font-size: 1.4rem;
-    background-color: var(--card-background);
-
-    box-shadow: var(--shadow-l1);
     display: none;
-    margin: 0 calc(var(--container-padding) * -1);
+    margin: 0;
 
-    padding: 30px 30px;
-
-    @include respond(xl) {
-        padding: 15px 0;
-    }
-
-    &, .menu-bottom-section ol {
+    & {
         flex-direction: column;
-        gap: 30px;
+        gap: var(--sidebar-element-separation);
 
         @include respond(xl) {
-            gap: 25px;
+            gap: var(--sidebar-element-separation);
         }
     }
 
@@ -160,10 +151,6 @@
     @include respond(md) {
         align-items: flex-end;
         display: flex;
-        background-color: transparent;
-        padding: 0;
-        box-shadow: none;
-        margin: 0;
     }
 
     li {
@@ -201,14 +188,6 @@
             }
         }
 
-        &.menu-bottom-section {
-            margin-top: auto;
-
-            ol {
-                display: flex;
-                padding-left: 0;
-            }
-        }
     }
 }
 

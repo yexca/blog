@@ -69,6 +69,12 @@ permalinks:
 pygmentsUseClasses: true
 
 params:
+  background:
+    image: https://github.com/yexca/picx-images-hosting/raw/master/2023/04-%e7%bd%91%e7%ab%99%e8%83%8c%e6%99%af/blog-background.2p10z489pjc0.webp
+    local: true
+    size: cover
+    position: center
+    attachment: fixed
   article:
     math: false
 

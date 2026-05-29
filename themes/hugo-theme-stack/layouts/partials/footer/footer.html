@@ -13,17 +13,19 @@
             {{ . | safeHTML }} <br/>
         {{ end }}
 
-        <p><span id="htmer_time" style="color: var(--themecolor);"></span></p>
+        <p><span id="htmer_time"></span></p>
 
-        <img src="https://count.getloli.com/@yexca"/>
+        <img src="https://count.getloli.com/@yexca" alt="{{ T `footer.visitCounterAlt` }}"/>
 
-        <p>Visits Since 2025-02-28</p>        
+        <p>{{ T "footer.visitsSince" (dict "Date" "2025-02-08") }}</p>
 
         {{- $Generator := `<a href="https://gohugo.io/" target="_blank" class="link" rel="noopener">Hugo</a>` -}}
         {{- $Theme := printf `<b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" class="link" rel="noopener" data-version="%s">Stack</a></b>` $ThemeVersion -}}
         {{- $DesignedBy := `<a href="https://jimmycai.com" target="_blank" class="link" rel="noopener">Jimmy</a>` -}}
+        {{- $ModifiedBy := `<a href="https://yexca.net" target="_blank" class="link" rel="noopener">yexca</a>` -}}
 
         {{ T "footer.builtWith" (dict "Generator" $Generator) | safeHTML }} <span>|</span>
-        {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
+        {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }} <span>|</span>
+        {{ T "footer.modifiedBy" (dict "ModifiedBy" $ModifiedBy) | safeHTML }}
     </section>
 </footer>

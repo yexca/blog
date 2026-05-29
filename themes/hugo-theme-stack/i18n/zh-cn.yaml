@@ -60,8 +60,20 @@ search:
         other: "#PAGES_COUNT 个结果 （用时 #TIME_SECONDS 秒）"
 
 footer:
+    runningTime:
+        other: 本博客已运行 {{ .Years }} 年 {{ .Days }} 天 {{ .Hours }} 小时 {{ .Minutes }} 分钟 {{ .Seconds }} 秒
+
+    visitCounterAlt:
+        other: 访问统计
+
+    visitsSince:
+        other: 自 {{ .Date }} 起的访问统计
+
     builtWith:
         other: 使用 {{ .Generator }} 构建
 
     designedBy:
         other: 主题 {{ .Theme }} 由 {{ .DesignedBy }} 设计
+
+    modifiedBy:
+        other: 修改自 {{ .ModifiedBy }}

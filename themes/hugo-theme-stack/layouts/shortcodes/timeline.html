@@ -50,12 +50,15 @@
 
 /* 内容框样式 */
 .timeline-content {
-  background: var(--timeline-bg-color, #f2e0e6); /* 支持暗色模式 */
+  background: var(--timeline-bg-color, var(--card-background-secondary)); /* 支持暗色模式 */
   padding: 10px 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--card-border-color);
+  box-shadow: var(--shadow-l1);
+  backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+  -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
   max-width: 500px;
-  color: var(--timeline-text-color, rgba(29, 24, 24, 0.526))/* 支持暗色模式 */
+  color: var(--timeline-text-color, var(--card-text-color-main))/* 支持暗色模式 */
 }
 
 /* 默认内容内边距 */
@@ -64,7 +67,7 @@
 }
 
 .timeline-content a {
-  color: var(--timeline-text-color, rgba(29, 24, 24, 0.526));
+  color: var(--timeline-text-color, var(--card-text-color-main));
 }
 
 /* 时间点 */
@@ -85,8 +88,8 @@
   :root {
     --timeline-line-color: #555;
     --timeline-date-color: #aaa;
-    --timeline-bg-color: #40303f;
-    --timeline-text-color: #eee;
+    --timeline-bg-color: var(--card-background-secondary);
+    --timeline-text-color: var(--card-text-color-main);
     --timeline-point-color: #aaa;
   }
 }
@@ -95,8 +98,8 @@
   :root {
     --timeline-line-color: #ccc;
     --timeline-date-color: #666;
-    --timeline-bg-color: #f2e0e6;
-    --timeline-text-color: #000;
+    --timeline-bg-color: var(--card-background-secondary);
+    --timeline-text-color: var(--card-text-color-main);
     --timeline-point-color: #ccc;
   }
 }

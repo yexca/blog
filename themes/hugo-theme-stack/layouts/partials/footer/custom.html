@@ -31,9 +31,12 @@
         var create_time = Math.round(new Date(Date.UTC(2021, 10, 6, 14, 15, 19)).getTime() / 1000);
         var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
         currentTime = secondToDate((timestamp - create_time));
-        currentTimeHtml = 'This blog has been running for ' + currentTime[0] + ' years ' + currentTime[1] + ' days '
-                + currentTime[2] + ' hours ' + currentTime[3] + ' minutes ' + currentTime[4]
-                + ' seconds';
+        currentTimeHtml = '{{ T "footer.runningTime" (dict "Years" "__YEARS__" "Days" "__DAYS__" "Hours" "__HOURS__" "Minutes" "__MINUTES__" "Seconds" "__SECONDS__") }}'
+                .replace('__YEARS__', currentTime[0])
+                .replace('__DAYS__', currentTime[1])
+                .replace('__HOURS__', currentTime[2])
+                .replace('__MINUTES__', currentTime[3])
+                .replace('__SECONDS__', currentTime[4]);
         document.getElementById("htmer_time").innerHTML = currentTimeHtml;
     }    setInterval(setTime, 1000);
 </script>

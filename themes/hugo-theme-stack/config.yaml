@@ -150,6 +150,27 @@ params:
             local: false
             src:
 
+    background:
+        image: https://github.com/yexca/picx-images-hosting/raw/master/2023/04-%e7%bd%91%e7%ab%99%e8%83%8c%e6%99%af/blog-background.2p10z489pjc0.webp
+        local: true
+        size: cover
+        position: center
+        attachment: fixed
+        blur: 1px
+        saturation: 1.35
+        light:
+            tint: rgba(245, 245, 250, 0.38)
+            card: rgba(255, 255, 255, 0.72)
+            cardSecondary: rgba(255, 255, 255, 0.38)
+            cardSelected: rgba(255, 255, 255, 0.48)
+            border: rgba(255, 255, 255, 0.42)
+        dark:
+            tint: rgba(18, 18, 18, 0.48)
+            card: rgba(38, 38, 38, 0.68)
+            cardSecondary: rgba(255, 255, 255, 0.08)
+            cardSelected: rgba(255, 255, 255, 0.14)
+            border: rgba(255, 255, 255, 0.16)
+
     colorScheme:
         # Display toggle
         toggle: true

@@ -1,6 +1,7 @@
 html {
     font-size: 62.5%;
     overflow-y: scroll;
+    background: var(--body-background);
 }
 
 * {
@@ -8,12 +9,44 @@ html {
 }
 
 body {
-    background: var(--body-background);
+    background-color: var(--body-background);
+    background-image: var(--body-background-overlay), var(--body-background-image);
+    background-size: cover, var(--body-background-size);
+    background-position: center, var(--body-background-position);
+    background-repeat: no-repeat;
+    background-attachment: fixed, var(--body-background-attachment);
     margin: 0;
     font-family: var(--base-font-family);
     font-size: 1.6rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+}
+
+.article-list article,
+.article-list--compact,
+.article-list--tile article,
+.sidebar-panel,
+.section-card,
+.main-article,
+.widget--toc,
+.widget.archives .widget-archive--list,
+footer.site-footer,
+.tagCloud .tagCloud-tags a,
+.pagination,
+.not-found-card,
+.search-form input,
+#main-menu.show,
+.archive-page-card,
+.glass-card,
+.copyCodeButton,
+.comment-container,
+.twikoo,
+.waline-container,
+.disqus-container {
+    border: 1px solid var(--card-border-color);
+    backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+    -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
 }
 
 /* scrollbar styles for Firefox */

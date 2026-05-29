@@ -63,8 +63,20 @@ search:
         other: "#PAGES_COUNT 件 （#TIME_SECONDS 秒）"
 
 footer:
+    runningTime:
+        other: このブログは {{ .Years }} 年 {{ .Days }} 日 {{ .Hours }} 時間 {{ .Minutes }} 分 {{ .Seconds }} 秒 運営されています。
+
+    visitCounterAlt:
+        other: アクセス統計
+
+    visitsSince:
+        other: "{{ .Date }} からのアクセス統計"
+
     builtWith:
         other: "{{ .Generator }} で構築されています。"
 
     designedBy:
         other: テーマ {{ .Theme }} は {{ .DesignedBy }} によって設計されています。
+
+    modifiedBy:
+        other: "{{ .ModifiedBy }} によって改修されています。"

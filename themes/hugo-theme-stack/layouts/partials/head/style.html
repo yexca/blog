@@ -1,3 +1,75 @@
 {{ $sass := resources.Get "scss/style.scss" }}
 {{ $style := $sass | toCSS | minify | resources.Fingerprint "sha256" }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{- with .Site.Params.background -}}
+    <style>
+        :root {
+            {{- with .blur }}
+            --glass-blur: {{ . | safeCSS }};
+            {{- end }}
+            {{- with .saturation }}
+            --glass-saturation: {{ . | safeCSS }};
+            {{- end }}
+            {{- with .light }}
+                {{- with .card }}
+            --card-background: {{ . | safeCSS }};
+                {{- end }}
+                {{- with .cardSecondary }}
+            --card-background-secondary: {{ . | safeCSS }};
+                {{- end }}
+                {{- with .cardSelected }}
+            --card-background-selected: {{ . | safeCSS }};
+                {{- end }}
+                {{- with .border }}
+            --card-border-color: {{ . | safeCSS }};
+                {{- end }}
+                {{- with .tint }}
+            --body-background-overlay-light: linear-gradient({{ . | safeCSS }}, {{ . | safeCSS }});
+                {{- end }}
+            {{- end }}
+        }
+        :root[data-scheme="dark"] {
+            {{- with .dark }}
+                {{- with .card }}
+            --card-background: {{ . | safeCSS }};
+                {{- end }}
+                {{- with .cardSecondary }}
+            --card-background-secondary: {{ . | safeCSS }};
+                {{- end }}
+                {{- with .cardSelected }}
+            --card-background-selected: {{ . | safeCSS }};
+                {{- end }}
+                {{- with .border }}
+            --card-border-color: {{ . | safeCSS }};
+                {{- end }}
+                {{- with .tint }}
+            --body-background-overlay-dark: linear-gradient({{ . | safeCSS }}, {{ . | safeCSS }});
+                {{- end }}
+            {{- end }}
+        }
+    </style>
+    {{- with .image -}}
+        {{- $image := . -}}
+        {{- if $.Site.Params.background.local -}}
+            {{- $image = $image | relURL -}}
+        {{- end -}}
+        <style>
+            :root {
+                --body-background-image: url({{ $image | safeCSS }});
+                --body-background-overlay: var(--body-background-overlay-light);
+                {{- with $.Site.Params.background.size }}
+                --body-background-size: {{ . | safeCSS }};
+                {{- end }}
+                {{- with $.Site.Params.background.position }}
+                --body-background-position: {{ . | safeCSS }};
+                {{- end }}
+                {{- with $.Site.Params.background.attachment }}
+                --body-background-attachment: {{ . | safeCSS }};
+                {{- end }}
+            }
+            :root[data-scheme="dark"] {
+                --body-background-overlay: var(--body-background-overlay-dark);
+            }
+        </style>
+    {{- end -}}
+{{- end -}}

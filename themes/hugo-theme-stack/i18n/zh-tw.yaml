@@ -66,8 +66,20 @@ search:
         other: "#PAGES_COUNT 個結果 （用時 #TIME_SECONDS 秒）"
 
 footer:
+    runningTime:
+        other: 本部落格已運行 {{ .Years }} 年 {{ .Days }} 天 {{ .Hours }} 小時 {{ .Minutes }} 分鐘 {{ .Seconds }} 秒
+
+    visitCounterAlt:
+        other: 訪問統計
+
+    visitsSince:
+        other: 自 {{ .Date }} 起的訪問統計
+
     builtWith:
         other: 使用 {{ .Generator }} 建立
 
     designedBy:
         other: 主題 {{ .Theme }} 由 {{ .DesignedBy }} 設計
+
+    modifiedBy:
+        other: 修改自 {{ .ModifiedBy }}

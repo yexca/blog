@@ -66,8 +66,20 @@ search:
         other: "#PAGES_COUNT pages (#TIME_SECONDS seconds)"
 
 footer:
+    runningTime:
+        other: This blog has been running for {{ .Years }} years {{ .Days }} days {{ .Hours }} hours {{ .Minutes }} minutes {{ .Seconds }} seconds
+
+    visitCounterAlt:
+        other: Visit counter
+
+    visitsSince:
+        other: Visits since {{ .Date }}
+
     builtWith:
         other: Built with {{ .Generator }}
 
     designedBy:
         other: Theme {{ .Theme }} designed by {{ .DesignedBy }}
+
+    modifiedBy:
+        other: Modified by {{ .ModifiedBy }}
