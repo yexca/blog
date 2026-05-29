@@ -1,30 +1,60 @@
-<div class="article-list--compact links">
-    {{ range $i, $link := .Params.links }}
-        <article>
-            <a href="{{ $link.website }}" target="_blank" rel="noopener">
-                <div class="article-details">
-                    <h2 class="article-title">
-                        {{- $link.title -}}
-                    </h2>
-                    <footer class="article-time">
-                        {{ with $link.description }}
-                            {{ . }}
-                        {{ else }}
-                            {{ $link.website }}
-                        {{ end }}
-                    </footer>
-                </div>
-        
-                {{ with $link.image }}
-                    {{ $permalink := . }}
-                    {{ with ($.Resources.GetMatch (printf "%s" (. | safeURL))) }}
-                        {{ $permalink = .RelPermalink }}
-                    {{ end }}
-                    <div class="article-image">
-                        <img src="{{ $permalink }}" loading="lazy">
-                    </div>
+{{ $sections := .Params.linkSections }}
+{{ if not $sections }}
+    {{ $sections = slice (dict "title" "Links" "links" .Params.links "legacy" true) }}
+{{ end }}
+
+<div class="link-sections">
+    {{ range $section := $sections }}
+        <section class="link-section">
+            <header class="link-section-header">
+                {{ with $section.icon }}
+                    <span class="link-section-icon">
+                        {{ partial "helper/icon" . }}
+                    </span>
                 {{ end }}
-            </a>
-        </article>
+                <div>
+                    <h2>{{ $section.title }}</h2>
+                    {{ with $section.description }}
+                        <p>{{ . }}</p>
+                    {{ end }}
+                </div>
+            </header>
+
+            <div class="link-card-list">
+                {{ range $link := $section.links }}
+                    {{ $external := or $section.legacy $link.external }}
+                    {{ $icon := default "link" $link.icon }}
+                    {{ if eq $icon "tags" }}
+                        {{ $icon = "tag" }}
+                    {{ end }}
+                    <article class="link-card">
+                        <a href="{{ $link.website }}" {{ if $external }}target="_blank" rel="noopener"{{ end }}>
+                            <div class="link-card-media">
+                                {{ with $link.image }}
+                                    {{ $permalink := . }}
+                                    {{ with ($.Resources.GetMatch (printf "%s" (. | safeURL))) }}
+                                        {{ $permalink = .RelPermalink }}
+                                    {{ end }}
+                                    <img src="{{ $permalink }}" loading="lazy" alt="{{ $link.title }}">
+                                {{ else }}
+                                    {{ partial "helper/icon" $icon }}
+                                {{ end }}
+                            </div>
+
+                            <div class="link-card-content">
+                                <h3>{{ $link.title }}</h3>
+                                <p>
+                                    {{ with $link.description }}
+                                        {{ . }}
+                                    {{ else }}
+                                        {{ $link.website }}
+                                    {{ end }}
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+                {{ end }}
+            </div>
+        </section>
     {{ end }}
 </div>

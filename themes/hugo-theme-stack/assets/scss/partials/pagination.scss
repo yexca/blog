@@ -1,14 +1,30 @@
 .pagination {
     display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
     background-color: var(--card-background);
     box-shadow: var(--shadow-l1);
     border-radius: var(--card-border-radius);
     overflow: hidden;
-    flex-wrap: wrap;
+
+    .pagination-links {
+        display: flex;
+        flex: 1 1 auto;
+        flex-wrap: nowrap;
+        min-width: 0;
+    }
 
     .page-link {
-        padding: 16px 32px;
+        padding: 14px 20px;
         display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        min-width: 50px;
+        gap: 6px;
+        border-right: 1px solid var(--card-separator-color);
+        color: var(--card-text-color-secondary);
+        transition: background-color 0.2s ease, color 0.2s ease;
 
         &.current {
             font-weight: bold;
@@ -16,6 +32,90 @@
             color: var(--card-text-color-main);
         }
 
-        color: var(--card-text-color-secondary);
+        &.dots,
+        &.disabled {
+            cursor: default;
+        }
+
+        &.disabled {
+            opacity: 0.45;
+        }
+
+        &:not(.current):not(.dots):not(.disabled):hover {
+            background-color: var(--card-background-selected);
+            color: var(--card-text-color-main);
+        }
     }
+
+    .pagination-jump {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        gap: 8px;
+        padding: 10px 12px;
+        color: var(--card-text-color-secondary);
+        border-left: 1px solid var(--card-separator-color);
+
+        label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        input {
+            width: 64px;
+            height: 36px;
+            padding: 0 10px;
+            color: var(--card-text-color-main);
+            text-align: center;
+            border: 1px solid var(--card-border-color);
+            border-radius: var(--tag-border-radius);
+            background-color: var(--card-background-secondary);
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            margin: 0;
+            -webkit-appearance: none;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+
+        button {
+            height: 36px;
+            padding: 0 16px;
+            color: var(--card-text-color-main);
+            border: 1px solid var(--card-border-color);
+            border-radius: var(--tag-border-radius);
+            background-color: var(--card-background-selected);
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+            &:hover {
+                color: var(--card-text-color-main);
+                border-color: var(--card-separator-color);
+                background-color: var(--card-background-secondary);
+            }
+        }
+    }
+
+    .pagination-total {
+        color: var(--card-text-color-tertiary);
+    }
+
+    // @include respond(lg) {
+    //     .pagination-jump {
+    //         display: flex;
+    //     }
+    // }
+    @media (min-width: 1400px) {
+    .pagination-jump {
+        display: flex;
+    }
+}
 }

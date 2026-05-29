@@ -1,26 +1,59 @@
 {{ if gt .Paginator.TotalPages 1 }}
-    <nav class='pagination'>
+    <nav class='pagination' aria-label='{{ if eq .Site.Language.Lang "zh-tw" }}分頁{{ else if eq .Site.Language.Lang "en" }}Pagination{{ else if eq .Site.Language.Lang "ja" }}ページ送り{{ else }}分页{{ end }}'>
         {{ $.Scratch.Set "hasPrevDots" false }}
         {{ $.Scratch.Set "hasNextDots" false }}
 
-        {{ range .Paginator.Pagers }}
-            {{ if eq . $.Paginator }}
-                <span class='page-link current'>
-                    {{- .PageNumber -}}
-                </span>
-                {{ else if or (or (eq . $.Paginator.First) (eq . $.Paginator.Prev)) (or  (eq . $.Paginator.Next) (eq . $.Paginator.Last )) }}
-                    <a class='page-link' href='{{ .URL }}'>
+        <div class='pagination-links'>
+            {{ range .Paginator.Pagers }}
+                {{ if eq . $.Paginator }}
+                    <span class='page-link current' aria-current='page'>
                         {{- .PageNumber -}}
-                    </a>
-                {{ else }}
-                    {{ if and (not ($.Scratch.Get "hasPrevDots")) (lt .PageNumber $.Paginator.PageNumber)  }}
-                        {{ $.Scratch.Set "hasPrevDots" true }}
-                        <span class='page-link dots'>&hellip;</span>
-                    {{ else if and (not ($.Scratch.Get "hasNextDots")) (gt .PageNumber $.Paginator.PageNumber) }}
-                        {{ $.Scratch.Set "hasNextDots" true }}
-                        <span class='page-link dots'>&hellip;</span>
+                    </span>
+                    {{ else if or (or (eq . $.Paginator.First) (eq . $.Paginator.Prev)) (or  (eq . $.Paginator.Next) (eq . $.Paginator.Last )) }}
+                        <a class='page-link' href='{{ .URL }}' aria-label='{{ if eq $.Site.Language.Lang "zh-tw" }}頁{{ else if eq $.Site.Language.Lang "en" }}page{{ else if eq $.Site.Language.Lang "ja" }}ページ{{ else }}页{{ end }} {{ .PageNumber }}'>
+                            {{- .PageNumber -}}
+                        </a>
+                    {{ else }}
+                        {{ if and (not ($.Scratch.Get "hasPrevDots")) (lt .PageNumber $.Paginator.PageNumber)  }}
+                            {{ $.Scratch.Set "hasPrevDots" true }}
+                            <span class='page-link dots' aria-hidden='true'>&hellip;</span>
+                        {{ else if and (not ($.Scratch.Get "hasNextDots")) (gt .PageNumber $.Paginator.PageNumber) }}
+                            {{ $.Scratch.Set "hasNextDots" true }}
+                            <span class='page-link dots' aria-hidden='true'>&hellip;</span>
+                        {{ end }}
                     {{ end }}
-                {{ end }}
             {{ end }}
+        </div>
+
+        <form class='pagination-jump' data-pagination-jump data-first-url='{{ .Paginator.First.URL }}' data-total-pages='{{ .Paginator.TotalPages }}'>
+            <label>
+                <span>{{ if eq .Site.Language.Lang "zh-tw" }}跳轉到{{ else if eq .Site.Language.Lang "en" }}Jump to{{ else if eq .Site.Language.Lang "ja" }}移動先{{ else }}跳转到{{ end }}</span>
+                <input type='number' name='page' min='1' max='{{ .Paginator.TotalPages }}' value='{{ .Paginator.PageNumber }}' inputmode='numeric'>
+            </label>
+            <span class='pagination-total'>/ {{ .Paginator.TotalPages }}</span>
+            <button type='submit'>{{ if eq .Site.Language.Lang "zh-tw" }}跳轉{{ else if eq .Site.Language.Lang "en" }}Jump{{ else if eq .Site.Language.Lang "ja" }}移動{{ else }}跳转{{ end }}</button>
+        </form>
     </nav>
+
+    <script>
+        (() => {
+            if (window.__stackPaginationJumpReady) return;
+            window.__stackPaginationJumpReady = true;
+
+            document.addEventListener('submit', (event) => {
+                const form = event.target.closest('[data-pagination-jump]');
+                if (!form) return;
+
+                event.preventDefault();
+
+                const input = form.querySelector('input[name="page"]');
+                const totalPages = Number(form.dataset.totalPages || 1);
+                const page = Math.min(Math.max(Number.parseInt(input.value, 10) || 1, 1), totalPages);
+                const firstUrl = form.dataset.firstUrl || '/';
+
+                input.value = page;
+                window.location.href = page === 1 ? firstUrl : `${firstUrl.replace(/\/?$/, '/') }page/${page}/`;
+            });
+        })();
+    </script>
 {{ end }}
