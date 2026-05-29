@@ -222,8 +222,19 @@
 
     select {
         border: 0;
-        background-color: transparent;
+        background: none !important;
         color: var(--body-text-color);
+        padding: 0 !important;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: inherit;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        &::-ms-expand {
+            display: none;
+        }
 
         option {
             color: var(--card-text-color-main);
