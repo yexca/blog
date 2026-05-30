@@ -5,24 +5,17 @@ date: 2024-12-27T18:20:25+0900
 lastmod: 2026-05-30T00:00:00+0900
 readingTime: false
 linkSections:
-  - title: This Blog
-    description: Entry points inside this blog
-    icon: home
-    links:
-      - title: Categories
-        description: All categories
-        website: /en/categories
-        icon: categories
-      - title: Tags
-        description: All tags
-        website: /en/tags
-        icon: tag
   - title: My Sites
     description: Sites I maintain outside this blog
     icon: user
     links:
+      - title: "yexca"
+        description: "My personal homepage"
+        website: https://yexca.net/
+        image: https://yexca.net/img/profile.png
+        external: true
       - title: "VRChat Docs"
-        description: "The tutorial docs for the game VRChat (Only Simplified Chinese)"
+        description: "The tutorial docs for the game VRChat"
         website: https://vrchat.yexca.net/
         image: https://vrchat.yexca.net/favicon.png
         external: true
@@ -32,7 +25,7 @@ linkSections:
         image: https://vrc.yexca.net/assets/img/auther.jpg
         external: true
       - title: "Lit Link"
-        description: More about me
+        description: "Lit Link homepage"
         website: https://lit.link/yexca
         icon: link
         external: true
@@ -52,7 +45,7 @@ linkSections:
         external: true
 menu:
     main: 
-        weight: 5
+        weight: 7
         params:
             icon: link
 

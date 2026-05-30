@@ -5,22 +5,15 @@ date: 2024-12-27T18:20:25+0900
 lastmod: 2026-05-30T00:00:00+0900
 readingTime: false
 linkSections:
-  - title: 当前博客
-    description: 这个博客里的分类入口
-    icon: home
-    links:
-      - title: 分类
-        description: 所有分类
-        website: /categories
-        icon: categories
-      - title: 标签
-        description: 所有标签
-        website: /tags
-        icon: tag
   - title: 我的网站
     description: 我在博客之外维护的站点
     icon: user
     links:
+      - title: "yexca"
+        description: "我的个人主页"
+        website: https://yexca.net/
+        image: https://yexca.net/img/profile.png
+        external: true
       - title: "VRChat Docs"
         description: 对于游戏 VRChat 所写的教程文档
         website: https://vrchat.yexca.net/
@@ -32,7 +25,7 @@ linkSections:
         image: https://vrc.yexca.net/assets/img/auther.jpg
         external: true
       - title: "Lit Link"
-        description: 我做了什么
+        description: Lit Link 主页
         website: https://lit.link/yexca
         icon: link
         external: true
@@ -52,7 +45,7 @@ linkSections:
         external: true
 menu:
     main: 
-        weight: 5
+        weight: 7
         params:
             icon: link
 

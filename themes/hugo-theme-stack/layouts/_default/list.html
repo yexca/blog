@@ -1,4 +1,137 @@
 {{ define "main" }}
+    {{- if and (eq .Kind "taxonomy") (eq .Data.Plural "categories") -}}
+        {{- $terms := .Site.Taxonomies.categories.ByCount -}}
+        {{- $mainPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
+        {{- $notHidden := where .Site.RegularPages "Params.hidden" "!=" true -}}
+        {{- $visiblePosts := $mainPages | intersect $notHidden -}}
+        <section class="taxonomy-page taxonomy-page--categories" data-taxonomy-categories>
+            <header class="taxonomy-hero taxonomy-surface">
+                <p class="taxonomy-eyebrow">{{ T "widget.categoriesCloud.title" }}</p>
+                <h1>{{ .Title }}</h1>
+                <p class="taxonomy-summary">{{ T "taxonomy.categoriesSummary" (dict "Categories" (len $terms) "Posts" (len $visiblePosts)) }}</p>
+            </header>
+
+            <section class="category-switcher taxonomy-surface">
+                <div class="category-card-grid" role="tablist" aria-label="{{ .Title }}" data-category-grid>
+                    {{ range $index, $term := $terms }}
+                        {{- $panelID := printf "category-panel-%d" $index -}}
+                        {{- $visiblePages := where $term.Pages "Params.hidden" "!=" true -}}
+                        <button class="category-switch-card{{ if eq $index 0 }} is-active{{ end }}{{ if ge $index 7 }} is-overflow{{ end }}" type="button" role="tab" aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}" aria-controls="{{ $panelID }}" data-category-button="{{ $panelID }}" data-category-index="{{ $index }}">
+                            <span class="category-switch-title">{{ $term.Page.Title }}</span>
+                            <span class="category-switch-meta">{{ T "taxonomy.postCount" (len $visiblePages) }}</span>
+                            <span class="category-switch-line" aria-hidden="true"></span>
+                        </button>
+                    {{ end }}
+                    <button class="category-expand-button category-switch-card" type="button" data-category-expand data-expand-text="{{ T "taxonomy.expandCategories" }}" data-collapse-text="{{ T "taxonomy.collapseCategories" }}" aria-expanded="false" hidden>
+                        <span class="category-switch-title">{{ T "taxonomy.expandCategories" }}</span>
+                        <span class="category-switch-meta">{{ T "taxonomy.showAllCategories" (len $terms) }}</span>
+                        <span class="category-expand-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </section>
+
+            <div class="category-panels">
+                {{ range $index, $term := $terms }}
+                    {{- $panelID := printf "category-panel-%d" $index -}}
+                    {{- $visiblePages := where $term.Pages "Params.hidden" "!=" true -}}
+                    <section class="category-panel taxonomy-surface{{ if eq $index 0 }} is-active{{ end }}" id="{{ $panelID }}" role="tabpanel" data-category-panel="{{ $panelID }}" data-category-page-size="12"{{ if ne $index 0 }} hidden{{ end }}>
+                        <header class="category-panel-header">
+                            <div>
+                                <p>{{ T "taxonomy.categoryPosts" (len $visiblePages) }}</p>
+                                <h2>{{ $term.Page.Title }}</h2>
+                            </div>
+                            <a href="{{ $term.Page.RelPermalink }}">{{ T "taxonomy.openCategory" }}</a>
+                        </header>
+
+                        <div class="taxonomy-post-list">
+                            {{ range $visiblePages }}
+                                {{ partial "taxonomy/post-card.html" (dict "Page" . "ItemAttrs" "data-category-post") }}
+                            {{ end }}
+                        </div>
+
+                        <nav class="taxonomy-inline-pagination" data-category-pagination aria-label="{{ T "taxonomy.pagination" }}" hidden></nav>
+                    </section>
+                {{ end }}
+            </div>
+        </section>
+        {{ partialCached "footer/footer" . }}
+    {{- else if and (eq .Kind "taxonomy") (eq .Data.Plural "tags") -}}
+        {{- $terms := .Site.Taxonomies.tags.ByCount -}}
+        {{- $groups := slice -}}
+        {{- if eq .Site.Language.Lang "ja" -}}
+            {{- $groups = slice "あ" "か" "さ" "た" "な" "は" "ま" "や" "ら" "わ" "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" "#" -}}
+        {{- else if or (eq .Site.Language.Lang "zh-cn") (eq .Site.Language.Lang "zh-tw") -}}
+            {{- $groups = split "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,#" "," -}}
+        {{- else -}}
+            {{- $groups = split "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,#" "," -}}
+        {{- end -}}
+
+        <section class="taxonomy-page taxonomy-page--tags" data-taxonomy-tags>
+            <header class="taxonomy-hero taxonomy-surface">
+                <p class="taxonomy-eyebrow">{{ T "widget.tagCloud.title" }}</p>
+                <h1>{{ .Title }}</h1>
+                <p class="taxonomy-summary">{{ T "taxonomy.tagsSummary" (len $terms) }}</p>
+            </header>
+
+            <div class="tag-finder taxonomy-surface">
+                <label class="tag-search" for="tag-search-input">
+                    {{ partial "helper/icon" "search" }}
+                    <input id="tag-search-input" type="search" placeholder="{{ T "taxonomy.searchTags" }}" autocomplete="off" data-tag-search>
+                </label>
+
+                <div class="tag-featured">
+                    {{ range first 18 $terms }}
+                        <a class="tag-featured-link" href="{{ .Page.RelPermalink }}" data-tag-item data-tag-name="{{ .Page.Title | lower }}" data-tag-title="{{ .Page.Title }}">
+                            <span>{{ .Page.Title }}</span>
+                            <strong>{{ .Count }}</strong>
+                        </a>
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="tag-index">
+                {{ range $group := $groups }}
+                    <section class="tag-index-group taxonomy-surface" data-tag-group data-tag-group-key="{{ $group }}">
+                        <h2>{{ $group }}</h2>
+                        <div class="tag-index-list"></div>
+                    </section>
+                {{ end }}
+            </div>
+
+            <div class="tag-source" data-tag-source hidden>
+                {{ range $terms }}
+                    <a class="tag-index-link" href="{{ .Page.RelPermalink }}" data-tag-item data-tag-name="{{ .Page.Title | lower }}" data-tag-title="{{ .Page.Title }}">
+                        <span>{{ .Page.Title }}</span>
+                        <strong>{{ .Count }}</strong>
+                    </a>
+                {{ end }}
+            </div>
+
+            <p class="tag-empty-state taxonomy-surface" data-tag-empty hidden>{{ T "taxonomy.noMatchingTags" }}</p>
+        </section>
+        {{ partialCached "footer/footer" . }}
+    {{- else if eq .Kind "term" -}}
+        {{- $pages := where .Pages "Params.hidden" "!=" true -}}
+        {{- $paginator := .Paginate $pages -}}
+        <section class="taxonomy-page taxonomy-page--term">
+            <header class="taxonomy-hero taxonomy-surface">
+                <p class="taxonomy-eyebrow">{{ .Data.Singular | humanize }}</p>
+                <h1>{{ .Title }}</h1>
+                <p class="taxonomy-summary">{{ T "taxonomy.postCount" (len $pages) }}</p>
+            </header>
+
+            <section class="taxonomy-surface taxonomy-term-list">
+                <div class="taxonomy-post-list">
+                    {{ range $paginator.Pages }}
+                        {{ partial "taxonomy/post-card.html" (dict "Page" .) }}
+                    {{ end }}
+                </div>
+            </section>
+
+            {{- partial "pagination.html" . -}}
+        </section>
+        {{ partialCached "footer/footer" . }}
+    {{- else -}}
     <header>
         <h3 class="section-title">
             {{ if eq .Parent (.GetPage "/") }}
@@ -78,6 +211,7 @@
     {{- partial "pagination.html" . -}}
 
     {{ partialCached "footer/footer" . }}
+    {{- end -}}
 {{ end }}
 
 {{ define "right-sidebar" }}

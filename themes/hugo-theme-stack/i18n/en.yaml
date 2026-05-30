@@ -68,6 +68,42 @@ archives:
     nextYear:
         other: Next year
 
+taxonomy:
+    categoriesSummary:
+        other: "{{ .Categories }} categories, {{ .Posts }} posts in total"
+
+    tagsSummary:
+        other: "{{ .Count }} tags, grouped by first character"
+
+    postCount:
+        one: "{{ .Count }} post"
+        other: "{{ .Count }} posts"
+
+    categoryPosts:
+        one: "{{ .Count }} post in"
+        other: "{{ .Count }} posts in"
+
+    openCategory:
+        other: Open category
+
+    expandCategories:
+        other: Show categories
+
+    collapseCategories:
+        other: Hide categories
+
+    showAllCategories:
+        other: "Show all {{ .Count }}"
+
+    pagination:
+        other: Pagination
+
+    searchTags:
+        other: Search tags
+
+    noMatchingTags:
+        other: No matching tags
+
 search:
     title:
         other: Search

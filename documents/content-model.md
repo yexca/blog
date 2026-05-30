@@ -128,6 +128,12 @@ This means category links and tag links are generated slightly differently:
 The home card category badges are styled as glass badges under `.article-list .article-category a`.
 The general category style still exists for other contexts.
 
+The taxonomy list pages are custom:
+
+- `/categories/` is an interactive category switcher
+- `/tags/` is a searchable grouped tag index
+- `/categories/<term>/` and `/tags/<term>/` use the shared taxonomy post-card list
+
 Term pages may define:
 
 ```yaml
@@ -139,6 +145,26 @@ style:
 The current `details.html` still outputs this as inline style.
 Inline style will override normal SCSS.
 Avoid term-level `style` if the design should remain fully glass and color-neutral.
+
+### Tag Grouping
+
+Tag grouping on `/tags/` is language aware and runs in `assets/ts/main.ts`.
+
+Simplified and Traditional Chinese:
+
+- groups are `A-Z` plus `#`
+- Latin tags use their first letter
+- known Chinese characters use a small pinyin-initial map
+- unknown or ambiguous Chinese characters fall back to `#`
+
+Japanese:
+
+- kana tags are grouped into `あ/か/さ/た/な/は/ま/や/ら/わ`
+- Latin tags use individual `A-Z` groups
+- unknown characters, including kanji without a reliable reading, fall back to `#`
+
+This means tag names control their own grouping.
+If a tag appears under `#`, either the first character is not covered by the current map or it has no reliable reading from static text alone.
 
 ## Translations
 

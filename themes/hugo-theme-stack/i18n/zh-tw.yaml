@@ -68,6 +68,40 @@ archives:
     nextYear:
         other: 下一年
 
+taxonomy:
+    categoriesSummary:
+        other: "{{ .Categories }} 個分類，共 {{ .Posts }} 篇文章"
+
+    tagsSummary:
+        other: "{{ .Count }} 個標籤，已按首字分組"
+
+    postCount:
+        other: "{{ .Count }} 篇文章"
+
+    categoryPosts:
+        other: "{{ .Count }} 篇文章收錄於"
+
+    openCategory:
+        other: 打開分類
+
+    expandCategories:
+        other: 展開分類
+
+    collapseCategories:
+        other: 收起分類
+
+    showAllCategories:
+        other: "查看全部 {{ .Count }} 個"
+
+    pagination:
+        other: 分頁
+
+    searchTags:
+        other: 搜尋標籤
+
+    noMatchingTags:
+        other: 沒有符合的標籤
+
 search:
     title:
         other: 搜尋

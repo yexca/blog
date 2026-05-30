@@ -8,7 +8,7 @@ views:
     - '789'
 menu:
     main:
-        weight: 4
+        weight: 6
         params: 
             icon: clock
 

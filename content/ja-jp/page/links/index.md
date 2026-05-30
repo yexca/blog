@@ -5,24 +5,17 @@ date: 2024-12-27T18:20:25+0900
 lastmod: 2026-05-30T00:00:00+0900
 readingTime: false
 linkSections:
-  - title: このブログ
-    description: このブログ内の分類リンク
-    icon: home
-    links:
-      - title: カテゴリー
-        description: 全てのカテゴリー
-        website: /ja/categories
-        icon: categories
-      - title: タグ
-        description: 全てのタグ
-        website: /ja/tags
-        icon: tag
   - title: 自分のサイト
     description: ブログ以外で運営しているサイト
     icon: user
     links:
+      - title: "yexca"
+        description: "個人ホームページ"
+        website: https://yexca.net/
+        image: https://yexca.net/img/profile.png
+        external: true
       - title: "VRChat Docs"
-        description: "ゲーム VRChat のチュートリアルドキュメント (中国語簡体字のみ)"
+        description: "ゲーム VRChat のチュートリアルドキュメント"
         website: https://vrchat.yexca.net/
         image: https://vrchat.yexca.net/favicon.png
         external: true
@@ -32,7 +25,7 @@ linkSections:
         image: https://vrc.yexca.net/assets/img/auther.jpg
         external: true
       - title: "Lit Link"
-        description: 何をしたか
+        description: "Lit Link ホームページ"
         website: https://lit.link/yexca
         icon: link
         external: true
@@ -52,7 +45,7 @@ linkSections:
         external: true
 menu:
     main: 
-        weight: 5
+        weight: 7
         params:
             icon: link
 

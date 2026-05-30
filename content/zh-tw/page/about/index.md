@@ -12,7 +12,7 @@ aliases:
 comments: false
 menu:
     main: 
-        weight: 6
+        weight: 8
         params:
             icon: user
 ---

@@ -63,6 +63,7 @@ The global list currently includes:
 - tile article cards
 - sidebar panels
 - section cards
+- taxonomy surfaces
 - main articles
 - table of contents widget
 - archive widgets
@@ -83,6 +84,14 @@ backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
 box-shadow: var(--shadow-l1);
 border-radius: var(--card-border-radius);
 ```
+
+For nested taxonomy UI, keep the visual hierarchy explicit:
+
+- outer surfaces use `var(--card-background)`
+- inner cards, buttons, tag links, and pagination buttons use `rgba(255, 255, 255, 0)`
+- hover/active state should use border, transform, and shadow before adding another filled background
+
+This keeps the glass effect from becoming stacked and muddy.
 
 ## Home Article Cards Are Fully Clickable
 
@@ -246,6 +255,62 @@ Selectors:
 ```
 
 The timeline filters out hidden posts.
+
+## Taxonomy Pages
+
+Files:
+
+```text
+themes/hugo-theme-stack/layouts/_default/list.html
+themes/hugo-theme-stack/layouts/partials/taxonomy/post-card.html
+themes/hugo-theme-stack/assets/scss/partials/layout/list.scss
+themes/hugo-theme-stack/assets/ts/main.ts
+themes/hugo-theme-stack/i18n/*.yaml
+```
+
+The category and tag list pages are custom project-specific pages now.
+They should not be treated as upstream Stack-compatible surfaces.
+
+Category page behavior:
+
+- category cards are rendered in a responsive grid
+- if the site has eight or fewer categories, all categories are shown
+- if the site has nine or more categories, the first seven categories are shown and the eighth grid slot becomes the expand card
+- the selected category panel shows post cards below the switcher
+- category panel pagination is client-side, currently 12 posts per page
+- category cards do not show raw URLs
+
+Tag page behavior:
+
+- top area contains search plus frequent tags
+- tags are rendered into a hidden source container and distributed to groups by `setupTaxonomyPages()`
+- Chinese pages group by pinyin initial when known, with unknown characters under `#`
+- Japanese pages group kana into gojūon rows and Latin tags into individual `A-Z` groups
+- search filters both frequent tags and grouped tags
+
+The shared taxonomy post card is fully clickable:
+
+- `.taxonomy-post-card-link` covers the card
+- real links in `.taxonomy-post-body` and `.taxonomy-post-tags` sit above it
+- clicking empty card space opens the article
+- clicking a tag opens the tag page
+
+Important selectors:
+
+```scss
+.taxonomy-page
+.taxonomy-surface
+.category-card-grid
+.category-switch-card
+.category-expand-button
+.category-panel
+.taxonomy-post-card
+.taxonomy-post-card-link
+.taxonomy-inline-pagination
+.tag-finder
+.tag-index-group
+.tag-index-link
+```
 
 ## Links Page Cards
 

@@ -27,7 +27,7 @@ The main layout depends on the page kind:
 
 - Home page: `layouts/index.html`
 - Single article: `layouts/_default/single.html`
-- Section or taxonomy list: `layouts/_default/list.html`
+- Section, taxonomy list, or taxonomy term page: `layouts/_default/list.html`
 - Archives page: `layouts/_default/archives.html`
 - Search page: `layouts/page/search.html` and `layouts/page/search.json`
 
@@ -105,6 +105,45 @@ Key selectors:
 - `.article-details a`
 - `.article-image a`
 - `.article-category a`
+
+## Taxonomy Pages
+
+The category, tag, category term, and tag term pages are handled in:
+
+```text
+themes/hugo-theme-stack/layouts/_default/list.html
+themes/hugo-theme-stack/layouts/partials/taxonomy/post-card.html
+themes/hugo-theme-stack/assets/scss/partials/layout/list.scss
+themes/hugo-theme-stack/assets/ts/main.ts
+```
+
+The taxonomy list pages no longer use the original Stack compact list design.
+
+Category taxonomy page (`/categories/`):
+
+- renders category switch cards above the article area
+- selects the first category by default
+- shows the first seven category cards when there are nine or more categories
+- replaces the eighth grid position with an expand/collapse card
+- renders the selected category's posts below the switcher
+- paginates the selected category client-side at 12 posts per page
+
+Tag taxonomy page (`/tags/`):
+
+- renders a search field and frequent tags
+- renders tag groups by language
+- Simplified and Traditional Chinese use `A-Z` plus `#`
+- Japanese uses `あ/か/さ/た/な/は/ま/や/ら/わ`, `A-Z`, and `#`
+- English and other languages use `A-Z` plus `#`
+
+Taxonomy term pages (`/categories/<term>/` and `/tags/<term>/`) use the shared taxonomy post-card partial and Hugo pagination.
+They intentionally avoid the upstream Stack compact list.
+
+`partials/taxonomy/post-card.html` provides a reusable full-card-clickable post card.
+The invisible full-card link sits behind real links, so clicking empty card space opens the post while tag links remain clickable.
+
+Client-side behavior is initialized by `setupTaxonomyPages()` in `assets/ts/main.ts`.
+Because soft navigation calls `window.Stack.init()`, taxonomy interactions are reattached after same-origin page transitions.
 
 ## Article Header and Details
 

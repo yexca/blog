@@ -65,6 +65,40 @@ archives:
     nextYear:
         other: 次の年
 
+taxonomy:
+    categoriesSummary:
+        other: "{{ .Categories }} 個のカテゴリ、合計 {{ .Posts }} 件の記事"
+
+    tagsSummary:
+        other: "{{ .Count }} 個のタグを頭文字で整理しています"
+
+    postCount:
+        other: "{{ .Count }} 件の記事"
+
+    categoryPosts:
+        other: "{{ .Count }} 件の記事"
+
+    openCategory:
+        other: カテゴリを開く
+
+    expandCategories:
+        other: カテゴリを展開
+
+    collapseCategories:
+        other: カテゴリを閉じる
+
+    showAllCategories:
+        other: "全 {{ .Count }} 件を見る"
+
+    pagination:
+        other: ページ送り
+
+    searchTags:
+        other: タグを検索
+
+    noMatchingTags:
+        other: 一致するタグがありません
+
 search:
     title:
         other: 検索

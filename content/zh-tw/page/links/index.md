@@ -5,24 +5,17 @@ date: 2024-12-27T18:20:25+0900
 lastmod: 2026-05-30T00:00:00+0900
 readingTime: false
 linkSections:
-  - title: 目前部落格
-    description: 這個部落格裡的分類入口
-    icon: home
-    links:
-      - title: 類別
-        description: 所有的類別
-        website: /zh-tw/categories
-        icon: categories
-      - title: 標籤
-        description: 所有的標籤
-        website: /zh-tw/tags
-        icon: tag
   - title: 我的網站
     description: 我在部落格之外維護的站點
     icon: user
     links:
+      - title: "yexca"
+        description: "我的個人主頁"
+        website: https://yexca.net/
+        image: https://yexca.net/img/profile.png
+        external: true
       - title: "VRChat Docs"
-        description: "對於遊戲 VRChat 所寫的教學文檔 (只有簡體字)"
+        description: "對於遊戲 VRChat 所寫的教學文檔"
         website: https://vrchat.yexca.net/
         image: https://vrchat.yexca.net/favicon.png
         external: true
@@ -32,7 +25,7 @@ linkSections:
         image: https://vrc.yexca.net/assets/img/auther.jpg
         external: true
       - title: "Lit Link"
-        description: 我做了什麼
+        description: "Lit Link 主頁"
         website: https://lit.link/yexca
         icon: link
         external: true
@@ -52,7 +45,7 @@ linkSections:
         external: true
 menu:
     main: 
-        weight: 5
+        weight: 7
         params:
             icon: link
 

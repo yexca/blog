@@ -1,0 +1,51 @@
+{{- $page := .Page -}}
+<article class="taxonomy-post-card"{{ with .ItemAttrs }} {{ . | safeHTMLAttr }}{{ end }}>
+    <a class="taxonomy-post-card-link" href="{{ $page.RelPermalink }}" aria-hidden="true" tabindex="-1"></a>
+
+    {{- $image := partialCached "helper/image" (dict "Context" $page "Type" "articleList") $page.RelPermalink "articleList" -}}
+    {{ if $image.exists }}
+        <div class="taxonomy-post-image">
+            {{ if $image.resource }}
+                {{- $Permalink := $image.resource.RelPermalink -}}
+                {{- $Width := $image.resource.Width -}}
+                {{- $Height := $image.resource.Height -}}
+
+                {{- if (default true $page.Page.Site.Params.imageProcessing.cover.enabled) -}}
+                    {{- $thumbnail := $image.resource.Fill "180x120" -}}
+                    {{- $Permalink = $thumbnail.RelPermalink -}}
+                    {{- $Width = $thumbnail.Width -}}
+                    {{- $Height = $thumbnail.Height -}}
+                {{- end -}}
+
+                <img src="{{ $Permalink }}" width="{{ $Width }}" height="{{ $Height }}" alt="{{ $page.Title }}" loading="lazy">
+            {{ else }}
+                <img src="{{ $image.permalink }}" alt="{{ $page.Title }}" loading="lazy">
+            {{ end }}
+        </div>
+    {{ end }}
+
+    <div class="taxonomy-post-body">
+        <div class="taxonomy-post-meta">
+            {{ if not $page.Date.IsZero }}
+                <time datetime='{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}'>{{ $page.Date | time.Format (or $page.Site.Params.dateFormat.published "Jan 02, 2006") }}</time>
+            {{ end }}
+            {{ if ($page.Params.readingTime | default ($page.Site.Params.article.readingTime)) }}
+                <span>{{ T "article.readingTime" $page.ReadingTime }}</span>
+            {{ end }}
+        </div>
+
+        <h3><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+
+        {{ with $page.Params.description }}
+            <p>{{ . }}</p>
+        {{ end }}
+
+        {{ with $page.GetTerms "tags" }}
+            <footer class="taxonomy-post-tags">
+                {{ range first 4 . }}
+                    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{ end }}
+            </footer>
+        {{ end }}
+    </div>
+</article>

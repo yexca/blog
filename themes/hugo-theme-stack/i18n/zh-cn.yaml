@@ -62,6 +62,40 @@ archives:
     nextYear:
         other: 下一年
 
+taxonomy:
+    categoriesSummary:
+        other: "{{ .Categories }} 个分类，共 {{ .Posts }} 篇文章"
+
+    tagsSummary:
+        other: "{{ .Count }} 个标签，已按首字符分组"
+
+    postCount:
+        other: "{{ .Count }} 篇文章"
+
+    categoryPosts:
+        other: "{{ .Count }} 篇文章收录于"
+
+    openCategory:
+        other: 打开分类
+
+    expandCategories:
+        other: 展开分类
+
+    collapseCategories:
+        other: 收起分类
+
+    showAllCategories:
+        other: "查看全部 {{ .Count }} 个"
+
+    pagination:
+        other: 分页
+
+    searchTags:
+        other: 搜索标签
+
+    noMatchingTags:
+        other: 没有匹配的标签
+
 search:
     title:
         other: 搜索
