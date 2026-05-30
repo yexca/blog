@@ -90,3 +90,19 @@ footer:
 
     modifiedBy:
         other: 修改自 {{ .ModifiedBy }}
+
+github:
+    loading:
+        other: 加载中...
+
+    missingRepo:
+        other: 缺少 Repository 名称
+
+    noDescription:
+        other: 暂无简介
+
+    notFound:
+        other: 找不到该 Repo
+
+    failed:
+        other: 获取 Repo 信息失败

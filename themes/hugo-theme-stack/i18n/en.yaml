@@ -96,3 +96,19 @@ footer:
 
     modifiedBy:
         other: Modified by {{ .ModifiedBy }}
+
+github:
+    loading:
+        other: Loading...
+
+    missingRepo:
+        other: Missing repository name
+
+    noDescription:
+        other: No description
+
+    notFound:
+        other: Repository not found
+
+    failed:
+        other: Failed to get repository information

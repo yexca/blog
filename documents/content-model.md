@@ -213,6 +213,7 @@ Important customized shortcodes:
 - `notice.html`
 - `details.html`
 - `timeline.html`
+- `github.html`
 - media embeds such as `bilibili.html`, `youtube.html`, `netease.html`, `video.html`
 
 ### Notice
@@ -267,6 +268,24 @@ The shortcode reads JSON using `readFile` and expects each item to contain:
 ```
 
 `content` is rendered with `safeHTML`, so only trusted JSON should be used.
+
+### GitHub
+
+Argon-style GitHub repository card.
+
+Usage:
+
+```markdown
+{{< github repo="owner/repo" >}}
+{{< github repo="owner/repo" size="mini" >}}
+{{< github author="owner" project="repo" >}}
+```
+
+The card fetches repository description, stars, forks, and homepage in the browser from the GitHub API.
+If the repository has no description, the card shows a localized fallback message from `themes/hugo-theme-stack/i18n/*.yaml`.
+If the repository has no homepage, the homepage row is hidden.
+The `mini` size always hides the homepage row to keep the compact card readable.
+The card background is transparent (`rgba(..., 0)`) and the text colors follow Stack light/dark theme variables.
 
 ## Possible AI Summary Extension
 

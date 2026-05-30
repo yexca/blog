@@ -26,7 +26,7 @@ tags:
 
 YouTubeから音源を取得する方法についてだけど、`yt-dlp` を使ってダウンロードできる。ただ、ここから取得する音源は有劣化フォーマットからの変換になるから、本物の無劣化音源ではないよ。
 
-Github: [yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)
+{{< github repo="yt-dlp/yt-dlp" >}}
 
 最高音質のYouTube動画から音声をダウンロードするコマンド：
 

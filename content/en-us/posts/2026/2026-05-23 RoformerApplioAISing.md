@@ -26,7 +26,7 @@ This guide uses Applio (based on the RVC architecture). You'll need about 10 to 
 
 You can use `yt-dlp` to download audio from YouTube. Note that this is converted from lossy formats, so it's not true lossless audio.
 
-GitHub: [yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)
+{{< github repo="yt-dlp/yt-dlp" >}}
 
 Download YouTube audio in the highest quality:
 

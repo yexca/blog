@@ -96,3 +96,19 @@ footer:
 
     modifiedBy:
         other: 修改自 {{ .ModifiedBy }}
+
+github:
+    loading:
+        other: 載入中...
+
+    missingRepo:
+        other: 缺少 Repository 名稱
+
+    noDescription:
+        other: 暫無簡介
+
+    notFound:
+        other: 找不到該 Repo
+
+    failed:
+        other: 取得 Repo 資訊失敗

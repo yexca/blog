@@ -24,7 +24,7 @@ tags:
 
 关于从 Youtube 获取音频，可以使用 `yt-dlp` 下载，这里获取的也是从有损格式转换，并不是真无损音乐
 
-Github: [yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)
+{{< github repo="yt-dlp/yt-dlp" >}}
 
 下载最高音质的 YouTube 视频的音频
 
