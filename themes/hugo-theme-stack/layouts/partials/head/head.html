@@ -1,5 +1,8 @@
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+{{- if and .IsHome (eq .Site.Language.Lang "zh-cn") -}}
+    {{- partial "head/language-redirect.html" . -}}
+{{- end -}}
 
 {{- $description := partialCached "data/description" . .RelPermalink -}}
 <meta name='description' {{ printf "content=%q" $description | safeHTMLAttr }}>

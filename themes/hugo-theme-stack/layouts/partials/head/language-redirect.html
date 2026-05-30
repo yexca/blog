@@ -1,0 +1,55 @@
+<script>
+(function () {
+    var normalizePath = function (path) {
+        var normalized = path.replace(/\/+$/, '');
+        return normalized ? normalized + '/' : '/';
+    };
+
+    var rootPath = normalizePath(new URL('{{ "/" | relURL }}', window.location.origin).pathname);
+    var currentPath = normalizePath(window.location.pathname);
+    if (currentPath !== rootPath) return;
+
+    try {
+        var referrer = document.referrer ? new URL(document.referrer) : null;
+        if (referrer && referrer.origin === window.location.origin) return;
+    }
+    catch (_) {}
+
+    var storageKey = 'stack-language-redirect-done';
+    try {
+        if (window.sessionStorage.getItem(storageKey) === 'true') return;
+        window.sessionStorage.setItem(storageKey, 'true');
+    }
+    catch (_) {}
+
+    var languages = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || ''];
+    var getLanguageKey = function (language) {
+        language = (language || '').toLowerCase().replace(/_/g, '-');
+        if (language === 'ja' || language.indexOf('ja-') === 0) return 'ja';
+        if (language === 'en' || language.indexOf('en-') === 0) return 'en';
+        if (language === 'zh' || language.indexOf('zh-hans') === 0) return 'zh-cn';
+        if (language.indexOf('zh-hant') === 0) return 'zh-tw';
+        if (language === 'zh-cn' || language === 'zh-sg' || language === 'zh-my') return 'zh-cn';
+        if (language === 'zh-tw' || language === 'zh-hk' || language === 'zh-mo') return 'zh-tw';
+        if (language.indexOf('zh-') === 0) return 'zh-cn';
+        return '';
+    };
+
+    var languagePaths = {
+        'zh-cn': '{{ "/" | relURL }}',
+        'zh-tw': '{{ "/zh-tw/" | relURL }}',
+        en: '{{ "/en/" | relURL }}',
+        ja: '{{ "/ja/" | relURL }}'
+    };
+    var languageKey = languages.map(getLanguageKey).find(function (key) { return key; }) || 'en';
+    var targetPath = languagePaths[languageKey] || languagePaths.en;
+    var targetURL = new URL(targetPath, window.location.origin);
+    targetURL.search = window.location.search;
+    targetURL.hash = window.location.hash;
+
+    if (targetURL.href === window.location.href) return;
+    window.location.replace(targetURL.href);
+})();
+</script>
