@@ -22,6 +22,18 @@ languages:
       description: "yexca 的技术与生活博客，记录编程学习与生活随想。"
       sidebar:
         subtitle: 把这个不美好的世界，编程您所期望的样子吧！
+    menus:
+      main:
+        - name: 分类
+          url: /categories/
+          weight: 2
+          params:
+            icon: categories
+        - name: 标签
+          url: /tags/
+          weight: 3
+          params:
+            icon: tag
   zh-tw:
     contentDir: 'content/zh-tw'
     disabled: false
@@ -34,6 +46,18 @@ languages:
       description: "yexca 的技術與生活部落格，紀錄程式學習與日常隨筆。"
       sidebar:
         subtitle: 把這個不美好的世界，編程您所期望的樣子吧！
+    menus:
+      main:
+        - name: 類別
+          url: /zh-tw/categories/
+          weight: 2
+          params:
+            icon: categories
+        - name: 標籤
+          url: /zh-tw/tags/
+          weight: 3
+          params:
+            icon: tag
   en:
     contentDir: 'content/en-us'
     disabled: false
@@ -46,6 +70,18 @@ languages:
       description: "yexca's tech and life blog, writing about coding, projects, and daily thoughts."
       sidebar:
         subtitle: "Tech Otakus Change The World"
+    menus:
+      main:
+        - name: Categories
+          url: /en/categories/
+          weight: 2
+          params:
+            icon: categories
+        - name: Tags
+          url: /en/tags/
+          weight: 3
+          params:
+            icon: tag
   ja:
     contentDir: 'content/ja-jp'
     disabled: false
@@ -58,6 +94,18 @@ languages:
       description: "yexca の技術と生活のブログ。プログラミングや日常の記録を掲載。"
       sidebar:
         subtitle: "この世で道が尽きることはなく、行きたいと望む心があれば、道は必ず足元に広がる"
+    menus:
+      main:
+        - name: カテゴリー
+          url: /ja/categories/
+          weight: 2
+          params:
+            icon: categories
+        - name: タグ
+          url: /ja/tags/
+          weight: 3
+          params:
+            icon: tag
 
 pagination:
     pagerSize: 10
