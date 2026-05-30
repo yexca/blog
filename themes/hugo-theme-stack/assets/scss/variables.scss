@@ -153,8 +153,15 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
     --link-background-opacity: 0.5;
     --link-background-opacity-hover: 0.7;
 
-    --pre-background-color: rgba(39, 40, 34, 0.9);
-    --pre-text-color: #f8f8f2;
+    --pre-background-color: rgba(255, 255, 255, 0);
+    --pre-focus-background-color: rgba(255, 255, 255, 0.72);
+    --pre-text-color: #383a42;
+    --pre-border-color: rgba(255, 255, 255, 0.45);
+    --pre-header-border-color: rgba(0, 0, 0, 0.06);
+    --pre-line-number-color: rgba(56, 58, 66, 0.42);
+    --pre-line-highlight-color: rgba(94, 114, 228, 0.1);
+    --pre-selection-color: rgba(94, 114, 228, 0.18);
+    --pre-box-shadow: 0 15px 35px rgba(31, 35, 40, 0.12);
 
     --code-background-color: rgba(0, 0, 0, 0.1);
     --code-text-color: #808080;
@@ -167,6 +174,15 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
     &[data-scheme="dark"] {
         --code-background-color: rgba(0, 0, 0, 0.32);
         --code-text-color: rgba(255, 255, 255, 0.9);
+        --pre-background-color: rgba(30, 34, 42, 0);
+        --pre-focus-background-color: rgba(30, 34, 42, 0.82);
+        --pre-text-color: #abb2bf;
+        --pre-border-color: rgba(255, 255, 255, 0.12);
+        --pre-header-border-color: rgba(255, 255, 255, 0.08);
+        --pre-line-number-color: rgba(171, 178, 191, 0.36);
+        --pre-line-highlight-color: rgba(97, 174, 238, 0.12);
+        --pre-selection-color: rgba(97, 174, 238, 0.22);
+        --pre-box-shadow: 0 18px 40px rgba(0, 0, 0, 0.26);
 
         --table-border-color: #717171;
         --tr-even-background-color: rgba(255, 255, 255, 0.06);
@@ -188,14 +204,10 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 }
 
 [data-scheme="light"] {
-    --pre-text-color: #272822;
-    --pre-background-color: rgba(250, 250, 250, 0.86);
     @import "partials/highlight/light.scss";
 }
 
 [data-scheme="dark"] {
-    --pre-text-color: #f8f8f2;
-    --pre-background-color: rgba(39, 40, 34, 0.88);
     @import "partials/highlight/dark.scss";
 }
 

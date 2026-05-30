@@ -81,6 +81,7 @@ After changing templates or SCSS:
 5. Check a category page or tag page if taxonomy links changed.
 6. Check the archive page if article list, card, or timeline styles changed.
 7. Check at least one translated article if language links or URL generation changed.
+8. If code block styles or scripts changed, check copy, line wrap, collapse, and window mode in both light and dark modes.
 
 ## Common Commands
 

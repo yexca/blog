@@ -1,14 +1,23 @@
 /*
-*   Style: monokai
-*   https://xyproto.github.io/splash/docs/monokai.html
+*   Argon-inspired dark code theme.
+*   Palette adapted from Atom One Dark highlight.js styles bundled with Argon.
 */
 
-$color: #f8f8f2;
-$background-color: #272822;
-$error-color: #bb0064;
-$keyword-color: #66d9ef;
-$text-color: $color;
-$name-color: #a6e22e;
-$literal-color: #e6db74;
+$color: #abb2bf;
+$background-color: transparent;
+$error-color: #be5046;
+$keyword-color: #c678dd;
+$text-color: #abb2bf;
+$name-color: #61aeee;
+$literal-color: #98c379;
+$number-color: #d19a66;
+$operator-color: #c678dd;
+$punctuation-color: #abb2bf;
+$comment-color: #5c6370;
+$tag-color: #e06c75;
+$attribute-color: #d19a66;
+$builtin-color: #e6c07b;
+$line-highlight-color: var(--pre-line-highlight-color);
+$line-number-color: var(--pre-line-number-color);
 
 @import "common.scss";

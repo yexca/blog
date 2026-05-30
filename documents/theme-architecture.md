@@ -147,6 +147,23 @@ That article partial renders:
 
 `content.html` wraps Markdown tables in `.table-wrapper`.
 
+Code blocks are rendered by Hugo/Chroma during Markdown rendering.
+The visual shell and syntax palette live in:
+
+```text
+themes/hugo-theme-stack/assets/scss/partials/layout/article.scss
+themes/hugo-theme-stack/assets/scss/partials/highlight
+```
+
+The macOS-style code block controls are attached on page load by:
+
+```text
+themes/hugo-theme-stack/assets/ts/main.ts
+```
+
+Those controls add language labels, copy, line wrapping, collapse, and a draggable/resizable window mode.
+Window mode uses a temporary body-level `.codeBlockPortal` so the enlarged code block stays centered in the viewport instead of being constrained by article layout containers.
+
 ## Sidebars
 
 Left sidebar:
