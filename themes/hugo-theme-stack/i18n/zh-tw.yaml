@@ -55,6 +55,19 @@ widget:
         title:
             other: 分類
 
+archives:
+    future:
+        other: 未來
+
+    past:
+        other: 過去
+
+    previousYear:
+        other: 上一年
+
+    nextYear:
+        other: 下一年
+
 search:
     title:
         other: 搜尋

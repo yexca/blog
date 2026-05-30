@@ -55,6 +55,19 @@ widget:
         title:
             other: Categories
 
+archives:
+    future:
+        other: Future
+
+    past:
+        other: Past
+
+    previousYear:
+        other: Previous year
+
+    nextYear:
+        other: Next year
+
 search:
     title:
         other: Search

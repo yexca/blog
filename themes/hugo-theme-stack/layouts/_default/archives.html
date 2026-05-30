@@ -4,49 +4,280 @@
     {{/*  <header class="post-header text-center">
         <a class="post-title" href="{{ .RelPermalink }}">归档</a>
     </header>  */}}
-    <header>
-        {{- $taxonomy := $.Site.GetPage "taxonomyTerm" "categories" -}}
-        {{- $terms := $taxonomy.Pages -}}
-        {{ if $terms }}
-        <h2 class="section-title">{{ $taxonomy.Title }}</h2>
-        <div class="subsection-list">
-            <div class="article-list--tile">
-                {{ range $terms }}
-                    {{ partial "article-list/tile" (dict "context" . "size" "250x150" "Type" "taxonomy") }}
-                {{ end }}
-            </div>
-        </div>
+    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+    {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
+    {{ $filtered := ($pages | intersect $notHidden) }}
+    {{ $archives := $filtered.GroupByDate "2006" }}
+    {{ $currentYear := int (now.Format "2006") }}
+    {{ $latestYear := $currentYear }}
+    {{ $earliestYear := $currentYear }}
+    {{ range $archives }}
+        {{ $yearInt := int .Key }}
+        {{ if gt $yearInt $latestYear }}
+            {{ $latestYear = $yearInt }}
         {{ end }}
+        {{ if lt $yearInt $earliestYear }}
+            {{ $earliestYear = $yearInt }}
+        {{ end }}
+    {{ end }}
+
+    <header class="archive-year-header">
+        <div class="archive-year-stage" data-archive-stage>
+            <button class="archive-year-control archive-year-control-newer" type="button" data-archive-step="newer" aria-label="{{ T "archives.nextYear" }}">
+                {{ partial "helper/icon" "back" }}
+            </button>
+            <div class="archive-year-rail" data-archive-rail>
+                <div class="archive-year-line" aria-hidden="true"></div>
+                <nav class="archive-year-track" data-archive-track aria-label="Archives by year">
+                    {{ range seq $latestYear -1 $earliestYear }}
+                        {{ $year := printf "%d" . }}
+                        {{ $yearPages := slice }}
+                        {{ range $archives }}
+                            {{ if eq .Key $year }}
+                                {{ $yearPages = .Pages }}
+                            {{ end }}
+                        {{ end }}
+                        <a class="archive-year-link{{ if eq . $currentYear }} is-active{{ end }}" href="#{{ $year }}" data-archive-year="{{ $year }}"{{ if eq . $currentYear }} aria-current="page"{{ end }}>
+                            <span class="archive-year-text">{{ $year }}</span>
+                            <span class="archive-year-dot">
+                                <span class="archive-year-count">{{ len $yearPages }}</span>
+                            </span>
+                        </a>
+                    {{ end }}
+                </nav>
+            </div>
+            <button class="archive-year-control archive-year-control-older" type="button" data-archive-step="older" aria-label="{{ T "archives.previousYear" }}">
+                {{ partial "helper/icon" "back" }}
+            </button>
+        </div>
     </header>
 
-    <div class="post-content" id="post_content">
-        <div class='argon-timeline'>
-            {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-            {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
-            {{ $filtered := ($pages | intersect $notHidden) }}
-
-            {{/* 按年份分组 */}}
-            {{ range $filtered.GroupByDate "2006" }}
-                {{ $year := .Key }}
-                <div class='argon-timeline-node node-year' id="{{ $year }}">
-                    <div class='argon-timeline-time archive-timeline-year'>
-                        <a href="#{{ $year }}">{{ $year }}</a>
-                    </div>
-                    <div class='argon-timeline-card card bg-gradient-secondary archive-timeline-title'></div>
-                </div>
-
-                {{ range .Pages }}
-                <div class='argon-timeline-node node-post'>
-                    <div class='argon-timeline-time'>{{ .Date.Format "06-01-02" }}</div>
-                    <div class='argon-timeline-card card bg-gradient-secondary archive-timeline-title'>
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    </div>
-                </div>
+    <div class="post-content archive-year-content" id="post_content" data-default-year="{{ $currentYear }}">
+        {{ range seq $latestYear -1 $earliestYear }}
+            {{ $year := printf "%d" . }}
+            {{ $yearPages := slice }}
+            {{ range $archives }}
+                {{ if eq .Key $year }}
+                    {{ $yearPages = .Pages }}
                 {{ end }}
             {{ end }}
-        </div>
+
+            <section class="archive-year-panel" data-archive-panel="{{ $year }}" aria-labelledby="archive-year-title-{{ $year }}"{{ if ne . $currentYear }} hidden{{ end }}>
+                <h2 class="archive-panel-title" id="archive-year-title-{{ $year }}">{{ $year }}</h2>
+                <div class='argon-timeline archive-post-timeline'>
+                    {{ if $yearPages }}
+                        {{ $previousMonth := "" }}
+                        {{ range $index, $page := $yearPages }}
+                        {{ $month := $page.Date.Format "2006-01" }}
+                        <div class='argon-timeline-node node-post{{ if or (eq $index 0) (ne $month $previousMonth) }} node-month-start{{ end }}'>
+                            <div class='argon-timeline-time'>{{ .Date.Format "06-01-02" }}</div>
+                            <div class='argon-timeline-card card bg-gradient-secondary archive-timeline-title'>
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </div>
+                        </div>
+                        {{ $previousMonth = $month }}
+                        {{ end }}
+                    {{ else }}
+                        <div class='argon-timeline-node node-post node-empty node-month-start'>
+                            <div class='argon-timeline-time'>{{ $year }}</div>
+                            <div class='argon-timeline-card card bg-gradient-secondary archive-timeline-title archive-empty-card'>
+                                此年没有创造呢
+                            </div>
+                        </div>
+                    {{ end }}
+                </div>
+            </section>
+        {{ end }}
     </div>
 </article>
+
+<script>
+    (function () {
+        const archiveContent = document.querySelector('.archive-year-content');
+        if (!archiveContent) return;
+
+        const defaultYear = archiveContent.dataset.defaultYear;
+        const stage = document.querySelector('[data-archive-stage]');
+        const rail = document.querySelector('[data-archive-rail]');
+        const track = document.querySelector('[data-archive-track]');
+        const panels = Array.from(document.querySelectorAll('[data-archive-panel]'));
+        const links = Array.from(document.querySelectorAll('[data-archive-year]'));
+        const stepButtons = Array.from(document.querySelectorAll('[data-archive-step]'));
+        const years = panels.map((panel) => panel.dataset.archivePanel);
+        let activeYear = null;
+        let animationTimer = null;
+
+        function getTargetYear() {
+            const hashYear = decodeURIComponent(window.location.hash.replace('#', ''));
+            return years.includes(hashYear) ? hashYear : defaultYear;
+        }
+
+        function getExpandX() {
+            if (!stage || !rail) return 100;
+            const stageRect = stage.getBoundingClientRect();
+            const railRect = rail.getBoundingClientRect();
+            const railOffset = railRect.left - stageRect.left;
+            const railTarget = Math.min(Math.max(railRect.width * 0.2, 120), 180);
+            return Math.round(railOffset + railTarget);
+        }
+
+        function moveTrack(year) {
+            if (!stage || !rail || !track) return;
+            const expandX = getExpandX();
+            stage.style.setProperty('--archive-line-left', `${expandX}px`);
+            archiveContent.style.setProperty('--archive-line-left', `${expandX}px`);
+
+            const link = links.find((item) => item.dataset.archiveYear === year);
+            if (!link) return;
+
+            const dot = link.querySelector('.archive-year-dot');
+            const currentCenter = getStaticCenter(dot || link, stage);
+            const nextTransform = expandX - currentCenter;
+
+            track.style.transform = `translate3d(${nextTransform}px, 0, 0)`;
+            track.dataset.archiveOffset = nextTransform;
+        }
+
+        function getStaticCenter(element, ancestor) {
+            let center = element.offsetWidth / 2;
+            let node = element;
+
+            while (node && node !== ancestor) {
+                center += node.offsetLeft;
+                node = node.offsetParent;
+            }
+
+            if (node === ancestor) return center;
+
+            const elementRect = element.getBoundingClientRect();
+            const ancestorRect = ancestor.getBoundingClientRect();
+            const transform = Number.parseFloat(track.dataset.archiveOffset || '0');
+            return elementRect.left - ancestorRect.left - transform + elementRect.width / 2;
+        }
+
+        function updateControls(year) {
+            const index = years.indexOf(year);
+            stepButtons.forEach((button) => {
+                const direction = button.dataset.archiveStep;
+                const targetIndex = direction === 'newer' ? index - 1 : index + 1;
+                button.disabled = targetIndex < 0 || targetIndex >= years.length;
+            });
+        }
+
+        function setActiveLink(year) {
+            links.forEach((link) => {
+                const isActive = link.dataset.archiveYear === year;
+                link.classList.toggle('is-active', isActive);
+                if (isActive) {
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        }
+
+        function openPanel(panel, animate) {
+            panel.hidden = false;
+            panel.classList.add('is-active');
+
+            if (!animate) {
+                panel.style.maxHeight = '';
+                panel.style.opacity = '';
+                return;
+            }
+
+            panel.style.maxHeight = '0px';
+            panel.style.opacity = '0';
+            requestAnimationFrame(() => {
+                panel.style.maxHeight = `${panel.scrollHeight}px`;
+                panel.style.opacity = '1';
+            });
+
+            animationTimer = window.setTimeout(() => {
+                panel.style.maxHeight = '';
+            }, 460);
+        }
+
+        function closePanel(panel, done) {
+            panel.style.maxHeight = `${panel.scrollHeight}px`;
+            panel.style.opacity = '1';
+            panel.classList.remove('is-active');
+
+            requestAnimationFrame(() => {
+                panel.style.maxHeight = '0px';
+                panel.style.opacity = '0';
+            });
+
+            animationTimer = window.setTimeout(() => {
+                panel.hidden = true;
+                done();
+            }, 280);
+        }
+
+        function showYear(year, animate) {
+            if (!years.includes(year)) year = defaultYear;
+            if (activeYear === year) {
+                moveTrack(year);
+                setActiveLink(year);
+                return;
+            }
+
+            window.clearTimeout(animationTimer);
+            const previousPanel = panels.find((panel) => panel.dataset.archivePanel === activeYear);
+            const nextPanel = panels.find((panel) => panel.dataset.archivePanel === year);
+            if (!nextPanel) return;
+
+            activeYear = year;
+            setActiveLink(year);
+            updateControls(year);
+
+            const reveal = () => {
+                moveTrack(year);
+                window.setTimeout(() => openPanel(nextPanel, animate), animate ? 260 : 0);
+            };
+
+            if (previousPanel && animate) {
+                closePanel(previousPanel, reveal);
+            } else {
+                panels.forEach((panel) => {
+                    panel.hidden = panel !== nextPanel;
+                    panel.classList.toggle('is-active', panel === nextPanel);
+                    panel.style.maxHeight = '';
+                    panel.style.opacity = '';
+                });
+                reveal();
+            }
+        }
+
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const year = link.dataset.archiveYear;
+                navigateToYear(year);
+            });
+        });
+
+        stepButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const index = years.indexOf(activeYear || getTargetYear());
+                const targetIndex = button.dataset.archiveStep === 'newer' ? index - 1 : index + 1;
+                const targetYear = years[targetIndex];
+                if (targetYear) navigateToYear(targetYear);
+            });
+        });
+
+        function navigateToYear(year) {
+            if (window.location.hash !== `#${year}`) {
+                history.pushState(null, '', `#${year}`);
+            }
+            showYear(year, true);
+        }
+
+        showYear(getTargetYear(), false);
+        window.addEventListener('hashchange', () => showYear(getTargetYear(), true));
+        window.addEventListener('resize', () => moveTrack(activeYear || getTargetYear()));
+    })();
+</script>
 
 {{ partialCached "footer/footer" . }}
 {{ end }}

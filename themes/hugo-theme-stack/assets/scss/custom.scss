@@ -57,10 +57,178 @@
 // }
 
 // archive page
+.archive-year-header {
+    margin-bottom: 0;
+}
+
+.archive-year-stage {
+    position: relative;
+    --archive-line-left: 100px;
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    align-items: start;
+    gap: 8px;
+    overflow: hidden;
+    padding: 16px 0 0;
+    min-height: 96px;
+}
+
+.archive-year-stage::before {
+    display: none;
+}
+
+.archive-year-rail {
+    position: relative;
+    overflow: visible;
+    min-height: 92px;
+    grid-column: 2;
+}
+
+.archive-year-line {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #FFE4EF;
+    border-radius: 999px;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 54px, #000 calc(100% - 54px), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 54px, #000 calc(100% - 54px), transparent 100%);
+}
+
+.archive-year-track {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(22px, 7vw, 82px);
+    width: max-content;
+    padding: 0 140px 0 36px;
+    transition: transform 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.archive-year-control {
+    position: relative;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    margin-top: 34px;
+    border: 1px solid var(--card-border-color);
+    border-radius: 50%;
+    background: var(--card-background-secondary);
+    color: var(--card-text-color-tertiary);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+.archive-year-control:hover {
+    background: var(--card-background-selected);
+    color: var(--card-text-color-main);
+    transform: translateY(-1px);
+}
+
+.archive-year-control:disabled {
+    cursor: default;
+    opacity: 0.32;
+    transform: none;
+}
+
+.archive-year-control svg {
+    width: 20px;
+    height: 20px;
+}
+
+.archive-year-control-older svg {
+    transform: rotate(180deg);
+}
+
+.archive-year-link {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    min-width: 74px;
+    color: var(--card-text-color-tertiary);
+    text-decoration: none;
+    transition: color 0.2s, transform 0.28s, opacity 0.28s;
+    opacity: 0.7;
+}
+
+.archive-year-link:hover,
+.archive-year-link.is-active {
+    color: var(--card-text-color-main);
+    opacity: 1;
+}
+
+.archive-year-link.is-active {
+    transform: translateY(-4px);
+}
+
+.archive-year-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.archive-year-dot {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--card-background-secondary);
+    backdrop-filter: blur(10px) saturate(1.15);
+    -webkit-backdrop-filter: blur(10px) saturate(1.15);
+    border: 4px solid #F39EB6;
+    box-shadow: none;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.archive-year-link.is-active .archive-year-dot {
+    background: #F39EB6;
+    border-color: #F39EB6;
+    transform: scale(1.08);
+}
+
+.archive-year-count {
+    color: var(--card-text-color-main);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+}
+
+.archive-year-link.is-active .archive-year-count {
+    color: #fff;
+}
+
+.archive-year-content {
+    --archive-line-left: 100px;
+    position: relative;
+    margin-top: -10px;
+}
+
+.archive-year-panel {
+    overflow: hidden;
+    transition: max-height 0.36s ease, opacity 0.28s ease;
+}
+
+.archive-panel-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
 /* 时间轴主体 */
 .argon-timeline {
     position: relative;
-    padding: 30px 0 0 0;
+    padding: 18px 0 0 0;
 }
 
 /* 垂直线 */
@@ -75,12 +243,44 @@
     border-radius: 2px;
 }
 
+.archive-post-timeline::before {
+    display: block;
+    left: calc(var(--archive-line-left) - 2px);
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #FFE4EF;
+    transition: left 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* 通用节点 */
 .argon-timeline-node {
     position: relative;
     display: flex;
     align-items: center;
     // margin-bottom: 20px;
+}
+
+.archive-post-timeline .argon-timeline-node::before {
+    content: '';
+    position: absolute;
+    left: calc(var(--archive-line-left) - 2px);
+    width: 4px;
+    transition: left 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.archive-post-timeline .argon-timeline-node::before {
+    top: -10px;
+    bottom: 50%;
+    z-index: 1;
+    background: transparent;
+}
+
+.archive-post-timeline .argon-timeline-node.node-month-start::before {
+    top: -24px;
+    background:
+        radial-gradient(circle, #F39EB6 1.5px, transparent 2px) center top / 4px 10px repeat-y,
+        linear-gradient(var(--card-background), var(--card-background)) center top / 4px 100% no-repeat;
 }
 
 // 年份节点
@@ -95,10 +295,20 @@
     margin-bottom: 10px; /* 文章之间保持较小的间距，显得紧凑 */
 }
 
+.node-post.node-month-start:not(:first-child) {
+    margin-top: 18px;
+}
+
 .node-post .argon-timeline-card {
     padding: 8px 15px;   /* 缩小卡片内部内边距，更紧凑 */
     // background-color: #f7fafc; /* 如果没有渐变色，可以给个淡淡的底色 */
     border: none;
+}
+
+.node-empty .argon-timeline-card {
+    color: var(--card-text-color-tertiary);
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 /* 左侧日期 */
@@ -125,6 +335,16 @@
     z-index: 1;
 }
 
+.archive-post-timeline .argon-timeline-node::after {
+    left: calc(var(--archive-line-left) - 6px);
+    transition: left 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.archive-post-timeline .argon-timeline-card {
+    margin-left: calc(var(--archive-line-left) - 60px);
+    transition: margin-left 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 /* 右侧卡片内容 */
 .argon-timeline-card {
     margin-left: 40px;
@@ -138,6 +358,7 @@
     border-radius: var(--card-border-radius);
     box-shadow: var(--shadow-l1);
     padding: var(--card-padding);
+    overflow: hidden;
 }
 
 /* 年份特殊样式 */
@@ -152,4 +373,94 @@
     font-weight: 500;             /* 中等粗细 */
     transition: all 0.2s;
     text-overflow: ellipsis;
+}
+
+@media (max-width: 700px) {
+    .archive-year-stage {
+        grid-template-columns: 34px minmax(0, 1fr) 34px;
+        gap: 4px;
+        min-height: 92px;
+    }
+
+    .archive-year-stage::before {
+        display: none;
+    }
+
+    .archive-year-line {
+        top: 40px;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 34px, #000 calc(100% - 34px), transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0, #000 34px, #000 calc(100% - 34px), transparent 100%);
+    }
+
+    .archive-year-control {
+        width: 30px;
+        height: 30px;
+        margin-top: 36px;
+    }
+
+    .archive-year-control svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .archive-year-link {
+        min-width: 62px;
+    }
+
+    .archive-year-text {
+        font-size: 0.95rem;
+    }
+
+    .archive-year-dot {
+        width: 38px;
+        height: 38px;
+        border-width: 3px;
+    }
+
+    .archive-year-count {
+        font-size: 0.85rem;
+    }
+
+    .archive-timeline-title a {
+        font-size: 1.18rem;
+    }
+
+    .argon-timeline-time {
+        width: 58px;
+        min-width: 58px;
+        font-size: 0.82rem;
+    }
+
+    .argon-timeline-card {
+        margin-left: 28px;
+    }
+
+.archive-post-timeline .argon-timeline-node::before {
+        left: calc(var(--archive-line-left) - 2px);
+    }
+
+    .archive-post-timeline .argon-timeline-card {
+        margin-left: calc(var(--archive-line-left) - 42px);
+    }
+
+    .node-empty .argon-timeline-card {
+        font-size: 1.2rem;
+    }
+
+    .node-post.node-month-start:not(:first-child) {
+        margin-top: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .archive-year-track,
+    .archive-year-link,
+    .archive-year-dot,
+    .archive-year-control,
+    .archive-post-timeline .argon-timeline-node::before,
+    .archive-post-timeline::before,
+    .archive-post-timeline .argon-timeline-node::after,
+    .archive-year-panel {
+        transition: none;
+    }
 }

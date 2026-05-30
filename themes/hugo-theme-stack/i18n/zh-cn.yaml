@@ -49,6 +49,19 @@ widget:
         title:
             other: 分类
 
+archives:
+    future:
+        other: 未来
+
+    past:
+        other: 过去
+
+    previousYear:
+        other: 上一年
+
+    nextYear:
+        other: 下一年
+
 search:
     title:
         other: 搜索

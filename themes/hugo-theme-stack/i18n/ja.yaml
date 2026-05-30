@@ -52,6 +52,19 @@ widget:
         title:
             other: カテゴリ
 
+archives:
+    future:
+        other: 未来
+
+    past:
+        other: 過去
+
+    previousYear:
+        other: 前の年
+
+    nextYear:
+        other: 次の年
+
 search:
     title:
         other: 検索
