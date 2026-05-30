@@ -313,21 +313,33 @@ declare global {
     }
 }
 
+function setupSearch() {
+    const searchForm = document.querySelector('.search-form') as HTMLFormElement;
+    if (!searchForm || searchForm.dataset.stackSearchReady === 'true') return;
+
+    searchForm.dataset.stackSearchReady = 'true';
+
+    const searchInput = searchForm.querySelector('input') as HTMLInputElement,
+        searchResultList = document.querySelector('.search-result--list') as HTMLDivElement,
+        searchResultTitle = document.querySelector('.search-result--title') as HTMLHeadingElement;
+
+    new Search({
+        form: searchForm,
+        input: searchInput,
+        list: searchResultList,
+        resultTitle: searchResultTitle,
+        resultTitleTemplate: window.searchResultTitleTemplate
+    });
+}
+
 window.addEventListener('load', () => {
     setTimeout(function () {
-        const searchForm = document.querySelector('.search-form') as HTMLFormElement,
-            searchInput = searchForm.querySelector('input') as HTMLInputElement,
-            searchResultList = document.querySelector('.search-result--list') as HTMLDivElement,
-            searchResultTitle = document.querySelector('.search-result--title') as HTMLHeadingElement;
-
-        new Search({
-            form: searchForm,
-            input: searchInput,
-            list: searchResultList,
-            resultTitle: searchResultTitle,
-            resultTitleTemplate: window.searchResultTitleTemplate
-        });
+        setupSearch();
     }, 0);
 })
+
+if (document.readyState !== 'loading') {
+    setTimeout(setupSearch, 0);
+}
 
 export default Search;

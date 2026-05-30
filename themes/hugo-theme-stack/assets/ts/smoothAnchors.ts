@@ -18,6 +18,11 @@ function setupSmoothAnchors() {
         if (!href.startsWith("#")) {
             return;
         }
+        if ((aElement as HTMLElement).dataset.stackSmoothAnchorReady === "true") {
+            return;
+        }
+        (aElement as HTMLElement).dataset.stackSmoothAnchorReady = "true";
+
         aElement.addEventListener("click", clickEvent => {
             clickEvent.preventDefault();
 

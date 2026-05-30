@@ -13,8 +13,12 @@ import StackColorScheme from 'ts/colorScheme';
 import { setupScrollspy } from 'ts/scrollspy';
 import { setupSmoothAnchors } from "ts/smoothAnchors";
 import { setupStickySidebar } from "ts/stickySidebar";
+import { setupPageTransitions } from "ts/pageTransitions";
 
 let Stack = {
+    globalInit: () => {
+        setupPageTransitions();
+    },
     init: () => {
         /**
          * Bind menu event
@@ -64,7 +68,7 @@ let Stack = {
         /**
          * Add controls to code blocks
         */
-        const highlights = document.querySelectorAll('.article-content div.highlight');
+        const highlights = document.querySelectorAll('.article-content div.highlight:not([data-stack-code-ready])');
         const copyText = `Copy`,
             copiedText = `Copied!`;
         const writeClipboardText = async (text: string) => {
@@ -96,6 +100,7 @@ let Stack = {
         };
 
         highlights.forEach((highlight: HTMLElement) => {
+            highlight.dataset.stackCodeReady = 'true';
             const codeBlock = highlight.querySelector('code[data-lang]');
             if (!codeBlock) return;
             let focusPlaceholder: HTMLElement | null = null;
@@ -265,6 +270,7 @@ let Stack = {
 
 window.addEventListener('load', () => {
     setTimeout(function () {
+        Stack.globalInit();
         Stack.init();
     }, 0);
 })

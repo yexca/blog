@@ -73,6 +73,9 @@ let slideToggle = (target, duration = 500) => {
 export default function () {
     const toggleMenu = document.getElementById('toggle-menu');
     if (toggleMenu) {
+        if (toggleMenu.dataset.stackMenuReady === 'true') return;
+        toggleMenu.dataset.stackMenuReady = 'true';
+
         toggleMenu.addEventListener('click', () => {
             if (document.getElementById('main-menu').classList.contains('transiting')) return;
             document.body.classList.toggle('show-menu');

@@ -2,7 +2,7 @@
 {{ $style := $sass | toCSS | minify | resources.Fingerprint "sha256" }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{- with .Site.Params.background -}}
-    <style>
+    <style data-stack-runtime-style>
         :root {
             {{- with .blur }}
             --glass-blur: {{ . | safeCSS }};
@@ -53,7 +53,7 @@
         {{- if $.Site.Params.background.local -}}
             {{- $image = $image | relURL -}}
         {{- end -}}
-        <style>
+        <style data-stack-runtime-style>
             :root {
                 --body-background-image: url({{ $image | safeCSS }});
                 --body-background-overlay: var(--body-background-overlay-light);

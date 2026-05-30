@@ -13,6 +13,8 @@ The site started from `hugo-theme-stack`, but the active theme has been modified
   How posts, pages, multilingual content, front matter, taxonomies, links, and shortcodes are expected to work.
 - [Customization Reference](./customization-reference.md)
   The main visual and behavior customizations compared with the original Stack theme.
+- [Page Transitions](./page-transitions.md)
+  How same-origin soft navigation, View Transitions, script replay, and scroll restoration work.
 
 ## Core Facts
 

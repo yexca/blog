@@ -31,6 +31,10 @@ The main layout depends on the page kind:
 - Archives page: `layouts/_default/archives.html`
 - Search page: `layouts/page/search.html` and `layouts/page/search.json`
 
+The main container has a `data-page-shell` attribute. Client-side same-origin
+soft navigation replaces this shell when moving between pages without a full
+reload. See `documents/page-transitions.md`.
+
 ## Head and Style Injection
 
 The head entry point is:

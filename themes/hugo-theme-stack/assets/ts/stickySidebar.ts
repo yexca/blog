@@ -1,6 +1,9 @@
 export function setupStickySidebar() {
     const sidebar = document.querySelector('.left-sidebar') as HTMLElement;
     if (!sidebar) return;
+    if (sidebar.dataset.stackStickyReady === 'true') return;
+
+    sidebar.dataset.stackStickyReady = 'true';
 
     const updateStickyTop = () => {
         const overflow = sidebar.offsetHeight - window.innerHeight;

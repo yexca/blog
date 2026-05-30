@@ -1,7 +1,12 @@
 html {
     font-size: 62.5%;
     overflow-y: scroll;
-    background: var(--body-background);
+    background-color: var(--body-background);
+    background-image: var(--body-background-overlay), var(--body-background-image);
+    background-size: cover, var(--body-background-size);
+    background-position: center, var(--body-background-position);
+    background-repeat: no-repeat;
+    background-attachment: fixed, var(--body-background-attachment);
 }
 
 * {

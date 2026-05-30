@@ -51,6 +51,8 @@ function computeOffsets(headers: NodeListOf<Element>) {
 }
 
 function setupScrollspy() {
+    if (document.body.dataset.stackScrollspyReady === "true") return;
+
     let headers = document.querySelectorAll(headersQuery);
     if (!headers) {
         console.warn("No header matched query", headers);
@@ -68,6 +70,8 @@ function setupScrollspy() {
         console.warn("No navigation matched query", navigationQuery);
         return;
     }
+
+    document.body.dataset.stackScrollspyReady = "true";
 
     let sectionsOffsets = computeOffsets(headers);
 
