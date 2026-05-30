@@ -189,23 +189,25 @@ It is heavily customized.
 
 It renders:
 
-- category tiles at the top
-- an Argon-style yearly timeline of posts
+- a horizontal year rail with previous/next controls
+- one expanded per-year post timeline at a time
+- dotted connector segments between months
 - posts filtered by `mainSections`
 - posts with `hidden: true` excluded
 
-Archive-specific SCSS is mostly in:
+Archive-specific SCSS is in:
 
 ```text
-themes/hugo-theme-stack/assets/scss/custom.scss
+themes/hugo-theme-stack/assets/scss/partials/layout/archives.scss
 ```
 
 Look for selectors prefixed with:
 
 ```text
+.archive-year
+.archive-post-timeline
 .argon-timeline
 .archive-page-card
-.archive-timeline
 ```
 
 ## Links Page

@@ -219,24 +219,29 @@ Files:
 
 ```text
 themes/hugo-theme-stack/layouts/_default/archives.html
-themes/hugo-theme-stack/assets/scss/custom.scss
+themes/hugo-theme-stack/assets/scss/partials/layout/archives.scss
 ```
 
 The archive page is no longer a plain Stack archive.
 It renders:
 
-- category tiles
-- a yearly timeline
+- a horizontal year rail with previous/next controls
+- one expanded per-year timeline at a time
+- article counts inside year nodes
+- dotted connector segments at the start of each month
 - per-post timeline cards
 
 Selectors:
 
 ```scss
+.archive-year-stage
+.archive-year-link
+.archive-year-dot
+.archive-post-timeline
 .argon-timeline
 .argon-timeline-node
 .argon-timeline-card
 .archive-page-card
-.archive-timeline-year
 .archive-timeline-title
 ```
 
@@ -371,6 +376,6 @@ themes/hugo-theme-stack/assets/scss/variables.scss
 themes/hugo-theme-stack/assets/scss/partials/base.scss
 themes/hugo-theme-stack/assets/scss/partials/article.scss
 themes/hugo-theme-stack/assets/scss/partials/sidebar.scss
+themes/hugo-theme-stack/assets/scss/partials/layout/archives.scss
 themes/hugo-theme-stack/assets/scss/custom.scss
 ```
-
