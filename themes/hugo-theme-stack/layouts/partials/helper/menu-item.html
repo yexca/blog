@@ -1,0 +1,15 @@
+{{- $currentPage := .CurrentPage -}}
+{{- $item := .MenuItem -}}
+{{- $active := or (eq $currentPage.RelPermalink $item.URL) (or ($currentPage.HasMenuCurrent "main" $item) ($currentPage.IsMenuCurrent "main" $item)) -}}
+<li {{ if $active }} class='current' {{ end }}>
+    <a href='{{ $item.URL }}' {{ if eq $item.Params.newTab true }}target="_blank"{{ end }}>
+        {{- $icon := default $item.Pre $item.Params.Icon -}}
+        {{- if $item.Pre -}}
+            {{- warnf "Menu item [%s] is using [pre] field to set icon, please use [params.icon] instead.\nMore information: https://stack.jimmycai.com/config/menu" $item.URL -}}
+        {{- end -}}
+        {{- with $icon -}}
+            {{- partial "helper/icon" . -}}
+        {{- end -}}
+        <span>{{- $item.Name -}}</span>
+    </a>
+</li>
