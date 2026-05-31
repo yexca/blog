@@ -3,7 +3,7 @@ title: について
 slug: /about
 # description: Hugo, the world's fastest framework for building websites
 date: '2021-11-04T20:20:20+08:00'
-lastmod: '2025-08-22T22:58:14+0900'
+lastmod: '2026-05-31T23:28:01+0900'
 aliases:
   - about-us
   - about-hugo
@@ -16,6 +16,14 @@ menu:
         params:
             icon: user
 ---
+
+{{< about_versions >}}
+{{< about_version id="2026" label="2026-05-31" >}}
+
+{{< about-2026 >}}
+
+{{< /about_version >}}
+{{% about_version id="2025-08-22" label="2025-08-22" %}}
 
 > このページは機械翻訳を使ったよ！(๑˃̵ᴗ˂̵)
 
@@ -66,7 +74,7 @@ Wow〜 ⊙o⊙
 
 ## ウェブサイトの歴史
 
-{{< timeline src="/content/ja-jp/page/about/about.json" >}}
+{{% timeline src="/content/ja-jp/page/about/about.json" %}}
 
 ## 今日も一緒に頑張ろう〜
 
@@ -81,3 +89,6 @@ Wow〜 ⊙o⊙
 ---
 
 ![yexca-about](https://count.getloli.com/@yexca-about)
+
+{{% /about_version %}}
+{{< /about_versions >}}

@@ -1,15 +1,12 @@
-{{ $src := .Get "src" }} <!-- 获取传入的 src 参数 -->
-{{ $jsonFile := readFile $src | transform.Unmarshal }} <!-- 读取 JSON 文件并解码 -->
-
+{{- $src := .Get "src" -}}
+{{- $jsonFile := readFile $src | transform.Unmarshal -}}
 <div class="timeline">
-  {{ range $jsonFile }}
-    <div class="timeline-item">
-      <div class="timeline-date">{{ .date }}</div>
-      <div class="timeline-content">
-        {{ .content | safeHTML }}
-      </div>
-    </div>
-  {{ end }}
+{{- range $jsonFile }}
+<div class="timeline-item">
+<div class="timeline-date">{{ .date }}</div>
+<div class="timeline-content">{{ .content | safeHTML }}</div>
+</div>
+{{- end }}
 </div>
 
 {{/*  <div class="timeline">

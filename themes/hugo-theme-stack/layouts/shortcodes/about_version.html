@@ -1,0 +1,15 @@
+{{- $label := .Get "label" | default (.Get 0) -}}
+{{- $id := .Get "id" | default ($label | anchorize) -}}
+
+<section
+    class="about-version-panel"
+    data-about-version-panel="{{ $id }}"
+    data-about-version-label="{{ $label }}"
+    id="about-version-panel-{{ $id }}"
+    role="tabpanel">
+    {{- if eq $id "2026" -}}
+        {{- .Inner | safeHTML -}}
+    {{- else -}}
+        {{- .Inner -}}
+    {{- end -}}
+</section>
