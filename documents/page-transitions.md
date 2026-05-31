@@ -54,6 +54,16 @@ For an internal same-origin page URL:
 External links, downloads, new-tab links, form submissions, and hash-only
 navigation are not intercepted.
 
+## 404 Pages
+
+Hugo serves missing pages as an HTTP 404 response with a rendered HTML body.
+Soft navigation treats that response as renderable when the content type is
+HTML. This lets the theme's `layouts/404.html` page replace the current shell
+and keeps its search-keyword behavior working for missing internal URLs.
+
+If a soft navigation request fails for another reason, such as a network error
+or a non-HTML response, the browser falls back to ordinary full-page navigation.
+
 ## Head Updates
 
 `pageTransitions.ts` updates:

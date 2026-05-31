@@ -243,7 +243,10 @@ async function fetchDocument(url: URL, signal: AbortSignal) {
         signal,
     });
 
-    if (!response.ok || !response.headers.get('content-type')?.includes('text/html')) {
+    const isHTML = response.headers.get('content-type')?.includes('text/html');
+    const canRenderResponse = response.ok || response.status === 404;
+
+    if (!canRenderResponse || !isHTML) {
         throw new Error(`Unable to load ${url.href}`);
     }
 
@@ -299,6 +302,21 @@ function navigate(url: URL, historyBehavior: NavigationHistoryBehavior = 'push',
     });
 }
 
+async function handleInterceptedNavigation(url: URL, navigationType: NavigateEvent['navigationType']) {
+    pendingNavigation?.abort();
+    pendingNavigation = new AbortController();
+
+    try {
+        await swapPage(url, 'auto', navigationType === 'traverse' ? 'restore' : 'top', pendingNavigation.signal);
+    }
+    catch (error) {
+        activeNavigationURL = null;
+        document.documentElement.classList.remove('is-page-transitioning');
+        if (error instanceof Error && error.name === 'AbortError') return;
+        window.location.href = url.href;
+    }
+}
+
 function setupClickFallback() {
     document.addEventListener('click', (event) => {
         if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -329,9 +347,7 @@ function setupNavigationAPI() {
             scroll: 'manual',
             focusReset: 'after-transition',
             handler: async () => {
-                pendingNavigation?.abort();
-                pendingNavigation = new AbortController();
-                await swapPage(url, 'auto', event.navigationType === 'traverse' ? 'restore' : 'top', pendingNavigation.signal);
+                await handleInterceptedNavigation(url, event.navigationType);
             },
         });
     });
