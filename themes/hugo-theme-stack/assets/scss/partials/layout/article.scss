@@ -442,6 +442,15 @@
             }
         }
 
+        &.is-focused.is-collapsed {
+            min-height: 0;
+            height: 50px;
+            padding-top: 0;
+            padding-bottom: 0;
+            resize: none;
+            overflow: hidden;
+        }
+
         &.is-dragging {
             user-select: none;
         }

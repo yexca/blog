@@ -775,6 +775,7 @@ let Stack = {
                 highlight.style.top = '';
                 highlight.style.width = '';
                 highlight.style.height = '';
+                highlight.style.transform = '';
                 if (originalParent) {
                     originalParent.insertBefore(highlight, originalNextSibling);
                 }
@@ -792,6 +793,11 @@ let Stack = {
                 const isFocused = !highlight.classList.contains('is-focused');
 
                 if (isFocused) {
+                    highlight.style.left = '';
+                    highlight.style.top = '';
+                    highlight.style.width = '';
+                    highlight.style.height = '';
+                    highlight.style.transform = '';
                     originalParent = highlight.parentNode;
                     originalNextSibling = highlight.nextSibling;
                     focusPlaceholder = document.createElement('div');
