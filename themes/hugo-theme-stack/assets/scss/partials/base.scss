@@ -2,11 +2,23 @@ html {
     font-size: 62.5%;
     overflow-y: scroll;
     background-color: var(--body-background);
+}
+
+html::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
     background-image: var(--body-background-overlay), var(--body-background-image);
     background-size: cover, var(--body-background-size);
     background-position: center, var(--body-background-position);
     background-repeat: no-repeat;
-    background-attachment: fixed, var(--body-background-attachment);
+}
+
+@media (max-width: 767.98px) {
+    html::before {
+        background-image: var(--body-background-overlay), var(--body-background-image-mobile);
+    }
 }
 
 * {
@@ -14,12 +26,8 @@ html {
 }
 
 body {
-    background-color: var(--body-background);
-    background-image: var(--body-background-overlay), var(--body-background-image);
-    background-size: cover, var(--body-background-size);
-    background-position: center, var(--body-background-position);
-    background-repeat: no-repeat;
-    background-attachment: fixed, var(--body-background-attachment);
+    position: relative;
+    background-color: transparent;
     margin: 0;
     font-family: var(--base-font-family);
     font-size: 1.6rem;

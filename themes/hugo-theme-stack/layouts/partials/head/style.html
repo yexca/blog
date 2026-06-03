@@ -48,22 +48,31 @@
             {{- end }}
         }
     </style>
-    {{- with .image -}}
+    {{- $background := . -}}
+    {{- with $background.image -}}
         {{- $image := . -}}
-        {{- if $.Site.Params.background.local -}}
+        {{- if $background.local -}}
             {{- $image = $image | relURL -}}
+        {{- end -}}
+        {{- $mobileImage := $image -}}
+        {{- with $background.mobileImage -}}
+            {{- $mobileImage = . -}}
+            {{- if $background.local -}}
+                {{- $mobileImage = $mobileImage | relURL -}}
+            {{- end -}}
         {{- end -}}
         <style data-stack-runtime-style>
             :root {
                 --body-background-image: url({{ $image | safeCSS }});
+                --body-background-image-mobile: url({{ $mobileImage | safeCSS }});
                 --body-background-overlay: var(--body-background-overlay-light);
-                {{- with $.Site.Params.background.size }}
+                {{- with $background.size }}
                 --body-background-size: {{ . | safeCSS }};
                 {{- end }}
-                {{- with $.Site.Params.background.position }}
+                {{- with $background.position }}
                 --body-background-position: {{ . | safeCSS }};
                 {{- end }}
-                {{- with $.Site.Params.background.attachment }}
+                {{- with $background.attachment }}
                 --body-background-attachment: {{ . | safeCSS }};
                 {{- end }}
             }

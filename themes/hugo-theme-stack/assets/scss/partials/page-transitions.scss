@@ -10,6 +10,12 @@
     background-repeat: no-repeat;
 }
 
+@media (max-width: 767.98px) {
+    ::view-transition {
+        background-image: var(--body-background-overlay), var(--body-background-image-mobile);
+    }
+}
+
 ::view-transition-image-pair(root) {
     isolation: isolate;
 }

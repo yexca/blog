@@ -18,6 +18,7 @@ Relevant config block:
 params:
   background:
     image:
+    mobileImage:
     local: true
     size: cover
     position: center
@@ -49,6 +50,8 @@ Runtime variable injection lives in:
 ```text
 themes/hugo-theme-stack/layouts/partials/head/style.html
 ```
+
+`mobileImage` is optional. When it is empty, mobile viewports reuse `image` and crop it with `cover`.
 
 Global glass surfaces are assigned in:
 

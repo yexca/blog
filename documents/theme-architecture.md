@@ -62,6 +62,7 @@ The most important injected variables are:
 - `--body-background-overlay-light`
 - `--body-background-overlay-dark`
 - `--body-background-image`
+- `--body-background-image-mobile`
 
 These variables are the core of the current glassmorphism design.
 
