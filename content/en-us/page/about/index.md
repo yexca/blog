@@ -18,12 +18,12 @@ menu:
 ---
 
 {{< about_versions >}}
-{{< about_version id="2026" label="2026-05-31" >}}
+{{< about_version id="2026-05-31" label="2026-05-31" >}}
 
 {{< about-2026 >}}
 
 {{< /about_version >}}
-{{% about_version id="2025-08-22" label="2025-08-22" %}}
+{{% about_version id="2024-12-29" label="2024-12-29" %}}
 
 > This page was partially machine translated (๑˃̵ᴗ˂̵)
 
@@ -87,6 +87,33 @@ Here’s to staying curious and exploring endless possibilities!
 ---
 
 ![yexca-about](https://count.getloli.com/@yexca-about)
+
+{{< /about_version >}}
+{{% about_version id="2021-11-04" label="2021-11-04" %}}
+
+Hello, I am [yexca](https://yexca.net)
+
+This website is for my daily learning and sharing.
+
+## Purpose of the Website
+
+Because my memory isn't very good, I created this website to record the process of solving difficulties I encounter during my explorations.
+
+The articles are only for recording problem-solving.
+
+## Contact Me
+
+Email: <blog@yexca.net>
+
+## Website History
+
+- November 4, 2021: Created
+- November 12, 2021: Construction began; after multiple modifications, the Astra theme was finally adopted (it crashed and was reinstalled)
+- November 22, 2021: Theme changed to [Sakurairo](https://iro.tw/)
+- January 30, 2022: Theme changed to [Argon](https://github.com/solstice23/argon-theme)
+- April 4, 2023: Converted to full Docker deployment
+- May 5, 2023: Commemorating the first server crash
+- July 3, 2023: Moving blog to Jekyll
 
 {{% /about_version %}}
 {{< /about_versions >}}

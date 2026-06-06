@@ -18,12 +18,12 @@ menu:
 ---
 
 {{< about_versions >}}
-{{< about_version id="2026" label="2026-05-31" >}}
+{{< about_version id="2026-05-31" label="2026-05-31" >}}
 
 {{< about-2026 >}}
 
 {{< /about_version >}}
-{{% about_version id="2025-08-22" label="2025-08-22" %}}
+{{% about_version id="2024-12-29" label="2024-12-29" %}}
 
 > このページは機械翻訳を使ったよ！(๑˃̵ᴗ˂̵)
 
@@ -89,6 +89,33 @@ Wow〜 ⊙o⊙
 ---
 
 ![yexca-about](https://count.getloli.com/@yexca-about)
+
+{{< /about_version >}}
+{{% about_version id="2021-11-04" label="2021-11-04" %}}
+
+こんにちは、[yexca](https://yexca.net)です。
+
+このウェブサイトは、私の日々の学習と共有のために開設しました。
+
+## ウェブサイトの目的
+
+記憶力がそれほど良くないため、探求中に遭遇した困難を解決する過程を記録するためにこのウェブサイトを作成しました。
+
+記事は問題解決の記録のみを目的としています。
+
+## 連絡先
+
+メールアドレス：<blog@yexca.net>
+
+## ウェブサイトの履歴
+
+- 2021年11月4日：開設
+- 2021年11月12日：構築開始。幾度かの修正を経て、最終的にAstraテーマを採用しました（一度クラッシュしたため再インストールしました）
+- 2021年11月22日：テーマを[Sakurairo](https://iro.tw/)に変更
+- 2022年1月30日：テーマを[Argon](https://github.com/solstice23/argon-theme)に変更
+- 2023年4月4日：Dockerによる完全デプロイメントに移行
+- 2023年5月5日：最初のサーバークラッシュを記念
+- 2023年7月3日：ブログをJekyllに移行
 
 {{% /about_version %}}
 {{< /about_versions >}}

@@ -18,12 +18,12 @@ menu:
 ---
 
 {{< about_versions >}}
-{{< about_version id="2026" label="2026-05-31" >}}
+{{< about_version id="2026-05-31" label="2026-05-31" >}}
 
 {{< about-2026 >}}
 
 {{< /about_version >}}
-{{% about_version id="2025-08-22" label="2025-08-22" %}}
+{{% about_version id="2024-12-29" label="2024-12-29" %}}
 
 > 此頁面有使用機器翻譯喲 (๑˃̵ᴗ˂̵)
 
@@ -89,6 +89,33 @@ Wow~ ⊙o⊙
 ---
 
 ![yexca-about](https://count.getloli.com/@yexca-about)
+
+{{< /about_version >}}
+{{% about_version id="2021-11-04" label="2021-11-04" %}}
+
+您好，我是 [yexca](https://yexca.net)
+
+此網站為我的日常學習分享
+
+## 建站目的
+
+由於本人記憶力不是特別好，故建立此網站記錄自己進行探索時遇到困難的解決過程
+
+文章僅作解決問題的記錄
+
+## 聯絡我
+
+Email: <blog@yexca.net>
+
+## 網站歷史
+
+- 2021.11.04 建立
+- 2021.11.12 開始建設，透過多次修改，最終使用Astra主題（崩潰重裝過）
+- 2021.11.22 更換主題[Sakurairo](https://iro.tw/)
+- 2022.01.30 更換主題[Argon](https://github.com/solstice23/argon-theme)
+- 2023.04.04 轉換為全 Docker 部署
+- 2023.05.05 紀念伺服器第一次崩了
+- 2023.07.03 轉移部落格至 Jekyll
 
 {{% /about_version %}}
 {{< /about_versions >}}
