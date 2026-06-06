@@ -66,6 +66,44 @@ The most important injected variables are:
 
 These variables are the core of the current glassmorphism design.
 
+## Client-Side Script Structure
+
+The global theme script entry remains:
+
+```text
+themes/hugo-theme-stack/assets/ts/main.ts
+```
+
+`main.ts` intentionally stays small. It exposes the public `window.Stack`
+contract and delegates work to:
+
+```text
+themes/hugo-theme-stack/assets/ts/core/initOnce.ts
+themes/hugo-theme-stack/assets/ts/core/pageInit.ts
+```
+
+`initOnce.ts` runs one-time global setup such as soft navigation.
+`pageInit.ts` runs after the initial page load and again after every soft
+navigation shell replacement.
+
+Page and component behavior is split into feature modules:
+
+```text
+themes/hugo-theme-stack/assets/ts/features/about2026.ts
+themes/hugo-theme-stack/assets/ts/features/aboutVersions.ts
+themes/hugo-theme-stack/assets/ts/features/archives.ts
+themes/hugo-theme-stack/assets/ts/features/articleTiles.ts
+themes/hugo-theme-stack/assets/ts/features/codeBlocks.ts
+themes/hugo-theme-stack/assets/ts/features/githubInfoCards.ts
+themes/hugo-theme-stack/assets/ts/features/taxonomyPages.ts
+```
+
+Shared data used by these features lives under:
+
+```text
+themes/hugo-theme-stack/assets/ts/data
+```
+
 ## Home Page Article Cards
 
 The home page is:
@@ -115,19 +153,21 @@ The category, tag, category term, and tag term pages are handled in:
 themes/hugo-theme-stack/layouts/_default/list.html
 themes/hugo-theme-stack/layouts/partials/taxonomy/post-card.html
 themes/hugo-theme-stack/assets/scss/partials/layout/list.scss
-themes/hugo-theme-stack/assets/ts/main.ts
+themes/hugo-theme-stack/assets/ts/features/taxonomyPages.ts
+themes/hugo-theme-stack/assets/ts/data/tagInitials.ts
 ```
 
 The taxonomy list pages no longer use the original Stack compact list design.
 
 Category taxonomy page (`/categories/`):
 
-- renders category switch cards above the article area
-- selects the first category by default
+- renders category link cards above the article preview area
+- links each category card to its term page
 - shows the first seven category cards when there are nine or more categories
 - replaces the eighth grid position with an expand/collapse card
-- renders the selected category's posts below the switcher
-- paginates the selected category client-side at 12 posts per page
+- renders preview panels for the first three categories
+- limits each preview panel to six posts
+- relies on term pages for full category browsing and Hugo pagination
 
 Tag taxonomy page (`/tags/`):
 
@@ -143,15 +183,17 @@ They intentionally avoid the upstream Stack compact list.
 `partials/taxonomy/post-card.html` provides a reusable full-card-clickable post card.
 The invisible full-card link sits behind real links, so clicking empty card space opens the post while tag links remain clickable.
 
-Client-side behavior is initialized by `setupTaxonomyPages()` in `assets/ts/main.ts`.
+Client-side behavior is initialized by `setupTaxonomyPages()` in `assets/ts/features/taxonomyPages.ts`.
+For categories, the script handles full-card clicks and expand/collapse when the list page has no tab panels.
 Because soft navigation calls `window.Stack.init()`, taxonomy interactions are reattached after same-origin page transitions.
 
 ## Article Header and Details
 
-Article card and article page headers share:
+Article cards and article pages use separate cover partials:
 
 ```text
 themes/hugo-theme-stack/layouts/partials/article/components/header.html
+themes/hugo-theme-stack/layouts/partials/article-list/cover.html
 themes/hugo-theme-stack/layouts/partials/article/components/details.html
 ```
 
@@ -165,8 +207,9 @@ themes/hugo-theme-stack/layouts/partials/article/components/details.html
 - tags
 - translation links
 
-Because this partial is shared by the home card and article page, changes here affect both surfaces.
-If a change should affect only home cards, scope the style under `.article-list`.
+`article/components/header.html` is for article pages and keeps larger responsive
+cover images with eager loading and high fetch priority. `article-list/cover.html`
+is for list cards and uses smaller list-oriented cover sizes.
 
 ## Single Article Page
 
@@ -202,7 +245,7 @@ themes/hugo-theme-stack/assets/scss/partials/highlight
 The macOS-style code block controls are attached on page load by:
 
 ```text
-themes/hugo-theme-stack/assets/ts/main.ts
+themes/hugo-theme-stack/assets/ts/features/codeBlocks.ts
 ```
 
 Those controls add language labels, copy, line wrapping, collapse, and a draggable/resizable window mode.
@@ -260,6 +303,12 @@ Archive-specific SCSS is in:
 
 ```text
 themes/hugo-theme-stack/assets/scss/partials/layout/archives.scss
+```
+
+Archive-specific client-side behavior is in:
+
+```text
+themes/hugo-theme-stack/assets/ts/features/archives.ts
 ```
 
 Look for selectors prefixed with:
@@ -328,7 +377,15 @@ The Twikoo provider template is:
 themes/hugo-theme-stack/layouts/partials/comments/provider/twikoo.html
 ```
 
-It has custom glass-style CSS.
+It renders a data container. The client script in
+`assets/ts/features/twikooComments.ts` loads Twikoo from jsDelivr when the
+comment container nears the viewport.
+
+Twikoo glass-style CSS lives in:
+
+```text
+themes/hugo-theme-stack/assets/scss/partials/comments/twikoo.scss
+```
 
 To disable comments for one article, set:
 

@@ -11,25 +11,40 @@ import { setupArticleTiles } from "ts/features/articleTiles";
 import { setupCodeBlocks } from "ts/features/codeBlocks";
 import { setupGithubInfoCards } from "ts/features/githubInfoCards";
 import { setupTaxonomyPages } from "ts/features/taxonomyPages";
+import { setupTwikooComments } from "ts/features/twikooComments";
+import { setupFooterRuntime } from "ts/features/footerRuntime";
 
-export function initPage() {
+type Feature = {
+    selector: string;
+    setup: (root?: ParentNode) => void;
+};
+
+const features: Feature[] = [
+    { selector: '.github-info-card', setup: setupGithubInfoCards },
+    { selector: '[data-about-versions]', setup: setupAboutVersions },
+    { selector: '[data-about-2026]', setup: setupAbout2026 },
+    { selector: '[data-taxonomy-categories], [data-taxonomy-tags], .taxonomy-post-card', setup: setupTaxonomyPages },
+    { selector: '[data-archive-stage]', setup: setupArchives },
+    { selector: '.article-list--tile', setup: setupArticleTiles },
+    { selector: '.article-content div.highlight', setup: setupCodeBlocks },
+    { selector: '[data-twikoo]', setup: setupTwikooComments },
+    { selector: '#htmer_time', setup: setupFooterRuntime },
+];
+
+export function initPage(root: ParentNode = document) {
     menu();
     setupStickySidebar();
 
-    const articleContent = document.querySelector('.article-content') as HTMLElement;
+    const articleContent = root.querySelector('.article-content') as HTMLElement;
     if (articleContent) {
         new StackGallery(articleContent);
         setupSmoothAnchors();
         setupScrollspy();
     }
 
-    setupGithubInfoCards();
-    setupAboutVersions();
-    setupAbout2026();
-    setupTaxonomyPages();
-    setupArchives();
-    setupArticleTiles();
-    setupCodeBlocks();
+    features.forEach((feature) => {
+        if (root.querySelector(feature.selector)) feature.setup(root);
+    });
 
     new StackColorScheme(document.getElementById('dark-mode-toggle'));
 }

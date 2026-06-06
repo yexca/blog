@@ -21,6 +21,7 @@ export function setupTaxonomyPages() {
         const categoryGrid = categoryPage.querySelector('[data-category-grid]') as HTMLElement | null;
         const expandButton = categoryPage.querySelector('[data-category-expand]') as HTMLButtonElement | null;
         const expandTitle = expandButton?.querySelector('.category-switch-title');
+        const categoryItems = Array.from(categoryPage.querySelectorAll('[data-category-button], [data-category-link]')) as HTMLElement[];
 
         const activatePanel = (targetID: string) => {
             buttons.forEach((button) => {
@@ -39,7 +40,7 @@ export function setupTaxonomyPages() {
         const setupCategoryCollapse = () => {
             if (!categoryGrid || !expandButton) return;
 
-            const shouldCollapse = buttons.length >= 9;
+            const shouldCollapse = categoryItems.length >= 9;
             expandButton.setAttribute('aria-expanded', 'false');
             expandButton.hidden = !shouldCollapse;
             categoryGrid.classList.toggle('is-collapsed', shouldCollapse);
@@ -47,6 +48,22 @@ export function setupTaxonomyPages() {
                 expandTitle.textContent = expandButton.dataset.expandText || expandTitle.textContent;
             }
         };
+
+        if (!buttons.length || !panels.length) {
+            setupCategoryCollapse();
+            expandButton?.addEventListener('click', () => {
+                if (!categoryGrid || !expandButton) return;
+                const isExpanded = expandButton.getAttribute('aria-expanded') === 'true';
+                categoryGrid.classList.toggle('is-collapsed', isExpanded);
+                expandButton.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+                if (expandTitle) {
+                    expandTitle.textContent = isExpanded
+                        ? (expandButton.dataset.expandText || expandTitle.textContent)
+                        : (expandButton.dataset.collapseText || expandTitle.textContent);
+                }
+            });
+            return;
+        }
 
         const setupCategoryPagination = (panel: HTMLElement) => {
             const pageSize = Number(panel.dataset.categoryPageSize || 12);

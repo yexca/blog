@@ -1,5 +1,13 @@
-{{ $image := partialCached "helper/image" (dict "Context" . "Type" "articleList") .RelPermalink "articleList" }}
+{{- $page := . -}}
+{{- $index := 1 -}}
+{{- $isHome := false -}}
+{{- if reflect.IsMap . -}}
+    {{- $page = .Page -}}
+    {{- $index = .Index -}}
+    {{- $isHome = .IsHome -}}
+{{- end -}}
+{{- $image := partialCached "helper/image" (dict "Context" $page "Type" "articleList") $page.RelPermalink "articleList" -}}
 <article class="{{ if $image.exists }}has-image{{ end }}">
-    {{ partial "article/components/header" . }}
-    <a class="article-card-link" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1"></a>
+    {{ partial "article-list/cover" (dict "Page" $page "Image" $image "IsPriority" (and $isHome (eq $index 0))) }}
+    <a class="article-card-link" href="{{ $page.RelPermalink }}" aria-hidden="true" tabindex="-1"></a>
 </article>

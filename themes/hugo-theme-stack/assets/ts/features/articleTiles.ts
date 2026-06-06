@@ -1,7 +1,7 @@
 import { getColor } from 'ts/color';
 
-export function setupArticleTiles() {
-    const articleTile = document.querySelector('.article-list--tile');
+export function setupArticleTiles(root: ParentNode = document) {
+    const articleTile = root.querySelector('.article-list--tile');
     if (!articleTile) return;
 
     let observer = new IntersectionObserver(async (entries, observer) => {
@@ -12,12 +12,15 @@ export function setupArticleTiles() {
             const articles = entry.target.querySelectorAll('article.has-image');
             articles.forEach(async articles => {
                 const image = articles.querySelector('img'),
-                    imageURL = image.src,
-                    key = image.getAttribute('data-key'),
-                    hash = image.getAttribute('data-hash'),
+                    imageURL = image?.src,
+                    key = image?.getAttribute('data-key'),
+                    hash = image?.getAttribute('data-hash'),
                     articleDetails: HTMLDivElement = articles.querySelector('.article-details');
 
+                if (!imageURL || !articleDetails) return;
+
                 const colors = await getColor(key, hash, imageURL);
+                if (!colors?.DarkMuted || !colors?.Vibrant) return;
 
                 articleDetails.style.background = `
                 linear-gradient(0deg,

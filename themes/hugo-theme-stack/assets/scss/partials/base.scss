@@ -16,6 +16,11 @@ html::before {
 }
 
 @media (max-width: 767.98px) {
+    :root {
+        --glass-blur: 10px;
+        --body-background-attachment: scroll;
+    }
+
     html::before {
         background-image: var(--body-background-overlay), var(--body-background-image-mobile);
     }

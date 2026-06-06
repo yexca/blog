@@ -27,7 +27,7 @@
         {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
         {{- end -}}
         {{ range $pages }}
-        {{- $content := safeHTML (.Summary | html) -}}
+        {{- $content := safeHTML ((.Summary | plainify | htmlUnescape | truncate 480) | html) -}}
         {{- if .Site.Params.rssFullContent -}}
             {{- $content = safeHTML (.Content | html) -}}
         {{- end -}}

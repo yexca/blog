@@ -2,7 +2,10 @@ interface pageData {
     title: string,
     date: string,
     permalink: string,
-    content: string,
+    summary: string,
+    description: string,
+    tags?: string[],
+    categories?: string[],
     image?: string,
     preview: string,
     matchCount: number
@@ -140,14 +143,20 @@ class Search {
         const rawData = await this.getData();
         const results: pageData[] = [];
 
-        const regex = new RegExp(keywords.filter((v, index, arr) => {
+        const filteredKeywords = keywords.filter((v, index, arr) => {
             arr[index] = escapeRegExp(v);
             return v.trim() !== '';
-        }).join('|'), 'gi');
+        });
+
+        if (!filteredKeywords.length) return results;
+
+        const regex = new RegExp(filteredKeywords.join('|'), 'gi');
 
         for (const item of rawData) {
             const titleMatches: match[] = [],
-                contentMatches: match[] = [];
+                summaryMatches: match[] = [],
+                descriptionMatches: match[] = [],
+                metaMatches: match[] = [];
 
             let result = {
                 ...item,
@@ -155,16 +164,33 @@ class Search {
                 matchCount: 0
             }
 
-            const contentMatchAll = item.content.matchAll(regex);
-            for (const match of Array.from(contentMatchAll)) {
-                contentMatches.push({
+            const searchableMeta = [
+                ...(item.tags || []),
+                ...(item.categories || []),
+            ].join(' ');
+
+            for (const match of Array.from((item.summary || '').matchAll(regex))) {
+                summaryMatches.push({
                     start: match.index,
                     end: match.index + match[0].length
                 });
             }
 
-            const titleMatchAll = item.title.matchAll(regex);
-            for (const match of Array.from(titleMatchAll)) {
+            for (const match of Array.from((item.description || '').matchAll(regex))) {
+                descriptionMatches.push({
+                    start: match.index,
+                    end: match.index + match[0].length
+                });
+            }
+
+            for (const match of Array.from(searchableMeta.matchAll(regex))) {
+                metaMatches.push({
+                    start: match.index,
+                    end: match.index + match[0].length
+                });
+            }
+
+            for (const match of Array.from(item.title.matchAll(regex))) {
                 titleMatches.push({
                     start: match.index,
                     end: match.index + match[0].length
@@ -172,15 +198,17 @@ class Search {
             }
 
             if (titleMatches.length > 0) result.title = Search.processMatches(result.title, titleMatches, false);
-            if (contentMatches.length > 0) {
-                result.preview = Search.processMatches(result.content, contentMatches);
+            if (summaryMatches.length > 0) {
+                result.preview = Search.processMatches(result.summary, summaryMatches);
+            }
+            else if (descriptionMatches.length > 0) {
+                result.preview = Search.processMatches(result.description, descriptionMatches);
             }
             else {
-                /// If there are no matches in the content, use the first 140 characters as preview
-                result.preview = replaceHTMLEnt(result.content.substring(0, 140));
+                result.preview = replaceHTMLEnt((result.summary || result.description || '').substring(0, 140));
             }
 
-            result.matchCount = titleMatches.length + contentMatches.length;
+            result.matchCount = titleMatches.length + summaryMatches.length + descriptionMatches.length + metaMatches.length;
             if (result.matchCount > 0) results.push(result);
         }
 
@@ -217,7 +245,8 @@ class Search {
             const parser = new DOMParser();
 
             for (const item of this.data) {
-                item.content = parser.parseFromString(item.content, 'text/html').body.innerText;
+                item.summary = parser.parseFromString(item.summary || '', 'text/html').body.innerText;
+                item.description = parser.parseFromString(item.description || '', 'text/html').body.innerText;
             }
         }
 

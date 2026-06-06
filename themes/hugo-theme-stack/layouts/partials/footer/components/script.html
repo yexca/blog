@@ -1,4 +1,14 @@
-{{- partial "helper/external" (dict "Context" . "Namespace" "Vibrant") -}}
+{{- $needsVibrant := false -}}
+{{- if .IsPage -}}
+    {{- $related := (where (.Site.RegularPages.Related .) "Params.hidden" "!=" true) | first 5 -}}
+    {{- $needsVibrant = gt (len $related) 0 -}}
+{{- else if and (not .IsHome) (gt (len .Sections) 0) -}}
+    {{- $needsVibrant = true -}}
+{{- end -}}
+
+{{- if $needsVibrant -}}
+    {{- partial "helper/external" (dict "Context" . "Namespace" "Vibrant") -}}
+{{- end -}}
 
 {{- $opts := dict "minify" hugo.IsProduction -}}
 {{- $script := resources.Get "ts/main.ts" | js.Build $opts | fingerprint -}}

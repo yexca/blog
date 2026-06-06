@@ -15,6 +15,8 @@ The site started from `hugo-theme-stack`, but the active theme has been modified
   The main visual and behavior customizations compared with the original Stack theme.
 - [Page Transitions](./page-transitions.md)
   How same-origin soft navigation, View Transitions, script replay, and scroll restoration work.
+- [Performance](./performance.md)
+  Performance budgets, build reports, lazy loading rules, and output-size maintenance notes.
 - [About Page Versioning Summary](./about-page-versioning.md)
   How the versioned About page, 2026 card layout, Mind Map slider, dynamic site universe, and Git-style blog history are implemented.
 

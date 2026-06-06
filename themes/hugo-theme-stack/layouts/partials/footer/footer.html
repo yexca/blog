@@ -13,7 +13,8 @@
             {{ . | safeHTML }} <br/>
         {{ end }}
 
-        <p><span id="htmer_time"></span></p>
+        {{- $runtimeTemplate := T "footer.runningTime" (dict "Years" "__YEARS__" "Days" "__DAYS__" "Hours" "__HOURS__" "Minutes" "__MINUTES__" "Seconds" "__SECONDS__") -}}
+        <p><span id="htmer_time" data-runtime-start="1636208119" data-runtime-template="{{ $runtimeTemplate | htmlEscape }}"></span></p>
 
         <img src="https://count.getloli.com/@yexca" alt="{{ T `footer.visitCounterAlt` }}"/>
 

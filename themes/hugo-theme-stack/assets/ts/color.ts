@@ -12,6 +12,14 @@ interface colorScheme {
     }
 }
 
+declare global {
+    const Vibrant: {
+        from: (imageURL: string) => {
+            getPalette: () => Promise<colorScheme>;
+        };
+    } | undefined;
+}
+
 let colorsCache: { [key: string]: colorScheme } = {};
 
 if (localStorage.hasOwnProperty('StackColorsCache')) {
@@ -24,6 +32,8 @@ if (localStorage.hasOwnProperty('StackColorsCache')) {
 }
 
 async function getColor(key: string, hash: string, imageURL: string) {
+    if (typeof Vibrant === 'undefined') return null;
+
     if (!key) {
         /**
          * If no key is provided, do not cache the result

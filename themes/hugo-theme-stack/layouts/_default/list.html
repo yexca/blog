@@ -12,15 +12,14 @@
             </header>
 
             <section class="category-switcher taxonomy-surface">
-                <div class="category-card-grid" role="tablist" aria-label="{{ .Title }}" data-category-grid>
+                <div class="category-card-grid" aria-label="{{ .Title }}" data-category-grid>
                     {{ range $index, $term := $terms }}
-                        {{- $panelID := printf "category-panel-%d" $index -}}
                         {{- $visiblePages := where $term.Pages "Params.hidden" "!=" true -}}
-                        <button class="category-switch-card{{ if eq $index 0 }} is-active{{ end }}{{ if ge $index 7 }} is-overflow{{ end }}" type="button" role="tab" aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}" aria-controls="{{ $panelID }}" data-category-button="{{ $panelID }}" data-category-index="{{ $index }}">
+                        <a class="category-switch-card{{ if ge $index 7 }} is-overflow{{ end }}" href="{{ $term.Page.RelPermalink }}" data-category-link data-category-index="{{ $index }}">
                             <span class="category-switch-title">{{ $term.Page.Title }}</span>
                             <span class="category-switch-meta">{{ T "taxonomy.postCount" (len $visiblePages) }}</span>
                             <span class="category-switch-line" aria-hidden="true"></span>
-                        </button>
+                        </a>
                     {{ end }}
                     <button class="category-expand-button category-switch-card" type="button" data-category-expand data-expand-text="{{ T "taxonomy.expandCategories" }}" data-collapse-text="{{ T "taxonomy.collapseCategories" }}" aria-expanded="false" hidden>
                         <span class="category-switch-title">{{ T "taxonomy.expandCategories" }}</span>
@@ -31,10 +30,10 @@
             </section>
 
             <div class="category-panels">
-                {{ range $index, $term := $terms }}
+                {{ range $index, $term := first 3 $terms }}
                     {{- $panelID := printf "category-panel-%d" $index -}}
                     {{- $visiblePages := where $term.Pages "Params.hidden" "!=" true -}}
-                    <section class="category-panel taxonomy-surface{{ if eq $index 0 }} is-active{{ end }}" id="{{ $panelID }}" role="tabpanel" data-category-panel="{{ $panelID }}" data-category-page-size="12"{{ if ne $index 0 }} hidden{{ end }}>
+                    <section class="category-panel taxonomy-surface is-active" id="{{ $panelID }}">
                         <header class="category-panel-header">
                             <div>
                                 <p>{{ T "taxonomy.categoryPosts" (len $visiblePages) }}</p>
@@ -44,12 +43,10 @@
                         </header>
 
                         <div class="taxonomy-post-list">
-                            {{ range $visiblePages }}
+                            {{ range first 6 $visiblePages }}
                                 {{ partial "taxonomy/post-card.html" (dict "Page" . "ItemAttrs" "data-category-post") }}
                             {{ end }}
                         </div>
-
-                        <nav class="taxonomy-inline-pagination" data-category-pagination aria-label="{{ T "taxonomy.pagination" }}" hidden></nav>
                     </section>
                 {{ end }}
             </div>

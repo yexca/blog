@@ -72,7 +72,7 @@ params:
   background:
     image: https://github.com/yexca/picx-images-hosting/raw/master/2023/04-%e7%bd%91%e7%ab%99%e8%83%8c%e6%99%af/blog-background.2p10z489pjc0.webp
     mobileImage:
-    local: true
+    local: false
     size: cover
     position: center
     attachment: fixed
@@ -96,3 +96,7 @@ markup:
         delimiters:
           block: [['$$', '$$'], ['\\[', '\\]']]
           inline: [['$', '$'], ['\\(', '\\)']]
+
+services:
+  rss:
+    limit: 20

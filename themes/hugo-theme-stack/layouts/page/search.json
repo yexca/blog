@@ -5,7 +5,20 @@
 {{- $result := slice -}}
 
 {{- range $filtered -}}
-    {{- $data := dict "title" .Title "date" .Date "permalink" .Permalink "content" (.Plain) -}}
+    {{- $description := default "" .Description -}}
+    {{- $summary := .Summary | plainify | htmlUnescape -}}
+    {{- if not $summary -}}
+        {{- $summary = .Plain | truncate 360 -}}
+    {{- end -}}
+    {{- $data := dict
+        "title" .Title
+        "date" .Date
+        "permalink" .Permalink
+        "summary" $summary
+        "description" $description
+        "tags" (default slice .Params.tags)
+        "categories" (default slice .Params.categories)
+    -}}
 
     {{- $image := partialCached "helper/image" (dict "Context" . "Type" "articleList") .RelPermalink "articleList" -}}
     {{- if $image.exists -}}
