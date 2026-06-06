@@ -1,6 +1,6 @@
-> 语言 / Language: [简体中文](README.zh-CN.md) | [English](README.md) | [日本語](README.ja.md)
-
 # yexca 的部落格
+
+> 语言 / Language: [简体中文](README.zh-CN.md) | [English](README.md) | [日本語](README.ja.md)
 
 歡迎來到我的部落格倉庫！
 
@@ -13,6 +13,9 @@
 - 🛠 自訂化主題與分類/標籤優化
 - 💡 技術筆記 / 生活心得
 - 🗂 架構清晰，適合快速瀏覽與二次開發
+- 同源軟導航：支援瀏覽器歷史、捲動位置還原、View Transition 動畫與安全回退
+- 強化程式碼區塊：複製、自動換行、摺疊，以及獨立視窗模式
+- 效能維護流程：檢查建置產物、搜尋索引、資源大小、字型與第三方腳本
 
 ## 🗃 資料夾結構
 
@@ -20,11 +23,27 @@
 - `themes/`：主題採用 [stack](https://github.com/CaiJimmy/hugo-theme-stack)，並加以自訂
 - `static/`：靜態資源
 - `hugo.yml`：部落格設定檔
+- `documents/`：目前重構後部落格的維護文件
+- `scripts/`：本機維護腳本，包含效能報告
 
 ## 🧩 使用技術
 
 - Hugo 靜態網站生成器
 - GitHub Actions 自動部署
+
+## 📄 文件入口
+
+先從 [documents/README.md](documents/README.md) 開始。目前文件涵蓋：
+
+- 開發流程
+- 主題架構
+- 內容模型
+- 客製化項目參考
+- 頁面軟導航
+- 效能維護
+- About 頁面版本化
+
+重要提醒：主題直接客製化在 `themes/hugo-theme-stack` 下。升級或替換上游 Stack 主題前，需要仔細比較並保留本倉庫的本地修改。
 
 ## 📝 授權條款
 
