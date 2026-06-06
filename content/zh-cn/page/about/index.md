@@ -91,7 +91,7 @@ Wow~ ⊙o⊙
 {{< /about_version >}}
 {{% about_version id="2021-11-04" label="2021-11-04" %}}
 
-您好，我是 [yexca](https://lit.link/yexca)
+您好，我是 [yexca](https://yexca.net)
 
 此网站为我的日常学习分享
 
