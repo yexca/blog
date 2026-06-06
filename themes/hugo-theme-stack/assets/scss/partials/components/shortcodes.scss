@@ -1,0 +1,206 @@
+.notice {
+  padding: 0.75em 1em;
+  margin: 1em 0;
+  border-left: 4px solid;
+  border-radius: 4px;
+  background-color: var(--card-background-secondary);
+  color: var(--card-text-color-main);
+  backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+  -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+
+  &.default {
+    border-color: #ccc;
+  }
+
+  &.info {
+    border-color: #2196f3;
+    color: #1a237e;
+  }
+
+  &.warn {
+    border-color: #ff9800;
+    color: #e65100;
+  }
+
+  &.danger {
+    border-color: #f44336;
+    color: #b71c1c;
+  }
+}
+
+[data-scheme="dark"] {
+  .notice {
+    &.default {
+      border-color: #666;
+      color: #eee;
+    }
+
+    &.info {
+      border-color: #90caf9;
+      color: #e3f2fd;
+    }
+
+    &.warn {
+      border-color: #ffb74d;
+      color: #fff3e0;
+    }
+
+    &.danger {
+      border-color: #ef5350;
+      color: #ffebee;
+    }
+  }
+}
+
+[data-scheme="sepia"] {
+  .notice {
+    &.info {
+      border-color: #6a5acd;
+      color: #3c2f2f;
+    }
+
+    &.warn {
+      border-color: #e9967a;
+      color: #5c4033;
+    }
+
+    &.danger {
+      border-color: #cd5c5c;
+      color: #7b3f3f;
+    }
+  }
+}
+
+.stack-shortcode-details {
+  margin: 1.5em 0;
+  padding: 1rem;
+  border: 1px solid var(--card-border-color);
+  border-radius: 8px;
+  background-color: var(--card-background-secondary);
+  box-shadow: var(--shadow-l1);
+  backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+  -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--card-separator-color);
+    box-shadow: var(--shadow-l2);
+  }
+}
+
+.stack-shortcode-details > summary {
+  display: block;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--card-text-color-main);
+  padding: 0;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::before {
+    content: '▶';
+    margin-right: 0.5em;
+    font-size: 0.8em;
+    transition: transform 0.2s ease;
+    display: inline-block;
+  }
+}
+
+.stack-shortcode-details[open] > summary::before {
+  content: '▼';
+  transform: rotate(0deg);
+}
+
+.stack-shortcode-details > div {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--card-separator-color);
+  line-height: 1.6;
+  color: var(--card-text-color-main);
+}
+
+.stack-shortcode-details > div pre {
+  margin-bottom: 0;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 20px 0 0 80px;
+  padding-left: 30px;
+  border-left: 2px solid var(--timeline-line-color, #ccc);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-date {
+  position: absolute;
+  left: -120px;
+  font-size: 14px;
+  color: var(--timeline-date-color, #efbfcf);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.timeline-content {
+  background: var(--timeline-bg-color, var(--card-background-secondary));
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border-color);
+  box-shadow: var(--shadow-l1);
+  backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+  -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+  max-width: 500px;
+  color: var(--timeline-text-color, var(--card-text-color-main));
+}
+
+.timeline-content p {
+  margin: 0;
+}
+
+.timeline-content a {
+  color: var(--timeline-text-color, var(--card-text-color-main));
+}
+
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background: var(--timeline-point-color, #ccc);
+  border: 2px solid var(--timeline-line-color, #ccc);
+  border-radius: 50%;
+}
+
+[data-scheme="dark"] {
+  :root {
+    --timeline-line-color: #555;
+    --timeline-date-color: #aaa;
+    --timeline-bg-color: var(--card-background-secondary);
+    --timeline-text-color: var(--card-text-color-main);
+    --timeline-point-color: #aaa;
+  }
+}
+
+[data-scheme="light"] {
+  :root {
+    --timeline-line-color: #ccc;
+    --timeline-date-color: #666;
+    --timeline-bg-color: var(--card-background-secondary);
+    --timeline-text-color: var(--card-text-color-main);
+    --timeline-point-color: #ccc;
+  }
+}

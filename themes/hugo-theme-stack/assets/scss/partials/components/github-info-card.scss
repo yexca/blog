@@ -1,0 +1,222 @@
+// Argon-style GitHub repo shortcode.
+.github-info-card {
+  margin: 20px 0;
+  padding: 20px 25px;
+  color: var(--card-text-color-main);
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-l2);
+  line-height: 1.8;
+  overflow: hidden;
+}
+
+.github-info-card a:not(.link) {
+  color: var(--accent-color);
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.github-info-card a:not(.link):hover {
+  color: var(--accent-color-darker);
+}
+
+.github-info-card-header {
+  margin-bottom: 5px;
+}
+
+.github-info-card-header a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--card-text-color-main);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.github-info-card-icon,
+.github-info-card-meta svg {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.github-info-card-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+}
+
+.github-info-card-name-a {
+  font-size: 20px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.github-info-card-description-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+  color: var(--card-text-color-secondary);
+}
+
+.github-info-card-description-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  transform: translateY(0.18em);
+}
+
+.github-info-card-description-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+.github-info-card-description {
+  min-height: 1.8em;
+  overflow-wrap: anywhere;
+}
+
+.github-info-card-homepage {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 4px;
+  min-width: 0;
+  color: var(--card-text-color-secondary);
+}
+
+.github-info-card-homepage[hidden] {
+  display: none;
+}
+
+.github-info-card-homepage-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  transform: translateY(0.18em);
+}
+
+.github-info-card-homepage-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+.github-info-card-homepage a {
+  overflow-wrap: anywhere;
+}
+
+.github-info-card-bottom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  color: var(--card-text-color-tertiary);
+}
+
+.github-info-card-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.78;
+}
+
+.github-info-card-meta svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.github-info-card-meta-stars svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.github-info-card-mini {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  white-space: nowrap;
+}
+
+.github-info-card-mini .github-info-card-header {
+  margin: 0;
+}
+
+.github-info-card-mini .github-info-card-icon svg {
+  width: 21px;
+  height: 21px;
+  transform: translateY(2px);
+}
+
+.github-info-card-mini .github-info-card-body {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.github-info-card-mini .github-info-card-homepage {
+  display: none;
+}
+
+.github-info-card-mini .github-info-card-name-a {
+  display: inline-block;
+  flex: 0 0 auto;
+  margin-right: 12px;
+  font-size: 19px;
+}
+
+.github-info-card-mini .github-info-card-description {
+  display: inline-block;
+  min-height: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.github-info-card-mini .github-info-card-description-row {
+  flex: 1;
+  overflow: hidden;
+}
+
+.github-info-card-mini .github-info-card-description {
+  min-width: 0;
+}
+
+.github-info-card-mini .github-info-card-bottom {
+  display: inline-flex;
+  margin-top: 0;
+}
+
+.github-info-card-mini .github-info-card-meta-forks {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .github-info-card-mini {
+    align-items: flex-start;
+    flex-direction: column;
+    white-space: normal;
+  }
+
+  .github-info-card-mini .github-info-card-body {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    white-space: normal;
+  }
+
+  .github-info-card-mini .github-info-card-description {
+    white-space: normal;
+  }
+}

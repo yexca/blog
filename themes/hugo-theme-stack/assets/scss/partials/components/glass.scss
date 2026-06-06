@@ -1,0 +1,8 @@
+@mixin glass-surface($background: var(--card-background), $blur-extra: 0px) {
+  background-color: $background;
+  border: 1px solid var(--card-border-color);
+  backdrop-filter: saturate(var(--glass-saturation)) blur(calc(var(--glass-blur) + #{$blur-extra}));
+  -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(calc(var(--glass-blur) + #{$blur-extra}));
+  box-shadow: var(--shadow-l1);
+  border-radius: var(--card-border-radius);
+}

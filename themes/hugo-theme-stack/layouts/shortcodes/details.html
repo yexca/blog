@@ -4,77 +4,7 @@
 </details>
     */}}
 
-<details>
+<details class="stack-shortcode-details">
     <summary>{{ .Get 0 }}</summary>
     <div>{{ .Inner | markdownify }}</div>
 </details>
-      
-<style lang="scss">
-/* 基础容器样式 */
-details {
-    margin: 1.5em 0; /* 上下留白，与段落分隔 */
-    padding: 1rem;
-    border: 1px solid var(--card-border-color); /* 浅灰色边框 */
-    border-radius: 8px; /* 轻微的圆角 */
-    background-color: var(--card-background-secondary); /* 浅灰色背景，稍微区别于白色正文 */
-    box-shadow: var(--shadow-l1); /* 轻微的阴影效果 */
-    backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
-    -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
-    transition: all 0.3s ease; /* 过渡效果，提升交互体验 */
-
-    /* 鼠标悬停时的效果 */
-    &:hover {
-        border-color: var(--card-separator-color); /* 边框颜色变深 */
-        box-shadow: var(--shadow-l2); /* 阴影增强 */
-    }
-}
-
-/* 摘要行 (summary) 样式 */
-summary {
-    display: block; /* 确保它独占一行 */
-    cursor: pointer; /* 鼠标指针改为手型，提示可点击 */
-    font-weight: 600; /* 略微加粗标题 */
-    color: var(--card-text-color-main); /* 较深的文字颜色 */
-    padding: 0;
-    list-style: none; /* 移除默认的列表标记（如小箭头） */
-    
-    /* 针对不同浏览器隐藏默认标记 */
-    &::-webkit-details-marker {
-        display: none;
-    }
-    
-    /* 自定义一个小箭头作为指示器 */
-    &::before {
-        content: '▶'; /* 默认是向右的箭头 */
-        margin-right: 0.5em;
-        font-size: 0.8em;
-        transition: transform 0.2s ease;
-        display: inline-block;
-    }
-}
-
-/* details 处于打开状态时的 summary 样式 */
-/*details[open] {}*/
-    /* 打开时可以稍微调整背景色或边框，但这里先保持不变 */
-
-details[open] > summary::before {
-    content: '▼'; /* 打开时箭头向下 */
-    transform: rotate(0deg); /* 保持不动 */
-}
-
-/* 隐藏的内容区域 (div) 样式 */
-details > div {
-    margin-top: 1rem; /* 与摘要行保持距离 */
-    padding-top: 1rem; /* 内容顶部内边距 */
-    border-top: 1px dashed var(--card-separator-color); /* 使用虚线分隔线，更轻盈 */
-    line-height: 1.6; /* 增加行高，提升可读性 */
-    color: var(--card-text-color-main) /* 内容文字颜色稍浅 */
-    /* 确保内容不会溢出 */
-    /*  overflow-x: auto;   */
-}
-
-/* 如果内容区域包含代码块，保持代码块的风格 */
-details > div pre {
-    margin-bottom: 0; /* 移除代码块下方的额外空间 */
-}
-</style>
