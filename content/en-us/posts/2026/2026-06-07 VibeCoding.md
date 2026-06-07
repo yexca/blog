@@ -44,7 +44,7 @@ Also, what really matters is human creativity. AI only generates or visualizes t
 
 Still, theoretical reasoning doesn't quite cure the anxiety. So, I tried to look at this through the lens of history.
 
-### Micro-level
+## Micro-level
 
 If AI is just a relatively minor shift, let's look at video games and online shopping as examples:
 
@@ -55,7 +55,7 @@ If AI is just a relatively minor shift, let's look at video games and online sho
 | Duration     | ~15-20 years                                                  | ~10-12 years                                                |
 | Notes     | Accompanied the growth of a generation. Went from being labeled "electronic heroin" to a major part of pop culture. | Key breakthrough was trust mechanisms like Alipay, and the widespread adoption of smartphones. |
 
-### Macro-level
+## Macro-level
 
 But what if this is a massive paradigm shift? Let's look at the Industrial Revolutions.
 
@@ -66,7 +66,7 @@ But what if this is a massive paradigm shift? Let's look at the Industrial Revol
 | Duration     | ~75 years | ~40-50 years | ~16-19 years (half a generation) |
 | Notes     | Spanned several generations. Slow migration from rural to urban areas, with long struggles like the Luddite movement (smashing machines). | Spanned two generations. People were initially terrified of electricity until home appliances and assembly lines reshaped middle-class life. | Went from panic over "internet addiction" to everyone owning a smartphone in under 20 years. |
 
-### The Evolution Process
+## The Evolution Process
 
 | **Phase** | **Core Feature** | **Public Reaction** | **AI Parallel** |
 | ----------------- | -------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------ |
@@ -75,7 +75,7 @@ But what if this is a massive paradigm shift? Let's look at the Industrial Revol
 | **3. Regulation & Integration** | Laws catch up, and tech starts solving its own pain points. | Trust builds, industries start adopting the tech as a utility. | Enterprises deploying custom AI tools, governments drafting AI safety acts. |
 | **4. Invisible Infrastructure** | Tech becomes part of the baseline infrastructure. | Taken for granted; people can't live without it. | The future: just like how no one thinks googling something on a phone is "high-tech" today. |
 
-### The Future of AI
+## The Future of AI
 
 Clearly, history shows we panic, then accept, and finally adapt—and this cycle is getting faster. If we mark the release of ChatGPT (late 2022) as year zero for generative AI, we can project what's next based on past patterns:
 
