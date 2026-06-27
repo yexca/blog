@@ -24,6 +24,11 @@ chore(post): update translated content
 Workflows use this exact subject to avoid starting another translation/deployment
 loop from the pushed translation commit.
 
+The translation workflow commits back to this repository with the default
+`GITHUB_TOKEN` and `contents: write` permission. `PERSONAL_TOKEN` is only needed
+by the deployment workflow when publishing to the external `yexca/blog-web`
+repository.
+
 ## Files
 
 - `.github/workflows/translate.yml`
