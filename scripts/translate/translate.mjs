@@ -10,7 +10,7 @@ const dryRun = args.has('--dry-run');
 const initManifest = args.has('--init-manifest');
 const checkOnly = args.has('--check');
 
-const configPath = getArgValue('--config') ?? 'i18n/translate.config.json';
+const configPath = getArgValue('--config') ?? 'translation/translate.config.json';
 const providerEnvName = getArgValue('--provider-env') ?? 'LLM_TRANSLATE_CONFIG';
 
 const config = await readJson(configPath);

@@ -30,10 +30,10 @@ loop from the pushed translation commit.
   Runs the translation script and commits translated content.
 - `.github/workflows/deploy.yml`
   Builds Hugo and publishes `public/` to `yexca/blog-web`.
-- `i18n/translate.config.json`
+- `translation/translate.config.json`
   Public translation rules: language directories, target locales, prompts, and
   manifest path.
-- `i18n/translation-manifest.json`
+- `translation/translation-manifest.json`
   Hash baseline for source posts and target translations.
 - `scripts/translate/translate.mjs`
   Translation runner with provider fallback.

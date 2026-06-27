@@ -21,7 +21,7 @@
   "targetLocales": ["zh-tw", "en", "ja"],
   "sourceGlobs": ["posts/**/*.md"],
   "excludeGlobs": ["**/_index.md"],
-  "manifestPath": "i18n/translation-manifest.json",
+  "manifestPath": "translation/translation-manifest.json",
   "noticeTemplate": {
     "default": "{{< notice >}} This article was translated by {model} {{< /notice >}}",
     "zh-tw": "{{< notice >}} 本文由 {model} 翻譯 {{< /notice >}}",

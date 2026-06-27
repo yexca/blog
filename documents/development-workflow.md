@@ -74,7 +74,7 @@ PERSONAL_TOKEN
 
 Translation is configured in `.github/workflows/translate.yml`.
 It scans Simplified Chinese posts under `content/zh-cn/posts`, compares source
-hashes with `i18n/translation-manifest.json`, translates stale targets, commits
+hashes with `translation/translation-manifest.json`, translates stale targets, commits
 the translated files, and then lets the deployment workflow publish the site.
 The LLM provider fallback list is expected in the GitHub secret:
 
