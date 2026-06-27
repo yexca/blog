@@ -16,7 +16,9 @@ concurrency:
 
 jobs:
   translate:
-    if: github.event_name != 'push' || github.event.head_commit.message != 'chore(post): update translated content'
+    if: >
+      github.event_name != 'push' ||
+      github.event.head_commit.message != 'chore(post): update translated content'
     runs-on: ubuntu-latest
 
     steps:
