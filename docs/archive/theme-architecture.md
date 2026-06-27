@@ -33,7 +33,7 @@ The main layout depends on the page kind:
 
 The main container has a `data-page-shell` attribute. Client-side same-origin
 soft navigation replaces this shell when moving between pages without a full
-reload. See `documents/page-transitions.md`.
+reload. See `docs/archive/page-transitions.md`.
 
 ## Head and Style Injection
 
@@ -394,4 +394,3 @@ comments: false
 ```
 
 in the article front matter.
-

@@ -23,7 +23,7 @@ The blog supports multiple languages: Simplified Chinese, Traditional Chinese, J
 - `content/`: Blog posts, organized by language
 - `themes/`: Based on [stack](https://github.com/CaiJimmy/hugo-theme-stack) with customizations
 - `static/`: Static resources
-- `documents/`: maintenance documentation for the current refactored blog
+- `docs/`: maintenance documentation for the current refactored blog
 - `scripts/`: local maintenance scripts, including performance reporting
 - `hugo.yml`: Blog configuration
 
@@ -34,15 +34,15 @@ The blog supports multiple languages: Simplified Chinese, Traditional Chinese, J
 
 ## 📄 Documentation
 
-Start with [documents/README.md](documents/README.md). The current maintenance notes cover:
+Start with [docs/README.md](docs/README.md). The current maintenance notes cover:
 
 - development workflow
 - theme architecture
 - content model
-- customization reference
-- page transitions
+- layout and partial references
+- styles and client scripts
 - performance
-- About page versioning
+- maintenance playbooks
 
 Important note: the theme is customized directly under `themes/hugo-theme-stack`. Before replacing or upgrading the upstream Stack theme, compare local changes carefully.
 

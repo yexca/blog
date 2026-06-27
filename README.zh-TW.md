@@ -23,7 +23,7 @@
 - `themes/`：主題採用 [stack](https://github.com/CaiJimmy/hugo-theme-stack)，並加以自訂
 - `static/`：靜態資源
 - `hugo.yml`：部落格設定檔
-- `documents/`：目前重構後部落格的維護文件
+- `docs/`：目前重構後部落格的維護文件
 - `scripts/`：本機維護腳本，包含效能報告
 
 ## 🧩 使用技術
@@ -33,15 +33,15 @@
 
 ## 📄 文件入口
 
-先從 [documents/README.md](documents/README.md) 開始。目前文件涵蓋：
+先從 [docs/README.md](docs/README.md) 開始。目前文件涵蓋：
 
 - 開發流程
 - 主題架構
 - 內容模型
-- 客製化項目參考
-- 頁面軟導航
+- layout 與 partial 參考
+- 樣式系統與客戶端腳本
 - 效能維護
-- About 頁面版本化
+- 維護手冊
 
 重要提醒：主題直接客製化在 `themes/hugo-theme-stack` 下。升級或替換上游 Stack 主題前，需要仔細比較並保留本倉庫的本地修改。
 

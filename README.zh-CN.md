@@ -22,7 +22,7 @@
 - `content/`: 博文内容，根据不同语言分化
 - `themes/`: 主题使用 [stack](https://github.com/CaiJimmy/hugo-theme-stack) 并进行了一定程度的自定义
 - `static/`: 静态资源
-- `documents/`：当前重构后博客的维护文档
+- `docs/`：当前重构后博客的维护文档
 - `scripts/`：本地维护脚本，包括性能报告
 - `hugo.yml`: 博客配置文件
 
@@ -33,15 +33,15 @@
 
 ## 📄 文档入口
 
-先从 [documents/README.md](documents/README.md) 开始。当前文档覆盖：
+先从 [docs/README.md](docs/README.md) 开始。当前文档覆盖：
 
 - 开发流程
 - 主题架构
 - 内容模型
-- 定制项参考
-- 页面软导航
+- layout 与 partial 参考
+- 样式系统与客户端脚本
 - 性能维护
-- About 页面版本化
+- 维护手册
 
 重要提醒：主题直接定制在 `themes/hugo-theme-stack` 下。升级或替换上游 Stack 主题前，需要仔细比较并保留本仓库的本地修改。
 

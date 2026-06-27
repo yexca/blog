@@ -99,7 +99,7 @@ with high fetch priority. List cover images use smaller responsive sizes.
 Large unused Yozai fonts are kept outside the published `static/` tree:
 
 ```text
-documents/assets/fonts/
+docs/assets/fonts/
 ```
 
 Files in `static/fonts/` are published directly. Do not put large unused fonts
