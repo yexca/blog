@@ -157,6 +157,11 @@
     }
 }
 
+.category-switch-card[hidden],
+.category-expand-button[hidden] {
+    display: none;
+}
+
 .category-switch-title {
     font-size: 1.8rem;
     font-weight: 700;

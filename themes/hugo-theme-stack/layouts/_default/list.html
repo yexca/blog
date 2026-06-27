@@ -21,11 +21,13 @@
                             <span class="category-switch-line" aria-hidden="true"></span>
                         </a>
                     {{ end }}
-                    <button class="category-expand-button category-switch-card" type="button" data-category-expand data-expand-text="{{ T "taxonomy.expandCategories" }}" data-collapse-text="{{ T "taxonomy.collapseCategories" }}" aria-expanded="false" hidden>
-                        <span class="category-switch-title">{{ T "taxonomy.expandCategories" }}</span>
-                        <span class="category-switch-meta">{{ T "taxonomy.showAllCategories" (len $terms) }}</span>
-                        <span class="category-expand-icon" aria-hidden="true"></span>
-                    </button>
+                    {{ if ge (len $terms) 9 }}
+                        <button class="category-expand-button category-switch-card" type="button" data-category-expand data-expand-text="{{ T "taxonomy.expandCategories" }}" data-collapse-text="{{ T "taxonomy.collapseCategories" }}" aria-expanded="false" hidden>
+                            <span class="category-switch-title">{{ T "taxonomy.expandCategories" }}</span>
+                            <span class="category-switch-meta">{{ T "taxonomy.showAllCategories" (len $terms) }}</span>
+                            <span class="category-expand-icon" aria-hidden="true"></span>
+                        </button>
+                    {{ end }}
                 </div>
             </section>
 
