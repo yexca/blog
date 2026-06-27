@@ -1,13 +1,21 @@
 name: Build and Deploy Hugo Blog
 
 on:
-  push:
-    branches:
-      - main  # 监听源仓库主分支的更新
+  workflow_run:
+    workflows:
+      - Translate Content
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
   build-deploy:
+    if: >
+      github.event_name != 'workflow_run' ||
+      (
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_commit.message != 'chore(post): update translated content'
+      )
     runs-on: ubuntu-latest
 
     steps:

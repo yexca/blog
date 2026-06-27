@@ -1,0 +1,51 @@
+name: Translate Content
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: translate-content
+  cancel-in-progress: false
+
+jobs:
+  translate:
+    if: github.event_name != 'push' || github.event.head_commit.message != 'chore(post): update translated content'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Translate changed content
+        env:
+          LLM_TRANSLATE_CONFIG: ${{ secrets.LLM_TRANSLATE_CONFIG }}
+        run: node scripts/translate/translate.mjs
+
+      - name: Commit translated content
+        id: commit
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/en-us content/ja-jp content/zh-tw i18n/translation-manifest.json
+          git commit -m "chore(post): update translated content"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"

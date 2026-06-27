@@ -59,9 +59,9 @@ To refresh the dated Markdown report:
 
 Deployment is configured in `.github/workflows/deploy.yml`.
 
-The workflow:
+The deployment workflow:
 
-1. Runs on pushes to `main` or manual dispatch.
+1. Runs after `.github/workflows/translate.yml` completes successfully, or by manual dispatch.
 2. Installs Hugo extended `0.140.1`.
 3. Runs `hugo --gc --minify`.
 4. Publishes `public/` to the external repository `yexca/blog-web`, branch `main`.
@@ -71,6 +71,18 @@ The deployment token is expected in the GitHub secret:
 ```text
 PERSONAL_TOKEN
 ```
+
+Translation is configured in `.github/workflows/translate.yml`.
+It scans Simplified Chinese posts under `content/zh-cn/posts`, compares source
+hashes with `i18n/translation-manifest.json`, translates stale targets, commits
+the translated files, and then lets the deployment workflow publish the site.
+The LLM provider fallback list is expected in the GitHub secret:
+
+```text
+LLM_TRANSLATE_CONFIG
+```
+
+See [Translation Actions](./translation-actions.md) for the secret JSON format.
 
 ## Dev Container
 
@@ -114,4 +126,3 @@ After changing templates or SCSS:
 git status --short
 git diff --stat
 ```
-

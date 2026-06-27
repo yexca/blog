@@ -1,0 +1,38 @@
+{
+  "baseLocale": "zh-cn",
+  "locales": {
+    "zh-cn": {
+      "contentDir": "content/zh-cn",
+      "label": "Simplified Chinese"
+    },
+    "zh-tw": {
+      "contentDir": "content/zh-tw",
+      "label": "Traditional Chinese"
+    },
+    "en": {
+      "contentDir": "content/en-us",
+      "label": "English"
+    },
+    "ja": {
+      "contentDir": "content/ja-jp",
+      "label": "Japanese"
+    }
+  },
+  "targetLocales": ["zh-tw", "en", "ja"],
+  "sourceGlobs": ["posts/**/*.md"],
+  "excludeGlobs": ["**/_index.md"],
+  "manifestPath": "i18n/translation-manifest.json",
+  "noticeTemplate": {
+    "default": "{{< notice >}} This article was translated by {model} {{< /notice >}}",
+    "zh-tw": "{{< notice >}} 本文由 {model} 翻譯 {{< /notice >}}",
+    "en": "{{< notice >}} This article was translated by {model} {{< /notice >}}",
+    "ja": "{{< notice >}} この記事は {model} によって翻訳されました {{< /notice >}}"
+  },
+  "promptVersion": 1,
+  "translatableFrontMatterKeys": ["title", "description", "categories", "tags"],
+  "copyFrontMatterKeys": ["slug", "author", "date", "image", "hidden", "comments", "math", "readingTime", "license", "translationKey", "draft"],
+  "prompt": {
+    "system": "You are a careful blog translator. Preserve Hugo front matter, Markdown structure, code blocks, shortcodes, math, links, image paths, and technical terms. Return only the translated Markdown document.",
+    "user": "Translate this Hugo Markdown article from {sourceLanguage} to {targetLanguage}. Translate natural-language prose and translatable front matter values. Keep slugs, dates, code, commands, URLs, shortcodes, and HTML unchanged unless their visible text is natural language.\n\n{content}"
+  }
+}
