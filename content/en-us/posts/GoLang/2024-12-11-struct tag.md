@@ -7,7 +7,7 @@ date: 2024-12-11T18:31:18+08:00
 lastmod: 2025-01-28T21:04:18+09:00
 # permalink: /en/archives/205
 categories:
-    - Technology
+    - Tech Learning
 tags:
     - Go
     - Programming Language

@@ -8,7 +8,7 @@ author: yexca
 views:
     - '285'
 categories:
-    - 試行錯誤の記録
+    - やってみた
 tags:
     - Word
 ---

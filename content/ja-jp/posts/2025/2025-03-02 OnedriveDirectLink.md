@@ -5,7 +5,7 @@ title: 'OneDrive の直リンクを取得する方法'
 author: yexca
 date: '2025-03-02T12:58:57+09:00'
 categories:
-    - 試行錯誤
+    - やってみた
 tags:
     - OneDrive
 ---

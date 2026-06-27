@@ -8,7 +8,7 @@ author: yexca
 views:
     - '163'
 categories:
-    - Life Logs
+    - Life Log
 tags:
     - Hello World
 ---

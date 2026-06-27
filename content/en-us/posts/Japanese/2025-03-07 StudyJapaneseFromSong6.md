@@ -6,7 +6,7 @@ author: yexca
 date: '2025-03-07T01:26:31+09:00'
 lastmod: '2025-07-17T21:52:07+09:00'
 categories:
-    - Academic Notes
+    - Academic Exploration
 tags:
     - Japanese
 ---

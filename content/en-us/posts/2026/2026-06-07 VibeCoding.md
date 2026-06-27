@@ -5,7 +5,7 @@ title: 'First Try at Vibe Coding: Accidentally Inhaling a New Digital Drug'
 author: yexca
 date: '2026-06-07T18:42:10+09:00'
 categories:
-    - Tinkering Experience
+    - Tinkering Notes
 tags:
     - AI
     - Vibe Coding

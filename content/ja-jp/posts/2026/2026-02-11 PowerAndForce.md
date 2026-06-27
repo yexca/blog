@@ -5,7 +5,7 @@ title: 'エネルギーと力'
 author: yexca
 date: '2026-02-11T19:32:48+09:00'
 categories:
-    - 人生哲学
+    - 生活哲学
 tags:
     - 人生の気づき
 ---

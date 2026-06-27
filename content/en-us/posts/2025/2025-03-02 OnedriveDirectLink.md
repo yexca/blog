@@ -5,7 +5,7 @@ title: 'Get OneDrive Direct Download Links'
 author: yexca
 date: '2025-03-02T12:58:57+09:00'
 categories:
-    - Tweaking
+    - Tinkering Notes
 tags:
     - OneDrive
 ---

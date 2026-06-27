@@ -6,7 +6,7 @@ author: yexca
 date: '2025-02-09T17:29:28+09:00'
 lastmod: '2025-02-15T17:17:08+09:00'
 categories:
-    - テック学習
+    - 技術学習
 tags:
     - バックエンド技術
     - Elasticsearch

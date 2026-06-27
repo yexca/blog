@@ -7,7 +7,7 @@ date: '2025-03-01T23:28:30+09:00'
 lastmod: '2025-03-04T18:38:28+09:00'
 math: true
 categories:
-    - Software Exam Prep
+    - Exam Study
 tags:
     - Software Designer
     - Computer Networks

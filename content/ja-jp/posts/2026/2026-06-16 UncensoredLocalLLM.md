@@ -5,7 +5,7 @@ title: 'ローカルで検閲なしAIモデルをデプロイする：大規模�
 author: yexca
 date: '2026-06-16T13:07:08+09:00'
 categories:
-    - 試行錯誤の記録
+    - やってみた
 tags:
     - LLM
     - AI

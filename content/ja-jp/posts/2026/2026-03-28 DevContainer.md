@@ -5,7 +5,7 @@ title: 'Dev Container を使ってみよう：環境依存から完全にサヨ�
 author: yexca
 date: '2026-03-28T16:12:02+09:00'
 categories:
-    - 開発プラクティス
+    - 開発実践
 tags:
     - Dev Container
     - Docker

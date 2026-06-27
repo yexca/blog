@@ -5,7 +5,7 @@ title: 'Pythonでpyinstallerを使って実行ファイル化する'
 author: yexca
 date: '2025-01-07T17:26:09+09:00'
 categories:
-    - 技術研修
+    - 技術学習
 tags:
     - Python
     - プログラミング基礎

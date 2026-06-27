@@ -8,7 +8,7 @@ author: yexca
 views:
     - '207'
 categories:
-    - 'Tweaking'
+    - 'Tinkering Notes'
 tags:
     - WordPress
 ---

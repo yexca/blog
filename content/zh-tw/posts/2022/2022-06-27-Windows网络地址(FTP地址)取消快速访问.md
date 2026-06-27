@@ -8,7 +8,7 @@ author: yexca
 views:
     - '252'
 categories:
-    - 摸索經驗
+    - 折騰經驗
 tags:
     - Windows
     - FTP

@@ -8,7 +8,7 @@ author: yexca
 views:
     - '1049'
 categories:
-    - 試行錯誤
+    - やってみた
 tags:
     - Game
     - Beat Saber

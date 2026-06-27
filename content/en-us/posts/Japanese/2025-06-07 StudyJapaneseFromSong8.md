@@ -5,7 +5,7 @@ title: 'Echoes of Emotion - "恋しくなったら手を叩こう"'
 author: yexca
 date: '2025-06-07T01:09:19+09:00'
 categories:
-    - Academic Notes
+    - Academic Exploration
 tags:
     - Japanese
 ---

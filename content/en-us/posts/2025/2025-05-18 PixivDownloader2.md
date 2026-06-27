@@ -5,7 +5,7 @@ title: 'Pixiv Downloader Refactor: From Haphazard Code to Understanding the Chao
 author: yexca
 date: '2025-05-18T16:20:33+09:00'
 categories:
-    - Dev Practices
+    - Development Practice
 tags:
     - Pixiv
     - Python

@@ -8,7 +8,7 @@ author: yexca
 views:
     - '251'
 categories:
-    - いじくり経験
+    - やってみた
 tags:
     - Locale Emulator
 ---

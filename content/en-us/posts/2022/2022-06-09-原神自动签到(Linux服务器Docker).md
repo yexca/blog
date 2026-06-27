@@ -8,7 +8,7 @@ author: yexca
 views:
     - '700'
 categories:
-    - Tech Tinkering
+    - Tinkering Notes
 tags:
     - Docker
     - miHoYo

@@ -5,7 +5,7 @@ title: 'Remote Control Your Windows PC'
 author: yexca
 date: '2026-06-22T01:26:59+09:00'
 categories:
-    - Tinkering
+    - Tinkering Notes
 tags:
     - RDP
     - Windows

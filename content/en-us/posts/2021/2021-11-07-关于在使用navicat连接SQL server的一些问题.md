@@ -8,7 +8,7 @@ author: hiyoung
 views:
     - '200'
 categories:
-    - Tech Tips
+    - Tinkering Notes
 tags:
     - Database
     - Navicat

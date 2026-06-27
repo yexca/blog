@@ -5,7 +5,7 @@ title: '再玩崩鐵：遊戲流水線的感想'
 author: yexca
 date: '2026-05-29T08:58:06+09:00'
 categories:
-    - 生活記錄
+    - 生活紀錄
 tags:
     - 遊戲
 ---

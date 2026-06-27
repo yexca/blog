@@ -5,7 +5,7 @@ title: 'From Saving Money, To Living Life, To Saying Goodbye'
 author: yexca
 date: '2025-04-14T16:23:48+09:00'
 categories:
-    - Systemic Life
+    - Life Philosophy
 tags:
     - Bookkeeping
 ---

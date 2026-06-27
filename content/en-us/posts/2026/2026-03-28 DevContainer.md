@@ -5,7 +5,7 @@ title: 'Embracing Dev Containers: Say Goodbye to Environment Dependencies'
 author: yexca
 date: '2026-03-28T16:12:02+09:00'
 categories:
-    - Development Practices
+    - Development Practice
 tags:
     - Dev Container
     - Docker

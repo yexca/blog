@@ -8,7 +8,7 @@ author: yexca
 views:
     - '256'
 categories:
-    - 實作經驗
+    - 開發實踐
 tags:
     - OpenWRT
 ---

@@ -9,7 +9,7 @@ views:
     - '231'
 categories:
     - Tech Learning
-    - 技术学习
+    - Tech Learning
 tags:
     - Git
     - Github

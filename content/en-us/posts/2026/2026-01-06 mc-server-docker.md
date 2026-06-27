@@ -5,7 +5,7 @@ title: 'Setting Up a Minecraft Server with Docker'
 author: yexca
 date: '2026-01-06T20:38:41+09:00'
 categories:
-    - Tech Log
+    - Tech Learning
 tags:
     - minecraft
     - docker

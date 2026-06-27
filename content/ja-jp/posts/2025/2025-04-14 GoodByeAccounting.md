@@ -5,7 +5,7 @@ title: '節約から生活、そして別れへ'
 author: yexca
 date: '2025-04-14T16:23:48+09:00'
 categories:
-    - 生活コード
+    - 生活哲学
 tags:
     - 簿記
 ---

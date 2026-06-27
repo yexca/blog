@@ -5,7 +5,7 @@ title: 'From Card Enthusiast to Architect: A Philosophy of Life-Driven System De
 author: yexca
 date: '2025-04-22T00:35:15+09:00'
 categories:
-    - Systemic Life
+    - Life Philosophy
 tags:
     - Institute of Everyday Architecture
     - Card Hacking

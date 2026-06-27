@@ -8,7 +8,7 @@ author: yexca
 views:
     - '385'
 categories:
-    - Troubleshooting
+    - Tinkering Notes
 tags:
     - GitHub
 ---

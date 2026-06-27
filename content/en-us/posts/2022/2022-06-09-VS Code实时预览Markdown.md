@@ -8,7 +8,7 @@ author: yexca
 views:
     - '245'
 categories:
-    - Tech Tips
+    - Tinkering Notes
 tags:
     - Markdown
     - VS Code

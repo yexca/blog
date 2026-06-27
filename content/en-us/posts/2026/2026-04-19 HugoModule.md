@@ -5,7 +5,7 @@ title: 'Hugo Module Management'
 author: yexca
 date: '2026-04-19T22:20:06+09:00'
 categories:
-    - Tech
+    - Tech Learning
 tags:
     - Hugo
     - Go

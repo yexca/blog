@@ -5,7 +5,7 @@ title: 'Glassmorphism'
 author: yexca
 date: '2025-01-05T16:19:36+09:00'
 categories:
-    - Dev Practice
+    - Development Practice
 tags:
     - Front-end
 ---

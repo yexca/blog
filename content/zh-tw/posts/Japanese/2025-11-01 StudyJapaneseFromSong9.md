@@ -5,7 +5,7 @@ title: '音之所感 - 《pris-magic!》'
 author: yexca
 date: '2025-11-01T14:30:01+09:00'
 categories:
-    - 學術探究
+    - 學術探索
 tags:
     - 日文學習
 ---

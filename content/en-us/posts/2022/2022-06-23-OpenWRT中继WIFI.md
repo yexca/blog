@@ -8,7 +8,7 @@ author: yexca
 views:
     - '256'
 categories:
-    - Tech Setup
+    - Tinkering Notes
 tags:
     - OpenWRT
 ---

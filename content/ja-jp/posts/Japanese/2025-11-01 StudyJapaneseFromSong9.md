@@ -5,7 +5,7 @@ title: '音に感じて - 『pris-magic!』'
 author: yexca
 date: '2025-11-01T14:30:01+09:00'
 categories:
-    - 学問探究
+    - 学術探究
 tags:
     - 日本語勉強
 ---

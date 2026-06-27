@@ -8,7 +8,7 @@ author: yexca
 views:
     - '251'
 categories:
-    - Tinkering Experience
+    - Tinkering Notes
 tags:
     - Locale Emulator
 ---

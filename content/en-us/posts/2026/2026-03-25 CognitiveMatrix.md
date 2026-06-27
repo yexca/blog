@@ -5,7 +5,7 @@ title: 'Cognitive Matrix: Calculating Value Elegantly'
 author: yexca
 date: '2026-03-25T20:20:49+09:00'
 categories:
-    - Philosophy of Life
+    - Life Philosophy
 tags:
     - Life Architecture Lab
 ---

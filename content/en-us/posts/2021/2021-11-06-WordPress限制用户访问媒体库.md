@@ -7,7 +7,7 @@ author: yexca
 views:
     - '204'
 categories:
-    - Development Practices
+    - Development Practice
 tags:
     - WordPress
 ---

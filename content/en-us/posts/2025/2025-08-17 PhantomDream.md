@@ -5,7 +5,7 @@ title: 'Phantom Dream'
 author: yexca
 date: '2025-08-17T01:13:32+09:00'
 categories:
-    - Systemic Life
+    - Life Philosophy
 tags:
     - Life insights
 ---

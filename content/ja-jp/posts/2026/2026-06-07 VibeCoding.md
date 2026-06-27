@@ -5,7 +5,7 @@ title: '初めてのVibe Coding：新型電子ドラッグをうっかりキメ�
 author: yexca
 date: '2026-06-07T18:42:10+09:00'
 categories:
-    - 試行錯誤
+    - やってみた
 tags:
     - AI
     - Vibe Coding

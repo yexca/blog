@@ -8,7 +8,7 @@ author: yexca
 views:
     - '252'
 categories:
-    - Tinkering Tips
+    - Tinkering Notes
 tags:
     - Windows
     - FTP

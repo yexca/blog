@@ -8,7 +8,7 @@ author: yexca
 views:
     - '245'
 categories:
-    - 試行錯誤の記録
+    - やってみた
 tags:
     - Markdown
     - 'VS Code'

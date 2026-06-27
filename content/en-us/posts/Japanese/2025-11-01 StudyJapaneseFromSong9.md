@@ -5,7 +5,7 @@ title: 'Echoes of Emotion - "pris-magic!"'
 author: yexca
 date: '2025-11-01T14:30:01+09:00'
 categories:
-    - Academic Notes
+    - Academic Exploration
 tags:
     - Japanese
 ---

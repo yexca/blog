@@ -7,7 +7,7 @@ date: 2024-02-25T17:56:54+08:00
 lastmod: 2025-02-05T17:13:54+09:00
 # permalink: /archives/158
 categories:
-    - 技術研修
+    - 技術学習
 tags:
     - バックエンド
     - SpringBoot

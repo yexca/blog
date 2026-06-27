@@ -5,7 +5,7 @@ title: 'Adrift in Learning, Misaligned in Life'
 author: yexca
 date: '2025-08-18T18:27:12+09:00'
 categories:
-    - Systemic Life
+    - Life Philosophy
 tags:
     - Life insights
 ---

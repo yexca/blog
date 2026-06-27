@@ -8,7 +8,7 @@ author: hiyoung
 views:
     - '183'
 categories:
-    - 技術研修
+    - 技術學習
 tags:
     - 資料庫
 ---

@@ -8,7 +8,7 @@ author: yexca
 views:
     - '285'
 categories:
-    - Tech Tips
+    - Tinkering Notes
 tags:
     - Word
 ---

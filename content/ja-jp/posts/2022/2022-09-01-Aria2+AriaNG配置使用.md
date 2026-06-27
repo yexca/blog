@@ -8,7 +8,7 @@ author: hiyoung
 views:
     - '1737'
 categories:
-    - いじくり回した記録
+    - やってみた
 tags:
     - Aria2
     - ダウンロードツール

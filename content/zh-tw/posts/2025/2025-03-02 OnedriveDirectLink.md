@@ -5,7 +5,7 @@ title: '獲取 OneDrive 直接下載連結'
 author: yexca
 date: '2025-03-02T12:58:57+09:00'
 categories:
-    - 實作經驗
+    - 開發實踐
 tags:
     - OneDrive
 ---

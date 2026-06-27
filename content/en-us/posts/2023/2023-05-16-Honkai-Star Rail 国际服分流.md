@@ -8,7 +8,7 @@ permalink: /archives/107
 views:
     - '32'
 categories:
-    - Tech Tips
+    - Tinkering Notes
 tags:
     - Game
     - miHoYo

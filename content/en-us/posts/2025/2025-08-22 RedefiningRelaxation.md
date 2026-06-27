@@ -5,7 +5,7 @@ title: 'Relaxation ≠ Entertainment: Rethinking Mental Energy'
 author: yexca
 date: '2025-08-22T22:17:38+09:00'
 categories:
-    - Systemic Life
+    - Life Philosophy
 tags:
     - Life insights
 ---

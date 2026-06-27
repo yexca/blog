@@ -8,7 +8,7 @@ author: yexca
 views:
     - '181'
 categories:
-    - Technical Learning
+    - Tech Learning
 tags:
     - Fiddler
 ---

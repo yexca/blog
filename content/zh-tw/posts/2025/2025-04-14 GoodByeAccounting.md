@@ -5,7 +5,7 @@ title: '從省錢，到生活，再到告別'
 author: yexca
 date: '2025-04-14T16:23:48+09:00'
 categories:
-    - 生活術式
+    - 生活哲學
 tags:
     - 記帳
 --- 

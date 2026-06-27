@@ -8,7 +8,7 @@ author: yexca
 views:
     - '288'
 categories:
-    - 開發實作
+    - 開發實踐
 tags:
     - WordPress
 ---

@@ -5,7 +5,7 @@ title: '漂浮的學習，錯位的人生'
 author: yexca
 date: '2025-08-18T18:27:12+09:00'
 categories:
-    - 生活術式
+    - 生活哲學
 tags:
     - 生活體悟
 ---

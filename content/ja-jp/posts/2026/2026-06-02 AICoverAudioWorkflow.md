@@ -5,7 +5,7 @@ title: 'AIカバーの学習用音声の前処理について考えてみる'
 author: yexca
 date: '2026-06-02T17:23:44+09:00'
 categories:
-    - 試行錯誤の記録
+    - やってみた
 tags:
     - Roformer
     - AI

@@ -8,7 +8,7 @@ layout: post
 views:
     - '32'
 categories:
-    - 試行錯誤の記録
+    - やってみた
 tags:
     - ゲーム
     - miHoYo

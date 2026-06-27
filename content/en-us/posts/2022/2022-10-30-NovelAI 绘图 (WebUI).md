@@ -8,7 +8,7 @@ author: yexca
 views:
     - '1092'
 categories:
-    - Tinkering Experience
+    - Tinkering Notes
 tags:
     - AI
     - NovelAI

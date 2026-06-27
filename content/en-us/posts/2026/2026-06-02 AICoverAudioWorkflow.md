@@ -5,7 +5,7 @@ title: 'Discussion on Audio Preprocessing for AI Cover Training'
 author: yexca
 date: '2026-06-02T17:23:44+09:00'
 categories:
-    - Hands-on Experience
+    - Tinkering Notes
 tags:
     - Roformer
     - AI

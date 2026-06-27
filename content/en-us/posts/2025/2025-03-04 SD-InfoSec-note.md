@@ -5,7 +5,7 @@ title: 'Software Designer - InfoSec Notes'
 author: yexca
 date: '2025-03-04T18:38:28+09:00'
 categories:
-    - Certification Prep
+    - Exam Study
 tags:
     - Software Designer
     - Operating Systems

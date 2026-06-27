@@ -8,7 +8,7 @@ author: yexca
 views:
     - '330'
 categories:
-    - いじくり記録
+    - やってみた
 tags:
     - YouTube
 ---

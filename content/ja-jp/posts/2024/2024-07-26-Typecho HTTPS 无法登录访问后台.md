@@ -4,7 +4,7 @@ title: 'Typecho で HTTPS 化後に管理画面へログインできない問題
 author: yexca
 date: 2024-07-26T22:22:22+08:00
 categories:
-    - 技術いじり
+    - やってみた
 tags:
     - Typecho
     - トラブルシュート

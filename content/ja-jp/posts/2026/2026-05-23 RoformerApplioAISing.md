@@ -6,7 +6,7 @@ author: yexca
 date: '2026-05-23T03:00:06+09:00'
 lastmod: 2026-05-23T17:50:02+0900
 categories:
-    - 試行錯誤
+    - やってみた
 tags:
     - Roformer
     - RVC

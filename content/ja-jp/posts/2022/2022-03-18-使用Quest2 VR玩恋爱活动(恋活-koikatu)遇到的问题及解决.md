@@ -5,7 +5,7 @@ date: '2022-03-18T16:54:23+08:00'
 lastmod: '2025-01-03T21:01:01+09:00'
 author: yexca
 categories:
-    - 技術いじり
+    - やってみた
 tags:
     - Game
     - VR

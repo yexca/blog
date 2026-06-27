@@ -5,7 +5,7 @@ title: '漂う学び、ずれた生活'
 author: yexca
 date: '2025-08-18T18:27:12+09:00'
 categories:
-    - 生活コード
+    - 生活哲学
 tags:
     - 生活の気づき
 ---

@@ -5,7 +5,7 @@ date: '2022-05-28T00:59:23+08:00'
 lastmod: '2025-01-23T15:56:23+09:00'
 author: yexca
 categories:
-  - 技術研修
+  - 技術学習
 tags:
   - Markdown
 ---

@@ -8,7 +8,7 @@ author: yexca
 views:
     - '256'
 categories:
-    - ガジェットいじり
+    - やってみた
 tags:
     - OpenWRT
 ---

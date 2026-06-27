@@ -5,7 +5,7 @@ title: 'Deploying Local Uncensored AI Models: Breaking the Two Layers of Shackle
 author: yexca
 date: '2026-06-16T13:07:08+09:00'
 categories:
-    - Tinkering
+    - Tinkering Notes
 tags:
     - LLM
     - AI

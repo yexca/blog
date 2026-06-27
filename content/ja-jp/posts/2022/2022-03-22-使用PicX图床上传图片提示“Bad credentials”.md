@@ -8,7 +8,7 @@ author: yexca
 views:
     - '374'
 categories:
-    - 技術メモ
+    - 技術学習
 tags:
     - Github
     - PicX

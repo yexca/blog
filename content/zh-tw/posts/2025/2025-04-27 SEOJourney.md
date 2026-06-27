@@ -5,7 +5,7 @@ title: '為了能搜到自己的名字：一次小站 SEO 排查實踐'
 author: yexca
 date: '2025-04-27T17:38:16+09:00'
 categories:
-  - 開發實作
+  - 開發實踐
 tags:
   - SEO
 ---

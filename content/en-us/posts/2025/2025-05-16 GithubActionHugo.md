@@ -5,7 +5,7 @@ title: 'Embracing DevOps: Offloading My Blog Build and Deploy to GitHub'
 author: yexca
 date: '2025-05-16T18:14:06+09:00'
 categories:
-    - Development Practices
+    - Development Practice
 tags:
     - DevOps
     - GitHub Actions

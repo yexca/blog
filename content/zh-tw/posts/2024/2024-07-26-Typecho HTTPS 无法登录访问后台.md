@@ -6,7 +6,7 @@ author: yexca
 date: 2024-07-26T22:22:22+08:00
 # permalink: /archives/175
 categories:
-    - 實作經驗
+    - 開發實踐
 tags:
     - Typecho
     - 故障排除

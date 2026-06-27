@@ -5,7 +5,7 @@ title: 'Dockerを使ってMinecraftサーバーを立てる方法'
 author: yexca
 date: '2026-01-06T20:38:41+09:00'
 categories:
-    - 技術いじり
+    - やってみた
 tags:
     - minecraft
     - docker

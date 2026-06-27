@@ -8,7 +8,7 @@ author: yexca
 views:
     - '1092'
 categories:
-    - 試行錯誤
+    - やってみた
 tags:
     - AI
     - NovelAI

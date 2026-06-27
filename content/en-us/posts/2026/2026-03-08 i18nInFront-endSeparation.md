@@ -5,7 +5,7 @@ title: 'i18n Implementation in Decoupled Architectures'
 author: yexca
 date: '2026-03-08T18:21:05+09:00'
 categories:
-    - Tech Notes
+    - Tech Learning
 tags:
     - i18n
 ---

@@ -8,7 +8,7 @@ author: yexca
 views:
     - '700'
 categories:
-    - 試行錯誤の記録
+    - やってみた
 tags:
     - Docker
     - miHoYo

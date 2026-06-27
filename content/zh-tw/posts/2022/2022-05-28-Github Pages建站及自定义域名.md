@@ -9,7 +9,7 @@ author: yexca
 views:
     - '355'
 categories:
-    - 開發實務
+    - 開發實踐
 tags:
     - GitHub Pages
     - 建站實務

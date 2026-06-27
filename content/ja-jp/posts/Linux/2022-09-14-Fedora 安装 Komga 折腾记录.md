@@ -8,7 +8,7 @@ author: yexca
 views:
     - '472'
 categories:
-    - 試行錯誤
+    - やってみた
 tags:
     - Docker
     - Komga

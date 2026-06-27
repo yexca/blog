@@ -5,7 +5,7 @@ title: 'Tinkering with Manga and Audio Websites'
 author: yexca
 date: '2025-10-05T01:58:35+09:00'
 categories:
-    - Tinkering Experience
+    - Tinkering Notes
 tags:
     - Config Log
     - Docker

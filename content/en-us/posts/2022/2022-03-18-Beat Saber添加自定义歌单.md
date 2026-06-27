@@ -8,7 +8,7 @@ author: yexca
 views:
     - '1049'
 categories:
-    - Tinkering
+    - Tinkering Notes
 tags:
     - Game
     - Beat Saber

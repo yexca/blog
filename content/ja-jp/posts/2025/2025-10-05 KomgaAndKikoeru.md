@@ -5,7 +5,7 @@ title: '漫画と音声サイトいじり'
 author: yexca
 date: '2025-10-05T01:58:35+09:00'
 categories:
-    - いじり経験
+    - やってみた
 tags:
     - 設定記録
     - Docker

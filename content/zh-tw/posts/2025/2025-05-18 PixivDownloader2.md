@@ -5,7 +5,7 @@ title: 'Pixiv 下載器重構記：從亂寫到理解混亂'
 author: yexca
 date: '2025-05-18T16:20:33+09:00'
 categories:
-  - 開發實作
+  - 開發實踐
 tags:
   - Pixiv
   - Python

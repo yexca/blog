@@ -5,7 +5,7 @@ title: 'Deep Research 初挑戦：人間が働く意味ってなんだろう'
 author: yexca
 date: '2026-02-13T19:05:52+09:00'
 categories:
-    - 学術探求
+    - 学術探究
 tags:
     - AI
 ---

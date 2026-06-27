@@ -8,7 +8,7 @@ author: yexca
 views:
     - '330'
 categories:
-    - Tinkering
+    - Tinkering Notes
 tags:
     - YouTube
 ---

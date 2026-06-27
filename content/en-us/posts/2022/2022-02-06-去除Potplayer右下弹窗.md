@@ -8,7 +8,7 @@ author: yexca
 views:
     - '690'
 categories:
-    - Tweaks & Hacks
+    - Tinkering Notes
 tags:
     - Potplayer
 ---

@@ -8,7 +8,7 @@ author: hiyoung
 views:
     - '1737'
 categories:
-    - Tech Setup
+    - Tinkering Notes
 tags:
     - Aria2
     - Download Tools

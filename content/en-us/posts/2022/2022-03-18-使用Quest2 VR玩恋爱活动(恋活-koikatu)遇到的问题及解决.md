@@ -9,7 +9,7 @@ author: yexca
 views:
     - '7351'
 categories:
-    - Tinkering Logs
+    - Tinkering Notes
 tags:
     - Game
     - VR

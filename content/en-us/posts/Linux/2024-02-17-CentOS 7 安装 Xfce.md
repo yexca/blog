@@ -6,7 +6,7 @@ author: yexca
 date: 2024-02-17T22:51:34+08:00
 # permalink: /archives/153
 categories:
-    - Tinkering
+    - Tinkering Notes
 tahs:
     - Linux
     - CentOS

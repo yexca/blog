@@ -5,7 +5,7 @@ title: 'SpringAMQP'
 author: yexca
 date: '2025-01-15T17:03:32+09:00'
 categories:
-    - 技術研修
+    - 技術學習
 tags:
     - 後端技術
     - SpringCloud

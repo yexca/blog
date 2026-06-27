@@ -5,7 +5,7 @@ title: 'Energy and Power'
 author: yexca
 date: '2026-02-11T19:32:48+09:00'
 categories:
-    - Philosophy of Life
+    - Life Philosophy
 tags:
     - Life Insights
 ---

@@ -8,7 +8,7 @@ author: yexca
 views:
     - '690'
 categories:
-    - 應用技巧
+    - 開發實踐
 tags:
     - Potplayer
 ---

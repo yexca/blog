@@ -6,7 +6,7 @@ author: yexca
 date: '2025-02-08T14:56:36+09:00'
 lastmod: '2025-02-15T17:17:08+09:00'
 categories:
-    - Learning Tech
+    - Tech Learning
 tags:
     - Backend Tech
     - Elasticsearch

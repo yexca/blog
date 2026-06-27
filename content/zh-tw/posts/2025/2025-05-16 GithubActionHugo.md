@@ -5,7 +5,7 @@ title: '擁抱 DevOps：把我的部落格建構與部署丟給 GitHub 處理'
 author: yexca
 date: '2025-05-16T18:14:06+09:00'
 categories:
-  - 開發實作
+  - 開發實踐
 tags:
   - DevOps
   - GitHub Actions

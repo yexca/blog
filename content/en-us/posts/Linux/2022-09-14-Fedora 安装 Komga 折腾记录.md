@@ -8,7 +8,7 @@ author: yexca
 views:
     - '472'
 categories:
-    - Setup
+    - Tinkering Notes
 tags:
     - Docker
     - Komga

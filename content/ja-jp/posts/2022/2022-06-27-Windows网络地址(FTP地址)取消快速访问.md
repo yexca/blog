@@ -8,7 +8,7 @@ author: yexca
 views:
     - '252'
 categories:
-    - 試行錯誤の記録
+    - やってみた
 tags:
     - Windows
     - FTP

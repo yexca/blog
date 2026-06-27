@@ -6,7 +6,7 @@ author: yexca
 date: 2024-07-26T22:22:22+08:00
 # permalink: /archives/175
 categories:
-    - Experience
+    - Tinkering Notes
 tags:
     - Typecho
     - Troubleshooting

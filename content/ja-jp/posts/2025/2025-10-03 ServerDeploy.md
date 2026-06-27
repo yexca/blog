@@ -6,7 +6,7 @@ author: yexca
 date: '2025-10-03T10:22:25+09:00'
 lastmod: '2025-10-05T02:18:25+09:00'
 categories:
-    - サーバーいじり
+    - やってみた
 tags:
     - 設定記録
     - Docker

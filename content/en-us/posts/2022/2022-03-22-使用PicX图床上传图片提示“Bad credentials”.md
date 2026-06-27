@@ -8,7 +8,7 @@ author: yexca
 views:
     - '374'
 categories:
-    - Experience
+    - Tinkering Notes
 tags:
     - GitHub
     - PicX

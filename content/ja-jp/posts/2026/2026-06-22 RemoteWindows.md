@@ -5,7 +5,7 @@ title: 'Windows PCをリモート操作する'
 author: yexca
 date: '2026-06-22T01:26:59+09:00'
 categories:
-    - 試行錯誤の記録
+    - やってみた
 tags:
     - RDP
     - Windows

@@ -7,7 +7,7 @@ date: 2024-12-17T21:16:31+08:00
 lastmod: 2025-01-28T21:11:18+09:00
 # permalink: /ja/archives/205
 categories:
-    - 技術研修
+    - 技術学習
 tags:
     - Go
     - プログラミング言語

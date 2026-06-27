@@ -5,7 +5,7 @@ title: 'Echoes of Emotion - "こんなに素晴らしい世界で"'
 author: yexca
 date: '2026-03-10T21:39:17+09:00'
 categories:
-    - Academic Notes
+    - Academic Exploration
 tags:
     - Japanese
 ---

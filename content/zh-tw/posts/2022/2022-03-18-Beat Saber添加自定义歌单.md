@@ -8,7 +8,7 @@ author: yexca
 views:
     - '1049'
 categories:
-    - 疑難排解經驗
+    - 折騰經驗
 tags:
     - Game
     - Beat Saber
