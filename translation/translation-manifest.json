@@ -2733,6 +2733,33 @@
       "sourceHash": "sha256:4721aaff87d727f1fd6bf73d2818886de2190019b33f1299478fd2fe59f29f51",
       "promptVersion": 1
     },
+    "posts/2026/2026-06-28 WindowsExcludedPort.md": {
+      "translations": {
+        "en": {
+          "sourceHash": "sha256:97785ca11cc372f8d3feb39ac7bc92e3058b53d4568a511972f010b01ef0fc0e",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-06-27T17:04:09.745Z"
+        },
+        "ja": {
+          "sourceHash": "sha256:97785ca11cc372f8d3feb39ac7bc92e3058b53d4568a511972f010b01ef0fc0e",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-06-27T17:04:35.491Z"
+        },
+        "zh-tw": {
+          "sourceHash": "sha256:97785ca11cc372f8d3feb39ac7bc92e3058b53d4568a511972f010b01ef0fc0e",
+          "status": "current",
+          "provider": "gemini-2",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-06-27T17:03:58.597Z"
+        }
+      },
+      "sourceHash": "sha256:97785ca11cc372f8d3feb39ac7bc92e3058b53d4568a511972f010b01ef0fc0e",
+      "promptVersion": 1
+    },
     "posts/Elasticsearch/2025-01-29-Elasticsearch-1.md": {
       "translations": {
         "en": {
@@ -6031,5 +6058,5 @@
       "promptVersion": 1
     }
   },
-  "updatedAt": "2026-06-27T16:59:47.737Z"
+  "updatedAt": "2026-06-27T17:04:35.543Z"
 }
