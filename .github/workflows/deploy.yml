@@ -1,26 +1,67 @@
 name: Build and Deploy Hugo Blog
 
 on:
-  workflow_run:
-    workflows:
-      - Translate Content
-    types:
-      - completed
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
+  should-deploy:
+    runs-on: ubuntu-latest
+    outputs:
+      deploy: ${{ steps.decision.outputs.deploy }}
+      reason: ${{ steps.decision.outputs.reason }}
+
+    steps:
+      - name: Checkout source
+        if: github.event_name == 'push'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Decide whether to deploy
+        id: decision
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          deploy=false
+          reason="unknown"
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            deploy=true
+            reason="manual dispatch"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            if [ "${{ github.event.head_commit.message }}" = "chore(post): update translated content" ]; then
+              deploy=true
+              reason="translated content commit"
+            else
+              changed_files="$(git diff --name-only HEAD^ HEAD)"
+              if echo "$changed_files" | grep -Eq '^(content/zh-cn/posts/|translation/translate\.config\.json|scripts/translate/|\.github/workflows/translate\.yml$)'; then
+                deploy=false
+                reason="translation inputs changed; wait for translation commit"
+              else
+                deploy=true
+                reason="non-translated-source push"
+              fi
+            fi
+          fi
+
+          echo "deploy=$deploy" >> "$GITHUB_OUTPUT"
+          echo "reason=$reason" >> "$GITHUB_OUTPUT"
+          echo "Decision: deploy=$deploy ($reason)"
+
   build-deploy:
-    if: >
-      github.event_name != 'workflow_run' ||
-      (
-        github.event.workflow_run.conclusion == 'success' &&
-        github.event.workflow_run.head_commit.message != 'chore(post): update translated content'
-      )
+    needs: should-deploy
+    if: needs.should-deploy.outputs.deploy == 'true'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2

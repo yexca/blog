@@ -8,12 +8,14 @@ The repository has a translation workflow for Hugo multilingual content.
 push to main
   -> Translate Content
   -> commit translated Markdown when source hashes changed
+  -> push translated commit
   -> Build and Deploy Hugo Blog
 ```
 
-`Build and Deploy Hugo Blog` is triggered by `workflow_run` after `Translate Content`
-finishes successfully. Manual deployment is still available through
-`workflow_dispatch`.
+`Build and Deploy Hugo Blog` runs on normal pushes unless the pushed files are
+translation inputs. In that case it waits for `Translate Content` to commit the
+translated files, and that translated commit triggers deployment. Manual
+deployment is still available through `workflow_dispatch`.
 
 Automatic translation commits use this subject:
 
@@ -28,6 +30,12 @@ The translation workflow commits back to this repository with the default
 `GITHUB_TOKEN` and `contents: write` permission. `PERSONAL_TOKEN` is only needed
 by the deployment workflow when publishing to the external `yexca/blog-web`
 repository.
+
+The deployment workflow uses a lightweight decision job. It skips pushes that
+change translation inputs, such as `content/zh-cn/posts/**`,
+`translation/translate.config.json`, `scripts/translate/**`, or the translation
+workflow itself. Other pushes, such as theme, style, Hugo config, static assets,
+or translated content updates, deploy immediately.
 
 ## Files
 
