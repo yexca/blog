@@ -8,14 +8,14 @@ The repository has a translation workflow for Hugo multilingual content.
 push to main
   -> Translate Content
   -> commit translated Markdown when source hashes changed
-  -> push translated commit
+  -> Translate Content success
   -> Build and Deploy Hugo Blog
 ```
 
 `Build and Deploy Hugo Blog` runs on normal pushes unless the pushed files are
-translation inputs. In that case it waits for `Translate Content` to commit the
-translated files, and that translated commit triggers deployment. Manual
-deployment is still available through `workflow_dispatch`.
+translation inputs. In that case it waits for `Translate Content` to finish
+successfully, then deploys the latest `main` commit. Manual deployment is still
+available through `workflow_dispatch`.
 
 Automatic translation commits use this subject:
 
@@ -34,8 +34,10 @@ repository.
 The deployment workflow uses a lightweight decision job. It skips pushes that
 change translation inputs, such as `content/zh-cn/posts/**`,
 `translation/translate.config.json`, `scripts/translate/**`, or the translation
-workflow itself. Other pushes, such as theme, style, Hugo config, static assets,
-or translated content updates, deploy immediately.
+workflow itself. Other pushes, such as theme, style, Hugo config, or static
+assets, deploy immediately. Translated commits pushed with `GITHUB_TOKEN` do not
+start push workflows, so deployment after translation is driven by
+`workflow_run`.
 
 ## Files
 

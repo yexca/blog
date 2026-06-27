@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows:
+      - Translate Content
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
@@ -32,15 +37,23 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             deploy=true
             reason="manual dispatch"
+          elif [ "${{ github.event_name }}" = "workflow_run" ]; then
+            if [ "${{ github.event.workflow_run.conclusion }}" = "success" ]; then
+              deploy=true
+              reason="translate workflow succeeded"
+            else
+              deploy=false
+              reason="translate workflow did not succeed"
+            fi
           elif [ "${{ github.event_name }}" = "push" ]; then
             if [ "${{ github.event.head_commit.message }}" = "chore(post): update translated content" ]; then
-              deploy=true
-              reason="translated content commit"
+              deploy=false
+              reason="translated content commit from GITHUB_TOKEN does not trigger deploy"
             else
               changed_files="$(git diff --name-only HEAD^ HEAD)"
               if echo "$changed_files" | grep -Eq '^(content/zh-cn/posts/|translation/translate\.config\.json|scripts/translate/|\.github/workflows/translate\.yml$)'; then
                 deploy=false
-                reason="translation inputs changed; wait for translation commit"
+                reason="translation inputs changed; wait for translation workflow"
               else
                 deploy=true
                 reason="non-translated-source push"
