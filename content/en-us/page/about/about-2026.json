@@ -1,0 +1,234 @@
+{
+  "eyebrow": "BLOG ID",
+  "identity": {
+    "avatar_alt": "Avatar",
+    "name_label": "Name",
+    "reading_label": "Pronunciation",
+    "description_label": "Description",
+    "name": "yexca",
+    "reading": "/jɛkɑ/",
+    "description": "This is yexca's personal blog: AI workflows, local automation, image recognition, data processing, multilingual notes, and the process of turning repeated small problems into practical tools."
+  },
+  "focus": {
+    "label": "current focus",
+    "motto": "no, possible",
+    "items": [
+      {
+        "title": "AI and data experiments",
+        "text": "Image recognition / YOLO / data preparation / media quality checks"
+      },
+      {
+        "title": "Local-first tools",
+        "text": "Yasumi / PixivDownloader / Kumo / ZeroClaw"
+      },
+      {
+        "title": "Multilingual knowledge systems",
+        "text": "Hugo blog / translation tooling / VRChat docs / personal services"
+      }
+    ]
+  },
+  "mind": {
+    "eyebrow": "Mind Map",
+    "title": "How I Observe The World",
+    "prev_label": "Previous card",
+    "next_label": "Next card",
+    "dots_label": "Mind map cards",
+    "cards": [
+      {
+        "bg": "matrix",
+        "title": "Repeated Problems Become Tools",
+        "text": "If a tiny annoyance appears often enough, it deserves a script, a workflow, or a small app.",
+        "link": "PixivDownloader",
+        "url": "https://github.com/yexca/PixivDownloader-WebUI"
+      },
+      {
+        "bg": "pipeline",
+        "title": "AI Workflows Need Pipelines",
+        "text": "Models are only one part of the work; preparation, checks, slicing, archiving, and deployment matter too.",
+        "link": "AI-Cover-Tools",
+        "url": "https://github.com/yexca/AI-Cover-Tools"
+      },
+      {
+        "bg": "tools",
+        "title": "Local First, Inspectable",
+        "text": "I like tools that are easy to run, easy to inspect, and still useful after the first experiment.",
+        "link": "Yasumi",
+        "url": "https://github.com/yexca/yasumi-project-deploy"
+      },
+      {
+        "bg": "music",
+        "accent": true,
+        "title": "Notes Become Systems",
+        "text": "The blog, translation tooling, VRChat docs, and project logs are all parts of one maintained knowledge system.",
+        "link": "Blog",
+        "url": "https://github.com/yexca/blog"
+      }
+    ]
+  },
+  "site": {
+    "eyebrow": "Site Universe",
+    "title": "Site Universe",
+    "core": {
+      "label": "yexca",
+      "meta": "personal page",
+      "url": "https://yexca.net/"
+    },
+    "nodes": [
+      {
+        "class": "blog",
+        "label": "Blog",
+        "meta": "digital notebook",
+        "url": "https://blog.yexca.net/",
+        "delay": "-2s",
+        "duration": "34s"
+      },
+      {
+        "class": "github",
+        "label": "GitHub",
+        "meta": "@yexca",
+        "url": "https://github.com/yexca",
+        "delay": "-19s",
+        "duration": "34s"
+      },
+      {
+        "class": "vrc",
+        "label": "VRChat",
+        "meta": "docs",
+        "url": "https://vrchat.yexca.net/",
+        "delay": "-9s",
+        "duration": "42s"
+      },
+      {
+        "class": "music",
+        "label": "Music",
+        "meta": "Navidrome",
+        "url": "https://music.yexca.net/",
+        "delay": "-30s",
+        "duration": "42s"
+      },
+      {
+        "class": "vrc-github",
+        "label": "Github-VRChat",
+        "meta": "VRChat repos",
+        "url": "https://github.com/yexca-VRChat",
+        "delay": "-16s",
+        "duration": "48s"
+      }
+    ]
+  },
+  "projects_section": {
+    "eyebrow": "Projects",
+    "title": "Repeated problems, reusable tools",
+    "open_label": "GitHub",
+    "items": [
+      {
+        "name": "PixivDownloader-WebUI",
+        "url": "https://github.com/yexca/PixivDownloader-WebUI",
+        "desc": "A local WebUI for Pixiv backups, queues, metadata, and browsing.",
+        "tags": ["Pixiv", "WebUI", "SQLite"]
+      },
+      {
+        "name": "AI-Cover-Tools",
+        "url": "https://github.com/yexca/AI-Cover-Tools",
+        "desc": "Audio separation, slicing, and checks for AI cover training material.",
+        "tags": ["Audio", "AI", "Windows"]
+      },
+      {
+        "name": "zeroclaw-dockyard",
+        "url": "https://github.com/yexca/zeroclaw-dockyard",
+        "desc": "A Docker-first control panel for multiple local ZeroClaw agents.",
+        "tags": ["ZeroClaw", "Docker", "Matrix"]
+      },
+      {
+        "name": "yasumi-project-deploy",
+        "url": "https://github.com/yexca/yasumi-project-deploy",
+        "desc": "Deployment entry point for the Yasumi personal planning system.",
+        "tags": ["Deploy", "Planning", "Local"]
+      },
+      {
+        "name": "Kumo",
+        "url": "https://github.com/yexca/Kumo",
+        "desc": "A lightweight self-hosted image hosting service for personal workflows.",
+        "tags": ["Images", "Self-hosted", "Go"]
+      },
+      {
+        "name": "kikoto",
+        "url": "https://github.com/yexca/kikoto",
+        "desc": "A local media library for organizing voice works and related metadata.",
+        "tags": ["Media", "Library", "Local"]
+      }
+    ]
+  },
+  "history_section": {
+    "eyebrow": "Blog History",
+    "title": "From problem notes to a maintained knowledge base",
+    "items": [
+      {
+        "label": "Start",
+        "kind": "main",
+        "kind_label": "MAIN",
+        "title": "A Place to Write Things Down",
+        "date": "2021-11-04",
+        "body": "The blog began as a small place for learning notes, fixes, and experiments that I did not want to lose.",
+        "active": true
+      },
+      {
+        "label": "Sakurairo",
+        "kind": "branch",
+        "kind_label": "BRANCH",
+        "title": "Learning by Changing Themes",
+        "date": "2021-11-22",
+        "body": "Early theme changes were not just decoration. They were how I learned what kind of site felt like mine."
+      },
+      {
+        "label": "Argon",
+        "kind": "branch",
+        "kind_label": "BRANCH",
+        "title": "A Blog That Could Stay Around",
+        "date": "2022-01-30",
+        "body": "Argon made the site feel practical enough for long-term writing, problem solving, and daily maintenance."
+      },
+      {
+        "label": "Docker",
+        "kind": "main",
+        "kind_label": "MAIN",
+        "title": "Deployment Became Reproducible",
+        "date": "2023-04-04",
+        "body": "Docker turned server setup from memory work into something closer to infrastructure notes I could repeat."
+      },
+      {
+        "label": "Jekyll",
+        "kind": "main",
+        "kind_label": "MAIN",
+        "title": "Toward Static Generation",
+        "date": "2023-07-03",
+        "body": "Moving to Jekyll shifted the blog from a themed website toward a lighter static publishing workflow."
+      },
+      {
+        "label": "Hugo",
+        "kind": "main",
+        "kind_label": "MAIN",
+        "title": "A Multilingual Knowledge Base",
+        "date": "2024-12-27",
+        "body": "Hugo brought internationalization, translation workflow, and a more maintainable structure for notes across languages."
+      },
+      {
+        "label": "Counter",
+        "kind": "branch",
+        "kind_label": "BRANCH",
+        "title": "A Small Sign of Life",
+        "date": "2025-02-28",
+        "body": "The counter is tiny, but it makes the page feel visited, alive, and a little more personal."
+      },
+      {
+        "label": "Refactor",
+        "kind": "main",
+        "kind_label": "MAIN",
+        "title": "Introducing the Blog Again",
+        "date": "2026-05-31",
+        "body": "The Stack theme refactor became a chance to rethink what this blog says about me now: code, tools, notes, and life."
+      }
+    ]
+  },
+  "footer": "Every experience is a commit. Stay curious, and keep exploring."
+}

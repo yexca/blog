@@ -1,0 +1,236 @@
+{
+  "eyebrow": "BLOG ID",
+  "identity": {
+    "avatar_alt": "アバター",
+    "name_label": "名前",
+    "english_label": "英語名",
+    "reading_label": "読み",
+    "description_label": "説明",
+    "name": "いえか",
+    "english": "yexca",
+    "reading": "ieka",
+    "description": "ここは yexca の個人ブログ。AI ワークフロー、ローカル自動化、画像認識、データ処理、多言語ノート、そして繰り返し現れる小さな問題を実用的なツールにしていく過程を記録する場所。"
+  },
+  "focus": {
+    "label": "current focus",
+    "motto": "no, possible",
+    "items": [
+      {
+        "title": "AI とデータ実験",
+        "text": "画像認識 / YOLO / データ準備 / メディア品質チェック"
+      },
+      {
+        "title": "ローカルファーストなツール",
+        "text": "Yasumi / PixivDownloader / Kumo / ZeroClaw"
+      },
+      {
+        "title": "多言語の知識システム",
+        "text": "Hugo ブログ / 翻訳ツール / VRChat ドキュメント / 個人サービス"
+      }
+    ]
+  },
+  "mind": {
+    "eyebrow": "思考マップ",
+    "title": "世界をどう観察するか",
+    "prev_label": "前のカード",
+    "next_label": "次のカード",
+    "dots_label": "思考マップのカード",
+    "cards": [
+      {
+        "bg": "matrix",
+        "title": "繰り返す問題はツールになる",
+        "text": "小さな面倒でも何度も現れるなら、スクリプトやワークフローや小さなアプリにする価値がある。",
+        "link": "PixivDownloader",
+        "url": "https://github.com/yexca/PixivDownloader-WebUI"
+      },
+      {
+        "bg": "pipeline",
+        "title": "AI ワークフローにはパイプラインが必要",
+        "text": "モデルは作業の一部にすぎない。準備、確認、分割、アーカイブ、デプロイも同じくらい大事。",
+        "link": "AI-Cover-Tools",
+        "url": "https://github.com/yexca/AI-Cover-Tools"
+      },
+      {
+        "bg": "tools",
+        "title": "ローカル優先、そして見えること",
+        "text": "動かしやすく、確認しやすく、最初の実験が終わった後も役に立つツールが好き。",
+        "link": "Yasumi",
+        "url": "https://github.com/yexca/yasumi-project-deploy"
+      },
+      {
+        "bg": "music",
+        "accent": true,
+        "title": "ノートはシステムになる",
+        "text": "ブログ、翻訳ツール、VRChat ドキュメント、プロジェクトログは、ひとつの保守される知識システムの一部。",
+        "link": "Blog",
+        "url": "https://github.com/yexca/blog"
+      }
+    ]
+  },
+  "site": {
+    "eyebrow": "サイト宇宙",
+    "title": "サイト宇宙",
+    "core": {
+      "label": "yexca",
+      "meta": "personal page",
+      "url": "https://yexca.net/"
+    },
+    "nodes": [
+      {
+        "class": "blog",
+        "label": "Blog",
+        "meta": "digital notebook",
+        "url": "https://blog.yexca.net/",
+        "delay": "-2s",
+        "duration": "34s"
+      },
+      {
+        "class": "github",
+        "label": "GitHub",
+        "meta": "@yexca",
+        "url": "https://github.com/yexca",
+        "delay": "-19s",
+        "duration": "34s"
+      },
+      {
+        "class": "vrc",
+        "label": "VRChat",
+        "meta": "docs",
+        "url": "https://vrchat.yexca.net/",
+        "delay": "-9s",
+        "duration": "42s"
+      },
+      {
+        "class": "music",
+        "label": "Music",
+        "meta": "Navidrome",
+        "url": "https://music.yexca.net/",
+        "delay": "-30s",
+        "duration": "42s"
+      },
+      {
+        "class": "vrc-github",
+        "label": "Github-VRChat",
+        "meta": "VRChat repos",
+        "url": "https://github.com/yexca-VRChat",
+        "delay": "-16s",
+        "duration": "48s"
+      }
+    ]
+  },
+  "projects_section": {
+    "eyebrow": "プロジェクト",
+    "title": "繰り返す問題を、繰り返し使えるツールへ",
+    "open_label": "GitHub",
+    "items": [
+      {
+        "name": "PixivDownloader-WebUI",
+        "url": "https://github.com/yexca/PixivDownloader-WebUI",
+        "desc": "Pixiv のバックアップ、キュー、メタデータ、ローカル閲覧のための WebUI。",
+        "tags": ["Pixiv", "WebUI", "SQLite"]
+      },
+      {
+        "name": "AI-Cover-Tools",
+        "url": "https://github.com/yexca/AI-Cover-Tools",
+        "desc": "AI カバー学習素材のための音声分離、分割、品質チェック。",
+        "tags": ["Audio", "AI", "Windows"]
+      },
+      {
+        "name": "zeroclaw-dockyard",
+        "url": "https://github.com/yexca/zeroclaw-dockyard",
+        "desc": "複数のローカル ZeroClaw agent を管理する Docker ファーストのコントロールパネル。",
+        "tags": ["ZeroClaw", "Docker", "Matrix"]
+      },
+      {
+        "name": "yasumi-project-deploy",
+        "url": "https://github.com/yexca/yasumi-project-deploy",
+        "desc": "Yasumi 個人計画システムのデプロイ入口。",
+        "tags": ["Deploy", "Planning", "Local"]
+      },
+      {
+        "name": "Kumo",
+        "url": "https://github.com/yexca/Kumo",
+        "desc": "個人ワークフロー向けの軽量セルフホスト画像ホスティングサービス。",
+        "tags": ["Images", "Self-hosted", "Go"]
+      },
+      {
+        "name": "kikoto",
+        "url": "https://github.com/yexca/kikoto",
+        "desc": "ローカル音声作品と関連メタデータを整理するためのメディアライブラリ。",
+        "tags": ["Media", "Library", "Local"]
+      }
+    ]
+  },
+  "history_section": {
+    "eyebrow": "ブログ履歴",
+    "title": "問題メモから、保守される知識ベースへ",
+    "items": [
+      {
+        "label": "Start",
+        "kind": "main",
+        "kind_label": "MAIN",
+        "title": "問題を書き留める場所",
+        "date": "2021-11-04",
+        "body": "ブログは最初、忘れたくない学習メモ、修正、実験を置いておく小さな場所として始まった。",
+        "active": true
+      },
+      {
+        "label": "Sakurairo",
+        "kind": "branch",
+        "kind_label": "BRANCH",
+        "title": "テーマ変更から学ぶ",
+        "date": "2021-11-22",
+        "body": "初期のテーマ変更はただの装飾ではなく、自分らしいサイトを探すための試行錯誤だった。"
+      },
+      {
+        "label": "Argon",
+        "kind": "branch",
+        "kind_label": "BRANCH",
+        "title": "長く残せるブログへ",
+        "date": "2022-01-30",
+        "body": "Argon によって、長く書き、問題を記録し、日々保守できる実用的な場所になった。"
+      },
+      {
+        "label": "Docker",
+        "kind": "main",
+        "kind_label": "MAIN",
+        "title": "デプロイが再現可能になった",
+        "date": "2023-04-04",
+        "body": "Docker はサーバー設定を記憶頼りの作業から、繰り返せるインフラメモに近いものへ変えた。"
+      },
+      {
+        "label": "Jekyll",
+        "kind": "main",
+        "kind_label": "MAIN",
+        "title": "静的生成へ向かう",
+        "date": "2023-07-03",
+        "body": "Jekyll への移行で、ブログはテーマサイトからより軽い静的公開ワークフローへ進んだ。"
+      },
+      {
+        "label": "Hugo",
+        "kind": "main",
+        "kind_label": "MAIN",
+        "title": "多言語の知識ベース",
+        "date": "2024-12-27",
+        "body": "Hugo は国際化、翻訳ワークフロー、そして多言語ノートを保守しやすい構造をもたらした。"
+      },
+      {
+        "label": "Counter",
+        "kind": "branch",
+        "kind_label": "BRANCH",
+        "title": "小さな生命のしるし",
+        "date": "2025-02-28",
+        "body": "カウンターは小さいけれど、ページに訪問の気配と生きている感じを与えてくれる。"
+      },
+      {
+        "label": "Refactor",
+        "kind": "main",
+        "kind_label": "MAIN",
+        "title": "ブログをもう一度紹介する",
+        "date": "2026-05-31",
+        "body": "Stack テーマのリファクタは、今のブログがコード、ツール、ノート、そして生活を記録する場所だと考え直す機会になった。"
+      }
+    ]
+  },
+  "footer": "すべての経験は commit。好奇心を持ち続けて、もっと可能性を探ろう。"
+}

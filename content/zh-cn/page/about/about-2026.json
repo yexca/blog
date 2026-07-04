@@ -1,0 +1,236 @@
+{
+  "eyebrow": "BLOG ID",
+  "identity": {
+    "avatar_alt": "头像",
+    "name_label": "姓名",
+    "english_label": "英文名",
+    "reading_label": "读音",
+    "description_label": "描述",
+    "name": "叶卡",
+    "english": "yexca",
+    "reading": "yè kǎ",
+    "description": "这里是 yexca 的个人博客：记录 AI 工作流、本地自动化、图像识别、数据处理、多语言笔记，以及把反复出现的小问题整理成实用工具的过程。"
+  },
+  "focus": {
+    "label": "current focus",
+    "motto": "no, possible",
+    "items": [
+      {
+        "title": "AI 与数据实验",
+        "text": "图像识别 / YOLO / 数据准备 / 媒体质量检查"
+      },
+      {
+        "title": "本地优先工具",
+        "text": "Yasumi / PixivDownloader / Kumo / ZeroClaw"
+      },
+      {
+        "title": "多语言知识系统",
+        "text": "Hugo 博客 / 翻译工具 / VRChat 文档 / 个人服务"
+      }
+    ]
+  },
+  "mind": {
+    "eyebrow": "思维地图",
+    "title": "我如何观察世界",
+    "prev_label": "上一张卡片",
+    "next_label": "下一张卡片",
+    "dots_label": "思维地图卡片",
+    "cards": [
+      {
+        "bg": "matrix",
+        "title": "反复出现的问题会变成工具",
+        "text": "一个小麻烦如果反复出现，就值得被做成脚本、工作流或小工具。",
+        "link": "PixivDownloader",
+        "url": "https://github.com/yexca/PixivDownloader-WebUI"
+      },
+      {
+        "bg": "pipeline",
+        "title": "AI 工作流需要流水线",
+        "text": "模型只是其中一部分；准备、检查、切片、归档和部署也同样重要。",
+        "link": "AI-Cover-Tools",
+        "url": "https://github.com/yexca/AI-Cover-Tools"
+      },
+      {
+        "bg": "tools",
+        "title": "本地优先，也要可检查",
+        "text": "我喜欢容易运行、容易检查，而且第一次实验结束后仍然有用的工具。",
+        "link": "Yasumi",
+        "url": "https://github.com/yexca/yasumi-project-deploy"
+      },
+      {
+        "bg": "music",
+        "accent": true,
+        "title": "笔记会变成系统",
+        "text": "博客、翻译工具、VRChat 文档和项目记录，都是同一套被维护的知识系统。",
+        "link": "Blog",
+        "url": "https://github.com/yexca/blog"
+      }
+    ]
+  },
+  "site": {
+    "eyebrow": "站点宇宙",
+    "title": "站点宇宙",
+    "core": {
+      "label": "yexca",
+      "meta": "personal page",
+      "url": "https://yexca.net/"
+    },
+    "nodes": [
+      {
+        "class": "blog",
+        "label": "Blog",
+        "meta": "digital notebook",
+        "url": "https://blog.yexca.net/",
+        "delay": "-2s",
+        "duration": "34s"
+      },
+      {
+        "class": "github",
+        "label": "GitHub",
+        "meta": "@yexca",
+        "url": "https://github.com/yexca",
+        "delay": "-19s",
+        "duration": "34s"
+      },
+      {
+        "class": "vrc",
+        "label": "VRChat",
+        "meta": "docs",
+        "url": "https://vrchat.yexca.net/",
+        "delay": "-9s",
+        "duration": "42s"
+      },
+      {
+        "class": "music",
+        "label": "Music",
+        "meta": "Navidrome",
+        "url": "https://music.yexca.net/",
+        "delay": "-30s",
+        "duration": "42s"
+      },
+      {
+        "class": "vrc-github",
+        "label": "Github-VRChat",
+        "meta": "VRChat repos",
+        "url": "https://github.com/yexca-VRChat",
+        "delay": "-16s",
+        "duration": "48s"
+      }
+    ]
+  },
+  "projects_section": {
+    "eyebrow": "项目",
+    "title": "反复出现的问题，可以变成反复使用的工具",
+    "open_label": "GitHub",
+    "items": [
+      {
+        "name": "PixivDownloader-WebUI",
+        "url": "https://github.com/yexca/PixivDownloader-WebUI",
+        "desc": "用于 Pixiv 备份、队列、元数据与本地浏览的 WebUI。",
+        "tags": ["Pixiv", "WebUI", "SQLite"]
+      },
+      {
+        "name": "AI-Cover-Tools",
+        "url": "https://github.com/yexca/AI-Cover-Tools",
+        "desc": "为 AI 翻唱训练素材进行音频分离、切片与质量检查。",
+        "tags": ["音频", "AI", "Windows"]
+      },
+      {
+        "name": "zeroclaw-dockyard",
+        "url": "https://github.com/yexca/zeroclaw-dockyard",
+        "desc": "以 Docker 为核心，管理多个本地 ZeroClaw agent 的控制台。",
+        "tags": ["ZeroClaw", "Docker", "Matrix"]
+      },
+      {
+        "name": "yasumi-project-deploy",
+        "url": "https://github.com/yexca/yasumi-project-deploy",
+        "desc": "Yasumi 个人计划系统的部署入口。",
+        "tags": ["部署", "计划", "本地"]
+      },
+      {
+        "name": "Kumo",
+        "url": "https://github.com/yexca/Kumo",
+        "desc": "面向个人工作流的轻量自托管图床服务。",
+        "tags": ["图片", "自托管", "Go"]
+      },
+      {
+        "name": "kikoto",
+        "url": "https://github.com/yexca/kikoto",
+        "desc": "用于整理本地音声作品与相关元数据的媒体库。",
+        "tags": ["媒体", "资料库", "本地"]
+      }
+    ]
+  },
+  "history_section": {
+    "eyebrow": "博客历史",
+    "title": "从问题笔记到持续维护的知识库",
+    "items": [
+      {
+        "label": "Start",
+        "kind": "main",
+        "kind_label": "主线",
+        "title": "一个写下问题的地方",
+        "date": "2021-11-04",
+        "body": "博客一开始只是一个小地方，用来存放不想忘掉的学习笔记、问题修复和实验记录。",
+        "active": true
+      },
+      {
+        "label": "Sakurairo",
+        "kind": "branch",
+        "kind_label": "分支",
+        "title": "通过换主题学习",
+        "date": "2021-11-22",
+        "body": "早期换主题不只是装饰，而是在摸索什么样的网站更像我自己。"
+      },
+      {
+        "label": "Argon",
+        "kind": "branch",
+        "kind_label": "分支",
+        "title": "可以长期留下来的博客",
+        "date": "2022-01-30",
+        "body": "Argon 让站点变得足够实用，适合长期写作、记录问题和日常维护。"
+      },
+      {
+        "label": "Docker",
+        "kind": "main",
+        "kind_label": "主线",
+        "title": "部署开始可复现",
+        "date": "2023-04-04",
+        "body": "Docker 把服务器配置从记忆工作，变成了更接近可以重复执行的基础设施笔记。"
+      },
+      {
+        "label": "Jekyll",
+        "kind": "main",
+        "kind_label": "主线",
+        "title": "走向静态生成",
+        "date": "2023-07-03",
+        "body": "迁移到 Jekyll 后，博客从主题站点走向更轻量的静态发布流程。"
+      },
+      {
+        "label": "Hugo",
+        "kind": "main",
+        "kind_label": "主线",
+        "title": "多语言知识库",
+        "date": "2024-12-27",
+        "body": "Hugo 带来了国际化、翻译流程，以及更适合维护多语言笔记的结构。"
+      },
+      {
+        "label": "Counter",
+        "kind": "branch",
+        "kind_label": "分支",
+        "title": "一个小小的生命迹象",
+        "date": "2025-02-28",
+        "body": "计数器很小，但它让页面显得有人来过、还活着，也更像一个人的站点。"
+      },
+      {
+        "label": "Refactor",
+        "kind": "main",
+        "kind_label": "主线",
+        "title": "重新介绍这个博客",
+        "date": "2026-05-31",
+        "body": "Stack 主题重构也成了一次重新思考的机会：现在这个博客记录代码、工具、笔记，也记录生活。"
+      }
+    ]
+  },
+  "footer": "每段经历都是一次 commit。保持好奇心，去探索更多可能性。"
+}

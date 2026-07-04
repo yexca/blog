@@ -20,7 +20,7 @@ menu:
 {{< about_versions >}}
 {{< about_version id="2026-05-31" label="2026-05-31" >}}
 
-{{< about-2026 >}}
+{{< about-2026 src="content/ja-jp/page/about/about-2026.json" >}}
 
 {{< /about_version >}}
 {{% about_version id="2024-12-29" label="2024-12-29" %}}

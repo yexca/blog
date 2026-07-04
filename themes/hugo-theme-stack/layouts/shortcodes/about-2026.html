@@ -1,217 +1,21 @@
-{{- $lang := .Page.Language.Lang -}}
-{{- $isEn := eq $lang "en" -}}
-{{- $isJa := eq $lang "ja" -}}
-{{- $isTw := eq $lang "zh-tw" -}}
+{{- $src := .Get "src" -}}
+{{- if not $src -}}
+{{- errorf "about-2026 shortcode requires a src parameter in %s" .Page.File.Path -}}
+{{- end -}}
+{{- $cfg := readFile $src | transform.Unmarshal -}}
+{{- $identity := index $cfg "identity" -}}
+{{- $focus := index $cfg "focus" -}}
+{{- $mind := index $cfg "mind" -}}
+{{- $site := index $cfg "site" -}}
+{{- $projectSection := index $cfg "projects_section" -}}
+{{- $historySection := index $cfg "history_section" -}}
+{{- $projects := index $projectSection "items" -}}
+{{- $history := index $historySection "items" -}}
 {{- $avatar := resources.Get "img/avatar.png" -}}
 {{- $avatarURL := "" -}}
 {{- if $avatar -}}
 {{- $avatarResized := $avatar.Resize "420x" -}}
 {{- $avatarURL = $avatarResized.RelPermalink -}}
-{{- end -}}
-{{- $copy := dict
-"eyebrow" "BLOG ID"
-"idNameLabel" "姓名"
-"idEnglishLabel" "英文名"
-"idReadingLabel" "读音"
-"idDescLabel" "描述"
-"idName" "叶卡"
-"idEnglish" "yexca"
-"idReading" "yè kǎ"
-"idDescription" "这里是 yexca 的个人博客：记录 AI 工作流、本地自动化、图像识别、数据处理、多语言笔记，以及把反复出现的小问题整理成实用工具的过程。"
-"focus" "current focus"
-"focusTechTitle" "AI 与数据实验"
-"focusTechText" "图像识别 / YOLO / 数据准备 / 媒体质量检查"
-"focusLifeTitle" "本地优先工具"
-"focusLifeText" "Yasumi / PixivDownloader / Kumo / ZeroClaw"
-"focusWorldTitle" "多语言知识系统"
-"focusWorldText" "Hugo 博客 / 翻译工具 / VRChat 文档 / 个人服务"
-"mindEyebrow" "思维地图"
-"mindTitle" "我如何观察世界"
-"siteEyebrow" "站点宇宙"
-"siteTitle" "站点宇宙"
-"siteCoreMeta" "personal page"
-"siteBlogMeta" "digital notebook"
-"siteGithubMeta" "@yexca"
-"siteVrcMeta" "docs"
-"siteMusicMeta" "Navidrome"
-"siteVrcGithubMeta" "VRChat repos"
-"projectEyebrow" "项目"
-"projectTitle" "一些留下痕迹的项目"
-"historyEyebrow" "博客历史"
-"historyTitle" "像 Git 历史一样演进的博客"
-"footer" "每段经历都是一次 commit。保持好奇心，去探索更多可能性。"
--}}
-{{- if $isTw -}}
-{{- $copy = merge $copy (dict
-"idNameLabel" "姓名"
-"idEnglishLabel" "英文名"
-"idReadingLabel" "讀音"
-"idDescLabel" "描述"
-"idName" "葉卡"
-"idEnglish" "yexca"
-"idReading" "ㄧㄝˋ ㄎㄚˇ"
-"idDescription" "這裡是 yexca 的個人部落格：記錄 AI 工作流、本地自動化、影像辨識、資料處理、多語言筆記，以及把反覆出現的小問題整理成實用工具的過程。"
-"focusTechTitle" "AI 與資料實驗"
-"focusTechText" "影像辨識 / YOLO / 資料準備 / 媒體品質檢查"
-"focusLifeTitle" "本地優先工具"
-"focusLifeText" "Yasumi / PixivDownloader / Kumo / ZeroClaw"
-"focusWorldTitle" "多語言知識系統"
-"focusWorldText" "Hugo 部落格 / 翻譯工具 / VRChat 文件 / 個人服務"
-"mindEyebrow" "思維地圖"
-"mindTitle" "我如何觀察世界"
-"siteEyebrow" "站點宇宙"
-"siteTitle" "站點宇宙"
-"siteCoreMeta" "personal page"
-"siteBlogMeta" "digital notebook"
-"siteGithubMeta" "@yexca"
-"siteVrcMeta" "docs"
-"siteMusicMeta" "Navidrome"
-"siteVrcGithubMeta" "VRChat repos"
-"projectEyebrow" "專案"
-"projectTitle" "一些留下痕跡的專案"
-"historyEyebrow" "部落格歷史"
-"historyTitle" "像 Git 歷史一樣演進的部落格"
-"footer" "每段經歷都是一次 commit。保持好奇心，去探索更多可能性。"
-) -}}
-{{- else if $isEn -}}
-{{- $copy = merge $copy (dict
-"idNameLabel" "Name"
-"idReadingLabel" "Pronunciation"
-"idDescLabel" "Description"
-"idName" "yexca"
-"idReading" "/jɛkɑ/"
-"idDescription" "This is yexca's personal blog: AI workflows, local automation, image recognition, data processing, multilingual notes, and the process of turning repeated small problems into practical tools."
-"focusTechTitle" "AI and data experiments"
-"focusTechText" "Image recognition / YOLO / data preparation / media quality checks"
-"focusLifeTitle" "Local-first tools"
-"focusLifeText" "Yasumi / PixivDownloader / Kumo / ZeroClaw"
-"focusWorldTitle" "Multilingual knowledge systems"
-"focusWorldText" "Hugo blog / translation tooling / VRChat docs / personal services"
-"mindEyebrow" "Mind Map"
-"mindTitle" "How I Observe The World"
-"siteEyebrow" "Site Universe"
-"siteTitle" "Site Universe"
-"siteCoreMeta" "personal page"
-"siteBlogMeta" "digital notebook"
-"siteGithubMeta" "@yexca"
-"siteVrcMeta" "docs"
-"siteMusicMeta" "Navidrome"
-"siteVrcGithubMeta" "VRChat repos"
-"projectEyebrow" "Projects"
-"projectTitle" "Projects With Traces"
-"historyEyebrow" "Blog History"
-"historyTitle" "A Blog Evolving Like Git History"
-"footer" "Every experience is a commit. Stay curious, and keep exploring."
-) -}}
-{{- else if $isJa -}}
-{{- $copy = merge $copy (dict
-"idNameLabel" "名前"
-"idEnglishLabel" "英語名"
-"idReadingLabel" "読み"
-"idDescLabel" "説明"
-"idName" "いえか"
-"idEnglish" "yexca"
-"idReading" "ieka"
-"idDescription" "ここは yexca の個人ブログ。AI ワークフロー、ローカル自動化、画像認識、データ処理、多言語ノート、そして繰り返し現れる小さな問題を実用的なツールにしていく過程を記録する場所。"
-"focusTechTitle" "AI とデータ実験"
-"focusTechText" "画像認識 / YOLO / データ準備 / メディア品質チェック"
-"focusLifeTitle" "ローカルファーストなツール"
-"focusLifeText" "Yasumi / PixivDownloader / Kumo / ZeroClaw"
-"focusWorldTitle" "多言語の知識システム"
-"focusWorldText" "Hugo ブログ / 翻訳ツール / VRChat ドキュメント / 個人サービス"
-"mindEyebrow" "思考マップ"
-"mindTitle" "世界をどう観察するか"
-"siteEyebrow" "サイト宇宙"
-"siteTitle" "サイト宇宙"
-"siteCoreMeta" "personal page"
-"siteBlogMeta" "digital notebook"
-"siteGithubMeta" "@yexca"
-"siteVrcMeta" "docs"
-"siteMusicMeta" "Navidrome"
-"siteVrcGithubMeta" "VRChat repos"
-"projectEyebrow" "プロジェクト"
-"projectTitle" "痕跡を残したプロジェクト"
-"historyEyebrow" "ブログ履歴"
-"historyTitle" "Git 履歴のように進化するブログ"
-"footer" "すべての経験は commit。好奇心を持ち続けて、もっと可能性を探ろう。"
-) -}}
-{{- end -}}
-
-{{- $projects := slice
-(dict "name" "PixivDownloader" "url" "https://github.com/yexca/PixivDownloader" "desc" "带 WebUI、SQLite 元数据、定时同步和 Docker 支持的本地 Pixiv 作品归档工具。")
-(dict "name" "AI-Cover-Tools" "url" "https://github.com/yexca/AI-Cover-Tools" "desc" "用于准备本地 AI 翻唱音频素材的 Windows 工具箱。")
-(dict "name" "zeroclaw" "url" "https://github.com/yexca/zeroclaw" "desc" "可替换、可部署的个人 AI 助手基础设施。")
-(dict "name" "yasumi-project" "url" "https://github.com/yexca/yasumi-project-frontend" "desc" "面向专注个人任务管理的本地优先规划应用。")
-(dict "name" "Kumo" "url" "https://github.com/yexca/Kumo" "desc" "作为个人实用工具构建的轻量图片托管服务。")
-(dict "name" "blog" "url" "https://github.com/yexca/blog" "desc" "简中 / 繁中 / 日本語 / English 的多语言数字笔记本。")
--}}
-{{- $history := slice
-(dict "label" "Start" "kind" "main" "title" "使用 Wordpress 建立博客" "date" "2021-11-04" "body" "有一个可以随心所欲创作的地方，这件事本身就很酷。" "x" "8%" "y" "58%" "active" true)
-(dict "label" "Sakurairo" "kind" "branch" "title" "从 Astra 到 Sakurairo" "date" "2021-11-22" "body" "主题探索期：先完成，再变可爱，再继续折腾。" "x" "18%" "y" "34%")
-(dict "label" "Argon" "kind" "branch" "title" "主题换为 Argon" "date" "2022-01-30" "body" "好看又实用，博客开始变成真正能长期写东西的地方。" "x" "29%" "y" "36%")
-(dict "label" "Docker" "kind" "main" "title" "全面 Docker 化" "date" "2023-04-04" "body" "部署方式进入可复现时代，Docker 改变世界。" "x" "38%" "y" "42%")
-(dict "label" "Jekyll" "kind" "main" "title" "迁移至 Jekyll" "date" "2023-07-03" "body" "更轻便，也更 geek，博客从主题站点走向静态生成。" "x" "48%" "y" "49%")
-(dict "label" "Hugo" "kind" "main" "title" "迁移至 Hugo" "date" "2024-12-27" "body" "国际化开启，博客变成多语言知识库。" "x" "70%" "y" "56%")
-(dict "label" "Count" "kind" "branch" "title" "可爱计数器" "date" "2025-02-28" "body" "小小的计数器像页面角落的呼吸，让博客继续活着。" "x" "76%" "y" "44%")
-(dict "label" "Refactor" "kind" "main" "title" "修改 stack 主题" "date" "2026-05-31" "body" "网站焕然一新，用回开始的背景。" "x" "94%" "y" "24%")
--}}
-{{- if $isTw -}}
-{{- $projects = slice
-(dict "name" "PixivDownloader" "url" "https://github.com/yexca/PixivDownloader" "desc" "帶 WebUI、SQLite metadata、定時同步與 Docker 支援的本地 Pixiv 作品歸檔工具。")
-(dict "name" "AI-Cover-Tools" "url" "https://github.com/yexca/AI-Cover-Tools" "desc" "用於準備本地 AI 翻唱音訊素材的 Windows 工具箱。")
-(dict "name" "zeroclaw" "url" "https://github.com/yexca/zeroclaw" "desc" "可替換、可部署的個人 AI 助手基礎設施。")
-(dict "name" "yasumi-project" "url" "https://github.com/yexca/yasumi-project-frontend" "desc" "面向專注個人任務管理的本地優先規劃應用。")
-(dict "name" "Kumo" "url" "https://github.com/yexca/Kumo" "desc" "作為個人實用工具構建的輕量圖片託管服務。")
-(dict "name" "blog" "url" "https://github.com/yexca/blog" "desc" "簡中 / 繁中 / 日本語 / English 的多語言數位筆記本。")
--}}
-{{- $history = slice
-(dict "label" "Start" "kind" "main" "title" "使用 Wordpress 建立部落格" "date" "2021-11-04" "body" "有一個可以隨心所欲創作的地方，這件事本身就很酷。" "x" "8%" "y" "58%" "active" true)
-(dict "label" "Sakurairo" "kind" "branch" "title" "從 Astra 到 Sakurairo" "date" "2021-11-22" "body" "主題探索期：先完成，再變可愛，再繼續折騰。" "x" "18%" "y" "34%")
-(dict "label" "Argon" "kind" "branch" "title" "主題換為 Argon" "date" "2022-01-30" "body" "好看又實用，部落格開始變成真正能長期寫東西的地方。" "x" "29%" "y" "36%")
-(dict "label" "Docker" "kind" "main" "title" "全面 Docker 化" "date" "2023-04-04" "body" "部署方式進入可重現時代，Docker 改變世界。" "x" "38%" "y" "42%")
-(dict "label" "Jekyll" "kind" "main" "title" "遷移至 Jekyll" "date" "2023-07-03" "body" "更輕便，也更 geek，部落格從主題站點走向靜態生成。" "x" "48%" "y" "49%")
-(dict "label" "Hugo" "kind" "main" "title" "遷移至 Hugo" "date" "2024-12-27" "body" "國際化開啟，部落格變成多語言知識庫。" "x" "70%" "y" "56%")
-(dict "label" "Count" "kind" "branch" "title" "可愛計數器" "date" "2025-02-28" "body" "小小的計數器像頁面角落的呼吸，讓部落格繼續活著。" "x" "76%" "y" "44%")
-(dict "label" "Refactor" "kind" "main" "title" "修改 stack 主題" "date" "2026-05-31" "body" "網站煥然一新，用回開始的背景。" "x" "94%" "y" "24%")
--}}
-{{- else if $isEn -}}
-{{- $projects = slice
-(dict "name" "PixivDownloader" "url" "https://github.com/yexca/PixivDownloader" "desc" "A local Pixiv artwork archiver with WebUI, SQLite metadata, scheduled sync, and Docker support.")
-(dict "name" "AI-Cover-Tools" "url" "https://github.com/yexca/AI-Cover-Tools" "desc" "A Windows toolkit for preparing local AI cover audio materials.")
-(dict "name" "zeroclaw" "url" "https://github.com/yexca/zeroclaw" "desc" "Small, swappable personal assistant infrastructure for local and deployable AI systems.")
-(dict "name" "yasumi-project" "url" "https://github.com/yexca/yasumi-project-frontend" "desc" "A local-first planning app for focused personal task management.")
-(dict "name" "Kumo" "url" "https://github.com/yexca/Kumo" "desc" "A lightweight image hosting service built as a practical personal tool.")
-(dict "name" "blog" "url" "https://github.com/yexca/blog" "desc" "A multilingual digital notebook in Simplified Chinese, Traditional Chinese, Japanese, and English.")
--}}
-{{- $history = slice
-(dict "label" "Start" "kind" "main" "title" "Started the Blog With Wordpress" "date" "2021-11-04" "body" "Having a place to create freely is already cool on its own." "x" "8%" "y" "58%" "active" true)
-(dict "label" "Sakurairo" "kind" "branch" "title" "From Astra to Sakurairo" "date" "2021-11-22" "body" "The theme exploration era: finish it first, make it cuter, then keep tinkering." "x" "18%" "y" "34%")
-(dict "label" "Argon" "kind" "branch" "title" "Changed Theme to Argon" "date" "2022-01-30" "body" "Beautiful and practical, the blog became a place where writing could last." "x" "29%" "y" "36%")
-(dict "label" "Docker" "kind" "main" "title" "Fully Dockerized" "date" "2023-04-04" "body" "Deployment entered the reproducible era. Docker changed the world." "x" "38%" "y" "42%")
-(dict "label" "Jekyll" "kind" "main" "title" "Moved to Jekyll" "date" "2023-07-03" "body" "Lighter and more geeky, the blog moved from a themed site toward static generation." "x" "48%" "y" "49%")
-(dict "label" "Hugo" "kind" "main" "title" "Moved to Hugo" "date" "2024-12-27" "body" "Internationalization began, turning the blog into a multilingual knowledge base." "x" "70%" "y" "56%")
-(dict "label" "Count" "kind" "branch" "title" "Cute Counter" "date" "2025-02-28" "body" "A tiny counter breathes in the corner of the page, keeping the blog alive." "x" "76%" "y" "44%")
-(dict "label" "Refactor" "kind" "main" "title" "Modified the Stack Theme" "date" "2026-05-31" "body" "The site feels new again, with the original background brought back." "x" "94%" "y" "24%")
--}}
-{{- else if $isJa -}}
-{{- $projects = slice
-(dict "name" "PixivDownloader" "url" "https://github.com/yexca/PixivDownloader" "desc" "WebUI、SQLite メタデータ、定期同期、Docker に対応したローカル Pixiv 作品アーカイバー。")
-(dict "name" "AI-Cover-Tools" "url" "https://github.com/yexca/AI-Cover-Tools" "desc" "ローカル AI カバー用の音声素材を準備する Windows ツールキット。")
-(dict "name" "zeroclaw" "url" "https://github.com/yexca/zeroclaw" "desc" "差し替えやデプロイがしやすい個人 AI アシスタント基盤。")
-(dict "name" "yasumi-project" "url" "https://github.com/yexca/yasumi-project-frontend" "desc" "集中した個人タスク管理のためのローカルファーストな計画アプリ。")
-(dict "name" "Kumo" "url" "https://github.com/yexca/Kumo" "desc" "個人用の実用ツールとして作った軽量画像ホスティングサービス。")
-(dict "name" "blog" "url" "https://github.com/yexca/blog" "desc" "簡体字中国語 / 繁体字中国語 / 日本語 / English の多言語デジタルノート。")
--}}
-{{- $history = slice
-(dict "label" "Start" "kind" "main" "title" "Wordpress でブログを開設" "date" "2021-11-04" "body" "自由に創作できる場所があること自体が、とてもかっこいいことだった。" "x" "8%" "y" "58%" "active" true)
-(dict "label" "Sakurairo" "kind" "branch" "title" "Astra から Sakurairo へ" "date" "2021-11-22" "body" "テーマ探索期。まず完成させ、もっとかわいくして、さらに試行錯誤する。" "x" "18%" "y" "34%")
-(dict "label" "Argon" "kind" "branch" "title" "テーマを Argon に変更" "date" "2022-01-30" "body" "見た目も実用性もよく、ブログは長く書き続けられる場所になった。" "x" "29%" "y" "36%")
-(dict "label" "Docker" "kind" "main" "title" "全面 Docker 化" "date" "2023-04-04" "body" "デプロイは再現可能な時代に入り、Docker が世界を変えた。" "x" "38%" "y" "42%")
-(dict "label" "Jekyll" "kind" "main" "title" "Jekyll へ移行" "date" "2023-07-03" "body" "より軽く、より geek に。ブログはテーマサイトから静的生成へ進んだ。" "x" "48%" "y" "49%")
-(dict "label" "Hugo" "kind" "main" "title" "Hugo へ移行" "date" "2024-12-27" "body" "国際化が始まり、ブログは多言語の知識ベースになった。" "x" "70%" "y" "56%")
-(dict "label" "Count" "kind" "branch" "title" "かわいいカウンター" "date" "2025-02-28" "body" "小さなカウンターがページの片隅で呼吸するように、ブログを生かし続けてくれた。" "x" "76%" "y" "44%")
-(dict "label" "Refactor" "kind" "main" "title" "stack テーマを修正" "date" "2026-05-31" "body" "サイトが新しく生まれ変わり、最初の背景をもう一度使った。" "x" "94%" "y" "24%")
--}}
 {{- end -}}
 
 <div class="about-observatory" data-about-2026>
@@ -219,164 +23,149 @@
 <div class="about-hero-copy">
 <div class="about-id-card" data-about-tilt>
 <div class="about-id-photo">
-{{- if $avatarURL -}}
-<img src="{{ $avatarURL }}" width="420" height="420" loading="lazy" alt="Avatar">
-{{- end -}}
+{{- if $avatarURL }}
+<img src="{{ $avatarURL }}" width="420" height="420" loading="lazy" alt="{{ index $identity "avatar_alt" }}">
+{{- end }}
 </div>
 <div class="about-id-main">
-<p class="about-eyebrow">{{ index $copy "eyebrow" }}</p>
+<p class="about-eyebrow">{{ index $cfg "eyebrow" }}</p>
 <dl class="about-id-fields">
 <div>
-<dt>{{ index $copy "idNameLabel" }}</dt>
-<dd>{{ index $copy "idName" }}</dd>
+<dt>{{ index $identity "name_label" }}</dt>
+<dd>{{ index $identity "name" }}</dd>
 </div>
-{{- if not $isEn -}}
+{{- with index $identity "english_label" }}
 <div>
-<dt>{{ index $copy "idEnglishLabel" }}</dt>
-<dd>{{ index $copy "idEnglish" }}</dd>
+<dt>{{ . }}</dt>
+<dd>{{ index $identity "english" }}</dd>
 </div>
-{{- end -}}
+{{- end }}
 <div>
-<dt>{{ index $copy "idReadingLabel" }}</dt>
-<dd>{{ index $copy "idReading" }}</dd>
+<dt>{{ index $identity "reading_label" }}</dt>
+<dd>{{ index $identity "reading" }}</dd>
 </div>
 <div class="about-id-description">
-<dt>{{ index $copy "idDescLabel" }}</dt>
-<dd>{{ index $copy "idDescription" }}</dd>
+<dt>{{ index $identity "description_label" }}</dt>
+<dd>{{ index $identity "description" }}</dd>
 </div>
 </dl>
 </div>
 </div>
 </div>
-<aside class="about-status-card" aria-label="{{ index $copy "focus" }}">
+<aside class="about-status-card" aria-label="{{ index $focus "label" }}">
 <div class="about-status-head">
-<span>{{ index $copy "focus" }}</span>
+<span>{{ index $focus "label" }}</span>
 <span class="about-status-pulse" aria-hidden="true"></span>
 </div>
 <div class="about-status-list">
+{{- range index $focus "items" }}
 <div>
-<strong>{{ index $copy "focusTechTitle" }}</strong>
-<span>{{ index $copy "focusTechText" }}</span>
+<strong>{{ index . "title" }}</strong>
+<span>{{ index . "text" }}</span>
 </div>
-<div>
-<strong>{{ index $copy "focusLifeTitle" }}</strong>
-<span>{{ index $copy "focusLifeText" }}</span>
+{{- end }}
 </div>
-<div>
-<strong>{{ index $copy "focusWorldTitle" }}</strong>
-<span>{{ index $copy "focusWorldText" }}</span>
-</div>
-</div>
-<p>no, possible</p>
+<p>{{ index $focus "motto" }}</p>
 </aside>
 </section>
 
 <section class="about-section">
 <div class="about-section-title">
-<p class="about-eyebrow">{{ index $copy "mindEyebrow" }}</p>
-<h2>{{ index $copy "mindTitle" }}</h2>
+<p class="about-eyebrow">{{ index $mind "eyebrow" }}</p>
+<h2>{{ index $mind "title" }}</h2>
 </div>
 <div class="about-card-slider" data-about-card-slider>
 <div class="about-card-slider-stage" data-about-slider-stage>
-<article class="about-card about-slider-card is-active" data-about-slider-card data-about-slider-bg="matrix" data-about-tilt>
-<span>01</span>
-<h3>{{ cond $isEn "Repeated Problems Become Tools" (cond $isJa "繰り返す問題はツールになる" (cond $isTw "反覆出現的問題會變成工具" "反复出现的问题会变成工具")) }}</h3>
-<p>{{ cond $isEn "If a tiny annoyance appears often enough, it deserves a script, a workflow, or a small app." (cond $isJa "小さな面倒でも何度も現れるなら、スクリプトやワークフローや小さなアプリにする価値がある。" (cond $isTw "一個小麻煩如果反覆出現，就值得被做成腳本、工作流或小工具。" "一个小麻烦如果反复出现，就值得被做成脚本、工作流或小工具。")) }}</p>
-<a href="https://github.com/yexca/PixivDownloader">PixivDownloader</a>
+{{- range $index, $card := index $mind "cards" }}
+<article class="about-card about-slider-card{{ if eq $index 0 }} is-active{{ end }}{{ if index $card "accent" }} about-card-accent{{ end }}" data-about-slider-card data-about-slider-bg="{{ index $card "bg" }}" data-about-tilt>
+<span>{{ printf "%02d" (add $index 1) }}</span>
+<h3>{{ index $card "title" }}</h3>
+<p>{{ index $card "text" }}</p>
+<a href="{{ index $card "url" }}">{{ index $card "link" }}</a>
 </article>
-<article class="about-card about-slider-card" data-about-slider-card data-about-slider-bg="pipeline" data-about-tilt>
-<span>02</span>
-<h3>{{ cond $isEn "AI Workflows Need Pipelines" (cond $isJa "AI ワークフローにはパイプラインが必要" (cond $isTw "AI 工作流需要流水線" "AI 工作流需要流水线")) }}</h3>
-<p>{{ cond $isEn "Models are only one part of the work; preparation, checks, slicing, archiving, and deployment matter too." (cond $isJa "モデルは作業の一部にすぎない。準備、確認、分割、アーカイブ、デプロイも同じくらい大事。" (cond $isTw "模型只是其中一部分；準備、檢查、切片、歸檔和部署也同樣重要。" "模型只是其中一部分；准备、检查、切片、归档和部署也同样重要。")) }}</p>
-<a href="https://github.com/yexca/AI-Cover-Tools">AI-Cover-Tools</a>
-</article>
-<article class="about-card about-slider-card" data-about-slider-card data-about-slider-bg="tools" data-about-tilt>
-<span>03</span>
-<h3>{{ cond $isEn "Local First, Inspectable" (cond $isJa "ローカル優先、そして見えること" (cond $isTw "本地優先，也要可檢查" "本地优先，也要可检查")) }}</h3>
-<p>{{ cond $isEn "I like tools that are easy to run, easy to inspect, and still useful after the first experiment." (cond $isJa "動かしやすく、確認しやすく、最初の実験が終わった後も役に立つツールが好き。" (cond $isTw "我喜歡容易運行、容易檢查，而且第一次實驗結束後仍然有用的工具。" "我喜欢容易运行、容易检查，而且第一次实验结束后仍然有用的工具。")) }}</p>
-<a href="https://github.com/yexca/yasumi-project-frontend">Yasumi</a>
-</article>
-<article class="about-card about-slider-card about-card-accent" data-about-slider-card data-about-slider-bg="music" data-about-tilt>
-<span>04</span>
-<h3>{{ cond $isEn "Notes Become Systems" (cond $isJa "ノートはシステムになる" (cond $isTw "筆記會變成系統" "笔记会变成系统")) }}</h3>
-<p>{{ cond $isEn "The blog, translation tooling, VRChat docs, and project logs are all parts of one maintained knowledge system." (cond $isJa "ブログ、翻訳ツール、VRChat ドキュメント、プロジェクトログは、ひとつの保守される知識システムの一部。" (cond $isTw "部落格、翻譯工具、VRChat 文件和專案記錄，都是同一套被維護的知識系統。" "博客、翻译工具、VRChat 文档和项目记录，都是同一套被维护的知识系统。")) }}</p>
-<a href="https://github.com/yexca/blog">Blog</a>
-</article>
+{{- end }}
 </div>
 <div class="about-card-slider-controls">
-<button type="button" class="about-slider-button" data-about-slider-prev aria-label="Previous card">‹</button>
-<div class="about-slider-dots" aria-label="Mind map cards"></div>
-<button type="button" class="about-slider-button" data-about-slider-next aria-label="Next card">›</button>
+<button type="button" class="about-slider-button" data-about-slider-prev aria-label="{{ index $mind "prev_label" }}">‹</button>
+<div class="about-slider-dots" aria-label="{{ index $mind "dots_label" }}"></div>
+<button type="button" class="about-slider-button" data-about-slider-next aria-label="{{ index $mind "next_label" }}">›</button>
 </div>
 </div>
 </section>
 
 <section class="about-section">
 <div class="about-section-title">
-<p class="about-eyebrow">{{ index $copy "siteEyebrow" }}</p>
-<h2>{{ index $copy "siteTitle" }}</h2>
+<p class="about-eyebrow">{{ index $site "eyebrow" }}</p>
+<h2>{{ index $site "title" }}</h2>
 </div>
 <div class="about-universe">
 <span class="about-orbit about-orbit-a" aria-hidden="true"></span>
 <span class="about-orbit about-orbit-b" aria-hidden="true"></span>
 <span class="about-orbit about-orbit-c" aria-hidden="true"></span>
-<a class="about-planet about-planet-core" href="https://yexca.net/" data-about-tilt><strong>yexca</strong><span>{{ index $copy "siteCoreMeta" }}</span></a>
-<span class="about-orbit-item about-orbit-item-blog" style="--orbit-delay: -2s; --orbit-duration: 34s;"><span class="about-orbit-counter"><a class="about-planet about-planet-blog" href="https://blog.yexca.net/"><strong>Blog</strong><span>{{ index $copy "siteBlogMeta" }}</span></a></span></span>
-<span class="about-orbit-item about-orbit-item-github" style="--orbit-delay: -19s; --orbit-duration: 34s;"><span class="about-orbit-counter"><a class="about-planet about-planet-github" href="https://github.com/yexca"><strong>GitHub</strong><span>{{ index $copy "siteGithubMeta" }}</span></a></span></span>
-<span class="about-orbit-item about-orbit-item-vrc" style="--orbit-delay: -9s; --orbit-duration: 42s;"><span class="about-orbit-counter"><a class="about-planet about-planet-vrc" href="https://vrchat.yexca.net/"><strong>VRChat</strong><span>{{ index $copy "siteVrcMeta" }}</span></a></span></span>
-<span class="about-orbit-item about-orbit-item-music" style="--orbit-delay: -30s; --orbit-duration: 42s;"><span class="about-orbit-counter"><a class="about-planet about-planet-music" href="https://music.yexca.net/"><strong>Music</strong><span>{{ index $copy "siteMusicMeta" }}</span></a></span></span>
-<span class="about-orbit-item about-orbit-item-vrc-github" style="--orbit-delay: -16s; --orbit-duration: 48s;"><span class="about-orbit-counter"><a class="about-planet about-planet-vrc-github" href="https://github.com/yexca-VRChat"><strong>Github-VRChat</strong><span>{{ index $copy "siteVrcGithubMeta" }}</span></a></span></span>
-</div>
-</section>
-
-<section class="about-section">
-<div class="about-section-title">
-<p class="about-eyebrow">{{ index $copy "projectEyebrow" }}</p>
-<h2>{{ index $copy "projectTitle" }}</h2>
-</div>
-<div class="about-project-grid">
-{{- range $projects }}
-<a class="about-card about-project-card" href="{{ .url }}" data-about-tilt><strong>{{ .name }}</strong><span>{{ .desc }}</span></a>
+{{- $core := index $site "core" }}
+<a class="about-planet about-planet-core" href="{{ index $core "url" }}" data-about-tilt><strong>{{ index $core "label" }}</strong><span>{{ index $core "meta" }}</span></a>
+{{- range index $site "nodes" }}
+<span class="about-orbit-item about-orbit-item-{{ index . "class" }}" style="--orbit-delay: {{ index . "delay" }}; --orbit-duration: {{ index . "duration" }};"><span class="about-orbit-counter"><a class="about-planet about-planet-{{ index . "class" }}" href="{{ index . "url" }}"><strong>{{ index . "label" }}</strong><span>{{ index . "meta" }}</span></a></span></span>
 {{- end }}
 </div>
 </section>
 
 <section class="about-section">
 <div class="about-section-title">
-<p class="about-eyebrow">{{ index $copy "historyEyebrow" }}</p>
-<h2>{{ index $copy "historyTitle" }}</h2>
+<p class="about-eyebrow">{{ index $projectSection "eyebrow" }}</p>
+<h2>{{ index $projectSection "title" }}</h2>
 </div>
-<div class="about-git-history" data-about-git-history>
-<svg class="about-git-lines" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true">
-<path class="about-git-main" d="M84 244 C90 268 86 288 96 294 C190 330 335 252 468 206 S706 225 828 244 S1010 160 1128 101"></path>
-<path class="about-git-branch" d="M96 294 C104 220 112 160 144 147 C224 104 310 124 408 147"></path>
-<path class="about-git-branch about-git-branch-alt" d="M828 244 C838 222 848 210 864 206"></path>
-</svg>
-
-{{- range $index, $item := $history }}
-<button type="button" class="about-commit about-commit-{{ add $index 1 }} about-commit-{{ $item.kind }}{{ if $item.active }} is-active{{ end }}" style="--x: {{ $item.x }}; --y: {{ $item.y }}" data-title="{{ $item.title }}" data-date="{{ $item.date }}" data-body="{{ $item.body }}">{{ $item.label }}</button>
+<div class="about-project-list">
+{{- range $index, $project := $projects }}
+<a class="about-project-row" href="{{ index $project "url" }}" data-about-tilt>
+<span class="about-project-index">{{ printf "%02d" (add $index 1) }}</span>
+<span class="about-project-main">
+<strong>{{ index $project "name" }}</strong>
+<span>{{ index $project "desc" }}</span>
+</span>
+<span class="about-project-tags">
+{{- range index $project "tags" }}
+<em>{{ . }}</em>
 {{- end }}
+</span>
+<span class="about-project-open" aria-hidden="true">{{ index $projectSection "open_label" }}</span>
+</a>
+{{- end }}
+</div>
+</section>
 
-<article class="about-commit-card">
+<section class="about-section">
+<div class="about-section-title">
+<p class="about-eyebrow">{{ index $historySection "eyebrow" }}</p>
+<h2>{{ index $historySection "title" }}</h2>
+</div>
+<div class="about-git-history about-git-history-linear" data-about-git-history>
+<div class="about-history-rail" aria-hidden="true">
+<span class="about-history-rail-main"></span>
+<span class="about-history-rail-branch about-history-rail-branch-left"></span>
+<span class="about-history-rail-branch about-history-rail-branch-right"></span>
+</div>
+<div class="about-history-nodes">
+{{- range $history }}
+<button type="button" class="about-commit about-linear-commit about-commit-{{ index . "kind" }}{{ if index . "active" }} is-active{{ end }}" data-title="{{ index . "title" }}" data-date="{{ index . "date" }}" data-body="{{ index . "body" }}">
+<span>{{ substr (index . "date") 0 4 }}</span>
+<strong>{{ index . "label" }}</strong>
+<em>{{ index . "kind_label" }}</em>
+</button>
+{{- end }}
+</div>
+
+<article class="about-commit-card about-linear-commit-card">
 {{- with index $history 0 }}
-<span data-about-commit-date>{{ .date }}</span>
-<h3 data-about-commit-title>{{ .title }}</h3>
-<p data-about-commit-body>{{ .body }}</p>
+<span data-about-commit-date>{{ index . "date" }}</span>
+<h3 data-about-commit-title>{{ index . "title" }}</h3>
+<p data-about-commit-body>{{ index . "body" }}</p>
 {{- end }}
 </article>
-
-<div class="about-history-years" aria-label="Blog history years">
-<span>2021</span>
-<span>2022</span>
-<span>2023</span>
-<span>2024</span>
-<span>2025</span>
-<span>2026</span>
-</div>
 </div>
 </section>
 
 <footer class="about-footer-card">
-<p>{{ index $copy "footer" }}</p>
+<p>{{ index $cfg "footer" }}</p>
 </footer>
 </div>

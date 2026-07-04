@@ -34,6 +34,20 @@ large page-specific feature.
 Interactive shortcode behavior should live in `assets/ts/features/` and be
 registered through `assets/ts/core/pageInit.ts`.
 
+## About 2026
+
+`about-2026.html` renders the current rich About page from a JSON file passed
+with `src`, for example:
+
+```go-html-template
+{{< about-2026 src="content/zh-cn/page/about/about-2026.json" >}}
+```
+
+Each language keeps its text in its own `content/<lang>/page/about/about-2026.json`.
+The shortcode owns the markup only; identity copy, focus items, mind-map cards,
+site-universe labels, project rows, history nodes, and footer text belong in
+the JSON file.
+
 ## Maintenance Rules
 
 - Keep old parameter names working when posts already use them.
