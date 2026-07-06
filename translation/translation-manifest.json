@@ -3516,6 +3516,33 @@
       "sourceHash": "sha256:b79bfba49d8d3e7466a7d71dc8358931b596359e09a7bfe45a0fee38b47efc26",
       "promptVersion": 1
     },
+    "posts/GoLang/2026-07-06-Go walk.md": {
+      "translations": {
+        "en": {
+          "sourceHash": "sha256:5e0891055cf6fac9bac8bebac33b8850cd7f7480b7c31ffeba9dd9c52ac17aa1",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-07-06T03:12:56.508Z"
+        },
+        "ja": {
+          "sourceHash": "sha256:5e0891055cf6fac9bac8bebac33b8850cd7f7480b7c31ffeba9dd9c52ac17aa1",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-07-06T03:13:16.482Z"
+        },
+        "zh-tw": {
+          "sourceHash": "sha256:5e0891055cf6fac9bac8bebac33b8850cd7f7480b7c31ffeba9dd9c52ac17aa1",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-07-06T03:12:37.884Z"
+        }
+      },
+      "sourceHash": "sha256:5e0891055cf6fac9bac8bebac33b8850cd7f7480b7c31ffeba9dd9c52ac17aa1",
+      "promptVersion": 1
+    },
     "posts/Japanese/2025-01-11 StudyJapaneseFromSong1.md": {
       "translations": {
         "en": {
@@ -6058,5 +6085,5 @@
       "promptVersion": 1
     }
   },
-  "updatedAt": "2026-06-27T17:04:35.543Z"
+  "updatedAt": "2026-07-06T03:13:16.539Z"
 }
