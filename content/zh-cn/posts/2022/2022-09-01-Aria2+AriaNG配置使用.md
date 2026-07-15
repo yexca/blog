@@ -67,6 +67,8 @@ AriaNg 现在提供三种版本, 标准版、单文件版和 AriaNg Native.
 dir=E:\Aria2Download
 # 日志文件的保存路径
 log=D:\aria2-1.36.0-win-64bit-build1\Aria2.log
+log-level=notice
+# 只想记录问题的话可以改为 log-level=warn
 # 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
 #disk-cache=32M
 # 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
