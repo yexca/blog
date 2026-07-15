@@ -1,6 +1,6 @@
 ---
 slug: 62
-title: Aria2+AriaNG Setup and Configuration
+title: Aria2 + AriaNG Configuration and Usage
 date: '2022-09-01T23:06:38+08:00'
 author: hiyoung
 # layout: post
@@ -8,224 +8,232 @@ author: hiyoung
 views:
     - '1737'
 categories:
-    - Tinkering Notes
+    - Tinkering Experience
 tags:
     - Aria2
-    - Download Tools
+    - Download Tool
 ---
+
+{{< notice >}} This article was translated by deepseek-v4-flash {{< /notice >}}
 
 > This article was written by [Hiyoung](https://blog.hiyoung.icu/)
 >
-> Original post: <https://blog.hiyoung.icu/2022/09/01/906d191f9a59/>
+> Original article: <https://blog.hiyoung.icu/2022/09/01/906d191f9a59/>
 
-{{< notice >}} This article was translated by Gemini-3-flash {{< /notice >}}
+Aria2 is a download tool on Linux. Here we introduce its installation and configuration under Windows. The official Aria2 does not have a GUI, so we use AriaNG to operate it directly via a web interface.
 
-Aria2 is a CLI-based download tool for Linux. This guide covers installation and configuration for Windows. Since the official Aria2 has no GUI, we'll use AriaNG as a web interface for operations.
+AriaNg is a modern web frontend that makes aria2 easier to use. AriaNg is developed using pure HTML &amp; javascript, so it does not require any compiler or runtime environment.
 
-AriaNg is a modern web frontend that makes Aria2 easier to use. Built with pure HTML and JavaScript, it doesn't require any compiler or runtime environment.
+## Download the Latest Aria2 + AriaNG Package
 
-## Download the Latest Aria2+AriaNG Packages
+First, download the installation packages from the official websites.
 
-First, download the packages from the official sites:
+- **[Aria2 GitHub Repository](https://github.com/aria2/aria2/releases/)**
 
-- **[Aria2 GitHub](https://github.com/aria2/aria2/releases/)**
- – **[Aria2 Official Docs](https://aria2.github.io/)**
+ – **[Aria2 Official Documentation](https://aria2.github.io/)**
 
-- **[AriaNG GitHub](https://github.com/mayswind/AriaNg/releases)**
- – **[AriaNG Official Docs](http://ariang.mayswind.net/zh_Hans/)**
+- **[AriaNG GitHub Repository](https://github.com/mayswind/AriaNg/releases)**
 
-Download the Aria2 archive for your OS. Extract AriaNG and place it inside the Aria2 folder.
+ – **[AriaNG Official Documentation](http://ariang.mayswind.net/zh_Hans/)**
 
-AriaNg offers three versions: Standard, Single-file, and AriaNg Native.
+For Aria2, select the compressed package corresponding to your operating system. After extracting AriaNG, place it in the Aria2 folder.
 
-> Standard: Best for web server deployment; features resource caching and lazy loading.
+AriaNg now offers three versions: Standard, Single File, and AriaNg Native.
+
+> The standard version is suitable for deployment on web servers, providing resource caching and on-demand loading.
 >
-> Single-file: Best for local use; just open the single HTML file in a browser.
+> The single file version is suitable for local use – just open the single HTML file in a browser after downloading.
 >
-> AriaNg Native: Also for local use, but doesn't require a browser.
+> AriaNg Native is also suitable for local use and does not require a browser.
 
 ## Add Configuration Files
 
-After extracting the files into a directory, create 4 empty files (create a .txt and change the extension):
+After extracting the files to the target directory, you need to create 4 new empty files (you can first create empty .txt files and then rename them):
 
-- **Aria2.log** (Log file)
-- **aria2.session** (Records download history for resuming)
-- **aria2.conf** (Configuration file)
-- **HideRun.vbs** (Used to run Aria2 without a visible CMD window)
+- **Aria2.log** (log file)
+- **aria2.session** (used to record download history for resume support)
+- **aria2.conf** (configuration file)
+- **HideRun.vbs** (used to hide the command prompt window when running)
 
-### Modify Configuration
+### Modify the Configuration File
 
-1. Open `aria2.conf` and paste the following content (use Notepad or any text editor):
+1. Open the empty `aria2.conf` file you just created, and fill in the following content (open it with Notepad).
 
 ```conf
-## '#' starts a comment. Modify options as needed. ##
-## Commented options use default values. Un-comment to change. ##
+## '#'开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
+## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##
 
-## File Saving ##
+## 文件保存相关 ##
 
-# Save path (absolute or relative). Default: current directory
+# 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
 dir=E:\Aria2Download
-# Log file path
+# 日志文件的保存路径
 log=D:\aria2-1.36.0-win-64bit-build1\Aria2.log
-# Enable disk cache. 0 to disable. Requires v1.16+. Default: 16M
+log-level=notice
+# 只想记录问题的话可以改为 log-level=warn
+# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
 #disk-cache=32M
-# File allocation method. Reduces fragmentation. Default: prealloc
-# Speed: none < falloc ? trunc < prealloc
-# falloc/trunc require filesystem/kernel support.
-# Use 'falloc' for NTFS, 'trunc' for EXT3/4. Comment out for macOS.
+# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
+# 预分配所需时间: none < falloc ? trunc < prealloc
+# falloc和trunc则需要文件系统和内核支持
+# NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项
 #file-allocation=none
-# Resume downloads
+# 断点续传
 continue=true
 
-## Download Connections ##
+## 下载连接相关 ##
 
-# Max concurrent downloads. Default: 5
+# 最大同时下载任务数, 运行时可修改, 默认:5
 #max-concurrent-downloads=5
-# Connections per server. Default: 1
+# 同一服务器连接数, 添加时可指定, 默认:1
 max-connection-per-server=5
-# Min split size. Range 1M-1024M. Default: 20M
-# If size=10M and file is 20MiB, two sources are used.
+# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
+# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
 min-split-size=10M
-# Max threads per task. Default: 5
+# 单个任务最大线程数, 添加时可指定, 默认:5
 #split=5
-# Global download limit. 0 for unlimited. Default: 0
+# 整体下载速度限制, 运行时可修改, 默认:0
 #max-overall-download-limit=0
-# Task download limit. Default: 0
+# 单个任务下载速度限制, 默认:0
 #max-download-limit=0
-# Global upload limit. Default: 0
+# 整体上传速度限制, 运行时可修改, 默认:0
 #max-overall-upload-limit=0
-# Task upload limit. Default: 0
+# 单个任务上传速度限制, 默认:0
 #max-upload-limit=0
-# Disable IPv6. Default: false
+# 禁用IPv6, 默认:false
 #disable-ipv6=true
-# Connection timeout. Default: 60
+# 连接超时时间, 默认:60
 #timeout=60
-# Max retries. 0 for unlimited. Default: 5
+# 最大重试次数, 设置为0表示不限制重试次数, 默认:5
 #max-tries=5
-# Seconds between retries. Default: 0
+# 设置重试等待的秒数, 默认:0
 #retry-wait=0
 
-## Progress Saving ##
+## 进度保存相关 ##
 
-# Load tasks from session file
+# 从会话文件中读取下载任务
 input-file=D:\aria2-1.36.0-win-64bit-build1\aria2.session
-# Save error/unfinished tasks to session file on exit
+# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
 save-session=D:\aria2-1.36.0-win-64bit-build1\aria2.session
-# Interval to save session. 0 to save only on exit. Default: 0
+# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
 #save-session-interval=60
 
-## RPC Settings ##
+## RPC相关设置 ##
 
-# Enable RPC. Default: false
+# 启用RPC, 默认:false
 enable-rpc=true
-# Allow all origins. Default: false
+# 允许所有来源, 默认:false
 rpc-allow-origin-all=true
-# Allow non-external access. Default: false
+# 允许非外部访问, 默认:false
 rpc-listen-all=true
-# Event polling method. [epoll, kqueue, port, poll, select]
+# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
 #event-poll=select
-# RPC port. Default: 6800
+# RPC监听端口, 端口被占用时可以修改, 默认:6800
 #rpc-listen-port=6800
-# RPC secret token (v1.18.4+). Replaces user/passwd.
+# 设置的RPC授权令牌, v1.18.4新增功能, 取代 --rpc-user 和 --rpc-passwd 选项
 #rpc-secret=<TOKEN>
-# RPC username (Deprecated)
+# 设置的RPC访问用户名, 此选项新版已废弃, 建议改用 --rpc-secret 选项
 #rpc-user=<USER>
-# RPC password (Deprecated)
+# 设置的RPC访问密码, 此选项新版已废弃, 建议改用 --rpc-secret 选项
 #rpc-passwd=<PASSWD>
-# Enable SSL/TLS for RPC. Requires https/wss.
+# 是否启用 RPC 服务的 SSL/TLS 加密,
+# 启用加密后 RPC 服务需要使用 https 或者 wss 协议连接
 #rpc-secure=true
-# Certificate file for RPC SSL/TLS
+# 在 RPC 服务中启用 SSL/TLS 加密时的证书文件,
+# 使用 PEM 格式时，您必须通过 --rpc-private-key 指定私钥
 #rpc-certificate=/path/to/certificate.pem
-# Private key for RPC SSL/TLS
+# 在 RPC 服务中启用 SSL/TLS 加密时的私钥文件
 #rpc-private-key=/path/to/certificate.key
 
-## BT/PT Download ##
+## BT/PT下载相关 ##
 
-# Auto-start BT task for .torrent files. Default: true
+# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
 #follow-torrent=true
-# BT port. Default: 6881-6999
+# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
 listen-port=51413
-# Max peers per torrent. Default: 55
+# 单个种子最大连接数, 默认:55
 #bt-max-peers=55
-# Enable DHT. Disable for PT. Default: true
+# 打开DHT功能, PT需要禁用, 默认:true
 enable-dht=false
-# Enable IPv6 DHT. Disable for PT.
+# 打开IPv6 DHT功能, PT需要禁用
 #enable-dht6=false
-# DHT port. Default: 6881-6999
+# DHT网络监听端口, 默认:6881-6999
 #dht-listen-port=6881-6999
-# Local Peer Discovery. Disable for PT. Default: false
+# 本地节点查找, PT需要禁用, 默认:false
 #bt-enable-lpd=false
-# Peer Exchange. Disable for PT. Default: true
+# 种子交换, PT需要禁用, 默认:true
 enable-peer-exchange=false
-# BT peer request speed limit. Default: 50K
+# 每个种子限速, 对少种的PT很有用, 默认:50K
 #bt-request-peer-speed-limit=50K
-# Client spoofing. Needed for PT.
+# 客户端伪装, PT需要
 peer-id-prefix=-TR2770-
 user-agent=Transmission/2.77
-# Seed ratio. Stop seeding at this ratio. 0 for infinite. Default: 1.0
+# 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
 seed-ratio=0.7
-# Force save session even if task is finished. Default: false
-# If true, .aria2 files remain after completion.
+# 强制保存会话, 即使任务已经完成, 默认:false
+# 较新的版本开启后会在任务完成后依然保留.aria2文件
 #force-save=false
-# BT hash check seed. Default: true
+# BT校验相关, 默认:true
 #bt-hash-check-seed=true
-# Skip hash check when resuming BT. Default: false
+# 继续之前的BT任务时, 无需再次校验, 默认:false
 bt-seed-unverified=true
-# Save magnet metadata as .torrent files. Default: false
+# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
 bt-save-metadata=true
 ```
 
-**Note: Update these four lines to match your local file paths**:
+**Note: You need to modify the following four lines to match your own file paths**:
 
 ```conf
-# File save path
+# 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
 dir=E:\Aria2Download
-# Log file path
+# 日志文件的保存路径
 log=D:\aria2-1.36.0-win-64bit-build1\Aria2.log
-# Input session file
+# 从会话文件中读取下载任务
 input-file=D:\aria2-1.36.0-win-64bit-build1\aria2.session
-# Output session file
+# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
 save-session=D:\aria2-1.36.0-win-64bit-build1\aria2.session
 ```
 
-The last two lines handle download history. If Aria2 fails to start, try clearing the contents of the session file.
+The last two lines are for saving download history. If Aria2 cannot start sometimes, clearing the content inside will fix it.
 
-2. Modify `HideRun.vbs`
+2. Modify the `HideRun.vbs` file
 
-Open `HideRun.vbs` and add:
+Open the `HideRun.vbs` file and add the following content:
 
 ```vbs
 CreateObject("WScript.Shell").Run "aria2c.exe --conf-path=aria2.conf",0
 ```
 
-Run `HideRun.vbs` (ensure you run the VBS, not the EXE). If there are no errors, skip the next part.
+Next, double-click to run the `HideRun.vbs` file (note: it must be the `.vbs` file, not the executable). If no error occurs, you can skip the following paragraph:
 
-**Warning:** You can add absolute paths in the VBS script, but the path **must not** contain spaces.
+Note: You can also add a specific directory prefix before the file path, but ensure that there are no spaces in the directory path of the prefix.
 
-Example of what NOT to do:
+For example:
 
 ```vbs
 CreateObject("WScript.Shell").Run "C:\Users\he ne\Downloads\aria2c.exe --conf-path=aria2.conf",0
 ```
 
-Because "he ne" contains a space, the system won't recognize it. This often happens with `C:\Program Files (x86)`. To fix this, either remove spaces from the directory or just keep the VBS in the same folder as Aria2 and use the relative path (as shown in the first VBS example).
+However, because the folder `he ne` contains a space, the system cannot recognize it. Similar common problematic locations include: `D:Program Files (x86)`, which also has spaces. The solution is to remove this prefix (but the `.vbs` file must be located in the same Aria2 folder).
 
 3. Open `index.html`
 
 ![img](https://cdn.statically.io/gh/hiyoung3937/img_hiyoung@master/bolg/Aria2+AriaNG%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8_1.1ohxweqn3ayo.jpg)
 
-Open the `index.html` file from the AriaNG folder. If it shows "Connected," the setup is successful.
+Open the `index.html` file inside. If it displays "Connected", the setup is successful.
 
 4. Add to Startup
 
-Create a shortcut for `HideRun.vbs` and place it in the Windows Startup folder:
+Create a shortcut of the `HideRun.vbs` file and place it in Windows' startup directory:
 
-Press `Win + R`, type `shell:startup`, and press Enter.
+Enter the following in the Run dialog: `shell:startup`
 
-This opens the Startup folder. Drag the `HideRun.vbs` shortcut into this folder to enable auto-start.
+This will open the startup folder. Then drag the shortcut into it.
 
 - - - - - -
 
-References:
-[Aria2+AriaNG Configuration Guide (Win10)](https://www.higgs.xyz/en/archives/7/)
+Reference articles:
+
+[Aria2 + AriaNG Configuration Guide (Win10)](https://www.higgs.xyz/archives/7/)
+
 [AriaNG Documentation](http://ariang.mayswind.net/zh_Hans/)

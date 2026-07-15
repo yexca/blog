@@ -1098,22 +1098,28 @@
     "posts/2022/2022-09-01-Aria2+AriaNG配置使用.md": {
       "translations": {
         "en": {
-          "sourceHash": "sha256:08a06af4d28b189a33ff4575ceeb9ab11aadf37d05c8119c2ff51fc86775555f",
+          "sourceHash": "sha256:c9c175e673ac581a8054185b6093455f9c4038e432256d12499b4fd0a97d9bac",
           "status": "current",
-          "updatedAt": "2026-06-27T15:27:58.782Z"
+          "provider": "deepseek",
+          "model": "deepseek-v4-flash",
+          "updatedAt": "2026-07-15T18:36:56.538Z"
         },
         "ja": {
-          "sourceHash": "sha256:08a06af4d28b189a33ff4575ceeb9ab11aadf37d05c8119c2ff51fc86775555f",
+          "sourceHash": "sha256:c9c175e673ac581a8054185b6093455f9c4038e432256d12499b4fd0a97d9bac",
           "status": "current",
-          "updatedAt": "2026-06-27T15:27:58.782Z"
+          "provider": "deepseek",
+          "model": "deepseek-v4-flash",
+          "updatedAt": "2026-07-15T18:41:08.402Z"
         },
         "zh-tw": {
-          "sourceHash": "sha256:08a06af4d28b189a33ff4575ceeb9ab11aadf37d05c8119c2ff51fc86775555f",
+          "sourceHash": "sha256:c9c175e673ac581a8054185b6093455f9c4038e432256d12499b4fd0a97d9bac",
           "status": "current",
-          "updatedAt": "2026-06-27T15:27:58.782Z"
+          "provider": "deepseek",
+          "model": "deepseek-v4-flash",
+          "updatedAt": "2026-07-15T18:34:34.724Z"
         }
       },
-      "sourceHash": "sha256:08a06af4d28b189a33ff4575ceeb9ab11aadf37d05c8119c2ff51fc86775555f",
+      "sourceHash": "sha256:c9c175e673ac581a8054185b6093455f9c4038e432256d12499b4fd0a97d9bac",
       "promptVersion": 1
     },
     "posts/2022/2022-09-01-Fiddler抓包HTTPS.md": {
@@ -6085,5 +6091,5 @@
       "promptVersion": 1
     }
   },
-  "updatedAt": "2026-07-06T03:13:16.539Z"
+  "updatedAt": "2026-07-15T18:41:08.508Z"
 }
