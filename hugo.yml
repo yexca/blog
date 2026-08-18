@@ -78,6 +78,7 @@ params:
     attachment: fixed
   article:
     math: false
+    mermaid: false
 
 markup:
   highlight:

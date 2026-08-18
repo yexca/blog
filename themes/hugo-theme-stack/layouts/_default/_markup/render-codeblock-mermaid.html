@@ -1,0 +1,6 @@
+{{- if or .Page.Params.mermaid .Page.Site.Params.article.mermaid -}}
+<pre class="mermaid">{{ .Inner | htmlEscape | safeHTML }}</pre>
+{{- else -}}
+{{- $result := transform.HighlightCodeBlock . -}}
+{{- $result.Wrapped -}}
+{{- end -}}

@@ -27,6 +27,7 @@ After theme changes, check:
 
 - Home page.
 - One article page with code blocks.
+- One article page with Mermaid enabled and one with Mermaid disabled.
 - One article page with images.
 - Archives page.
 - Category page.
@@ -36,6 +37,7 @@ After theme changes, check:
 - Mobile layout.
 - Dark and light color schemes.
 - Soft navigation between same-origin pages.
+- Mermaid diagrams after soft navigation and after a color-scheme switch.
 
 After translation changes, check:
 

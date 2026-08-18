@@ -10,6 +10,7 @@ import { setupArchives } from "ts/features/archives";
 import { setupArticleTiles } from "ts/features/articleTiles";
 import { setupCodeBlocks } from "ts/features/codeBlocks";
 import { setupGithubInfoCards } from "ts/features/githubInfoCards";
+import { setupMermaid } from "ts/features/mermaid";
 import { setupTaxonomyPages } from "ts/features/taxonomyPages";
 import { setupTwikooComments } from "ts/features/twikooComments";
 import { setupFooterRuntime } from "ts/features/footerRuntime";
@@ -27,6 +28,7 @@ const features: Feature[] = [
     { selector: '[data-archive-stage]', setup: setupArchives },
     { selector: '.article-list--tile', setup: setupArticleTiles },
     { selector: '.article-content div.highlight', setup: setupCodeBlocks },
+    { selector: '.article-content .mermaid', setup: setupMermaid },
     { selector: '[data-twikoo]', setup: setupTwikooComments },
     { selector: '#htmer_time', setup: setupFooterRuntime },
 ];

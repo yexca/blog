@@ -8,6 +8,7 @@
 | `assets/ts/core/pageInit.ts` | Registers page feature initializers. |
 | `assets/ts/core/initOnce.ts` | Guards global one-time setup. |
 | `assets/ts/features/*` | Page and component features. |
+| `assets/ts/features/mermaid.ts` | Opt-in Mermaid loading and rendering. |
 | `assets/ts/pageTransitions.ts` | Same-origin soft navigation. |
 | `assets/ts/search.tsx` | Search UI. |
 
@@ -37,3 +38,8 @@ Because page content can be replaced without a full reload:
 Third-party or network-heavy features should load near viewport or on demand.
 Current examples include comments, GitHub info cards, search data, and image
 color extraction for tile cards.
+
+Mermaid follows the same rule: the small feature code is bundled with the main
+entry, but the Mermaid renderer is requested only when an enabled page contains
+`.mermaid` nodes. The feature also listens for `onColorSchemeChange` so SVGs
+can be regenerated after a theme switch.

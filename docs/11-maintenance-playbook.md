@@ -25,6 +25,18 @@ Check:
 
 Verify headings, cover image, tags, math, code blocks, related content, and comments.
 
+## Change Mermaid Diagrams
+
+Check:
+
+- `hugo.yml` and the post's `mermaid` front matter switch.
+- `layouts/_default/_markup/render-codeblock-mermaid.html`.
+- `assets/ts/features/mermaid.ts` and `assets/ts/core/pageInit.ts`.
+- `assets/scss/partials/components/mermaid.scss`.
+
+Verify enabled and disabled pages, invalid syntax fallback, light/dark schemes,
+mobile sizing, soft navigation, and the performance report.
+
 ## Add A JavaScript Feature
 
 1. Add a module under `assets/ts/features/`.

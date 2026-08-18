@@ -1,0 +1,33 @@
+.article-content {
+    pre.mermaid {
+        display: block;
+        min-height: 0;
+        margin: 1.5em 0;
+        padding: var(--card-padding);
+        overflow-x: auto;
+        overflow-y: hidden;
+        color: var(--pre-text-color);
+        text-align: center;
+        white-space: pre;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        > svg {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            font-family: var(--base-font-family);
+        }
+
+        &.is-mermaid-error {
+            text-align: start;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+    }
+}

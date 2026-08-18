@@ -46,3 +46,8 @@ search URL with a keyword parameter.
 Prefer responsive images for article covers and list cards. Load third-party
 scripts lazily when possible. Current lazy-loading areas include comments,
 GitHub info cards, tile-card color extraction, and search.
+
+Mermaid is another opt-in third-party dependency. Keep the page switch disabled
+by default and load the pinned CDN module only on pages that contain Mermaid
+diagrams. Compare the production bundle and network requests before and after
+changes to the Mermaid feature.
