@@ -2793,6 +2793,33 @@
       "sourceHash": "sha256:7eed0d36048eb6c6946ab8dd063a5ee32a7e01dbb6aadf5a6ae256393542a07e",
       "promptVersion": 1
     },
+    "posts/2026/2026-08-19 AIImage.md": {
+      "translations": {
+        "en": {
+          "sourceHash": "sha256:7b55b07bc7ce90dac339437e41fa122e4cc797f68da7c1fb323381ccac5ddd87",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-08-18T23:20:06.423Z"
+        },
+        "ja": {
+          "sourceHash": "sha256:7b55b07bc7ce90dac339437e41fa122e4cc797f68da7c1fb323381ccac5ddd87",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-08-18T23:20:27.910Z"
+        },
+        "zh-tw": {
+          "sourceHash": "sha256:7b55b07bc7ce90dac339437e41fa122e4cc797f68da7c1fb323381ccac5ddd87",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-08-18T23:19:47.307Z"
+        }
+      },
+      "sourceHash": "sha256:7b55b07bc7ce90dac339437e41fa122e4cc797f68da7c1fb323381ccac5ddd87",
+      "promptVersion": 1
+    },
     "posts/Elasticsearch/2025-01-29-Elasticsearch-1.md": {
       "translations": {
         "en": {
@@ -6118,5 +6145,5 @@
       "promptVersion": 1
     }
   },
-  "updatedAt": "2026-08-13T10:07:26.618Z"
+  "updatedAt": "2026-08-18T23:20:27.975Z"
 }
