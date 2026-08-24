@@ -112,6 +112,15 @@ search:
     resultTitle:
         other: "#PAGES_COUNT 個結果 （用時 #TIME_SECONDS 秒）"
 
+    loading:
+        other: 正在搜尋...
+
+    empty:
+        other: "找不到與「#KEYWORDS」相符的內容"
+
+    error:
+        other: 搜尋索引載入失敗，請稍後再試
+
     pagination:
         other: 搜尋結果分頁
 

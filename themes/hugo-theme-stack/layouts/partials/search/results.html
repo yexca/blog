@@ -1,6 +1,15 @@
-<div class="search-result" data-search-result data-result-title-template="{{ T `search.resultTitle` }}">
-    <h3 class="search-result--title section-title"></h3>
-    <div class="search-result--list article-list--compact"></div>
+<div
+    class="search-result"
+    data-search-result
+    data-result-title-template="{{ T `search.resultTitle` }}"
+    data-loading-template="{{ T `search.loading` }}"
+    data-empty-template="{{ T `search.empty` }}"
+    data-error-template="{{ T `search.error` }}"
+    hidden
+>
+    <h3 class="search-result--title section-title" hidden></h3>
+    <p class="search-result--message" data-search-message aria-live="polite" hidden></p>
+    <div class="search-result--list article-list--compact" hidden></div>
 
     <nav
         class="pagination search-pagination"

@@ -56,9 +56,11 @@ Check:
 - `assets/scss/partials/layout/search.scss` for the result controls.
 
 Verify title-vs-body ordering, a mixed query such as `学习Linux` and
-`学习 Linux`, a result set larger than one page, an empty query, and the 404
-search form. Run the performance report because the index contains article
-text.
+`学习 Linux`, punctuation such as `docker-compose`, a result set larger than
+one page, an empty query, a no-match query, an index-loading failure, and the
+404 search form. Empty queries should hide the result shell, while no-match
+queries should show an explanation. Run the performance report because the
+index contains article text.
 
 ## Change Header
 

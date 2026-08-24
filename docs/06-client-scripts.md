@@ -36,7 +36,10 @@ Because page content can be replaced without a full reload:
 
 The search script is page-scoped through `[data-search-page-form]`; the Header
 search form deliberately uses a different selector because it only navigates
-to the search page.
+to the search page. The result shell starts hidden and distinguishes loading,
+results, no matches, and index-loading failures. Keep those states intact when
+changing result markup; an empty query must not reserve result or pagination
+space.
 
 Color-scheme choices are rendered in the Header and bound by
 `assets/ts/colorScheme.ts`. Preserve the `StackColorScheme` storage key and the

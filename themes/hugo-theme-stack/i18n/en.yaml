@@ -114,6 +114,15 @@ search:
     resultTitle:
         other: "#PAGES_COUNT pages (#TIME_SECONDS seconds)"
 
+    loading:
+        other: Searching...
+
+    empty:
+        other: "No results found for “#KEYWORDS”."
+
+    error:
+        other: The search index could not be loaded. Please try again.
+
     pagination:
         other: Search result pagination
 

@@ -106,6 +106,15 @@ search:
     resultTitle:
         other: "#PAGES_COUNT 个结果 （用时 #TIME_SECONDS 秒）"
 
+    loading:
+        other: 正在搜索...
+
+    empty:
+        other: "没有找到与“#KEYWORDS”匹配的内容"
+
+    error:
+        other: 搜索索引加载失败，请稍后重试
+
     pagination:
         other: 搜索结果分页
 

@@ -109,6 +109,15 @@ search:
     resultTitle:
         other: "#PAGES_COUNT 件 （#TIME_SECONDS 秒）"
 
+    loading:
+        other: 検索中...
+
+    empty:
+        other: "「#KEYWORDS」に一致する結果はありません。"
+
+    error:
+        other: 検索インデックスを読み込めませんでした。もう一度お試しください。
+
     pagination:
         other: 検索結果のページ送り
 

@@ -61,7 +61,7 @@ function replaceHTMLEnt(str: string = ''): string {
 }
 
 function escapeRegExp(string: string): string {
-    return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&');
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function isCjkCharacter(character: string): boolean {
@@ -164,9 +164,14 @@ class Search {
     private results: pageData[] = [];
     private form: HTMLFormElement;
     private input: HTMLInputElement;
+    private resultRoot: HTMLElement;
     private list: HTMLDivElement;
     private resultTitle: HTMLHeadingElement;
+    private message: HTMLElement;
     private resultTitleTemplate: string;
+    private loadingTemplate: string;
+    private emptyTemplate: string;
+    private errorTemplate: string;
     private pagination: HTMLElement | null;
     private pageLinks: HTMLElement | null;
     private previousButton: HTMLButtonElement | null;
@@ -178,11 +183,25 @@ class Search {
     private lastSearch = '';
     private searchGeneration = 0;
 
-    constructor({ form, input, list, resultTitle, pagination, resultTitleTemplate }) {
+    constructor({
+        form,
+        input,
+        resultRoot,
+        list,
+        resultTitle,
+        message,
+        pagination,
+        resultTitleTemplate,
+        loadingTemplate,
+        emptyTemplate,
+        errorTemplate
+    }) {
         this.form = form;
         this.input = input;
+        this.resultRoot = resultRoot;
         this.list = list;
         this.resultTitle = resultTitle;
+        this.message = message;
         this.pagination = pagination;
         this.pageLinks = pagination?.querySelector('[data-search-page-links]') || null;
         this.previousButton = pagination?.querySelector('[data-search-prev]') as HTMLButtonElement | null;
@@ -191,6 +210,9 @@ class Search {
         this.pageStatusTemplate = pagination?.getAttribute('data-page-status-template') || 'Page #CURRENT_PAGE / #TOTAL_PAGES';
         this.pageSize = Math.max(1, Number(pagination?.getAttribute('data-page-size') || 10));
         this.resultTitleTemplate = resultTitleTemplate || '#PAGES_COUNT results (#TIME_SECONDS seconds)';
+        this.loadingTemplate = loadingTemplate || 'Searching...';
+        this.emptyTemplate = emptyTemplate || 'No results found for "#KEYWORDS".';
+        this.errorTemplate = errorTemplate || 'The search index could not be loaded. Please try again.';
 
         /// A 404 page supplies the path-derived value directly; the search page
         /// reads its initial value from the URL instead.
@@ -368,19 +390,44 @@ class Search {
     private async doSearch(query: string, page = 1): Promise<void> {
         const generation = ++this.searchGeneration;
         const startTime = performance.now();
-        const results = await this.searchKeywords(splitKeywords(query));
+        this.showLoading();
 
-        if (generation !== this.searchGeneration) return;
+        try {
+            const results = await this.searchKeywords(splitKeywords(query));
 
-        this.results = results;
-        this.currentPage = page;
-        this.renderCurrentPage();
+            if (generation !== this.searchGeneration) return;
 
-        const endTime = performance.now();
-        this.resultTitle.innerText = this.generateResultTitle(
-            results.length,
-            ((endTime - startTime) / 1000).toPrecision(1)
-        );
+            this.results = results;
+            this.currentPage = page;
+
+            if (results.length === 0) {
+                this.showEmpty(query);
+                return;
+            }
+
+            this.resultRoot.hidden = false;
+            this.message.textContent = '';
+            this.message.hidden = true;
+            this.resultTitle.hidden = false;
+            this.list.hidden = false;
+            this.renderCurrentPage();
+
+            const endTime = performance.now();
+            this.resultTitle.innerText = this.generateResultTitle(
+                results.length,
+                ((endTime - startTime) / 1000).toPrecision(1)
+            );
+        }
+        catch (error) {
+            if (generation !== this.searchGeneration) return;
+
+            console.error('Failed to load the search index.', error);
+            this.lastSearch = '';
+            this.showError();
+        }
+        finally {
+            if (generation === this.searchGeneration) this.resultRoot.removeAttribute('aria-busy');
+        }
     }
 
     private renderCurrentPage(): void {
@@ -477,9 +524,12 @@ class Search {
     public async getData(): Promise<pageData[]> {
         if (!this.data.length) {
             const jsonURL = this.form.dataset.json;
-            if (!jsonURL) return [];
+            if (!jsonURL) throw new Error('Search index URL is missing.');
 
-            this.data = await fetch(jsonURL).then(response => response.json());
+            const response = await fetch(jsonURL);
+            if (!response.ok) throw new Error(`Search index request failed with status ${response.status}`);
+
+            this.data = await response.json();
             const parser = new DOMParser();
 
             for (const item of this.data) {
@@ -528,10 +578,57 @@ class Search {
         this.searchGeneration++;
         this.results = [];
         this.currentPage = 1;
+        this.resultRoot.hidden = true;
+        this.resultRoot.removeAttribute('aria-busy');
         this.list.innerHTML = '';
+        this.list.hidden = true;
         this.resultTitle.innerText = '';
+        this.resultTitle.hidden = true;
+        this.message.textContent = '';
+        this.message.hidden = true;
+        this.resetPagination();
+    }
+
+    private showLoading(): void {
+        this.results = [];
+        this.currentPage = 1;
+        this.resultRoot.hidden = false;
+        this.resultRoot.setAttribute('aria-busy', 'true');
+        this.resultTitle.innerText = '';
+        this.resultTitle.hidden = true;
+        this.list.innerHTML = '';
+        this.list.hidden = true;
+        this.message.textContent = this.loadingTemplate;
+        this.message.hidden = false;
+        this.resetPagination();
+    }
+
+    private showEmpty(query: string): void {
+        this.resultRoot.hidden = false;
+        this.resultTitle.hidden = true;
+        this.list.hidden = true;
+        this.message.textContent = this.emptyTemplate.replace('#KEYWORDS', query.trim());
+        this.message.hidden = false;
+        this.resetPagination();
+    }
+
+    private showError(): void {
+        this.results = [];
+        this.currentPage = 1;
+        this.resultRoot.hidden = false;
+        this.resultTitle.hidden = true;
+        this.list.innerHTML = '';
+        this.list.hidden = true;
+        this.message.textContent = this.errorTemplate;
+        this.message.hidden = false;
+        this.resetPagination();
+    }
+
+    private resetPagination(): void {
         if (this.pagination) this.pagination.hidden = true;
         if (this.pageLinks) this.pageLinks.innerHTML = '';
+        if (this.previousButton) this.previousButton.disabled = true;
+        if (this.nextButton) this.nextButton.disabled = true;
         if (this.pageStatus) this.pageStatus.textContent = '';
     }
 
@@ -589,19 +686,25 @@ function setupSearch(root: ParentNode = document): void {
     if (!searchForm || searchForm.dataset.stackSearchReady === 'true') return;
 
     const searchInput = searchForm.querySelector('input') as HTMLInputElement | null;
-    const resultRoot = root.querySelector('[data-search-result]');
+    const resultRoot = root.querySelector('[data-search-result]') as HTMLElement | null;
     const searchResultList = resultRoot?.querySelector('.search-result--list') as HTMLDivElement | null;
     const searchResultTitle = resultRoot?.querySelector('.search-result--title') as HTMLHeadingElement | null;
-    if (!searchInput || !searchResultList || !searchResultTitle) return;
+    const searchMessage = resultRoot?.querySelector('[data-search-message]') as HTMLElement | null;
+    if (!searchInput || !resultRoot || !searchResultList || !searchResultTitle || !searchMessage) return;
 
     searchForm.dataset.stackSearchReady = 'true';
     new Search({
         form: searchForm,
         input: searchInput,
+        resultRoot,
         list: searchResultList,
         resultTitle: searchResultTitle,
+        message: searchMessage,
         pagination: resultRoot?.querySelector('[data-search-pagination]') as HTMLElement | null,
-        resultTitleTemplate: resultRoot?.getAttribute('data-result-title-template') || ''
+        resultTitleTemplate: resultRoot.getAttribute('data-result-title-template') || '',
+        loadingTemplate: resultRoot.getAttribute('data-loading-template') || '',
+        emptyTemplate: resultRoot.getAttribute('data-empty-template') || '',
+        errorTemplate: resultRoot.getAttribute('data-error-template') || ''
     });
 }
 
