@@ -1,0 +1,11 @@
+{{- $context := .Context -}}
+{{- $related := $context.Scratch.Get "relatedPages" -}}
+{{- with $related -}}
+    <section class="widget related-content-widget">
+        <div class="widget-icon">
+            {{ partial "helper/icon" "link" }}
+        </div>
+        <h2 class="widget-title section-title">{{ T "article.relatedContent" }}</h2>
+        {{ partial "article/components/related-list" (dict "Pages" .) }}
+    </section>
+{{- end -}}

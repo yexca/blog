@@ -112,6 +112,31 @@ search:
     resultTitle:
         other: "#PAGES_COUNT 個結果 （用時 #TIME_SECONDS 秒）"
 
+    pagination:
+        other: 搜尋結果分頁
+
+    previous:
+        other: 上一頁
+
+    next:
+        other: 下一頁
+
+    pageStatus:
+        other: "第 #CURRENT_PAGE / #TOTAL_PAGES 頁"
+
+language:
+    other: 語言
+
+theme:
+    title:
+        other: 主題
+    auto:
+        other: 自動
+    light:
+        other: 淺色
+    dark:
+        other: 深色
+
 footer:
     runningTime:
         other: 本部落格已運行 {{ .Years }} 年 {{ .Days }} 天 {{ .Hours }} 小時 {{ .Minutes }} 分鐘 {{ .Seconds }} 秒

@@ -1,0 +1,13 @@
+{{- $pages := .Pages -}}
+<ol class="related-content-list">
+    {{- range $pages -}}
+        <li>
+            <a href="{{ .RelPermalink }}">
+                <span class="related-content-title">{{ .Title }}</span>
+                <time datetime="{{ .Date.Format `2006-01-02T15:04:05Z07:00` }}">
+                    {{- .Date | time.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") -}}
+                </time>
+            </a>
+        </li>
+    {{- end -}}
+</ol>

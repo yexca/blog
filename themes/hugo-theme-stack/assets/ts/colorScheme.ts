@@ -5,7 +5,7 @@ class StackColorScheme {
     private currentScheme: colorScheme;
     private systemPreferScheme: colorScheme;
 
-    constructor(toggleEl: HTMLElement) {
+    constructor(toggleEl?: HTMLElement | null) {
         this.bindMatchMedia();
         this.currentScheme = this.getSavedScheme();
         if (window.matchMedia('(prefers-color-scheme: dark)').matches === true)
@@ -18,6 +18,9 @@ class StackColorScheme {
         if (toggleEl)
             this.bindClick(toggleEl);
 
+        this.bindSchemeOptions();
+        this.updateSchemeOptions();
+
         if (document.body.style.transition == '')
             document.body.style.setProperty('transition', 'background-color .3s ease');
     }
@@ -26,25 +29,55 @@ class StackColorScheme {
         localStorage.setItem(this.localStorageKey, this.currentScheme);
     }
 
+    private applyScheme(scheme: colorScheme) {
+        this.currentScheme = scheme;
+        this.setBodyClass();
+        this.saveScheme();
+        this.updateSchemeOptions();
+    }
+
     private bindClick(toggleEl: HTMLElement) {
         toggleEl.addEventListener('click', (e) => {
+            let nextScheme: colorScheme;
+
             if (this.isDark()) {
                 /// Disable dark mode
-                this.currentScheme = 'light';
+                nextScheme = 'light';
             }
             else {
-                this.currentScheme = 'dark';
+                nextScheme = 'dark';
             }
 
-            this.setBodyClass();
-
-            if (this.currentScheme == this.systemPreferScheme) {
+            if (nextScheme == this.systemPreferScheme) {
                 /// Set to auto
-                this.currentScheme = 'auto';
+                nextScheme = 'auto';
             }
 
-            this.saveScheme();
+            this.applyScheme(nextScheme);
         })
+    }
+
+    private bindSchemeOptions() {
+        document.querySelectorAll('[data-color-scheme-option]').forEach((option: Element) => {
+            const element = option as HTMLElement;
+            if (element.dataset.stackColorSchemeReady === 'true') return;
+
+            element.dataset.stackColorSchemeReady = 'true';
+            element.addEventListener('click', () => {
+                const scheme = element.dataset.colorScheme as colorScheme;
+                if (scheme !== 'light' && scheme !== 'dark' && scheme !== 'auto') return;
+                this.applyScheme(scheme);
+            });
+        });
+    }
+
+    private updateSchemeOptions() {
+        document.querySelectorAll('[data-color-scheme-option]').forEach((option: Element) => {
+            const element = option as HTMLElement;
+            const selected = element.dataset.colorScheme === this.currentScheme;
+            element.setAttribute('aria-checked', selected ? 'true' : 'false');
+            element.classList.toggle('is-selected', selected);
+        });
     }
 
     private isDark() {
@@ -85,6 +118,7 @@ class StackColorScheme {
                 this.systemPreferScheme = 'light';
             }
             this.setBodyClass();
+            this.updateSchemeOptions();
         });
     }
 }

@@ -82,3 +82,77 @@
     }
 
 }
+
+.search-result {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-separation);
+}
+
+.search-pagination {
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .pagination-links {
+        flex: 0 1 auto;
+        overflow-x: auto;
+    }
+
+    .search-pagination-control {
+        min-width: 44px;
+        padding: 10px 14px;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        &:disabled {
+            cursor: default;
+            opacity: 0.4;
+        }
+    }
+
+    .search-pagination-control--next {
+        border-right: 1px solid var(--card-separator-color);
+
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    .pagination-links .page-link {
+        min-width: 42px;
+        padding: 10px 12px;
+        border: 0;
+        border-left: 1px solid var(--card-separator-color);
+        background: transparent;
+        cursor: pointer;
+        font: inherit;
+    }
+
+    .search-pagination-status {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 0 14px;
+        color: var(--card-text-color-tertiary);
+        border-left: 1px solid var(--card-separator-color);
+        font-size: 1.3rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .search-pagination {
+        .search-pagination-status {
+            flex: 1 0 100%;
+            justify-content: center;
+            border-top: 1px solid var(--card-separator-color);
+            border-left: 0;
+        }
+    }
+}

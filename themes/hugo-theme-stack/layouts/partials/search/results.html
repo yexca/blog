@@ -1,0 +1,39 @@
+<div class="search-result" data-search-result data-result-title-template="{{ T `search.resultTitle` }}">
+    <h3 class="search-result--title section-title"></h3>
+    <div class="search-result--list article-list--compact"></div>
+
+    <nav
+        class="pagination search-pagination"
+        data-search-pagination
+        data-page-size="10"
+        data-page-status-template="{{ T `search.pageStatus` }}"
+        aria-label="{{ T `search.pagination` }}"
+        hidden
+    >
+        <button
+            class="page-link search-pagination-control"
+            type="button"
+            data-search-prev
+            aria-label="{{ T `search.previous` }}"
+            title="{{ T `search.previous` }}"
+            disabled
+        >
+            {{ partial "helper/icon" "arrow-back" }}
+        </button>
+
+        <div class="pagination-links" data-search-page-links></div>
+
+        <button
+            class="page-link search-pagination-control search-pagination-control--next"
+            type="button"
+            data-search-next
+            aria-label="{{ T `search.next` }}"
+            title="{{ T `search.next` }}"
+            disabled
+        >
+            {{ partial "helper/icon" "arrow-back" }}
+        </button>
+
+        <span class="search-pagination-status" data-search-page-status aria-live="polite"></span>
+    </nav>
+</div>

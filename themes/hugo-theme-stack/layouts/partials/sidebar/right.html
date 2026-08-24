@@ -1,8 +1,10 @@
 {{- $scope := default "homepage" .Scope -}}
 {{- $context := .Context -}}
-{{- with (index .Context.Site.Params.widgets $scope) -}}
-    <aside class="sidebar right-sidebar sticky">
-        {{ range $widget := . }}
+{{- $widgets := index .Context.Site.Params.widgets $scope -}}
+{{- $related := $context.Scratch.Get "relatedPages" -}}
+{{- if or (gt (len $widgets) 0) (and (eq $scope "page") (gt (len $related) 0)) -}}
+    <aside class="sidebar right-sidebar sticky{{ if and (eq $scope `page`) (gt (len $related) 0) }} has-related{{ end }}">
+        {{ range $widget := $widgets }}
             {{ if templates.Exists (printf "partials/widget/%s.html" .type) }}
                 <!-- Ensure that the `params` is not nil -->
                 {{- $params := default dict .params -}}
@@ -11,6 +13,10 @@
             {{ else }}
                 {{ warnf "Widget %s not found" .type }}
             {{ end }}
+        {{ end }}
+
+        {{ if and (eq $scope "page") (gt (len $related) 0) }}
+            {{ partial "widget/related" (dict "Context" $context) }}
         {{ end }}
     </aside>
 {{ end }}

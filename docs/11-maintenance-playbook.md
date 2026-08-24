@@ -45,6 +45,28 @@ mobile sizing, soft navigation, and the performance report.
 4. Use selectors and element readiness flags.
 5. Verify normal load and soft navigation.
 
+## Change Search
+
+Check:
+
+- `layouts/page/search.json` for indexed fields.
+- `layouts/partials/search/results.html` for the result and pagination shell.
+- `assets/ts/search.tsx` for OR matching, CJK/Latin spacing, ranking, and
+  client-side pagination.
+- `assets/scss/partials/layout/search.scss` for the result controls.
+
+Verify title-vs-body ordering, a mixed query such as `学习Linux` and
+`学习 Linux`, a result set larger than one page, an empty query, and the 404
+search form. Run the performance report because the index contains article
+text.
+
+## Change Header
+
+Check `partials/header/site.html`, `partials/header.scss`, `features/header.ts`,
+`colorScheme.ts`, and the `.page-columns` wrapper in `baseof.html`. Verify the
+desktop search expansion, all language targets, all three theme choices,
+mobile search navigation, the mobile menu button, and soft navigation.
+
 ## Add Or Change A Shortcode
 
 1. Edit or add `layouts/shortcodes/<name>.html`.

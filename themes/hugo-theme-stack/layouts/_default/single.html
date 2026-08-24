@@ -18,9 +18,11 @@
     {{- $TOCManuallyDisabled := eq .Params.toc false -}}
     {{- $TOCEnabled := and (not $TOCManuallyDisabled) $TOCWidgetEnabled -}}
     {{- $hasTOC := ge (len .TableOfContents) 100 -}}
+    {{- $related := (where (.Site.RegularPages.Related .) "Params.hidden" "!=" true) | first 5 -}}
+    {{- .Scratch.Set "relatedPages" $related -}}
     {{- .Scratch.Set "TOCEnabled" (and $TOCEnabled $hasTOC) -}}
     
-    {{- .Scratch.Set "hasWidget" (or $HasWidgetNotTOC (and $TOCEnabled $hasTOC)) -}}
+    {{- .Scratch.Set "hasWidget" (or $HasWidgetNotTOC (and $TOCEnabled $hasTOC) (gt (len $related) 0)) -}}
 {{ end }}
 
 {{ define "main" }}

@@ -1,6 +1,6 @@
 {{ define "body-class" }}template-search{{ end }}
 {{ define "main" }}
-<form action="{{ .RelPermalink }}" class="search-form"{{ with .OutputFormats.Get "json" -}} data-json="{{ .RelPermalink }}"{{- end }}>
+<form action="{{ .RelPermalink }}" class="search-form" data-search-page-form{{ with .OutputFormats.Get "json" }} data-json="{{ .RelPermalink }}"{{ end }}>
     <p>
         <label>{{ T "search.title" }}</label>
         <input name="keyword" placeholder="{{ T `search.placeholder` }}" />
@@ -11,14 +11,7 @@
     </button>
 </form>
 
-<div class="search-result">
-    <h3 class="search-result--title section-title"></h3>
-    <div class="search-result--list article-list--compact"></div>
-</div>
-
-<script>
-    window.searchResultTitleTemplate = "{{ T `search.resultTitle` }}"
-</script>
+{{ partial "search/results.html" . }}
 
 {{- $opts := dict "minify" hugo.IsProduction "JSXFactory" "createElement" -}}
 {{- $searchScript := resources.Get "ts/search.tsx" | js.Build $opts -}}

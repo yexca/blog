@@ -100,9 +100,8 @@
 #toggle-menu {
     background: none;
     border: none;
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: relative;
+    flex: 0 0 auto;
     z-index: 2;
     cursor: pointer;
 

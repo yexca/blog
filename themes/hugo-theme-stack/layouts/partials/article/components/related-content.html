@@ -1,13 +1,10 @@
-{{ $related := (where (.Site.RegularPages.Related .) "Params.hidden" "!=" true) | first 5 }}
+{{- $related := .Scratch.Get "relatedPages" -}}
+{{- if not $related -}}
+    {{- $related = (where (.Site.RegularPages.Related .) "Params.hidden" "!=" true) | first 5 -}}
+{{- end -}}
 {{ with $related }}
-<aside class="related-content--wrapper">
+<aside class="related-content--wrapper related-content--mobile">
     <h2 class="section-title">{{ T "article.relatedContent" }}</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
-            {{ range . }}
-                {{ partial "article-list/tile" (dict "context" . "size" "250x150" "Type" "articleList") }}
-            {{ end }}
-        </div>
-    </div>
+    {{ partial "article/components/related-list" (dict "Pages" .) }}
 </aside>
 {{ end }}

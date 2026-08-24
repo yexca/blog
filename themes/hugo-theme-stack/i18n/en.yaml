@@ -114,6 +114,31 @@ search:
     resultTitle:
         other: "#PAGES_COUNT pages (#TIME_SECONDS seconds)"
 
+    pagination:
+        other: Search result pagination
+
+    previous:
+        other: Previous
+
+    next:
+        other: Next
+
+    pageStatus:
+        other: "Page #CURRENT_PAGE / #TOTAL_PAGES"
+
+language:
+    other: Language
+
+theme:
+    title:
+        other: Theme
+    auto:
+        other: Auto
+    light:
+        other: Light
+    dark:
+        other: Dark
+
 footer:
     runningTime:
         other: This blog has been running for {{ .Years }} years {{ .Days }} days {{ .Hours }} hours {{ .Minutes }} minutes {{ .Seconds }} seconds

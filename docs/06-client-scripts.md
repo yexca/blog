@@ -9,8 +9,9 @@
 | `assets/ts/core/initOnce.ts` | Guards global one-time setup. |
 | `assets/ts/features/*` | Page and component features. |
 | `assets/ts/features/mermaid.ts` | Opt-in Mermaid loading and rendering. |
+| `assets/ts/features/header.ts` | Header search expansion, mobile search navigation, and popover behavior. |
 | `assets/ts/pageTransitions.ts` | Same-origin soft navigation. |
-| `assets/ts/search.tsx` | Search UI. |
+| `assets/ts/search.tsx` | Search UI, ranking, and client-side result pagination. |
 
 ## Feature Pattern
 
@@ -32,6 +33,14 @@ Because page content can be replaced without a full reload:
 - Avoid global state that assumes only one page render.
 - Cleanly tolerate missing containers.
 - Recompute selectors inside the provided root.
+
+The search script is page-scoped through `[data-search-page-form]`; the Header
+search form deliberately uses a different selector because it only navigates
+to the search page.
+
+Color-scheme choices are rendered in the Header and bound by
+`assets/ts/colorScheme.ts`. Preserve the `StackColorScheme` storage key and the
+`onColorSchemeChange` event because other features depend on them.
 
 ## Lazy Loading
 

@@ -14,6 +14,7 @@ import { setupMermaid } from "ts/features/mermaid";
 import { setupTaxonomyPages } from "ts/features/taxonomyPages";
 import { setupTwikooComments } from "ts/features/twikooComments";
 import { setupFooterRuntime } from "ts/features/footerRuntime";
+import { setupHeader } from "ts/features/header";
 
 type Feature = {
     selector: string;
@@ -21,6 +22,7 @@ type Feature = {
 };
 
 const features: Feature[] = [
+    { selector: '[data-site-header]', setup: setupHeader },
     { selector: '.github-info-card', setup: setupGithubInfoCards },
     { selector: '[data-about-versions]', setup: setupAboutVersions },
     { selector: '[data-about-2026]', setup: setupAbout2026 },

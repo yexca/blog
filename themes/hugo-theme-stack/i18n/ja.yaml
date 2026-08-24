@@ -109,6 +109,31 @@ search:
     resultTitle:
         other: "#PAGES_COUNT 件 （#TIME_SECONDS 秒）"
 
+    pagination:
+        other: 検索結果のページ送り
+
+    previous:
+        other: 前へ
+
+    next:
+        other: 次へ
+
+    pageStatus:
+        other: "#CURRENT_PAGE / #TOTAL_PAGES ページ"
+
+language:
+    other: 言語
+
+theme:
+    title:
+        other: テーマ
+    auto:
+        other: 自動
+    light:
+        other: ライト
+    dark:
+        other: ダーク
+
 footer:
     runningTime:
         other: このブログは {{ .Years }} 年 {{ .Days }} 日 {{ .Hours }} 時間 {{ .Minutes }} 分 {{ .Seconds }} 秒 運営されています。

@@ -6,18 +6,21 @@
 
 {{- range $filtered -}}
     {{- $description := default "" .Description -}}
+    {{- $content := .Plain | plainify | htmlUnescape -}}
     {{- $summary := .Summary | plainify | htmlUnescape -}}
     {{- if not $summary -}}
-        {{- $summary = .Plain | truncate 360 -}}
+        {{- $summary = $content | truncate 360 -}}
     {{- end -}}
     {{- $data := dict
         "title" .Title
         "date" .Date
         "permalink" .Permalink
+        "content" $content
         "summary" $summary
         "description" $description
         "tags" (default slice .Params.tags)
         "categories" (default slice .Params.categories)
+        "keywords" (default slice .Params.keywords)
     -}}
 
     {{- $image := partialCached "helper/image" (dict "Context" . "Type" "articleList") .RelPermalink "articleList" -}}

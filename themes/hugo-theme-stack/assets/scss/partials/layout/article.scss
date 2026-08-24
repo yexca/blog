@@ -173,31 +173,96 @@
     }
 }
 
-.related-content {
-    overflow-x: auto;
-    padding-bottom: 15px;
+.related-content--mobile {
+    @include respond(lg) {
+        display: none;
+    }
+}
 
-    & > .flex {
-        float: left;
+.related-content-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--card-border-color);
+    border-radius: var(--card-border-radius);
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-l1);
+
+    li {
+        margin: 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--card-separator-color);
+        }
     }
 
-    article {
-        margin-right: 15px;
-        flex-shrink: 0;
-        overflow: hidden;
-        width: 250px;
-        height: 150px;
+    a {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        min-width: 0;
+        padding: 13px 16px;
+        color: var(--card-text-color-main);
+        transition: background-color 0.2s ease, color 0.2s ease;
 
-        .article-title {
-            font-size: 1.8rem;
-            margin: 0;
+        &:hover {
+            color: var(--accent-color);
+            background-color: var(--card-background-selected);
+        }
+    }
+
+    .related-content-title {
+        display: -webkit-box;
+        min-width: 0;
+        flex: 1 1 auto;
+        overflow: hidden;
+        font-size: 1.5rem;
+        line-height: 1.45;
+        overflow-wrap: anywhere;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    time {
+        flex: 0 0 auto;
+        color: var(--card-text-color-tertiary);
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+}
+
+.right-sidebar.has-related {
+    .widget--toc #TableOfContents {
+        max-height: unquote("min(42vh, 340px)");
+    }
+
+    .related-content-widget {
+        .related-content-list a {
+            padding: 10px 12px;
         }
 
-        &.has-image {
-            .article-details {
-                padding: 20px;
-                background: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.75) 100%);
-            }
+        .related-content-title {
+            font-size: 1.4rem;
+            -webkit-line-clamp: 1;
+        }
+
+        time {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .related-content-list {
+        a {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        time {
+            font-size: 1.25rem;
         }
     }
 }

@@ -8,6 +8,7 @@
 | `assets/scss/variables.scss` | CSS custom properties, font stacks, colors, article sizing. |
 | `assets/scss/breakpoints.scss` | Responsive breakpoints and mixins. |
 | `assets/scss/general.scss` | Broad global rules. |
+| `assets/scss/partials/header.scss` | Header layout, expanding search, and popovers. |
 | `assets/scss/custom.scss` | Small local overrides. Keep this file lean. |
 | `assets/scss/partials/components/glass.scss` | Shared glass-style surfaces. |
 | `assets/scss/partials/layout/*.scss` | Page-specific layouts. |
@@ -28,6 +29,8 @@ runtime CSS and checked by the performance report.
 - Keep page-specific layout rules under `partials/layout/`.
 - Avoid changing base typography from one feature file.
 - Test mobile and desktop when changing cards, sidebars, taxonomy pages, or article content.
+- Keep Header controls within the fixed action area at narrow widths; the site
+  name may truncate, but controls must not overlap or expand the viewport.
 
 ## Code Blocks
 

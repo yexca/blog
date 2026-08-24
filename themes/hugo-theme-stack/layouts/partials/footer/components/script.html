@@ -1,8 +1,5 @@
 {{- $needsVibrant := false -}}
-{{- if .IsPage -}}
-    {{- $related := (where (.Site.RegularPages.Related .) "Params.hidden" "!=" true) | first 5 -}}
-    {{- $needsVibrant = gt (len $related) 0 -}}
-{{- else if and (not .IsHome) (gt (len .Sections) 0) -}}
+{{- if and (not .IsHome) (gt (len .Sections) 0) -}}
     {{- $needsVibrant = true -}}
 {{- end -}}
 
