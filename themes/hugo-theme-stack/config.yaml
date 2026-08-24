@@ -4,6 +4,9 @@ module:
         min: "0.87.0"
 
 params:
+    author:
+        name:
+        email:
     mainSections:
         - posts
     featuredImageField: image

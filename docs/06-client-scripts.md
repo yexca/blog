@@ -42,6 +42,9 @@ Color-scheme choices are rendered in the Header and bound by
 `assets/ts/colorScheme.ts`. Preserve the `StackColorScheme` storage key and the
 `onColorSchemeChange` event because other features depend on them.
 
+`assets/ts/smoothAnchors.ts` subtracts the sticky Header height from manual
+anchor scrolling. Keep that offset consistent with the CSS scroll padding.
+
 ## Lazy Loading
 
 Third-party or network-heavy features should load near viewport or on demand.

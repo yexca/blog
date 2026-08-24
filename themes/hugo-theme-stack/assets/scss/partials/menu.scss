@@ -147,6 +147,20 @@
         display: flex;
     }
 
+    @media (max-width: 767.98px) {
+        &.show {
+            position: fixed;
+            top: calc(var(--site-header-sticky-top) + var(--site-header-height) + 8px);
+            inset-inline: 15px;
+            z-index: 29;
+            width: auto;
+            max-height: calc(100vh - var(--site-header-scroll-offset) - 12px);
+            max-height: calc(100dvh - var(--site-header-scroll-offset) - 12px);
+            overscroll-behavior: contain;
+            box-shadow: var(--shadow-l2);
+        }
+    }
+
     @include respond(md) {
         align-items: flex-end;
         display: flex;

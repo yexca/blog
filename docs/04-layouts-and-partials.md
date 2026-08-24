@@ -5,7 +5,7 @@
 | Area | Files | Notes |
 | --- | --- | --- |
 | Base document | `layouts/_default/baseof.html` | Outer HTML shell. |
-| Header | `partials/header/site.html` | Avatar, site name, search, language, theme, and mobile menu controls. |
+| Header | `partials/header/site.html` | Sticky site title, search, language, theme, and mobile menu controls. |
 | Head | `partials/head/*` | Metadata, styles, custom font links, language redirect. |
 | Footer | `partials/footer/*` | Script loading and footer UI. |
 | Home/list cards | `partials/article-list/*` | Default, compact, tile, and cover variants. |
@@ -31,6 +31,8 @@
 - Sidebar markup affects both desktop fixed layout and mobile behavior.
 - The Header sits above the `.page-columns` wrapper so the original three-column
   width calculations remain intact.
+- The sidebar profile uses `params.author.name` for the displayed author name. On
+  phone layouts it is shown only on language home pages.
 - Article related content is calculated in `layouts/_default/single.html`,
   rendered as a compact list on mobile, and rendered below the TOC by the
   page-scoped related widget on desktop.

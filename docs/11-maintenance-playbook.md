@@ -65,7 +65,9 @@ text.
 Check `partials/header/site.html`, `partials/header.scss`, `features/header.ts`,
 `colorScheme.ts`, and the `.page-columns` wrapper in `baseof.html`. Verify the
 desktop search expansion, all language targets, all three theme choices,
-mobile search navigation, the mobile menu button, and soft navigation.
+sticky position and anchor offset, mobile search navigation, the mobile menu
+at a scrolled position, the home-only mobile author profile, and soft
+navigation.
 
 ## Add Or Change A Shortcode
 

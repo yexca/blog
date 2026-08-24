@@ -1,7 +1,10 @@
 .sidebar {
+    --sidebar-sticky-top: var(--site-header-scroll-offset);
+
     &.sticky {
         @include respond(md) {
             position: sticky;
+            top: var(--sidebar-sticky-top);
         }
     }
 }
@@ -21,8 +24,6 @@
     --sidebar-panel-padding: 18px;
     --emoji-size: 40px;
     --emoji-font-size: 20px;
-    --sidebar-sticky-top: 0px;
-
     @include respond(md) {
         width: auto;
         margin-top: var(--main-top-padding);
@@ -37,10 +38,6 @@
         --sidebar-element-separation: 18px;
         --sidebar-panel-padding: 20px;
         --emoji-size: 40px;
-    }
-
-    &.sticky {
-        top: var(--sidebar-sticky-top);
     }
 
     &.compact {
@@ -85,6 +82,16 @@
     gap: var(--sidebar-element-separation);
 }
 
+@media (max-width: 767.98px) {
+    .main-container.has-site-header .page-columns.page-columns--profile-hidden-on-phone {
+        gap: 0;
+
+        .sidebar-profile {
+            display: none;
+        }
+    }
+}
+
 .sidebar-controls {
     list-style: none;
     margin: 0;
@@ -103,10 +110,6 @@
     display: none;
     flex-direction: column;
     gap: var(--widget-separation);
-
-    &.sticky {
-        top: 0;
-    }
 
     @include respond(lg) {
         padding-top: var(--main-top-padding);

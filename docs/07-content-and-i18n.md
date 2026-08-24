@@ -44,6 +44,11 @@ unless you are repairing known bad state.
 Theme UI strings live in `themes/hugo-theme-stack/i18n/`. Add or update theme
 strings there rather than hard-coding language-specific labels in templates.
 
+## Site Identity
+
+`params.author.name` in `hugo.yml` controls the author name shown in the sidebar
+profile. The site title remains language-aware and is displayed in the Header.
+
 ## Maintenance Checks
 
 When content structure or language rules change:

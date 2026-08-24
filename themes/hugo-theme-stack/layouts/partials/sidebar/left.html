@@ -1,19 +1,20 @@
+{{- $authorName := default .Site.Title .Site.Params.author.name -}}
 <aside class="sidebar left-sidebar sticky {{ if .Site.Params.sidebar.compact }}compact{{ end }}">
     <section class="sidebar-panel sidebar-profile">
         <header>
             {{ with .Site.Params.sidebar.avatar }}
                 {{ if (default true .enabled) }}
                 <figure class="site-avatar">
-                    <a href="{{ .Site.BaseURL | relLangURL }}">
+                    <a href="{{ .Site.BaseURL | relLangURL }}" aria-label="{{ $authorName }}">
                     {{ if not .local }}
-                        <img src="{{ .src }}" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                        <img src="{{ .src }}" width="300" height="300" class="site-logo" loading="lazy" alt="{{ $authorName }}">
                     {{ else }}
                         {{ $avatar := resources.Get (.src) }}
                         
                         {{ if $avatar }}
                             {{ $avatarResized := $avatar.Resize "300x" }}
                             <img src="{{ $avatarResized.RelPermalink }}" width="{{ $avatarResized.Width }}"
-                                height="{{ $avatarResized.Height }}" class="site-logo" loading="lazy" alt="Avatar">
+                                height="{{ $avatarResized.Height }}" class="site-logo" loading="lazy" alt="{{ $authorName }}">
                         {{ else }}
                             {{ errorf "Failed loading avatar from %q" . }}
                         {{ end }}
@@ -27,7 +28,7 @@
             {{ end }}
             
             <div class="site-meta">
-                <h1 class="site-name"><a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a></h1>
+                <h1 class="site-name"><a href="{{ .Site.BaseURL | relLangURL }}">{{ $authorName }}</a></h1>
                 {{- $subtitle := .Site.Params.sidebar.subtitle -}}
                 {{- with index .Site.Params.sidebar.subtitles .Site.Language.Lang -}}
                     {{- $subtitle = . -}}

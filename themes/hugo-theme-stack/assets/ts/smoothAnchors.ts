@@ -12,6 +12,17 @@
 
 const anchorLinksQuery = "a[href]";
 
+function getStickyHeaderOffset(): number {
+    const header = document.querySelector('[data-site-header]') as HTMLElement | null;
+    if (!header) return 0;
+
+    const style = window.getComputedStyle(header);
+    if (style.position !== 'sticky') return 0;
+
+    const stickyTop = Number.parseFloat(style.top) || 0;
+    return header.getBoundingClientRect().height + Math.max(stickyTop, 0) + 12;
+}
+
 function setupSmoothAnchors() {
     document.querySelectorAll(anchorLinksQuery).forEach(aElement => {
         let href = aElement.getAttribute("href");
@@ -32,7 +43,7 @@ function setupSmoothAnchors() {
 
             window.history.pushState({}, "", aElement.getAttribute("href"));
             scrollTo({
-                top: offset,
+                top: Math.max(0, offset - getStickyHeaderOffset()),
                 behavior: "smooth"
             });
         });

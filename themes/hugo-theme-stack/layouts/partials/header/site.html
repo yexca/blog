@@ -6,22 +6,6 @@
             </span>
         </button>
 
-        {{ with .Site.Params.sidebar.avatar }}
-            {{ if (default true .enabled) }}
-                <a class="site-header-avatar" href="{{ $.Site.BaseURL | relLangURL }}" aria-label="{{ $.Site.Title }}">
-                    {{ if not .local }}
-                        <img src="{{ .src }}" width="300" height="300" loading="eager" alt="{{ $.Site.Title }}">
-                    {{ else }}
-                        {{ $avatar := resources.Get .src }}
-                        {{ if $avatar }}
-                            {{ $avatarResized := $avatar.Resize "96x" }}
-                            <img src="{{ $avatarResized.RelPermalink }}" width="{{ $avatarResized.Width }}" height="{{ $avatarResized.Height }}" loading="eager" alt="{{ $.Site.Title }}">
-                        {{ end }}
-                    {{ end }}
-                </a>
-            {{ end }}
-        {{ end }}
-
         <a class="site-header-name" href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a>
     </div>
 
@@ -63,8 +47,7 @@
         {{ if (default false .Site.Params.colorScheme.toggle) }}
             <details class="site-header-popover" data-header-popover>
                 <summary title="{{ T `theme.title` }}" aria-label="{{ T `theme.title` }}">
-                    <span class="site-header-theme-icon site-header-theme-icon--light">{{ partial "helper/icon" "toggle-left" }}</span>
-                    <span class="site-header-theme-icon site-header-theme-icon--dark">{{ partial "helper/icon" "toggle-right" }}</span>
+                    {{ partial "helper/icon" "sun-moon" }}
                 </summary>
                 <div class="site-header-popover-panel site-header-theme-options" role="radiogroup" aria-label="{{ T `theme.title` }}">
                     <button type="button" role="radio" data-color-scheme-option data-color-scheme="auto" aria-checked="false">{{ T "theme.auto" }}</button>
