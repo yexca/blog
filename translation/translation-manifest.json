@@ -2820,6 +2820,33 @@
       "sourceHash": "sha256:7b55b07bc7ce90dac339437e41fa122e4cc797f68da7c1fb323381ccac5ddd87",
       "promptVersion": 1
     },
+    "posts/2026/2026-08-24 LTTLinus.md": {
+      "translations": {
+        "en": {
+          "sourceHash": "sha256:4d5ba956df3b89d768f0e0623ac10cc5cfc4748ea9a15d9f9420ec412b41d0e5",
+          "status": "current",
+          "provider": "gemini-2",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-08-24T10:48:56.974Z"
+        },
+        "ja": {
+          "sourceHash": "sha256:4d5ba956df3b89d768f0e0623ac10cc5cfc4748ea9a15d9f9420ec412b41d0e5",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-08-24T10:49:38.983Z"
+        },
+        "zh-tw": {
+          "sourceHash": "sha256:4d5ba956df3b89d768f0e0623ac10cc5cfc4748ea9a15d9f9420ec412b41d0e5",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-08-24T10:47:52.707Z"
+        }
+      },
+      "sourceHash": "sha256:4d5ba956df3b89d768f0e0623ac10cc5cfc4748ea9a15d9f9420ec412b41d0e5",
+      "promptVersion": 1
+    },
     "posts/Elasticsearch/2025-01-29-Elasticsearch-1.md": {
       "translations": {
         "en": {
@@ -6145,5 +6172,5 @@
       "promptVersion": 1
     }
   },
-  "updatedAt": "2026-08-18T23:20:27.975Z"
+  "updatedAt": "2026-08-24T10:49:39.019Z"
 }
