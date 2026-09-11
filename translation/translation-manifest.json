@@ -2847,6 +2847,31 @@
       "sourceHash": "sha256:4d5ba956df3b89d768f0e0623ac10cc5cfc4748ea9a15d9f9420ec412b41d0e5",
       "promptVersion": 1
     },
+    "posts/2026/2026-09-11-HarnessIsAllYouNeed.md": {
+      "translations": {
+        "en": {
+          "sourceHash": "sha256:8e533a16d39228aabf350bd789dfa2e63006b51a282e13f8de1e27f88643a7c8",
+          "status": "protected",
+          "updatedAt": "2026-09-11T23:01:03.142Z"
+        },
+        "ja": {
+          "sourceHash": "sha256:8e533a16d39228aabf350bd789dfa2e63006b51a282e13f8de1e27f88643a7c8",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-09-11T23:02:01.533Z"
+        },
+        "zh-tw": {
+          "sourceHash": "sha256:8e533a16d39228aabf350bd789dfa2e63006b51a282e13f8de1e27f88643a7c8",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-09-11T23:01:03.141Z"
+        }
+      },
+      "sourceHash": "sha256:8e533a16d39228aabf350bd789dfa2e63006b51a282e13f8de1e27f88643a7c8",
+      "promptVersion": 1
+    },
     "posts/Elasticsearch/2025-01-29-Elasticsearch-1.md": {
       "translations": {
         "en": {
@@ -6172,5 +6197,5 @@
       "promptVersion": 1
     }
   },
-  "updatedAt": "2026-08-24T10:49:39.019Z"
+  "updatedAt": "2026-09-11T23:02:01.702Z"
 }
