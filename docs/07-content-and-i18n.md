@@ -39,6 +39,21 @@ Translation automation lives in:
 The manifest tracks source hashes and translation state. Do not hand-edit it
 unless you are repairing known bad state.
 
+To keep a manually edited translation from being replaced when the source
+article changes, add this custom field to that translated article's front
+matter:
+
+```yaml
+translationLocked: true
+```
+
+The translation runner records the target as `protected` and skips both the
+translation request and file write. Remove the field or set it to `false` to
+allow synchronization again; the next run refreshes the translation once so
+changes made while it was locked are not missed. The field belongs in the
+target file (`content/en-us`, `content/ja-jp`, or `content/zh-tw`), and uses the
+locale identifiers from `translation/translate.config.json` only for reporting.
+
 ## Theme I18n
 
 Theme UI strings live in `themes/hugo-theme-stack/i18n/`. Add or update theme

@@ -32,6 +32,7 @@ const sourceRoot = path.resolve(root, baseLocaleConfig.contentDir);
 const sourceFiles = await collectSourceFiles(sourceRoot, config.sourceGlobs, config.excludeGlobs);
 const changedTargets = [];
 const skippedTargets = [];
+const protectedTargets = [];
 const failedTargets = [];
 let providers;
 
@@ -51,18 +52,37 @@ for (const sourceFile of sourceFiles) {
 
     const targetFile = path.resolve(root, targetLocaleConfig.contentDir, relativePath);
     const targetExists = await exists(targetFile);
+    const targetContent = targetExists ? await fs.readFile(targetFile, 'utf8') : undefined;
+    const translationLocked = targetContent !== undefined && readTranslationLocked(targetContent, targetFile);
     const previous = sourceEntry.translations[targetLocale];
 
     if (initManifest) {
       sourceEntry.translations[targetLocale] = {
+        ...(translationLocked ? previous : {}),
         sourceHash,
-        status: targetExists ? 'current' : 'missing',
+        status: translationLocked ? 'protected' : targetExists ? 'current' : 'missing',
         updatedAt: new Date().toISOString()
       };
       continue;
     }
 
-    const current = previous?.sourceHash === sourceHash && targetExists;
+    if (translationLocked) {
+      const protectedEntry = {
+        ...previous,
+        sourceHash,
+        status: 'protected'
+      };
+      if (previous?.status !== 'protected' || previous?.sourceHash !== sourceHash || !previous?.updatedAt) {
+        protectedEntry.updatedAt = new Date().toISOString();
+      }
+      sourceEntry.translations[targetLocale] = protectedEntry;
+      protectedTargets.push(`${targetLocale}:${relativePath}`);
+      continue;
+    }
+
+    // A previously protected translation must be refreshed once its lock is removed,
+    // even when the latest observed source hash was recorded while it was locked.
+    const current = previous?.status !== 'protected' && previous?.sourceHash === sourceHash && targetExists;
     if (current) {
       skippedTargets.push(`${targetLocale}:${relativePath}`);
       continue;
@@ -120,10 +140,14 @@ if (!checkOnly && !dryRun) {
   await fs.writeFile(manifestPath, `${JSON.stringify(sortManifest(manifest), null, 2)}\n`, 'utf8');
 }
 
-console.log(`translate: sources=${sourceFiles.length} changed=${changedTargets.length} skipped=${skippedTargets.length} failed=${failedTargets.length}`);
+console.log(`translate: sources=${sourceFiles.length} changed=${changedTargets.length} skipped=${skippedTargets.length} protected=${protectedTargets.length} failed=${failedTargets.length}`);
 if (changedTargets.length > 0) {
   console.log('changed targets:');
   for (const item of changedTargets) console.log(`- ${item}`);
+}
+if (protectedTargets.length > 0) {
+  console.log('protected targets:');
+  for (const item of protectedTargets) console.log(`- ${item}`);
 }
 if (failedTargets.length > 0) {
   console.error('failed targets:');
@@ -328,6 +352,33 @@ function withNotice(content, template, model) {
   const body = normalized.slice(frontMatterMatch[0].length).trimStart();
   const bodyWithoutOldNotice = body.replace(/^{{< notice >}}.*?(?:translated|翻譯|翻訳).*?{{< \/notice >}}\n\n/s, '');
   return `${frontMatter}\n\n${notice}\n\n${bodyWithoutOldNotice}`;
+}
+
+function readTranslationLocked(content, file) {
+  const frontMatterMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/);
+  if (!frontMatterMatch) return false;
+
+  let found = false;
+  let locked = false;
+  for (const line of frontMatterMatch[1].split(/\r?\n/)) {
+    const match = line.match(/^translationLocked\s*:\s*(.*?)\s*$/);
+    if (!match) continue;
+    if (found) {
+      throw new Error(`Duplicate translationLocked in ${file}`);
+    }
+
+    const value = match[1].replace(/\s+#.*$/, '').trim();
+    if (value === 'true') {
+      locked = true;
+    } else if (value === 'false') {
+      locked = false;
+    } else {
+      throw new Error(`translationLocked must be true or false in ${file}`);
+    }
+    found = true;
+  }
+
+  return found && locked;
 }
 
 function resolveNoticeTemplate(templateConfig, targetLocale) {
