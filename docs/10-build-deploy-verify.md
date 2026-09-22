@@ -2,17 +2,17 @@
 
 ## Local Preview
 
-Use Hugo server for local development. Keep drafts and future content behavior
+Hugo is not installed on the workstation, so build through Docker using the image from `.devcontainer/Dockerfile` (`docker build -f .devcontainer/Dockerfile -t blog-hugo:0.140.1 .devcontainer`, pinned to the CI Hugo version). Keep drafts and future content behavior
 explicit when testing.
 
 ```powershell
-.\env\hugo\hugo.exe server --buildDrafts --buildFuture
+docker run --rm -it -p 1313:1313 -v "${PWD}:/src" -w /src blog-hugo:0.140.1 hugo server --bind 0.0.0.0 --buildDrafts --buildFuture
 ```
 
 ## Production Build
 
 ```powershell
-.\env\hugo\hugo.exe --gc --minify
+docker run --rm -v "${PWD}:/src" -w /src blog-hugo:0.140.1 hugo --gc --minify
 ```
 
 ## Performance Report
@@ -32,7 +32,8 @@ After theme changes, check:
 - Archives page.
 - Category page.
 - Tag page.
-- Search page.
+- Search page (snippet mode and full-text mode).
+- Home page language redirect with a non-matching browser language (and no redirect for crawler user agents).
 - About page.
 - Mobile layout.
 - Dark and light color schemes.

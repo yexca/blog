@@ -11,7 +11,7 @@
 | `assets/ts/features/mermaid.ts` | Opt-in Mermaid loading and rendering. |
 | `assets/ts/features/header.ts` | Header search expansion, mobile search navigation, and popover behavior. |
 | `assets/ts/pageTransitions.ts` | Same-origin soft navigation. |
-| `assets/ts/search.tsx` | Search UI, ranking, and client-side result pagination. |
+| `assets/ts/search.tsx` | Search UI, snippet/full-text index switching, ranking, and client-side result pagination. |
 
 ## Feature Pattern
 
@@ -58,3 +58,20 @@ Mermaid follows the same rule: the small feature code is bundled with the main
 entry, but the Mermaid renderer is requested only when an enabled page contains
 `.mermaid` nodes. The feature also listens for `onColorSchemeChange` so SVGs
 can be regenerated after a theme switch.
+
+## Language Redirect
+
+`partials/head/language-redirect.html` runs inline on the zh-cn home page only. It
+redirects once per session to the language matching `navigator.languages`, skips
+visitors arriving from this site, and skips crawler user agents so each language
+home is indexed as itself. Keep that crawler guard when editing the script.
+
+## Search Modes
+
+The search page ships two JSON outputs: `index.json` (snippet per post, the
+default) and `index-full.json` (full text, output format `searchfull`). The
+checkbox `[data-search-full-text]` switches modes; the choice is stored under
+`StackSearchFullText` and the full index is only fetched after it is enabled.
+
+`pageTransitions.ts` also swaps `link[rel="stylesheet"][data-language-font]`
+during soft navigation so the per-language web font follows a language switch.

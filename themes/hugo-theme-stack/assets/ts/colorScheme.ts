@@ -5,7 +5,7 @@ class StackColorScheme {
     private currentScheme: colorScheme;
     private systemPreferScheme: colorScheme;
 
-    constructor(toggleEl?: HTMLElement | null) {
+    constructor() {
         this.bindMatchMedia();
         this.currentScheme = this.getSavedScheme();
         if (window.matchMedia('(prefers-color-scheme: dark)').matches === true)
@@ -14,9 +14,6 @@ class StackColorScheme {
             this.systemPreferScheme = 'light';
 
         this.dispatchEvent(document.documentElement.dataset.scheme as colorScheme);
-
-        if (toggleEl)
-            this.bindClick(toggleEl);
 
         this.bindSchemeOptions();
         this.updateSchemeOptions();
@@ -34,27 +31,6 @@ class StackColorScheme {
         this.setBodyClass();
         this.saveScheme();
         this.updateSchemeOptions();
-    }
-
-    private bindClick(toggleEl: HTMLElement) {
-        toggleEl.addEventListener('click', (e) => {
-            let nextScheme: colorScheme;
-
-            if (this.isDark()) {
-                /// Disable dark mode
-                nextScheme = 'light';
-            }
-            else {
-                nextScheme = 'dark';
-            }
-
-            if (nextScheme == this.systemPreferScheme) {
-                /// Set to auto
-                nextScheme = 'auto';
-            }
-
-            this.applyScheme(nextScheme);
-        })
     }
 
     private bindSchemeOptions() {

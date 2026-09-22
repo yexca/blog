@@ -46,3 +46,11 @@ behavior.
 - `assets/ts/core/pageInit.ts`
 - `assets/ts/pageTransitions.ts`
 - `assets/ts/features/*`
+
+## Removed Upstream Files
+
+The following upstream Stack files were removed on purpose and should not be
+restored when porting fixes: `exampleSite/`, `images/`, `netlify.toml`, `go.mod`,
+`debug.sh`, theme-level `.github/` and `.devcontainer/`, i18n files other than
+`en`, `ja`, `zh-cn`, `zh-tw`, comment providers other than Twikoo, and
+`assets/scss/partials/comments/disqusjs.scss`. `LICENSE` (GPL-3.0) stays.

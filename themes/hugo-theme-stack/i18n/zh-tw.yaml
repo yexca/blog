@@ -180,3 +180,15 @@ github:
 
     failed:
         other: 取得 Repo 資訊失敗
+
+searchFullText:
+    other: 全文搜尋
+
+searchFullTextHint:
+    other: 預設只搜尋每篇文章的開頭部分；勾選後載入完整索引（體積較大）
+
+taxonomyMenu:
+    categories:
+        other: 分類
+    tags:
+        other: 標籤

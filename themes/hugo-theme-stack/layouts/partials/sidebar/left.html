@@ -71,17 +71,9 @@
 
     <ol class="menu sidebar-panel sidebar-menu" id="main-menu">
         {{ $currentPage := . }}
-        {{- $tagMenuName := "Tags" -}}
-        {{- if eq .Site.Language.Lang "zh-cn" -}}
-            {{- $tagMenuName = "标签" -}}
-        {{- else if eq .Site.Language.Lang "zh-tw" -}}
-            {{- $tagMenuName = "標籤" -}}
-        {{- else if eq .Site.Language.Lang "ja" -}}
-            {{- $tagMenuName = "タグ" -}}
-        {{- end -}}
         {{- $taxonomyMenuItems := slice
-            (dict "Name" (T "widget.categoriesCloud.title") "URL" ("/categories/" | relLangURL) "Icon" "categories" "Taxonomy" "categories")
-            (dict "Name" $tagMenuName "URL" ("/tags/" | relLangURL) "Icon" "tag" "Taxonomy" "tags")
+            (dict "Name" (T "taxonomyMenu.categories") "URL" ("/categories/" | relLangURL) "Icon" "categories" "Taxonomy" "categories")
+            (dict "Name" (T "taxonomyMenu.tags") "URL" ("/tags/" | relLangURL) "Icon" "tag" "Taxonomy" "tags")
         -}}
         {{- $mainMenu := .Site.Menus.main -}}
         {{- with first 1 $mainMenu -}}

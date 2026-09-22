@@ -1,6 +1,6 @@
 {{ define "body-class" }}template-search{{ end }}
 {{ define "main" }}
-<form action="{{ .RelPermalink }}" class="search-form" data-search-page-form{{ with .OutputFormats.Get "json" }} data-json="{{ .RelPermalink }}"{{ end }}>
+<form action="{{ .RelPermalink }}" class="search-form" data-search-page-form{{ with .OutputFormats.Get "json" }} data-json="{{ .RelPermalink }}"{{ end }}{{ with .OutputFormats.Get "searchfull" }} data-json-full="{{ .RelPermalink }}"{{ end }}>
     <p>
         <label>{{ T "search.title" }}</label>
         <input name="keyword" placeholder="{{ T `search.placeholder` }}" />
@@ -10,6 +10,16 @@
         {{ partial "helper/icon" "search" }}
     </button>
 </form>
+
+{{ if .OutputFormats.Get "searchfull" }}
+<div class="search-options" data-search-options>
+    <label class="search-options-toggle">
+        <input type="checkbox" data-search-full-text>
+        <span>{{ T "searchFullText" }}</span>
+    </label>
+    <span class="search-options-hint">{{ T "searchFullTextHint" }}</span>
+</div>
+{{ end }}
 
 {{ partial "search/results.html" . }}
 

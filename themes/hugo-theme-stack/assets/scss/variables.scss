@@ -57,27 +57,31 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
     --ja-font-family: "Yomogi", "Noto Sans JP", var(--sys-font-family);
     --en-font-family: "Comic Neue", "Noto Sans", var(--sys-font-family);
 
-    --base-font-family: var(--sys-font-family), sans-serif;
+    --base-font-family: var(--sys-font-family);
     --code-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* 针对中文（简体） */
 :lang(zh), :lang(zh-CN) {
+    --article-font-family: var(--zh-font-family);
     font-family: var(--zh-font-family);
 }
 
 /* 针对中文（繁体） */
 :lang(zh-TW) {
+    --article-font-family: var(--zh-TW-font-family);
     font-family: var(--zh-TW-font-family);
 }
 
 /* 针对英语 */
 :lang(en) {
+    --article-font-family: var(--en-font-family);
     font-family: var(--en-font-family);
 }
 
 /* 针对日文 */
 :lang(ja) {
+    --article-font-family: var(--ja-font-family);
     font-family: var(--ja-font-family);
 }
 
@@ -129,6 +133,8 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 *   Article content font settings
 */
 :root {
+    // Overridden per language in the :lang() blocks above so article text uses the same family as the UI.
+    // Overridden per language in the :lang() blocks above so article text uses the same family as the UI.
     --article-font-family: var(--base-font-family);
     --article-font-size: 1.6rem;
 

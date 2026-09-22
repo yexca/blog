@@ -40,7 +40,10 @@
 
     {{ partialCached "footer/footer" . }}
 
-    {{ partialCached "article/components/photoswipe" . }}
+    {{/* PhotoSwipe is only needed when the content has gallery images. */}}
+    {{ if strings.Contains (printf "%s" .Content) "gallery-image" }}
+        {{ partialCached "article/components/photoswipe" . }}
+    {{ end }}
 {{ end }}
 
 {{ define "right-sidebar" }}

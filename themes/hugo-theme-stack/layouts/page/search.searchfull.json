@@ -1,0 +1,2 @@
+{{- /* Full-text search index, loaded only when the visitor enables full-text search. */ -}}
+{{- jsonify (partial "search/index-data.html" (dict "Context" . "Full" true)) -}}

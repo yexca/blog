@@ -168,3 +168,42 @@
         }
     }
 }
+
+.search-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 16px;
+    margin-top: calc(var(--section-separation) * -1 + 12px);
+    padding: 0 6px;
+    color: var(--card-text-color-secondary);
+    font-size: 1.4rem;
+    line-height: 1.5;
+
+    .search-options-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        color: var(--card-text-color-main);
+        border: 1px solid var(--card-border-color);
+        border-radius: 999px;
+        background-color: var(--card-background);
+        box-shadow: var(--shadow-l1);
+        cursor: pointer;
+        user-select: none;
+
+        input {
+            margin: 0;
+            accent-color: var(--accent-color);
+        }
+    }
+
+    .search-options-hint {
+        flex: 1 1 260px;
+        min-width: 0;
+        color: var(--card-text-color-tertiary);
+        font-size: 1.3rem;
+        text-shadow: 0 1px 6px var(--card-background);
+    }
+}

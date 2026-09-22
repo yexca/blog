@@ -1,5 +1,8 @@
 <script>
 (function () {
+    // Crawlers render JavaScript; never redirect them so each language home is indexed as itself.
+    if (/bot|crawl|spider|slurp|bingpreview|lighthouse|headless/i.test(navigator.userAgent || '')) return;
+
     var normalizePath = function (path) {
         var normalized = path.replace(/\/+$/, '');
         return normalized ? normalized + '/' : '/';

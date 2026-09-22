@@ -182,3 +182,15 @@ github:
 
     failed:
         other: Failed to get repository information
+
+searchFullText:
+    other: Full-text search
+
+searchFullTextHint:
+    other: By default only the beginning of each post is searched. Enable this to load the complete index (larger download).
+
+taxonomyMenu:
+    categories:
+        other: Categories
+    tags:
+        other: Tags

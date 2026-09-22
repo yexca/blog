@@ -159,8 +159,30 @@ function mergeKeywords(...fields: fieldMatches[]): Set<string> {
     return result;
 }
 
+const fullTextStorageKey = 'StackSearchFullText';
+
+function readFullTextPreference(): boolean {
+    try {
+        return window.localStorage.getItem(fullTextStorageKey) === 'true';
+    }
+    catch (_) {
+        return false;
+    }
+}
+
+function saveFullTextPreference(enabled: boolean) {
+    try {
+        window.localStorage.setItem(fullTextStorageKey, enabled ? 'true' : 'false');
+    }
+    catch (_) {}
+}
+
 class Search {
-    private data: pageData[] = [];
+    /// Index rows per mode. The snippet index is the default; the full-text index is
+    /// fetched only after the visitor enables it.
+    private data: Record<'snippet' | 'full', pageData[] | null> = { snippet: null, full: null };
+    private fullText = false;
+    private fullTextToggle: HTMLInputElement | null;
     private results: pageData[] = [];
     private form: HTMLFormElement;
     private input: HTMLInputElement;
@@ -191,6 +213,7 @@ class Search {
         resultTitle,
         message,
         pagination,
+        fullTextToggle,
         resultTitleTemplate,
         loadingTemplate,
         emptyTemplate,
@@ -214,6 +237,10 @@ class Search {
         this.emptyTemplate = emptyTemplate || 'No results found for "#KEYWORDS".';
         this.errorTemplate = errorTemplate || 'The search index could not be loaded. Please try again.';
 
+        this.fullTextToggle = fullTextToggle || null;
+        this.fullText = Boolean(this.form.dataset.jsonFull) && readFullTextPreference();
+        if (this.fullTextToggle) this.fullTextToggle.checked = this.fullText;
+
         /// A 404 page supplies the path-derived value directly; the search page
         /// reads its initial value from the URL instead.
         if (this.input.value.trim() !== '') {
@@ -228,6 +255,7 @@ class Search {
         this.bindQueryStringChange();
         this.bindSearchForm();
         this.bindPagination();
+        this.bindFullTextToggle();
     }
 
     /**
@@ -522,24 +550,39 @@ class Search {
     }
 
     public async getData(): Promise<pageData[]> {
-        if (!this.data.length) {
-            const jsonURL = this.form.dataset.json;
-            if (!jsonURL) throw new Error('Search index URL is missing.');
+        const mode = this.fullText ? 'full' : 'snippet';
+        const cached = this.data[mode];
+        if (cached) return cached;
 
-            const response = await fetch(jsonURL);
-            if (!response.ok) throw new Error(`Search index request failed with status ${response.status}`);
+        const jsonURL = this.fullText
+            ? (this.form.dataset.jsonFull || this.form.dataset.json)
+            : this.form.dataset.json;
+        if (!jsonURL) throw new Error('Search index URL is missing.');
 
-            this.data = await response.json();
-            const parser = new DOMParser();
+        const response = await fetch(jsonURL);
+        if (!response.ok) throw new Error(`Search index request failed with status ${response.status}`);
 
-            for (const item of this.data) {
-                item.content = parser.parseFromString(item.content || '', 'text/html').body.innerText;
-                item.summary = parser.parseFromString(item.summary || '', 'text/html').body.innerText;
-                item.description = parser.parseFromString(item.description || '', 'text/html').body.innerText;
-            }
+        const rows: pageData[] = await response.json();
+        const parser = new DOMParser();
+
+        for (const item of rows) {
+            item.content = parser.parseFromString(item.content || '', 'text/html').body.innerText;
+            item.summary = parser.parseFromString(item.summary || '', 'text/html').body.innerText;
+            item.description = parser.parseFromString(item.description || '', 'text/html').body.innerText;
         }
 
-        return this.data;
+        this.data[mode] = rows;
+        return rows;
+    }
+
+    private bindFullTextToggle(): void {
+        if (!this.fullTextToggle) return;
+
+        this.fullTextToggle.addEventListener('change', () => {
+            this.fullText = this.fullTextToggle.checked;
+            saveFullTextPreference(this.fullText);
+            if (this.lastSearch) this.doSearch(this.lastSearch, 1);
+        });
     }
 
     private bindSearchForm(): void {
@@ -701,6 +744,7 @@ function setupSearch(root: ParentNode = document): void {
         resultTitle: searchResultTitle,
         message: searchMessage,
         pagination: resultRoot?.querySelector('[data-search-pagination]') as HTMLElement | null,
+        fullTextToggle: root.querySelector('[data-search-full-text]') as HTMLInputElement | null,
         resultTitleTemplate: resultRoot.getAttribute('data-result-title-template') || '',
         loadingTemplate: resultRoot.getAttribute('data-loading-template') || '',
         emptyTemplate: resultRoot.getAttribute('data-empty-template') || '',

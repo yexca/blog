@@ -1,0 +1,45 @@
+{{- /* Builds the search index rows. Called with (dict "Context" $page "Full" bool).
+       Full=false truncates article text to params.search.snippetLength runes so the
+       default index stays small; Full=true keeps the whole article body. */ -}}
+{{- $context := .Context -}}
+{{- $full := default false .Full -}}
+{{- $snippetLength := default 800 $context.Site.Params.search.snippetLength -}}
+{{- $pages := where $context.Site.RegularPages "Type" "in" $context.Site.Params.mainSections -}}
+{{- $notHidden := where $context.Site.RegularPages "Params.hidden" "!=" true -}}
+{{- $filtered := ($pages | intersect $notHidden) -}}
+
+{{- $result := slice -}}
+
+{{- range $filtered -}}
+    {{- $content := .Plain | htmlUnescape | replaceRE `\s+` " " -}}
+    {{- if not $full -}}
+        {{- $content = truncate $snippetLength "" $content -}}
+    {{- end -}}
+    {{- $data := dict
+        "title" .Title
+        "date" .Date
+        "permalink" .Permalink
+        "content" $content
+        "description" (default "" .Description)
+        "tags" (default slice .Params.tags)
+        "categories" (default slice .Params.categories)
+        "keywords" (default slice .Params.keywords)
+    -}}
+
+    {{- $image := partialCached "helper/image" (dict "Context" . "Type" "articleList") .RelPermalink "articleList" -}}
+    {{- if $image.exists -}}
+        {{- $imagePermalink := "" -}}
+        {{- if and $image.resource (default true .Page.Site.Params.imageProcessing.cover.enabled) -}}
+            {{- $thumbnail := $image.resource.Fill "120x120" -}}
+            {{- $imagePermalink = (absURL $thumbnail.Permalink) -}}
+        {{- else -}}
+            {{- $imagePermalink = $image.permalink -}}
+        {{- end -}}
+
+        {{- $data = merge $data (dict "image" (absURL $imagePermalink)) -}}
+    {{- end -}}
+
+    {{- $result = $result | append $data -}}
+{{- end -}}
+
+{{- return $result -}}

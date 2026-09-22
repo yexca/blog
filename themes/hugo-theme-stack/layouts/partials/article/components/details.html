@@ -1,7 +1,16 @@
+{{- /* Article metadata block. Called with a Page (article header) or with
+       (dict "Page" $page "IsList" true) from list cards. List cards show a short
+       summary and hide the translation row; the article page keeps it. */ -}}
+{{- $page := . -}}
+{{- $isList := false -}}
+{{- if reflect.IsMap . -}}
+    {{- $page = .Page -}}
+    {{- $isList = default false .IsList -}}
+{{- end -}}
 <div class="article-details">
-    {{ if .Params.categories }}
+    {{ if $page.Params.categories }}
     <header class="article-category">
-        {{ range (.GetTerms "categories") }}
+        {{ range ($page.GetTerms "categories") }}
             <a href="{{ .RelPermalink }}" {{ with .Params.style }}style="background-color: {{ .background }}; color: {{ .color }};"{{ end }}>
                 {{ .LinkTitle }}
             </a>
@@ -11,28 +20,33 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="{{ .RelPermalink }}">
-                {{- .Title -}}
+            <a href="{{ $page.RelPermalink }}">
+                {{- $page.Title -}}
             </a>
         </h2>
-    
-        {{ with .Params.description }}
+
+        {{ if $page.Params.description }}
         <h3 class="article-subtitle">
-            {{ . }}
+            {{ $page.Params.description }}
         </h3>
+        {{ else if $isList }}
+            {{- $summary := $page.Summary | plainify | htmlUnescape | replaceRE `\s+` " " -}}
+            {{- with $summary }}
+        <p class="article-summary">{{ . | truncate 120 }}</p>
+            {{- end }}
         {{ end }}
     </div>
 
-    {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
-    {{ $showDate := not .Date.IsZero }}
+    {{ $showReadingTime := $page.Params.readingTime | default ($page.Site.Params.article.readingTime) }}
+    {{ $showDate := not $page.Date.IsZero }}
     {{ $showFooter := or $showDate $showReadingTime }}
     {{ if $showFooter }}
     <footer class="article-time">
         {{ if $showDate }}
             <div>
                 {{ partial "helper/icon" "date" }}
-                <time class="article-time--published" datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
-                    {{- .Date | time.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") -}}
+                <time class="article-time--published" datetime='{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}'>
+                    {{- $page.Date | time.Format (or $page.Site.Params.dateFormat.published "Jan 02, 2006") -}}
                 </time>
             </div>
         {{ end }}
@@ -41,32 +55,27 @@
             <div>
                 {{ partial "helper/icon" "clock" }}
                 <time class="article-time--reading">
-                    {{ T "article.readingTime" .ReadingTime }}
+                    {{ T "article.readingTime" $page.ReadingTime }}
                 </time>
             </div>
         {{ end }}
     </footer>
     {{ end }}
 
-    {{/*  标签  */}}
-    {{ if .Params.tags }}
+    {{ with $page.GetTerms "tags" }}
         <footer class="post-tags">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M4 7v3l9 9l7 -7l-9 -9h-3a2 2 0 0 0 -2 2"></path>
-                <path d="M9 8h-0.01"></path>
-            </svg>
-            {{ range .Params.tags }}
-                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" target="_blank" class="tag badge badge-secondary post-meta-detail-tag">{{ . }}</a>
+            {{ partial "helper/icon" "tag" }}
+            {{ range . }}
+                <a href="{{ .RelPermalink }}" class="tag badge badge-secondary post-meta-detail-tag">{{ .LinkTitle }}</a>
             {{ end }}
         </footer>
     {{ end }}
 
-    {{ if .IsTranslated }}
+    {{ if and (not $isList) $page.IsTranslated }}
         <footer class="article-translations">
             {{ partial "helper/icon" "language" }}
             <div>
-                {{ range .Translations }}
+                {{ range $page.Translations }}
                     <a href="{{ .Permalink }}" class="link">{{ .Language.LanguageName }}</a>
                 {{ end }}
             </div>

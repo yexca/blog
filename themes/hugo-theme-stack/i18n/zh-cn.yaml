@@ -174,3 +174,15 @@ github:
 
     failed:
         other: 获取 Repo 信息失败
+
+searchFullText:
+    other: 全文搜索
+
+searchFullTextHint:
+    other: 默认只搜索每篇文章的开头部分；勾选后加载完整索引（体积更大）
+
+taxonomyMenu:
+    categories:
+        other: 分类
+    tags:
+        other: 标签

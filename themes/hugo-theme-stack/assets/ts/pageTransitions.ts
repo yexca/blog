@@ -88,6 +88,7 @@ function updateHead(nextDocument: Document) {
         'meta[property^="og:"]',
         'meta[name^="twitter:"]',
         'link[rel="alternate"]',
+        'link[rel="stylesheet"][data-language-font]',
         'link[rel="preload"][as="fetch"]',
     ];
 
@@ -118,6 +119,7 @@ function replaceBody(nextDocument: Document) {
         throw new Error('Missing page shell');
     }
 
+    document.documentElement.lang = nextDocument.documentElement.lang;
     document.body.className = nextDocument.body.className;
     currentShell.replaceWith(document.importNode(nextShell, true));
 }

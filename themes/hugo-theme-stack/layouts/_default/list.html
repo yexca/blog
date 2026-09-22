@@ -214,5 +214,8 @@
 {{ end }}
 
 {{ define "right-sidebar" }}
-    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+    {{/* Category and tag overview pages already list the taxonomies, so skip the widget column there. */}}
+    {{ if ne .Kind "taxonomy" }}
+        {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+    {{ end }}
 {{ end }}

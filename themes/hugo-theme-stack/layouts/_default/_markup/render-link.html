@@ -1,12 +1,6 @@
-{{/*  <a class="link" href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}"
-    {{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener"
-    {{ end }}>{{ .Text | safeHTML }}</a>  */}}
-
-<a class="link" href="{{ .Destination | safeURL }}" 
-{{ with .Title}} title="{{ . }}"{{ end }}
-{{ if not (strings.HasPrefix .Destination "https://blog.yexca.net") }}
-   target="_blank" rel="noopener"
-{{ end }}>
-{{ .Text | safeHTML }}
-</a>
- 
+{{- /* Only true external links open in a new tab. Relative paths, anchors, and
+       links back to this site stay in the same tab. */ -}}
+{{- $destination := .Destination -}}
+{{- $isAbsolute := or (hasPrefix $destination "http://") (hasPrefix $destination "https://") (hasPrefix $destination "//") -}}
+{{- $isExternal := and $isAbsolute (not (hasPrefix $destination site.BaseURL)) -}}
+<a class="link" href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>

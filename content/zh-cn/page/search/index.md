@@ -6,6 +6,7 @@ layout: "search"
 outputs:
     - html
     - json
+    - searchfull
 menu:
     main:
         weight: 5

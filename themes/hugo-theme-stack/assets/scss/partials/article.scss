@@ -107,6 +107,17 @@
     gap: 8px;
 }
 
+.article-summary {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    color: var(--card-text-color-secondary);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
 .article-time,
 .article-translations {
     display: flex;

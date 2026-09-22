@@ -35,10 +35,3 @@ KaTeX:
       type: script
       defer: true
 
-Cactus:
-    - src: https://latest.cactus.chat/cactus.js
-      integrity:
-      type: script
-    - src: https://latest.cactus.chat/style.css
-      integrity:
-      type: style

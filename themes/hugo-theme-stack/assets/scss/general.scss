@@ -17,15 +17,28 @@ a {
 }
 
 .section-title {
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 10px;
-    display: block;
-    font-size: 1.6rem;
+    // Section titles sit outside cards, directly on the background image, so they get
+    // their own small glass surface to keep contrast predictable.
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 10px;
+    padding: 6px 14px;
+    font-size: 1.4rem;
     font-weight: bold;
-    color: var(--body-text-color);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--card-text-color-main);
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border-color);
+    border-radius: 999px;
+    box-shadow: var(--shadow-l1);
+    backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+    -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
 
     a {
-        color: var(--body-text-color);
+        color: inherit;
     }
 }

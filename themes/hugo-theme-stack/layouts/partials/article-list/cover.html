@@ -37,5 +37,5 @@
         </div>
     {{ end }}
 
-    {{ partialCached "article/components/details" $page $page.RelPermalink }}
+    {{ partialCached "article/components/details" (dict "Page" $page "IsList" true) $page.RelPermalink "list" }}
 </header>

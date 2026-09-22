@@ -54,6 +54,13 @@ changes made while it was locked are not missed. The field belongs in the
 target file (`content/en-us`, `content/ja-jp`, or `content/zh-tw`), and uses the
 locale identifiers from `translation/translate.config.json` only for reporting.
 
+## Taxonomy Titles
+
+`content/<lang>/categories/_index.md` and `content/<lang>/tags/_index.md` hold the
+localized page titles for the taxonomy overview pages. Without them Hugo falls
+back to the English taxonomy name. They are not part of the translation
+workflow (`sourceGlobs` only covers `posts/**`), so edit each language by hand.
+
 ## Theme I18n
 
 Theme UI strings live in `themes/hugo-theme-stack/i18n/`. Add or update theme

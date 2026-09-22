@@ -41,7 +41,8 @@ export function initPage(root: ParentNode = document) {
 
     const articleContent = root.querySelector('.article-content') as HTMLElement;
     if (articleContent) {
-        new StackGallery(articleContent);
+        /// PhotoSwipe is only shipped with articles that contain gallery images.
+        if (articleContent.querySelector('img.gallery-image')) new StackGallery(articleContent);
         setupSmoothAnchors();
         setupScrollspy();
     }
@@ -50,5 +51,5 @@ export function initPage(root: ParentNode = document) {
         if (root.querySelector(feature.selector)) feature.setup(root);
     });
 
-    new StackColorScheme(document.getElementById('dark-mode-toggle'));
+    new StackColorScheme();
 }

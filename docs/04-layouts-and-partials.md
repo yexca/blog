@@ -6,13 +6,13 @@
 | --- | --- | --- |
 | Base document | `layouts/_default/baseof.html` | Outer HTML shell. |
 | Header | `partials/header/site.html` | Sticky site title, search, language, theme, and mobile menu controls. |
-| Head | `partials/head/*` | Metadata, styles, custom font links, language redirect. |
+| Head | `partials/head/*` | Metadata, styles, per-language font link, hreflang, JSON-LD, language redirect (zh-cn home only). |
 | Footer | `partials/footer/*` | Script loading and footer UI. |
-| Home/list cards | `partials/article-list/*` | Default, compact, tile, and cover variants. |
+| Home/list cards | `partials/article-list/*` | Default, compact, tile, and cover variants. List cards call `article/components/details` with `(dict "Page" . "IsList" true)`, which shows a summary and hides the translation row. |
 | Article page | `partials/article/article.html`, `partials/article/components/*` | Header, content, tags, related content, math, comments. |
 | Sidebars | `partials/sidebar/left.html`, `partials/sidebar/right.html` | Navigation, profile, widgets, TOC. |
 | Widgets | `partials/widget/*` | Archives, categories, search, tag cloud, TOC, and desktop related posts. |
-| Search | `layouts/page/search.*`, `partials/search/results.html`, `assets/ts/search.tsx` | Search index, ranking, and client-side pagination. |
+| Search | `layouts/page/search.*`, `partials/search/index-data.html`, `partials/search/results.html`, `assets/ts/search.tsx` | Snippet and full-text indexes, ranking, and client-side pagination. |
 | Taxonomy cards | `partials/taxonomy/post-card.html` | Category/tag listing cards. |
 | Comments | `partials/comments/*` | Provider containers and lazy-loading hooks. |
 | Shortcodes | `layouts/shortcodes/*` | Inline content features. |
@@ -38,3 +38,10 @@
   page-scoped related widget on desktop.
 - Head and footer changes can break soft navigation, analytics, comments, or fonts.
 - Shortcode changes can affect old posts across every language.
+- `_markup/render-link.html` opens a new tab only for absolute URLs that do not
+  start with `site.BaseURL`; relative links and anchors stay in the same tab.
+- `hreflang` links are generated from `.AllTranslations` in `partials/head/custom.html`;
+  do not hard-code language URLs there.
+- `layouts/_default/single.html` includes the PhotoSwipe partial only when the
+  rendered content contains `gallery-image`; the client gallery is gated the same way.
+- Taxonomy overview pages (`/categories/`, `/tags/`) render without the widget column.

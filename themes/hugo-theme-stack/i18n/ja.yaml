@@ -177,3 +177,15 @@ github:
 
     failed:
         other: Repo 情報の取得に失敗しました
+
+searchFullText:
+    other: 全文検索
+
+searchFullTextHint:
+    other: 既定では各記事の冒頭のみを検索します。オンにすると完全な索引を読み込みます（サイズ大）。
+
+taxonomyMenu:
+    categories:
+        other: カテゴリ
+    tags:
+        other: タグ
