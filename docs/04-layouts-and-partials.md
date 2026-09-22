@@ -4,18 +4,18 @@
 
 | Area | Files | Notes |
 | --- | --- | --- |
-| Base document | `layouts/_default/baseof.html` | Outer HTML shell. |
-| Header | `partials/header/site.html` | Sticky site title, search, language, theme, and mobile menu controls. |
-| Head | `partials/head/*` | Metadata, styles, per-language font link, hreflang, JSON-LD, language redirect (zh-cn home only). |
-| Footer | `partials/footer/*` | Script loading and footer UI. |
-| Home/list cards | `partials/article-list/*` | Default, compact, tile, and cover variants. List cards call `article/components/details` with `(dict "Page" . "IsList" true)`, which shows a summary and hides the translation row. |
-| Article page | `partials/article/article.html`, `partials/article/components/*` | Header, content, tags, related content, math, comments. |
-| Sidebars | `partials/sidebar/left.html`, `partials/sidebar/right.html` | Navigation, profile, widgets, TOC. |
-| Widgets | `partials/widget/*` | Archives, categories, search, tag cloud, TOC, and desktop related posts. |
-| Search | `layouts/page/search.*`, `partials/search/index-data.html`, `partials/search/results.html`, `assets/ts/search.tsx` | Snippet and full-text indexes, ranking, and client-side pagination. |
-| Taxonomy cards | `partials/taxonomy/post-card.html` | Category/tag listing cards. |
-| Comments | `partials/comments/*` | Provider containers and lazy-loading hooks. |
-| Shortcodes | `layouts/shortcodes/*` | Inline content features. |
+| Base document | `layouts/baseof.html` | Outer HTML shell. |
+| Header | `_partials/header/site.html` | Sticky site title, search, language, theme, and mobile menu controls. |
+| Head | `_partials/head/*` | Metadata, styles, per-language font link, hreflang, JSON-LD, language redirect (zh-cn home only). |
+| Footer | `_partials/footer/*` | Script loading and footer UI. |
+| Home/list cards | `_partials/article-list/*` | Default, compact, tile, and cover variants. List cards call `article/components/details` with `(dict "Page" . "IsList" true)`, which shows a summary and hides the translation row. |
+| Article page | `_partials/article/article.html`, `_partials/article/components/*` | Header, content, tags, related content, math, comments. |
+| Sidebars | `_partials/sidebar/left.html`, `_partials/sidebar/right.html` | Navigation, profile, widgets, TOC. |
+| Widgets | `_partials/widget/*` | Archives, categories, search, tag cloud, TOC, and desktop related posts. |
+| Search | `layouts/page/search.*`, `_partials/search/index-data.html`, `_partials/search/results.html`, `assets/ts/search.tsx` | Snippet and full-text indexes, ranking, and client-side pagination. |
+| Taxonomy cards | `_partials/taxonomy/post-card.html` | Category/tag listing cards. |
+| Comments | `_partials/comments/*` | Provider containers and lazy-loading hooks. |
+| Shortcodes | `layouts/_shortcodes/*` | Inline content features. |
 
 ## Editing Rules
 
@@ -33,15 +33,20 @@
   width calculations remain intact.
 - The sidebar profile uses `params.author.name` for the displayed author name. On
   phone layouts it is shown only on language home pages.
-- Article related content is calculated in `layouts/_default/single.html`,
+- Article related content is calculated in `layouts/single.html`,
   rendered as a compact list on mobile, and rendered below the TOC by the
   page-scoped related widget on desktop.
 - Head and footer changes can break soft navigation, analytics, comments, or fonts.
 - Shortcode changes can affect old posts across every language.
 - `_markup/render-link.html` opens a new tab only for absolute URLs that do not
   start with `site.BaseURL`; relative links and anchors stay in the same tab.
-- `hreflang` links are generated from `.AllTranslations` in `partials/head/custom.html`;
+- `hreflang` links are generated from `.AllTranslations` in `_partials/head/custom.html`;
   do not hard-code language URLs there.
-- `layouts/_default/single.html` includes the PhotoSwipe partial only when the
-  rendered content contains `gallery-image`; the client gallery is gated the same way.
+- Templates use the Hugo 0.146+ layout: page kinds sit directly in `layouts/`
+  (`home.html`, `single.html`, `list.html`, `baseof.html`, `rss.xml`), partials in
+  `layouts/_partials/`, shortcodes in `layouts/_shortcodes/`, render hooks in
+  `layouts/_markup/`. `templates.Exists` paths must use the `_partials/` prefix.
+- The image lightbox needs no template: `_partials/article/components/content.html`
+  only passes translated PhotoSwipe labels (`lightbox.*` in `i18n/`) as
+  `data-lightbox-labels`. Wrap content in `data-no-lightbox` to opt images out.
 - Taxonomy overview pages (`/categories/`, `/tags/`) render without the widget column.

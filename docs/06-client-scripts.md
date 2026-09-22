@@ -61,7 +61,7 @@ can be regenerated after a theme switch.
 
 ## Language Redirect
 
-`partials/head/language-redirect.html` runs inline on the zh-cn home page only. It
+`_partials/head/language-redirect.html` runs inline on the zh-cn home page only. It
 redirects once per session to the language matching `navigator.languages`, skips
 visitors arriving from this site, and skips crawler user agents so each language
 home is indexed as itself. Keep that crawler guard when editing the script.

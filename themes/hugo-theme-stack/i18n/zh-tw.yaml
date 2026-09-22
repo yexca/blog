@@ -192,3 +192,19 @@ taxonomyMenu:
         other: 分類
     tags:
         other: 標籤
+
+lightbox:
+    close:
+        other: 關閉
+
+    zoom:
+        other: 縮放
+
+    previous:
+        other: 上一張
+
+    next:
+        other: 下一張
+
+    error:
+        other: 圖片載入失敗

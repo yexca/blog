@@ -310,6 +310,10 @@
         }
     }
 
+    img.is-zoomable {
+        cursor: zoom-in;
+    }
+
     figure {
         text-align: center;
 

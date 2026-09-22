@@ -194,3 +194,19 @@ taxonomyMenu:
         other: Categories
     tags:
         other: Tags
+
+lightbox:
+    close:
+        other: Close
+
+    zoom:
+        other: Zoom
+
+    previous:
+        other: Previous
+
+    next:
+        other: Next
+
+    error:
+        other: The image could not be loaded

@@ -41,8 +41,8 @@ export function initPage(root: ParentNode = document) {
 
     const articleContent = root.querySelector('.article-content') as HTMLElement;
     if (articleContent) {
-        /// PhotoSwipe is only shipped with articles that contain gallery images.
-        if (articleContent.querySelector('img.gallery-image')) new StackGallery(articleContent);
+        /// The lightbox library itself is only fetched when an image is clicked.
+        if (articleContent.querySelector('img')) new StackGallery(articleContent);
         setupSmoothAnchors();
         setupScrollspy();
     }

@@ -4,10 +4,10 @@
 
 Check:
 
-- `partials/article-list/default.html`
-- `partials/article-list/compact.html`
-- `partials/article-list/tile.html`
-- `partials/article-list/cover.html`
+- `_partials/article-list/default.html`
+- `_partials/article-list/compact.html`
+- `_partials/article-list/tile.html`
+- `_partials/article-list/cover.html`
 - `assets/scss/partials/layout/list.scss`
 - `assets/ts/features/articleTiles.ts`
 
@@ -17,9 +17,9 @@ Verify home, list, taxonomy, and mobile layouts.
 
 Check:
 
-- `layouts/_default/single.html`
-- `partials/article/article.html`
-- `partials/article/components/*`
+- `layouts/single.html`
+- `_partials/article/article.html`
+- `_partials/article/components/*`
 - `assets/scss/partials/layout/article.scss`
 - `assets/ts/features/codeBlocks.ts`
 
@@ -30,7 +30,7 @@ Verify headings, cover image, tags, math, code blocks, related content, and comm
 Check:
 
 - `hugo.yml` and the post's `mermaid` front matter switch.
-- `layouts/_default/_markup/render-codeblock-mermaid.html`.
+- `layouts/_markup/render-codeblock-mermaid.html`.
 - `assets/ts/features/mermaid.ts` and `assets/ts/core/pageInit.ts`.
 - `assets/scss/partials/components/mermaid.scss`.
 
@@ -50,7 +50,7 @@ mobile sizing, soft navigation, and the performance report.
 Check:
 
 - `layouts/page/search.json` for indexed fields.
-- `layouts/partials/search/results.html` for the result and pagination shell.
+- `layouts/_partials/search/results.html` for the result and pagination shell.
 - `assets/ts/search.tsx` for OR matching, CJK/Latin spacing, ranking, and
   client-side pagination.
 - `assets/scss/partials/layout/search.scss` for the result controls.
@@ -64,7 +64,7 @@ index contains article text.
 
 ## Change Header
 
-Check `partials/header/site.html`, `partials/header.scss`, `features/header.ts`,
+Check `_partials/header/site.html`, `partials/header.scss`, `features/header.ts`,
 `colorScheme.ts`, and the `.page-columns` wrapper in `baseof.html`. Verify the
 desktop search expansion, all language targets, all three theme choices,
 sticky position and anchor offset, mobile search navigation, the mobile menu
@@ -73,7 +73,7 @@ navigation.
 
 ## Add Or Change A Shortcode
 
-1. Edit or add `layouts/shortcodes/<name>.html`.
+1. Edit or add `layouts/_shortcodes/<name>.html`.
 2. Add shared styles to `partials/components/shortcodes.scss`.
 3. Add feature script only if interaction is required.
 4. Check old posts that already use the shortcode.

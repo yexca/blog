@@ -30,7 +30,7 @@ but they should be investigated before large UI or asset changes are merged.
 `static/fonts/` should not contain unused fonts. Files in `static/` are copied
 directly into the published site.
 
-Web fonts come from Google Fonts. `partials/head/custom.html` emits one
+Web fonts come from Google Fonts. `_partials/head/custom.html` emits one
 `<link data-language-font>` per page with only the family for the current
 language (Noto Sans SC / TC / JP + Yomogi / Comic Neue + Noto Sans). Keep that
 mapping aligned with the `--*-font-family` stacks in `assets/scss/variables.scss`,
@@ -39,7 +39,7 @@ the same family.
 
 ## Search
 
-The search index rows are built by `partials/search/index-data.html` and
+The search index rows are built by `_partials/search/index-data.html` and
 rendered by two templates:
 
 - `layouts/page/search.json` (`index.json`): default index, article text
@@ -57,8 +57,8 @@ search URL with a keyword parameter.
 
 Prefer responsive images for article covers and list cards. Load third-party
 scripts lazily when possible. Current lazy-loading areas include comments,
-GitHub info cards, tile-card color extraction, search, and PhotoSwipe (only on
-articles whose content contains gallery images).
+GitHub info cards, tile-card color extraction, search, and PhotoSwipe 5 (fetched with
+SRI on the first click on an article image, never on page load).
 
 Mermaid is another opt-in third-party dependency. Keep the page switch disabled
 by default and load the pinned CDN module only on pages that contain Mermaid

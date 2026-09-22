@@ -5,7 +5,7 @@
 {{- if or (gt (len $widgets) 0) (and (eq $scope "page") (gt (len $related) 0)) -}}
     <aside class="sidebar right-sidebar sticky{{ if and (eq $scope `page`) (gt (len $related) 0) }} has-related{{ end }}">
         {{ range $widget := $widgets }}
-            {{ if templates.Exists (printf "partials/widget/%s.html" .type) }}
+            {{ if templates.Exists (printf "_partials/widget/%s.html" .type) }}
                 <!-- Ensure that the `params` is not nil -->
                 {{- $params := default dict .params -}}
 

@@ -4,7 +4,7 @@
 
 Hugo resolves pages through the theme layouts:
 
-1. `layouts/_default/baseof.html` provides the outer document structure.
+1. `layouts/baseof.html` provides the outer document structure.
 2. Head partials inject metadata, styles, color-scheme data, and custom links.
 3. Page templates render the page body.
 4. Shared partials render sidebars, article cards, pagination, comments, and widgets.
@@ -14,14 +14,14 @@ Hugo resolves pages through the theme layouts:
 
 | Page type | Primary files |
 | --- | --- |
-| Home | `layouts/index.html`, `partials/article-list/*` |
-| Section/list | `layouts/_default/list.html`, `partials/article-list/*` |
-| Article | `layouts/_default/single.html`, `partials/article/*` |
-| Archives | `layouts/_default/archives.html`, `assets/ts/features/archives.ts` |
+| Home | `layouts/home.html`, `_partials/article-list/*` |
+| Section/list | `layouts/list.html`, `_partials/article-list/*` |
+| Article | `layouts/single.html`, `_partials/article/*` |
+| Archives | `layouts/archives.html`, `assets/ts/features/archives.ts` |
 | Search | `layouts/page/search.html`, `layouts/page/search.json`, `assets/ts/search.tsx` |
-| Taxonomy | `partials/taxonomy/post-card.html`, `assets/ts/features/taxonomyPages.ts` |
-| About versions | `layouts/shortcodes/about*.html`, `assets/ts/features/about*.ts` |
-| Mermaid diagrams | `layouts/_default/_markup/render-codeblock-mermaid.html`, `assets/ts/features/mermaid.ts` |
+| Taxonomy | `_partials/taxonomy/post-card.html`, `assets/ts/features/taxonomyPages.ts` |
+| About versions | `layouts/_shortcodes/about*.html`, `assets/ts/features/about*.ts` |
+| Mermaid diagrams | `layouts/_markup/render-codeblock-mermaid.html`, `assets/ts/features/mermaid.ts` |
 
 ## Asset Flow
 

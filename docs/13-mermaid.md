@@ -26,7 +26,7 @@ flowchart LR
 
 ## Implementation
 
-- `layouts/_default/_markup/render-codeblock-mermaid.html` converts enabled
+- `layouts/_markup/render-codeblock-mermaid.html` converts enabled
   Mermaid fences to `<pre class="mermaid">` and falls back to Hugo's normal
   highlighter when the page switch is off.
 - `assets/ts/features/mermaid.ts` loads Mermaid 11.16.1 from jsDelivr only when

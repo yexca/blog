@@ -186,3 +186,19 @@ taxonomyMenu:
         other: 分类
     tags:
         other: 标签
+
+lightbox:
+    close:
+        other: 关闭
+
+    zoom:
+        other: 缩放
+
+    previous:
+        other: 上一张
+
+    next:
+        other: 下一张
+
+    error:
+        other: 图片加载失败

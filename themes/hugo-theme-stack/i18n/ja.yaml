@@ -189,3 +189,19 @@ taxonomyMenu:
         other: カテゴリ
     tags:
         other: タグ
+
+lightbox:
+    close:
+        other: 閉じる
+
+    zoom:
+        other: ズーム
+
+    previous:
+        other: 前へ
+
+    next:
+        other: 次へ
+
+    error:
+        other: 画像を読み込めませんでした

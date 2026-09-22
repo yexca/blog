@@ -1,6 +1,6 @@
 # Shortcodes
 
-Shortcodes live in `themes/hugo-theme-stack/layouts/shortcodes/`.
+Shortcodes live in `themes/hugo-theme-stack/layouts/_shortcodes/`.
 
 ## Inventory
 

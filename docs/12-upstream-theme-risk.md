@@ -34,13 +34,13 @@ behavior.
 
 ## Files To Inspect First
 
-- `layouts/_default/baseof.html`
-- `layouts/index.html`
-- `layouts/_default/single.html`
-- `layouts/_default/list.html`
+- `layouts/baseof.html`
+- `layouts/home.html`
+- `layouts/single.html`
+- `layouts/list.html`
 - `layouts/page/search.*`
-- `layouts/partials/article-list/*`
-- `layouts/partials/sidebar/*`
+- `layouts/_partials/article-list/*`
+- `layouts/_partials/sidebar/*`
 - `assets/scss/variables.scss`
 - `assets/scss/partials/layout/*`
 - `assets/ts/core/pageInit.ts`

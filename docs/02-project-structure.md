@@ -31,7 +31,7 @@ The active theme code is split across:
 - `themes/hugo-theme-stack/assets/scss/`: bundled SCSS.
 - `themes/hugo-theme-stack/assets/ts/`: bundled TypeScript.
 - `themes/hugo-theme-stack/i18n/`: theme UI translations.
-- `themes/hugo-theme-stack/layouts/shortcodes/`: shortcode templates.
+- `themes/hugo-theme-stack/layouts/_shortcodes/`: shortcode templates.
 
 ## Generated Output
 
