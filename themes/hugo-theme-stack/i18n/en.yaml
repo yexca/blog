@@ -202,6 +202,9 @@ github:
 searchFullText:
     other: Full-text search
 
+searchFullTextShort:
+    other: Full text
+
 searchFullTextHint:
     other: By default only the beginning of each post is searched. Enable this to load the complete index (larger download).
 

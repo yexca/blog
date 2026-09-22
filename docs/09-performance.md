@@ -45,7 +45,7 @@ rendered by two templates:
 - `layouts/page/search.json` (`index.json`): default index, article text
   truncated to `params.search.snippetLength` runes (800 in `hugo.yml`).
 - `layouts/page/search.searchfull.json` (`index-full.json`): full article text,
-  fetched only when the visitor enables the full-text checkbox.
+  fetched only when the visitor enables the full-text switch.
 
 Check the default `index.json` per language against the `searchJsonBytes`
 budget; the full index is expected to be several times larger.

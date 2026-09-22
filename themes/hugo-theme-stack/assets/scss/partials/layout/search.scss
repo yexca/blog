@@ -130,41 +130,142 @@
     }
 }
 
-.search-options {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px 16px;
-    margin-top: calc(var(--section-separation) * -1 + 12px);
-    padding: 0 6px;
-    color: var(--card-text-color-secondary);
-    font-size: 1.4rem;
-    line-height: 1.5;
+.search-form.has-full-text {
+    --full-text-width: 118px;
+    z-index: 2;
 
-    .search-options-toggle {
+    p input {
+        padding-inline-end: calc(var(--button-size) + var(--full-text-width) - 16px);
+    }
+}
+
+/// Full-text switch sits inside the search box, before the search button; its hint shows on hover.
+.search-full-text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    inset-inline-end: calc(var(--button-size) - 16px);
+    display: flex;
+    align-items: center;
+
+    .search-full-text-toggle {
+        /// Undo the floating ".search-form label" caption styles
+        position: relative;
+        top: auto;
+        inset-inline-start: auto;
+        z-index: auto;
+        pointer-events: auto;
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 6px 12px;
-        color: var(--card-text-color-main);
-        border: 1px solid var(--card-border-color);
+        padding: 6px 10px 6px 8px;
+        color: var(--card-text-color-secondary);
+        font-size: 1.4rem;
+        line-height: 1.4;
+        white-space: nowrap;
         border-radius: 999px;
-        background-color: var(--card-background);
-        box-shadow: var(--shadow-l1);
         cursor: pointer;
         user-select: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        &:hover {
+            color: var(--card-text-color-main);
+            background-color: color-mix(in srgb, var(--card-text-color-main) 8%, transparent);
+        }
+
+        &:has(input:checked) {
+            color: var(--card-text-color-main);
+        }
 
         input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
             margin: 0;
-            accent-color: var(--accent-color);
+            padding: 0;
+            opacity: 0;
+            border: 0;
+            box-shadow: none;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            pointer-events: none;
         }
     }
 
-    .search-options-hint {
-        flex: 1 1 260px;
-        min-width: 0;
-        color: var(--card-text-color-tertiary);
+    .search-full-text-switch {
+        position: relative;
+        flex: 0 0 auto;
+        width: 30px;
+        height: 18px;
+        border-radius: 999px;
+        background-color: color-mix(in srgb, var(--card-text-color-main) 18%, transparent);
+        transition: background-color 0.2s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+    }
+
+    input:checked + .search-full-text-switch {
+        background-color: var(--accent-color);
+
+        &::after {
+            background-color: var(--accent-color-text);
+            transform: translateX(12px);
+        }
+    }
+
+    input:focus-visible + .search-full-text-switch {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 2px;
+    }
+
+    .search-full-text-tooltip {
+        position: absolute;
+        top: calc(100% + 10px);
+        inset-inline-end: 0;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: max-content;
+        max-width: unquote("min(300px, calc(100vw - 32px))");
+        padding: 10px 14px;
+        color: var(--card-text-color-secondary);
         font-size: 1.3rem;
-        text-shadow: 0 1px 6px var(--card-background);
+        line-height: 1.6;
+        border: 1px solid var(--card-border-color);
+        border-radius: var(--card-border-radius);
+        background-color: var(--card-background);
+        box-shadow: var(--shadow-l2);
+        backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+        -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4px);
+        pointer-events: none;
+        transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s linear 0.18s;
+
+        strong {
+            color: var(--card-text-color-main);
+            font-size: 1.4rem;
+        }
+    }
+
+    &:hover .search-full-text-tooltip,
+    &:has(input:focus-visible) .search-full-text-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        transition-delay: 0.15s, 0.15s, 0s;
     }
 }

@@ -194,8 +194,11 @@ github:
 searchFullText:
     other: 全文搜索
 
+searchFullTextShort:
+    other: 全文
+
 searchFullTextHint:
-    other: 默认只搜索每篇文章的开头部分；勾选后加载完整索引（体积更大）
+    other: 默认只搜索每篇文章的开头部分；开启后加载完整索引（体积更大）
 
 taxonomyMenu:
     categories:

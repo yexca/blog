@@ -1,25 +1,29 @@
 {{ define "body-class" }}template-search{{ end }}
 {{ define "main" }}
-<form action="{{ .RelPermalink }}" class="search-form" data-search-page-form{{ with .OutputFormats.Get "json" }} data-json="{{ .RelPermalink }}"{{ end }}{{ with .OutputFormats.Get "searchfull" }} data-json-full="{{ .RelPermalink }}"{{ end }}>
+<form action="{{ .RelPermalink }}" class="search-form{{ if .OutputFormats.Get "searchfull" }} has-full-text{{ end }}" data-search-page-form{{ with .OutputFormats.Get "json" }} data-json="{{ .RelPermalink }}"{{ end }}{{ with .OutputFormats.Get "searchfull" }} data-json-full="{{ .RelPermalink }}"{{ end }}>
     <p>
         <label>{{ T "search.title" }}</label>
         <input name="keyword" placeholder="{{ T `search.placeholder` }}" />
     </p>
 
+    {{ if .OutputFormats.Get "searchfull" }}
+    <div class="search-full-text">
+        <label class="search-full-text-toggle">
+            <input type="checkbox" role="switch" data-search-full-text aria-describedby="search-full-text-hint">
+            <span class="search-full-text-switch" aria-hidden="true"></span>
+            <span class="search-full-text-label">{{ T "searchFullTextShort" }}</span>
+        </label>
+        <div class="search-full-text-tooltip" id="search-full-text-hint" role="tooltip">
+            <strong>{{ T "searchFullText" }}</strong>
+            <span>{{ T "searchFullTextHint" }}</span>
+        </div>
+    </div>
+    {{ end }}
+
     <button title="{{ T `search.title` }}">
         {{ partial "helper/icon" "search" }}
     </button>
 </form>
-
-{{ if .OutputFormats.Get "searchfull" }}
-<div class="search-options" data-search-options>
-    <label class="search-options-toggle">
-        <input type="checkbox" data-search-full-text>
-        <span>{{ T "searchFullText" }}</span>
-    </label>
-    <span class="search-options-hint">{{ T "searchFullTextHint" }}</span>
-</div>
-{{ end }}
 
 {{ partial "search/results.html" . }}
 

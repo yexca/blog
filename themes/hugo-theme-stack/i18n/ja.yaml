@@ -197,6 +197,9 @@ github:
 searchFullText:
     other: 全文検索
 
+searchFullTextShort:
+    other: 全文
+
 searchFullTextHint:
     other: 既定では各記事の冒頭のみを検索します。オンにすると完全な索引を読み込みます（サイズ大）。
 

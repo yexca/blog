@@ -728,7 +728,7 @@ function setupSearch(root: ParentNode = document): void {
     const searchForm = root.querySelector('[data-search-page-form]') as HTMLFormElement | null;
     if (!searchForm || searchForm.dataset.stackSearchReady === 'true') return;
 
-    const searchInput = searchForm.querySelector('input') as HTMLInputElement | null;
+    const searchInput = searchForm.querySelector('input[name="keyword"]') as HTMLInputElement | null;
     const resultRoot = root.querySelector('[data-search-result]') as HTMLElement | null;
     const searchResultList = resultRoot?.querySelector('.search-result--list') as HTMLDivElement | null;
     const searchResultTitle = resultRoot?.querySelector('.search-result--title') as HTMLHeadingElement | null;

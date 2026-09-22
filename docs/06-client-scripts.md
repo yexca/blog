@@ -78,8 +78,9 @@ home is indexed as itself. Keep that crawler guard when editing the script.
 
 The search page ships two JSON outputs: `index.json` (snippet per post, the
 default) and `index-full.json` (full text, output format `searchfull`). The
-checkbox `[data-search-full-text]` switches modes; the choice is stored under
-`StackSearchFullText` and the full index is only fetched after it is enabled.
+switch `[data-search-full-text]` inside the search box switches modes, with its
+explanation in a tooltip shown on hover or keyboard focus; the choice is stored
+under `StackSearchFullText` and the full index is only fetched after it is enabled.
 
 `pageTransitions.ts` also swaps `link[rel="stylesheet"][data-language-font]`
 during soft navigation so the per-language web font follows a language switch.
