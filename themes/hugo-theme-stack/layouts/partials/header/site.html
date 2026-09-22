@@ -36,8 +36,8 @@
                                 {{ $target = . }}
                             {{ end }}
                         {{ end }}
-                        <a href="{{ $target.RelPermalink }}" role="menuitem"{{ if eq $target.Language.Lang $currentLanguageCode }} aria-current="page"{{ end }}>
-                            {{ .Language.LanguageName }}
+                        <a href="{{ $target.RelPermalink }}" role="menuitem" data-language-choice="{{ $target.Language.Lang }}"{{ if eq $target.Language.Lang $currentLanguageCode }} aria-current="page"{{ end }}>
+                            {{ .Language.Label }}
                         </a>
                     {{ end }}
                 </div>

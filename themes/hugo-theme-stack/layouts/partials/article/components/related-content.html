@@ -1,4 +1,4 @@
-{{- $related := .Scratch.Get "relatedPages" -}}
+{{- $related := .Store.Get "relatedPages" -}}
 {{- if not $related -}}
     {{- $related = (where (.Site.RegularPages.Related .) "Params.hidden" "!=" true) | first 5 -}}
 {{- end -}}

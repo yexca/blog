@@ -268,8 +268,12 @@ async function swapPage(url: URL, historyBehavior: NavigationHistoryBehavior, sc
         replaceBody(nextDocument);
     };
 
-    if (document.startViewTransition) {
-        await document.startViewTransition(update).finished;
+    // A hidden document skips the transition and rejects `ready` with InvalidStateError;
+    // the update callback still runs, so only `finished` decides success.
+    if (document.startViewTransition && document.visibilityState === 'visible') {
+        const transition = document.startViewTransition(update);
+        transition.ready.catch(() => {});
+        await transition.finished;
     }
     else {
         await update();

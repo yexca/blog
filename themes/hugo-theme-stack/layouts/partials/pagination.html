@@ -1,7 +1,7 @@
 {{ if gt .Paginator.TotalPages 1 }}
     <nav class='pagination' aria-label='{{ if eq .Site.Language.Lang "zh-tw" }}分頁{{ else if eq .Site.Language.Lang "en" }}Pagination{{ else if eq .Site.Language.Lang "ja" }}ページ送り{{ else }}分页{{ end }}'>
-        {{ $.Scratch.Set "hasPrevDots" false }}
-        {{ $.Scratch.Set "hasNextDots" false }}
+        {{ $.Store.Set "hasPrevDots" false }}
+        {{ $.Store.Set "hasNextDots" false }}
 
         <div class='pagination-links'>
             {{ range .Paginator.Pagers }}
@@ -14,11 +14,11 @@
                             {{- .PageNumber -}}
                         </a>
                     {{ else }}
-                        {{ if and (not ($.Scratch.Get "hasPrevDots")) (lt .PageNumber $.Paginator.PageNumber)  }}
-                            {{ $.Scratch.Set "hasPrevDots" true }}
+                        {{ if and (not ($.Store.Get "hasPrevDots")) (lt .PageNumber $.Paginator.PageNumber)  }}
+                            {{ $.Store.Set "hasPrevDots" true }}
                             <span class='page-link dots' aria-hidden='true'>&hellip;</span>
-                        {{ else if and (not ($.Scratch.Get "hasNextDots")) (gt .PageNumber $.Paginator.PageNumber) }}
-                            {{ $.Scratch.Set "hasNextDots" true }}
+                        {{ else if and (not ($.Store.Get "hasNextDots")) (gt .PageNumber $.Paginator.PageNumber) }}
+                            {{ $.Store.Set "hasNextDots" true }}
                             <span class='page-link dots' aria-hidden='true'>&hellip;</span>
                         {{ end }}
                     {{ end }}

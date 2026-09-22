@@ -1,7 +1,7 @@
 {{- $scope := default "homepage" .Scope -}}
 {{- $context := .Context -}}
 {{- $widgets := index .Context.Site.Params.widgets $scope -}}
-{{- $related := $context.Scratch.Get "relatedPages" -}}
+{{- $related := $context.Store.Get "relatedPages" -}}
 {{- if or (gt (len $widgets) 0) (and (eq $scope "page") (gt (len $related) 0)) -}}
     <aside class="sidebar right-sidebar sticky{{ if and (eq $scope `page`) (gt (len $related) 0) }} has-related{{ end }}">
         {{ range $widget := $widgets }}

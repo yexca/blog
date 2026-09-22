@@ -18,6 +18,31 @@
     }
     catch (_) {}
 
+    var languagePaths = {
+        'zh-cn': '{{ "/" | relURL }}',
+        'zh-tw': '{{ "/zh-tw/" | relURL }}',
+        en: '{{ "/en/" | relURL }}',
+        ja: '{{ "/ja/" | relURL }}'
+    };
+    var redirectTo = function (path) {
+        var targetURL = new URL(path, window.location.origin);
+        targetURL.search = window.location.search;
+        targetURL.hash = window.location.hash;
+        if (targetURL.href !== window.location.href) window.location.replace(targetURL.href);
+    };
+
+    // A language picked from the header menu (stored by the theme script) always wins,
+    // including an explicit choice of this default-language home.
+    var preference = null;
+    try {
+        preference = window.localStorage.getItem('stack-language-preference');
+    }
+    catch (_) {}
+    if (preference && Object.prototype.hasOwnProperty.call(languagePaths, preference)) {
+        redirectTo(languagePaths[preference]);
+        return;
+    }
+
     var storageKey = 'stack-language-redirect-done';
     try {
         if (window.sessionStorage.getItem(storageKey) === 'true') return;
@@ -40,19 +65,7 @@
         return '';
     };
 
-    var languagePaths = {
-        'zh-cn': '{{ "/" | relURL }}',
-        'zh-tw': '{{ "/zh-tw/" | relURL }}',
-        en: '{{ "/en/" | relURL }}',
-        ja: '{{ "/ja/" | relURL }}'
-    };
     var languageKey = languages.map(getLanguageKey).find(function (key) { return key; }) || 'en';
-    var targetPath = languagePaths[languageKey] || languagePaths.en;
-    var targetURL = new URL(targetPath, window.location.origin);
-    targetURL.search = window.location.search;
-    targetURL.hash = window.location.hash;
-
-    if (targetURL.href === window.location.href) return;
-    window.location.replace(targetURL.href);
+    redirectTo(languagePaths[languageKey] || languagePaths.en);
 })();
 </script>

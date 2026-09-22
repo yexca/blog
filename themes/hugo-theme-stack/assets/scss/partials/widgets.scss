@@ -25,6 +25,7 @@
             box-shadow: var(--shadow-l1);
             border-radius: var(--tag-border-radius);
             padding: 8px 20px;
+            border: 1px solid var(--card-border-color);
             color: var(--card-text-color-main);
             font-size: 1.4rem;
             transition: box-shadow 0.3s ease;

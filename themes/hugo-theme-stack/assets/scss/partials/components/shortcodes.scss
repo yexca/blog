@@ -5,8 +5,6 @@
   border-radius: 4px;
   background-color: var(--card-background-secondary);
   color: var(--card-text-color-main);
-  backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
-  -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
 
   &.default {
     border-color: #ccc;
@@ -78,8 +76,6 @@
   border-radius: 8px;
   background-color: var(--card-background-secondary);
   box-shadow: var(--shadow-l1);
-  backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
-  -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
   transition: all 0.3s ease;
 
   &:hover {
@@ -159,8 +155,6 @@
   border-radius: 8px;
   border: 1px solid var(--card-border-color);
   box-shadow: var(--shadow-l1);
-  backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
-  -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
   max-width: 500px;
   color: var(--timeline-text-color, var(--card-text-color-main));
 }

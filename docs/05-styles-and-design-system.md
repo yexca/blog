@@ -11,6 +11,12 @@
 | `assets/scss/partials/header.scss` | Sticky Header layout, expanding search, popovers, and anchor offset variables. |
 | `assets/scss/custom.scss` | Small local overrides. Keep this file lean. |
 | `assets/scss/partials/components/glass.scss` | Shared glass-style surfaces. |
+
+Only top-level surfaces (cards, header, popovers, section titles, footer) get
+`backdrop-filter`. Elements inside an already-blurred card (code blocks, copy buttons,
+shortcode boxes, tags) must not add their own: they only blur the card's flat background
+and each one is an extra compositing layer. The site header keeps its blur on `::before`
+so it is not a backdrop root and its popover panels can blur the page behind them.
 | `assets/scss/partials/layout/*.scss` | Page-specific layouts. |
 | `assets/scss/partials/components/*.scss` | Reusable component styling. |
 

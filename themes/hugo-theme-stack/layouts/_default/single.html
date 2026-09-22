@@ -19,10 +19,10 @@
     {{- $TOCEnabled := and (not $TOCManuallyDisabled) $TOCWidgetEnabled -}}
     {{- $hasTOC := ge (len .TableOfContents) 100 -}}
     {{- $related := (where (.Site.RegularPages.Related .) "Params.hidden" "!=" true) | first 5 -}}
-    {{- .Scratch.Set "relatedPages" $related -}}
-    {{- .Scratch.Set "TOCEnabled" (and $TOCEnabled $hasTOC) -}}
+    {{- .Store.Set "relatedPages" $related -}}
+    {{- .Store.Set "TOCEnabled" (and $TOCEnabled $hasTOC) -}}
     
-    {{- .Scratch.Set "hasWidget" (or $HasWidgetNotTOC (and $TOCEnabled $hasTOC) (gt (len $related) 0)) -}}
+    {{- .Store.Set "hasWidget" (or $HasWidgetNotTOC (and $TOCEnabled $hasTOC) (gt (len $related) 0)) -}}
 {{ end }}
 
 {{ define "main" }}
@@ -47,5 +47,5 @@
 {{ end }}
 
 {{ define "right-sidebar" }}
-    {{ if .Scratch.Get "hasWidget" }}{{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}{{ end}}
+    {{ if .Store.Get "hasWidget" }}{{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}{{ end}}
 {{ end }}

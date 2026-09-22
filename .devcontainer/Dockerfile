@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu
 ARG TARGETARCH
 
 # 设置版本变量
-ARG HUGO_VERSION="0.140.1"
+ARG HUGO_VERSION="0.166.0"
 
 # 安装依赖
 RUN apt-get update && apt-get install -y git curl

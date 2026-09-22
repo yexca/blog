@@ -5,7 +5,7 @@
 Run a production build first, then run the performance report:
 
 ```powershell
-docker run --rm -v "${PWD}:/src" -w /src blog-hugo:0.140.1 hugo --gc --minify
+docker run --rm -v "${PWD}:/src" -w /src blog-hugo:0.166.0 hugo --gc --minify
 ```
 
 ```powershell

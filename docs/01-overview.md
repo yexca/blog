@@ -7,7 +7,7 @@ clean upstream theme checkout. Treat it as local application code.
 ## Core Facts
 
 - Static site generator: Hugo extended.
-- Expected Hugo version: `0.140.1`.
+- Expected Hugo version: `0.166.0`.
 - Main config: `hugo.yml`.
 - Theme directory: `themes/hugo-theme-stack`.
 - Main content section: `posts`.

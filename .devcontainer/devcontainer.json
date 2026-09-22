@@ -3,7 +3,7 @@
     "build": {
         "dockerfile": "Dockerfile",
         "args": {
-            "HUGO_VERSION": "0.140.1"
+            "HUGO_VERSION": "0.166.0"
         }
     },
     "customizations": {

@@ -44,11 +44,22 @@
     border-radius: var(--card-border-radius);
     background-color: var(--card-background);
     box-shadow: var(--shadow-l1);
-    backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
-    -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
     position: sticky;
     top: var(--site-header-sticky-top);
     z-index: 30;
+
+    // The blur lives on a pseudo-element: an element with backdrop-filter is a backdrop root,
+    // which would stop the popover panels below from blurring anything outside the header.
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: inherit;
+        backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+        -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+        pointer-events: none;
+    }
 }
 
 .site-header-brand,

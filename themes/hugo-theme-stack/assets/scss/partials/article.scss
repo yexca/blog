@@ -51,8 +51,6 @@
             color: var(--card-text-color-tertiary);
             background-color: var(--card-background-secondary);
             border: 1px solid var(--card-border-color);
-            backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
-            -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
 
             &:hover {
                 color: var(--card-text-color-main);

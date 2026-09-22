@@ -1,5 +1,5 @@
 {{- $context := .Context -}}
-{{- $related := $context.Scratch.Get "relatedPages" -}}
+{{- $related := $context.Store.Get "relatedPages" -}}
 {{- with $related -}}
     <section class="widget related-content-widget">
         <div class="widget-icon">
