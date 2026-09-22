@@ -4,6 +4,7 @@ import StackColorScheme from 'ts/colorScheme';
 import { setupScrollspy } from 'ts/scrollspy';
 import { setupSmoothAnchors } from "ts/smoothAnchors";
 import { setupStickySidebar } from "ts/stickySidebar";
+import { setupContentClip } from "ts/features/contentClip";
 import { setupAbout2026 } from "ts/features/about2026";
 import { setupAboutVersions } from "ts/features/aboutVersions";
 import { setupArchives } from "ts/features/archives";
@@ -36,6 +37,7 @@ const features: Feature[] = [
 export function initPage(root: ParentNode = document) {
     menu();
     setupStickySidebar();
+    setupContentClip();
 
     const articleContent = root.querySelector('.article-content') as HTMLElement;
     if (articleContent) {

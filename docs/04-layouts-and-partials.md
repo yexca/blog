@@ -31,6 +31,13 @@
 - Sidebar markup affects both desktop fixed layout and mobile behavior.
 - The Header sits above the `.page-columns` wrapper so the original three-column
   width calculations remain intact.
+- Scrolled content ends 12px below the Header (`--site-header-scroll-offset`, the
+  line the sticky sidebars stop at): `html::after` (in `base.scss`) repeats the
+  site background, clipped to the band above that line and stacked
+  under the Header (z-index 25). Anything that must appear above it there needs a
+  higher z-index. `assets/ts/features/contentClip.ts` redraws the rounded, bordered
+  top edge of each card crossing the line as a `--content-clip-gap` (16px) cap, so
+  text keeps a margin from the cut edge; add new card surfaces to its `cardQuery`.
 - The sidebar profile uses `params.author.name` for the displayed author name. On
   phone layouts it is shown only on language home pages.
 - The ToC markup comes from `_partials/article/components/toc.html` (Hugo's

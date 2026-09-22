@@ -20,7 +20,9 @@ function getStickyHeaderOffset(): number {
     if (style.position !== 'sticky') return 0;
 
     const stickyTop = Number.parseFloat(style.top) || 0;
-    return header.getBoundingClientRect().height + Math.max(stickyTop, 0) + 12;
+    /// Also clear the cap drawn over the first --content-clip-gap of a cut card (contentClip.ts).
+    const clipGap = Number.parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--content-clip-gap')) || 0;
+    return header.getBoundingClientRect().height + Math.max(stickyTop, 0) + 12 + clipGap;
 }
 
 function setupSmoothAnchors() {

@@ -4,7 +4,8 @@ html {
     background-color: var(--body-background);
 }
 
-html::before {
+html::before,
+html:has(.site-header)::after {
     content: "";
     position: fixed;
     inset: 0;
@@ -15,13 +16,48 @@ html::before {
     background-repeat: no-repeat;
 }
 
+/// A second copy of the background, clipped to the band from the viewport top to
+/// 12px below the sticky header (the same line the sticky sidebars stop at) and
+/// stacked just under the header. Same box as html::before, so the image lines up
+/// exactly; scrolled content ends with a gap under the header instead of passing
+/// behind or above it. Stays under the mobile menu (29) and the focused code block (1000).
+/// ts/features/contentClip.ts widens the band under each card crossing the line
+/// (--content-clip-band) so the card caps below have plain background to blur.
+html:has(.site-header)::after {
+    z-index: 25;
+    background-color: var(--body-background);
+    clip-path: var(--content-clip-band, inset(0 0 calc(100% - var(--site-header-scroll-offset)) 0));
+    pointer-events: none;
+}
+
+/// Rounded top edge redrawn on a card cut by the line above, with the card's own
+/// glass surface. It hides the first --content-clip-gap of the card, so the text
+/// keeps a margin from the edge. Positioned by ts/features/contentClip.ts.
+.content-clip-cap {
+    position: fixed;
+    z-index: 26;
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border-color);
+    border-bottom: 0;
+    backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+    -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+    pointer-events: none;
+
+    /// The card ends inside the gap: the cap also draws the card's bottom edge
+    /// (the script rounds all four corners then).
+    &.is-ending {
+        border-bottom: 1px solid var(--card-border-color);
+    }
+}
+
 @media (max-width: 767.98px) {
     :root {
         --glass-blur: 10px;
         --body-background-attachment: scroll;
     }
 
-    html::before {
+    html::before,
+    html:has(.site-header)::after {
         background-image: var(--body-background-overlay), var(--body-background-image-mobile);
     }
 }

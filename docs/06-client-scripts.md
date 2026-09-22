@@ -45,8 +45,15 @@ Color-scheme choices are rendered in the Header and bound by
 `assets/ts/colorScheme.ts`. Preserve the `StackColorScheme` storage key and the
 `onColorSchemeChange` event because other features depend on them.
 
-`assets/ts/smoothAnchors.ts` subtracts the sticky Header height from manual
-anchor scrolling. Keep that offset consistent with the CSS scroll padding.
+`assets/ts/smoothAnchors.ts` subtracts the sticky Header height and
+`--content-clip-gap` from manual anchor scrolling. Keep that offset consistent with
+the CSS scroll padding.
+
+`assets/ts/features/contentClip.ts` runs on every page (scroll and resize, one
+update per animation frame). It finds the card crossing the line under the Header,
+places a `.content-clip-cap` over the card's first `--content-clip-gap`, and
+widens the background band (`--content-clip-band`) under it. Without JavaScript,
+content is still cut at the line, just without the cap.
 
 ## Lazy Loading
 

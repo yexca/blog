@@ -2,7 +2,9 @@
     --site-header-height: 66px;
     --site-header-sticky-top: max(8px, env(safe-area-inset-top, 0px));
     --site-header-scroll-offset: calc(var(--site-header-height) + var(--site-header-sticky-top) + 12px);
-    scroll-padding-top: var(--site-header-scroll-offset);
+    /// Height of the cap drawn over a card cut at --site-header-scroll-offset (see base.scss).
+    --content-clip-gap: 16px;
+    scroll-padding-top: calc(var(--site-header-scroll-offset) + var(--content-clip-gap));
 }
 
 .main-container.has-site-header {
