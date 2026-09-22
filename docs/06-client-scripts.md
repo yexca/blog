@@ -10,6 +10,7 @@
 | `assets/ts/features/*` | Page and component features. |
 | `assets/ts/features/mermaid.ts` | Opt-in Mermaid loading and rendering. |
 | `assets/ts/features/header.ts` | Header search expansion, mobile search navigation, and popover behavior. |
+| `assets/ts/features/pagination.ts` | List pagination jump input opened from the ellipsis or the mobile page status. |
 | `assets/ts/pageTransitions.ts` | Same-origin soft navigation. |
 | `assets/ts/search.tsx` | Search UI, snippet/full-text index switching, ranking, and client-side result pagination. |
 

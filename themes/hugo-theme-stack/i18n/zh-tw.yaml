@@ -133,6 +133,22 @@ search:
     pageStatus:
         other: "第 #CURRENT_PAGE / #TOTAL_PAGES 頁"
 
+pagination:
+    label:
+        other: 分頁
+
+    previous:
+        other: 上一頁
+
+    next:
+        other: 下一頁
+
+    page:
+        other: "第 {{ .Page }} 頁"
+
+    jump:
+        other: 跳轉到指定頁
+
 language:
     other: 語言
 

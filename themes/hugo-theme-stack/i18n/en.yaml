@@ -135,6 +135,22 @@ search:
     pageStatus:
         other: "Page #CURRENT_PAGE / #TOTAL_PAGES"
 
+pagination:
+    label:
+        other: Pagination
+
+    previous:
+        other: Previous
+
+    next:
+        other: Next
+
+    page:
+        other: "Page {{ .Page }}"
+
+    jump:
+        other: Jump to page
+
 language:
     other: Language
 

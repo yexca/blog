@@ -1,59 +1,61 @@
 {{ if gt .Paginator.TotalPages 1 }}
-    <nav class='pagination' aria-label='{{ if eq .Site.Language.Lang "zh-tw" }}分頁{{ else if eq .Site.Language.Lang "en" }}Pagination{{ else if eq .Site.Language.Lang "ja" }}ページ送り{{ else }}分页{{ end }}'>
-        {{ $.Store.Set "hasPrevDots" false }}
-        {{ $.Store.Set "hasNextDots" false }}
+    {{- $paginator := .Paginator -}}
+    {{- $current := $paginator.PageNumber -}}
+    {{- $total := $paginator.TotalPages -}}
+    {{- /* Pages within this distance of the current page are always listed */ -}}
+    {{- $window := 2 -}}
+    {{- $jumpLabel := T "pagination.jump" -}}
+
+    <nav class='pagination' aria-label='{{ T "pagination.label" }}' data-pagination data-first-url='{{ $paginator.First.URL }}' data-total-pages='{{ $total }}'>
+        {{ with $paginator.Prev }}
+            <a class='page-link page-nav page-nav--prev' href='{{ .URL }}' rel='prev' aria-label='{{ T "pagination.previous" }}'>
+                {{ partial "helper/icon" "back" }}
+                <span class='page-nav-label'>{{ T "pagination.previous" }}</span>
+            </a>
+        {{ else }}
+            <span class='page-link page-nav page-nav--prev disabled' aria-hidden='true'>
+                {{ partial "helper/icon" "back" }}
+                <span class='page-nav-label'>{{ T "pagination.previous" }}</span>
+            </span>
+        {{ end }}
 
         <div class='pagination-links'>
-            {{ range .Paginator.Pagers }}
-                {{ if eq . $.Paginator }}
-                    <span class='page-link current' aria-current='page'>
-                        {{- .PageNumber -}}
-                    </span>
-                    {{ else if or (or (eq . $.Paginator.First) (eq . $.Paginator.Prev)) (or  (eq . $.Paginator.Next) (eq . $.Paginator.Last )) }}
-                        <a class='page-link' href='{{ .URL }}' aria-label='{{ if eq $.Site.Language.Lang "zh-tw" }}頁{{ else if eq $.Site.Language.Lang "en" }}page{{ else if eq $.Site.Language.Lang "ja" }}ページ{{ else }}页{{ end }} {{ .PageNumber }}'>
-                            {{- .PageNumber -}}
-                        </a>
-                    {{ else }}
-                        {{ if and (not ($.Store.Get "hasPrevDots")) (lt .PageNumber $.Paginator.PageNumber)  }}
-                            {{ $.Store.Set "hasPrevDots" true }}
-                            <span class='page-link dots' aria-hidden='true'>&hellip;</span>
-                        {{ else if and (not ($.Store.Get "hasNextDots")) (gt .PageNumber $.Paginator.PageNumber) }}
-                            {{ $.Store.Set "hasNextDots" true }}
-                            <span class='page-link dots' aria-hidden='true'>&hellip;</span>
-                        {{ end }}
-                    {{ end }}
+            {{ range $paginator.Pagers }}
+                {{- $n := .PageNumber -}}
+                {{- $distance := sub $n $current -}}
+                {{- if lt $distance 0 }}{{ $distance = sub 0 $distance }}{{ end -}}
+                {{- /* A gap of a single page shows that page instead of an ellipsis */ -}}
+                {{- $fillsGap := or (and (eq $n 2) (eq (sub $current $window) 3)) (and (eq $n (sub $total 1)) (eq (add $current $window) (sub $total 2))) -}}
+
+                {{ if eq $n $current }}
+                    <span class='page-link current' aria-current='page'>{{ $n }}</span>
+                {{ else if or (eq $n 1) (eq $n $total) (le $distance $window) $fillsGap }}
+                    <a class='page-link' href='{{ .URL }}' aria-label='{{ T "pagination.page" (dict "Page" $n) }}'>{{ $n }}</a>
+                {{ else if or (eq $n 2) (eq $n (sub $total 1)) }}
+                    <button class='page-link dots' type='button' data-pagination-jump-trigger aria-label='{{ $jumpLabel }}' title='{{ $jumpLabel }}'>&hellip;</button>
+                {{ end }}
             {{ end }}
         </div>
 
-        <form class='pagination-jump' data-pagination-jump data-first-url='{{ .Paginator.First.URL }}' data-total-pages='{{ .Paginator.TotalPages }}'>
-            <label>
-                <span>{{ if eq .Site.Language.Lang "zh-tw" }}跳轉到{{ else if eq .Site.Language.Lang "en" }}Jump to{{ else if eq .Site.Language.Lang "ja" }}移動先{{ else }}跳转到{{ end }}</span>
-                <input type='number' name='page' min='1' max='{{ .Paginator.TotalPages }}' value='{{ .Paginator.PageNumber }}' inputmode='numeric'>
-            </label>
-            <span class='pagination-total'>/ {{ .Paginator.TotalPages }}</span>
-            <button type='submit'>{{ if eq .Site.Language.Lang "zh-tw" }}跳轉{{ else if eq .Site.Language.Lang "en" }}Jump{{ else if eq .Site.Language.Lang "ja" }}移動{{ else }}跳转{{ end }}</button>
+        <button class='page-link pagination-status' type='button' data-pagination-jump-trigger aria-label='{{ $jumpLabel }}' title='{{ $jumpLabel }}'>
+            <span class='pagination-status-current'>{{ $current }}</span>
+            <span class='pagination-status-total'>/ {{ $total }}</span>
+        </button>
+
+        <form class='pagination-jump' data-pagination-jump hidden>
+            <input type='number' name='page' min='1' max='{{ $total }}' value='{{ $current }}' inputmode='numeric' enterkeyhint='go' aria-label='{{ $jumpLabel }}'>
         </form>
+
+        {{ with $paginator.Next }}
+            <a class='page-link page-nav page-nav--next' href='{{ .URL }}' rel='next' aria-label='{{ T "pagination.next" }}'>
+                <span class='page-nav-label'>{{ T "pagination.next" }}</span>
+                {{ partial "helper/icon" "chevron-right" }}
+            </a>
+        {{ else }}
+            <span class='page-link page-nav page-nav--next disabled' aria-hidden='true'>
+                <span class='page-nav-label'>{{ T "pagination.next" }}</span>
+                {{ partial "helper/icon" "chevron-right" }}
+            </span>
+        {{ end }}
     </nav>
-
-    <script>
-        (() => {
-            if (window.__stackPaginationJumpReady) return;
-            window.__stackPaginationJumpReady = true;
-
-            document.addEventListener('submit', (event) => {
-                const form = event.target.closest('[data-pagination-jump]');
-                if (!form) return;
-
-                event.preventDefault();
-
-                const input = form.querySelector('input[name="page"]');
-                const totalPages = Number(form.dataset.totalPages || 1);
-                const page = Math.min(Math.max(Number.parseInt(input.value, 10) || 1, 1), totalPages);
-                const firstUrl = form.dataset.firstUrl || '/';
-
-                input.value = page;
-                window.location.href = page === 1 ? firstUrl : `${firstUrl.replace(/\/?$/, '/') }page/${page}/`;
-            });
-        })();
-    </script>
 {{ end }}

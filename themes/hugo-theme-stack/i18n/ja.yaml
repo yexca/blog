@@ -130,6 +130,22 @@ search:
     pageStatus:
         other: "#CURRENT_PAGE / #TOTAL_PAGES ページ"
 
+pagination:
+    label:
+        other: ページ送り
+
+    previous:
+        other: 前へ
+
+    next:
+        other: 次へ
+
+    page:
+        other: "{{ .Page }} ページ"
+
+    jump:
+        other: ページを指定して移動
+
 language:
     other: 言語
 

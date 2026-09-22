@@ -15,6 +15,7 @@ import { setupTaxonomyPages } from "ts/features/taxonomyPages";
 import { setupTwikooComments } from "ts/features/twikooComments";
 import { setupFooterRuntime } from "ts/features/footerRuntime";
 import { setupHeader } from "ts/features/header";
+import { setupPagination } from "ts/features/pagination";
 
 type Feature = {
     selector: string;
@@ -28,6 +29,7 @@ const features: Feature[] = [
     { selector: '[data-about-2026]', setup: setupAbout2026 },
     { selector: '[data-taxonomy-categories], [data-taxonomy-tags], .taxonomy-post-card', setup: setupTaxonomyPages },
     { selector: '[data-archive-stage]', setup: setupArchives },
+    { selector: '[data-pagination]', setup: setupPagination },
     { selector: '.article-content div.highlight', setup: setupCodeBlocks },
     { selector: '.article-content .mermaid', setup: setupMermaid },
     { selector: '[data-twikoo]', setup: setupTwikooComments },

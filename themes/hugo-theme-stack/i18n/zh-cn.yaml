@@ -127,6 +127,22 @@ search:
     pageStatus:
         other: "第 #CURRENT_PAGE / #TOTAL_PAGES 页"
 
+pagination:
+    label:
+        other: 分页
+
+    previous:
+        other: 上一页
+
+    next:
+        other: 下一页
+
+    page:
+        other: "第 {{ .Page }} 页"
+
+    jump:
+        other: 跳转到指定页
+
 language:
     other: 语言
 
