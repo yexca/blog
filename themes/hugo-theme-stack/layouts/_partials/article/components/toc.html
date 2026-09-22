@@ -1,0 +1,7 @@
+{{- /* Returns the page ToC without Hugo's <nav id="TableOfContents"> wrapper, so the
+       desktop widget and the mobile collapsible ToC can wrap it themselves without
+       producing a duplicate id. */ -}}
+{{- $toc := .TableOfContents -}}
+{{- $toc = replace $toc "<nav id=\"TableOfContents\">" "" -}}
+{{- $toc = replace $toc "</nav>" "" -}}
+{{- return $toc -}}

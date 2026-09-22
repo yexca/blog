@@ -36,9 +36,20 @@ body {
     margin: 0;
     font-family: var(--base-font-family);
     font-size: 1.6rem;
+    /// Insert a small gap between CJK and Latin letters / digits (Chrome 140+, Safari 18.4+).
+    /// `normal` means `ideograph-alpha ideograph-numeric`; Chrome rejects the explicit keyword list.
+    text-autospace: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
+}
+
+/// Keep code verbatim: an inserted gap would misrepresent the actual characters.
+code,
+kbd,
+pre,
+samp {
+    text-autospace: no-autospace;
 }
 
 .article-list article,

@@ -28,6 +28,10 @@ partials. Local Yozai font files are not used by the active theme.
 Do not add large font files to `static/` unless they are actively referenced by
 runtime CSS and checked by the performance report.
 
+`body` sets `text-autospace` so browsers that support it add a small gap between
+CJK and Latin letters or digits. `code`, `kbd`, `pre`, and `samp` opt out so code
+renders verbatim. Do not add manual spaces in content just for this effect.
+
 ## Design Rules
 
 - Keep shared tokens in `variables.scss`.

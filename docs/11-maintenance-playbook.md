@@ -9,7 +9,6 @@ Check:
 - `_partials/article-list/tile.html`
 - `_partials/article-list/cover.html`
 - `assets/scss/partials/layout/list.scss`
-- `assets/ts/features/articleTiles.ts`
 
 Verify home, list, taxonomy, and mobile layouts.
 

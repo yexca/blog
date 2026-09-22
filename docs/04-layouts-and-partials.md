@@ -33,6 +33,10 @@
   width calculations remain intact.
 - The sidebar profile uses `params.author.name` for the displayed author name. On
   phone layouts it is shown only on language home pages.
+- The ToC markup comes from `_partials/article/components/toc.html` (Hugo's
+  wrapper stripped). The desktop widget wraps it in `nav#TableOfContents`, which
+  the scrollspy targets; below `lg` a collapsible `.article-toc` copy without the
+  id is rendered inside the article card.
 - Article related content is calculated in `layouts/single.html`,
   rendered as a compact list on mobile, and rendered below the TOC by the
   page-scoped related widget on desktop.

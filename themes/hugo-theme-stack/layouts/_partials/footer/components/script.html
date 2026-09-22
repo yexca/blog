@@ -1,12 +1,3 @@
-{{- $needsVibrant := false -}}
-{{- if and (not .IsHome) (gt (len .Sections) 0) -}}
-    {{- $needsVibrant = true -}}
-{{- end -}}
-
-{{- if $needsVibrant -}}
-    {{- partial "helper/external" (dict "Context" . "Namespace" "Vibrant") -}}
-{{- end -}}
-
 {{- $opts := dict "minify" hugo.IsProduction -}}
 {{- $script := resources.Get "ts/main.ts" | js.Build $opts | fingerprint -}}
 

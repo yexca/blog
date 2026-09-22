@@ -17,20 +17,28 @@
                         {{- $Height = $thumbnail.Height -}}
                     {{- end -}}
                     
-                    <img src="{{ $Permalink }}" 
-                        width="{{ $Width }}" 
-                        height="{{ $Height }}" 
+                    <img src="{{ $Permalink }}"
+                        width="{{ $Width }}"
+                        height="{{ $Height }}"
                         loading="lazy"
-                        alt="Featured image of post {{ .context.Title }}"
-                        {{ with .context.Slug }}data-key="{{ . }}" {{ end }}
-                        data-hash="{{ $imageRaw.Data.Integrity }}">
+                        alt="Featured image of post {{ .context.Title }}">
                 {{ else }}
-                    <img src="{{ $image.permalink }}" loading="lazy" data-key="{{ .context.Slug }}" data-hash="{{ $image.permalink }}"/>
+                    <img src="{{ $image.permalink }}" loading="lazy"/>
                 {{ end }}
             </div>
         {{ end }}
 
-        <div class="article-details">
+        {{/* Gradient from the image's dominant colors, computed by Hugo at build time.
+             External images have no resource and keep the default background. */}}
+        <div class="article-details"
+            {{- with $image.resource -}}
+                {{- with .Colors -}}
+                    {{- $vibrant := index . 0 -}}
+                    {{- $darkMuted := index . 1 | default $vibrant -}}
+                    {{- printf ` style="background: linear-gradient(0deg, %s80 0%%, %sC0 100%%);"` $darkMuted $vibrant | safeHTMLAttr -}}
+                {{- end -}}
+            {{- end -}}
+        >
             <h2 class="article-title">
                 {{- .context.Title -}}
             </h2>

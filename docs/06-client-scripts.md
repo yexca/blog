@@ -51,8 +51,8 @@ anchor scrolling. Keep that offset consistent with the CSS scroll padding.
 ## Lazy Loading
 
 Third-party or network-heavy features should load near viewport or on demand.
-Current examples include comments, GitHub info cards, search data, and image
-color extraction for tile cards.
+Current examples include comments, GitHub info cards, and search data. Tile
+card gradients are computed by Hugo at build time (`.Colors`), not in the browser.
 
 Mermaid follows the same rule: the small feature code is bundled with the main
 entry, but the Mermaid renderer is requested only when an enabled page contains

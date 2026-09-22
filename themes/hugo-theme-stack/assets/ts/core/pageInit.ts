@@ -7,7 +7,6 @@ import { setupStickySidebar } from "ts/stickySidebar";
 import { setupAbout2026 } from "ts/features/about2026";
 import { setupAboutVersions } from "ts/features/aboutVersions";
 import { setupArchives } from "ts/features/archives";
-import { setupArticleTiles } from "ts/features/articleTiles";
 import { setupCodeBlocks } from "ts/features/codeBlocks";
 import { setupGithubInfoCards } from "ts/features/githubInfoCards";
 import { setupMermaid } from "ts/features/mermaid";
@@ -28,7 +27,6 @@ const features: Feature[] = [
     { selector: '[data-about-2026]', setup: setupAbout2026 },
     { selector: '[data-taxonomy-categories], [data-taxonomy-tags], .taxonomy-post-card', setup: setupTaxonomyPages },
     { selector: '[data-archive-stage]', setup: setupArchives },
-    { selector: '.article-list--tile', setup: setupArticleTiles },
     { selector: '.article-content div.highlight', setup: setupCodeBlocks },
     { selector: '.article-content .mermaid', setup: setupMermaid },
     { selector: '[data-twikoo]', setup: setupTwikooComments },

@@ -57,7 +57,7 @@ search URL with a keyword parameter.
 
 Prefer responsive images for article covers and list cards. Load third-party
 scripts lazily when possible. Current lazy-loading areas include comments,
-GitHub info cards, tile-card color extraction, search, and PhotoSwipe 5 (fetched with
+GitHub info cards, search, and PhotoSwipe 5 (fetched with
 SRI on the first click on an article image, never on page load).
 
 Mermaid is another opt-in third-party dependency. Keep the page switch disabled
