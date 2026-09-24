@@ -179,7 +179,7 @@ footer:
         other: 主題 {{ .Theme }} 由 {{ .DesignedBy }} 設計
 
     modifiedBy:
-        other: 修改自 {{ .ModifiedBy }}
+        other: 由 {{ .ModifiedBy }} 修改
 
 github:
     loading:

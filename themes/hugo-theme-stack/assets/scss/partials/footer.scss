@@ -1,7 +1,5 @@
+/// No card behind the footer: it sits directly on the page background.
 footer.site-footer {
-    background-color: var(--card-background);
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--shadow-l1);
     padding: var(--card-padding);
     font-size: 1.4rem;
     line-height: 1.75;
