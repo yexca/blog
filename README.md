@@ -48,5 +48,6 @@ Important note: the theme is customized directly under `themes/hugo-theme-stack`
 
 ## 📝 License
 
-All blog content is owned by the author. Some referenced content is credited.  
-Please respect original work. Contact me before reusing content.
+Blog content is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (see [LICENSE](LICENSE)): you may share and adapt it for non-commercial purposes, as long as you give credit and release your adaptations under the same license. Quoted third-party content remains with its original authors, as credited.
+
+The theme in `themes/hugo-theme-stack` is a modified [Hugo Theme Stack](https://github.com/CaiJimmy/hugo-theme-stack) and stays under its own [GPL-3.0](themes/hugo-theme-stack/LICENSE) license.

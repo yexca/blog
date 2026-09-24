@@ -48,5 +48,6 @@
 
 ## 📝 ライセンス
 
-本ブログのコンテンツはすべて著者に帰属します。引用コンテンツには出典を明記しています。  
-転載・利用の際は、必ず出典の明示をお願いします。
+本ブログのコンテンツは [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) ライセンスの下で提供されています（[LICENSE](LICENSE) を参照）。非営利目的に限り、著者の表示と出典の明記を条件に転載・改変でき、改変した作品は同じライセンスで公開する必要があります。引用した第三者のコンテンツの権利は、出典に記載の原著者に帰属します。
+
+`themes/hugo-theme-stack` のテーマは [Hugo Theme Stack](https://github.com/CaiJimmy/hugo-theme-stack) を改変したもので、引き続き同テーマの [GPL-3.0](themes/hugo-theme-stack/LICENSE) ライセンスに従います。

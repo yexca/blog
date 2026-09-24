@@ -47,5 +47,6 @@
 
 ## 📝 授權條款
 
-部落格內容著作權歸屬原作者。部分引用內容已標示出處。  
-敬請尊重原創，如需轉載請註明來源。
+部落格內容採用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 授權條款（見 [LICENSE](LICENSE)）：可於非商業用途下轉載與改作，但須標示作者並註明來源，改作後的作品須以相同條款釋出。引用的第三方內容著作權歸屬原作者，已標示出處。
+
+`themes/hugo-theme-stack` 中的主題基於 [Hugo Theme Stack](https://github.com/CaiJimmy/hugo-theme-stack) 修改，仍遵循其 [GPL-3.0](themes/hugo-theme-stack/LICENSE) 授權。

@@ -47,4 +47,6 @@
 
 ## 📝 License
 
-博客内容版权归作者所有，部分引用内容注明出处。请尊重原创，如需转载请注明来源。
+博客内容采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议（见 [LICENSE](LICENSE)）：可在非商业用途下转载与改编，但需署名并注明来源，改编后的作品须以相同协议发布。引用的第三方内容版权归原作者所有，已注明出处。
+
+`themes/hugo-theme-stack` 中的主题基于 [Hugo Theme Stack](https://github.com/CaiJimmy/hugo-theme-stack) 修改，仍遵循其 [GPL-3.0](themes/hugo-theme-stack/LICENSE) 许可。
