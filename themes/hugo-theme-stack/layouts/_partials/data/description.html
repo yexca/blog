@@ -10,8 +10,8 @@
     <!-- Page description exists -->
     {{ $description = .Description }}
 {{ else if .IsPage }}
-    <!-- Use page summary -->
-    {{ $description = .Summary }}
+    <!-- Use page summary, skipping the leading translation notice / quotes -->
+    {{ $description = partial "helper/summary" (dict "Page" . "Length" 160) }}
 {{ end }}
 
 {{ return (replaceRE "\n" " " $description | plainify) }}

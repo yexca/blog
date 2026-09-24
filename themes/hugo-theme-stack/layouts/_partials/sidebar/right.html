@@ -3,7 +3,7 @@
 {{- $widgets := index .Context.Site.Params.widgets $scope -}}
 {{- $related := $context.Store.Get "relatedPages" -}}
 {{- if or (gt (len $widgets) 0) (and (eq $scope "page") (gt (len $related) 0)) -}}
-    <aside class="sidebar right-sidebar sticky{{ if and (eq $scope `page`) (gt (len $related) 0) }} has-related{{ end }}">
+    <aside class="sidebar right-sidebar sticky{{ if and (eq $scope `page`) (gt (len $related) 0) }} has-related{{ end }}{{ if and (eq $scope `page`) ($context.Store.Get `TOCEnabled`) }} has-toc{{ end }}">
         {{ range $widget := $widgets }}
             {{ if templates.Exists (printf "_partials/widget/%s.html" .type) }}
                 <!-- Ensure that the `params` is not nil -->

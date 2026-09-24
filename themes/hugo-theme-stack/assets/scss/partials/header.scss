@@ -70,8 +70,9 @@
     align-items: center;
 }
 
+// The site name never shrinks; when the open search box runs out of room, the box gives way.
 .site-header-brand {
-    min-width: 0;
+    flex: 0 0 auto;
     gap: 10px;
 }
 
@@ -84,12 +85,10 @@
 }
 
 .site-header-name {
-    min-width: 0;
-    overflow: hidden;
     color: var(--accent-color);
     font-size: 1.7rem;
     font-weight: 700;
-    text-overflow: ellipsis;
+    line-height: 1.4;
     white-space: nowrap;
 
     &:hover {
@@ -98,8 +97,18 @@
 }
 
 .site-header-actions {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
+    min-width: 0;
     gap: 4px;
+
+    > * {
+        flex-shrink: 0;
+    }
+
+    > .site-header-search {
+        flex-shrink: 1;
+        min-width: 40px;
+    }
 }
 
 .site-header-search {

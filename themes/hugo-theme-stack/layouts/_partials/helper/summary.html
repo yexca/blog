@@ -1,0 +1,16 @@
+{{- /* Plain-text excerpt for list cards, meta descriptions and RSS. Built from the
+       rendered content with the leading notices and blockquotes dropped (the
+       machine-translation notice, reposted-from credits), so the excerpt starts at
+       the article itself. Falls back to .Summary when nothing else is left.
+       Called with (dict "Page" $page "Length" 120); Length defaults to 160. */ -}}
+{{- $page := .Page -}}
+{{- $length := default 160 .Length -}}
+{{- $leading := `^\s*(?:(?:<div class="notice[^"]*">(?s:.*?)</div>|<blockquote>(?s:.*?)</blockquote>)\s*)+` -}}
+{{- $html := replaceRE $leading "" (string $page.Content) 1 -}}
+{{- /* Only the head of the article can reach the excerpt; skip plainifying the rest. */ -}}
+{{- $html = substr $html 0 (mul $length 20) -}}
+{{- $text := $html | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}
+{{- if not $text -}}
+    {{- $text = $page.Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}
+{{- end -}}
+{{- return truncate $length $text -}}

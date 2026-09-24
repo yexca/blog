@@ -230,7 +230,7 @@
     }
 
     .toc-nav {
-        max-height: 60vh;
+        max-height: 70vh;
         padding: 4px 0;
     }
 }
@@ -294,11 +294,35 @@
     }
 }
 
-.right-sidebar.has-related {
-    .widget--toc .toc-nav {
-        max-height: unquote("min(42vh, 340px)");
-    }
+/// The ToC fills whatever height the sticky sidebar has left in the viewport; the
+/// widgets around it (related content) keep their natural size.
+.right-sidebar.has-toc {
+    @include respond(lg) {
+        max-height: calc(100vh - var(--sidebar-sticky-top) - var(--content-clip-gap));
+        max-height: calc(100dvh - var(--sidebar-sticky-top) - var(--content-clip-gap));
+        padding-bottom: 0;
 
+        & > * {
+            flex-shrink: 0;
+        }
+
+        & > .toc-widget {
+            flex-shrink: 1;
+            min-height: 0;
+        }
+
+        .widget--toc {
+            min-height: 0;
+        }
+
+        .widget--toc .toc-nav {
+            max-height: none;
+            min-height: 120px;
+        }
+    }
+}
+
+.right-sidebar.has-related {
     .related-content-widget {
         .related-content-list a {
             padding: 10px 12px;

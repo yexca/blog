@@ -1,6 +1,7 @@
 {{- /* Article metadata block. Called with a Page (article header) or with
        (dict "Page" $page "IsList" true) from list cards. List cards show a short
-       summary and hide the translation row; the article page keeps it. */ -}}
+       summary, put the categories beside the tags so the title leads the card, and
+       hide the translation row; the article page keeps its own layout. */ -}}
 {{- $page := . -}}
 {{- $isList := false -}}
 {{- if reflect.IsMap . -}}
@@ -8,7 +9,7 @@
     {{- $isList = default false .IsList -}}
 {{- end -}}
 <div class="article-details">
-    {{ if $page.Params.categories }}
+    {{ if and (not $isList) $page.Params.categories }}
     <header class="article-category">
         {{ range ($page.GetTerms "categories") }}
             <a href="{{ .RelPermalink }}" {{ with .Params.style }}style="background-color: {{ .background }}; color: {{ .color }};"{{ end }}>
@@ -30,9 +31,8 @@
             {{ $page.Params.description }}
         </h3>
         {{ else if $isList }}
-            {{- $summary := $page.Summary | plainify | htmlUnescape | replaceRE `\s+` " " -}}
-            {{- with $summary }}
-        <p class="article-summary">{{ . | truncate 120 }}</p>
+            {{- with partial "helper/summary" (dict "Page" $page "Length" 120) }}
+        <p class="article-summary">{{ . }}</p>
             {{- end }}
         {{ end }}
     </div>
@@ -62,11 +62,25 @@
     </footer>
     {{ end }}
 
-    {{ with $page.GetTerms "tags" }}
+    {{- $categories := cond $isList ($page.GetTerms "categories") slice -}}
+    {{- $tags := $page.GetTerms "tags" -}}
+    {{ if or $categories $tags }}
         <footer class="post-tags">
-            {{ partial "helper/icon" "tag" }}
-            {{ range . }}
-                <a href="{{ .RelPermalink }}" class="tag badge badge-secondary post-meta-detail-tag">{{ .LinkTitle }}</a>
+            {{ with $categories }}
+                <div class="post-tags-group post-tags-group--categories">
+                    {{ partial "helper/icon" "categories" }}
+                    {{ range . }}
+                        <a href="{{ .RelPermalink }}" class="post-category" {{ with .Params.style }}style="background-color: {{ .background }}; color: {{ .color }};"{{ end }}>{{ .LinkTitle }}</a>
+                    {{ end }}
+                </div>
+            {{ end }}
+            {{ with $tags }}
+                <div class="post-tags-group">
+                    {{ partial "helper/icon" "tag" }}
+                    {{ range . }}
+                        <a href="{{ .RelPermalink }}" class="tag badge badge-secondary post-meta-detail-tag">{{ .LinkTitle }}</a>
+                    {{ end }}
+                </div>
             {{ end }}
         </footer>
     {{ end }}
