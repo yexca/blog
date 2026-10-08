@@ -1,37 +1,64 @@
 html {
-    /// How far the fixed background layers reach above the viewport. iOS Safari draws the
-    /// page under the status bar (and under the top toolbar while it collapses), outside the
-    /// box `position: fixed; top: 0` starts from, so without this the scrolled text shows there.
-    --viewport-overscan: 120px;
+    /// How far the background layers reach above and below the viewport. iOS Safari 26 draws
+    /// the page under the status bar and the bottom toolbar, outside the viewport box; the
+    /// layers cover those strips so the background image fills the whole screen. Touch
+    /// screens only: a taller box makes `cover` zoom the image a little further in.
+    --viewport-overscan: 0px;
     font-size: 62.5%;
     overflow-y: scroll;
     background-color: var(--body-background);
+
+    @media (pointer: coarse) {
+        --viewport-overscan: 120px;
+    }
 }
 
-html::before,
-html:has(.site-header)::after {
-    content: "";
-    position: fixed;
-    inset: calc(-1 * var(--viewport-overscan)) 0 0;
-    z-index: -1;
-    background-image: var(--body-background-overlay), var(--body-background-image);
-    background-size: cover, var(--body-background-size);
-    background-position: center, var(--body-background-position);
-    background-repeat: no-repeat;
-}
-
-/// A second copy of the background, clipped to the band from above the viewport top to
-/// 12px below the sticky header (the same line the sticky sidebars stop at) and
-/// stacked just under the header. Same box as html::before, so the image lines up
-/// exactly; scrolled content ends with a gap under the header instead of passing
-/// behind or above it. Stays under the mobile menu (29) and the focused code block (1000).
-/// ts/features/contentClip.ts widens the band under each card crossing the line
-/// (--content-clip-band) so the card caps below have plain background to blur.
-html:has(.site-header)::after {
-    z-index: 25;
-    background-color: var(--body-background);
-    clip-path: var(--content-clip-band, inset(0 0 calc(100% - var(--viewport-overscan) - var(--site-header-scroll-offset)) 0));
+/// The site background (baseof.html). An empty box over the whole document whose two
+/// pseudo-elements are viewport-sized, sticky copies of the background, shifted up and
+/// grown by --viewport-overscan. Built this way for iOS Safari 26:
+/// - fixed elements are clipped to the viewport box, sticky ones are not, so only a sticky
+///   layer reaches under the status bar and the toolbar;
+/// - a fixed or sticky *element* on a screen edge makes Safari paint that bar in one flat
+///   colour instead of the page; pseudo-elements are not taken into account;
+/// - `overflow: clip` (not a scroll container, so sticky still follows the page) keeps the
+///   overscan past the document end from adding scroll length.
+.site-backdrop {
+    position: absolute;
+    inset: 0;
+    overflow: clip;
     pointer-events: none;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: sticky;
+        top: 0;
+        translate: 0 calc(-1 * var(--viewport-overscan));
+        height: calc(100vh + 2 * var(--viewport-overscan));
+        margin-bottom: calc(-100vh - 2 * var(--viewport-overscan));
+        background-image: var(--body-background-overlay), var(--body-background-image);
+        background-size: cover, var(--body-background-size);
+        background-position: center, var(--body-background-position);
+        background-repeat: no-repeat;
+    }
+
+    &::before {
+        z-index: -1;
+    }
+
+    /// A second copy of the background, clipped to the band from the screen top to
+    /// 12px below the sticky header (the same line the sticky sidebars stop at) and
+    /// stacked just under the header. Same box as ::before, so the image lines up
+    /// exactly; scrolled content ends with a gap under the header instead of passing
+    /// behind or above it. Stays under the mobile menu (29) and the focused code block (1000).
+    /// ts/features/contentClip.ts widens the band under each card crossing the line
+    /// (--content-clip-band) so the card caps below have plain background to blur.
+    &::after {
+        z-index: 25;
+        background-color: var(--body-background);
+        clip-path: var(--content-clip-band, inset(0 0 calc(100% - var(--viewport-overscan) - var(--site-header-scroll-offset)) 0));
+    }
 }
 
 /// Rounded top edge redrawn on a card cut by the line above, with the card's own
@@ -60,8 +87,8 @@ html:has(.site-header)::after {
         --body-background-attachment: scroll;
     }
 
-    html::before,
-    html:has(.site-header)::after {
+    .site-backdrop::before,
+    .site-backdrop::after {
         background-image: var(--body-background-overlay), var(--body-background-image-mobile);
     }
 }

@@ -1,5 +1,5 @@
 /// Content scrolled under the sticky Header is cut off by a copy of the page background
-/// (html::after in base.scss) at the line where the sticky sidebars stop. For each card
+/// (.site-backdrop::after in base.scss) at the line where the sticky sidebars stop. For each card
 /// crossing that line, this draws a "cap": the card's rounded, bordered top edge with its
 /// glass surface, hiding the first --content-clip-gap of the card so the text keeps a
 /// margin from the edge. The background band is widened under every cap so the cap's

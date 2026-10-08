@@ -14,6 +14,7 @@
                 {{- $hasWidget = true -}}
             {{- end -}}
         {{- end -}}
+        <div class="site-backdrop" aria-hidden="true"></div>
         <div class="container main-container flex column has-site-header {{ if $hasWidget }}extended{{ else }}compact{{ end }}" data-page-shell>
             {{ partial "header/site.html" . }}
             <div class="page-columns flex on-phone--column{{ if not .IsHome }} page-columns--profile-hidden-on-phone{{ end }}">
