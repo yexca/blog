@@ -32,14 +32,20 @@
 - The Header sits above the `.page-columns` wrapper so the original three-column
   width calculations remain intact.
 - Scrolled content ends 12px below the Header (`--site-header-scroll-offset`, the
-  line the sticky sidebars stop at): `html::after` (in `base.scss`) repeats the
-  site background, clipped to the band above that line and stacked
-  under the Header (z-index 25). Anything that must appear above it there needs a
-  higher z-index. Both background layers reach `--viewport-overscan` (120px) above
-  the viewport, because iOS Safari also draws the page under the status bar; clip
-  coordinates on `html::after` (CSS and the script's band) include that offset. `assets/ts/features/contentClip.ts` redraws the rounded, bordered
-  top edge of each card crossing the line as a `--content-clip-gap` (16px) cap, so
-  text keeps a margin from the cut edge; add new card surfaces to its `cardQuery`.
+  line the sticky sidebars stop at). The site background lives on `.site-backdrop`
+  (an empty `<div>` in `baseof.html`, styled in `base.scss`): `::before` is the
+  background (z-index -1) and `::after` repeats it, clipped to the band above that
+  line and stacked under the Header (z-index 25). Anything that must appear above
+  it there needs a higher z-index. `assets/ts/features/contentClip.ts` redraws the
+  rounded, bordered top edge of each card crossing the line as a
+  `--content-clip-gap` (16px) cap, so text keeps a margin from the cut edge; add new
+  card surfaces to its `cardQuery`.
+- Keep that structure for iOS Safari 26, which draws the page under the status bar
+  and the bottom toolbar: fixed elements are clipped to the area between them, so the
+  layers are sticky and reach `--viewport-overscan` (120px on touch screens) past the
+  viewport; a fixed or sticky *element* on a screen edge makes Safari paint the bar in
+  a flat colour, so the layers are pseudo-elements; `overflow: clip` on the wrapper
+  keeps the overscan from lengthening the page.
 - The sidebar profile uses `params.author.name` for the displayed author name. On
   phone layouts it is shown only on language home pages.
 - The ToC markup comes from `_partials/article/components/toc.html` (Hugo's
