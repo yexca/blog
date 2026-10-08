@@ -62,7 +62,12 @@ function update() {
     }
 
     const line = header.getBoundingClientRect().bottom + headerGap;
-    const gap = Number.parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue('--content-clip-gap')) || 0;
+    const rootStyle = window.getComputedStyle(document.documentElement);
+    const gap = Number.parseFloat(rootStyle.getPropertyValue('--content-clip-gap')) || 0;
+    /// The band's box starts --viewport-overscan above the viewport (base.scss), and the
+    /// polygon is in that box's coordinates.
+    const overscan = Number.parseFloat(rootStyle.getPropertyValue('--viewport-overscan')) || 0;
+    const bandLine = line + overscan;
 
     const crossing: { card: Element, rect: DOMRect }[] = [];
     document.querySelectorAll(cardQuery).forEach((card) => {
@@ -97,12 +102,12 @@ function update() {
             cap.style.height = `${height}px`;
             cap.style.borderRadius = ending ? radius : `${radius} ${radius} 0 0`;
 
-            const bottom = line + height;
-            dips.push(`${rect.right}px ${line}px, ${rect.right}px ${bottom}px, ${rect.left}px ${bottom}px, ${rect.left}px ${line}px`);
+            const bottom = bandLine + height;
+            dips.push(`${rect.right}px ${bandLine}px, ${rect.right}px ${bottom}px, ${rect.left}px ${bottom}px, ${rect.left}px ${bandLine}px`);
         });
 
     setBand(dips.length
-        ? `polygon(0 0, 100% 0, 100% ${line}px, ${dips.join(', ')}, 0 ${line}px)`
+        ? `polygon(0 0, 100% 0, 100% ${bandLine}px, ${dips.join(', ')}, 0 ${bandLine}px)`
         : '');
 }
 
