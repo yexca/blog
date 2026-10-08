@@ -21,11 +21,11 @@
     margin: 0;
     overflow: visible;
 }
-.hamburger:hover {
-    opacity: 0.7;
-}
-.hamburger.is-active:hover {
-    opacity: 0.7;
+/// Touch screens keep :hover after a tap, which would leave the button dimmed.
+@media (hover: hover) {
+    .hamburger:hover {
+        opacity: 0.7;
+    }
 }
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
@@ -97,7 +97,17 @@
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+/// A fixed, centred 40px box: the hamburger's padding-top trick relies on the line box,
+/// and iOS Safari adds its own horizontal button padding unless it is reset.
 #toggle-menu {
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
     background: none;
     border: none;
     position: relative;
