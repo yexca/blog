@@ -35,7 +35,9 @@
   line the sticky sidebars stop at): `html::after` (in `base.scss`) repeats the
   site background, clipped to the band above that line and stacked
   under the Header (z-index 25). Anything that must appear above it there needs a
-  higher z-index. `assets/ts/features/contentClip.ts` redraws the rounded, bordered
+  higher z-index. Both background layers reach `--viewport-overscan` (120px) above
+  the viewport, because iOS Safari also draws the page under the status bar; clip
+  coordinates on `html::after` (CSS and the script's band) include that offset. `assets/ts/features/contentClip.ts` redraws the rounded, bordered
   top edge of each card crossing the line as a `--content-clip-gap` (16px) cap, so
   text keeps a margin from the cut edge; add new card surfaces to its `cardQuery`.
 - The sidebar profile uses `params.author.name` for the displayed author name. On
