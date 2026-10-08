@@ -80,7 +80,7 @@
     display: none;
 
     @media (max-width: 767.98px) {
-        display: inline-block;
+        display: inline-flex;
     }
 }
 
@@ -90,9 +90,12 @@
     font-weight: 700;
     line-height: 1.4;
     white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
 
-    &:hover {
-        color: var(--accent-color-darker);
+    @media (hover: hover) {
+        &:hover {
+            color: var(--accent-color-darker);
+        }
     }
 }
 
@@ -132,6 +135,15 @@
         color: var(--card-text-color-main);
         font: inherit;
         transition: width 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
+        // iOS draws search fields as rounded native controls with a clear button.
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 0;
+
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+        }
     }
 
     button,
@@ -150,6 +162,9 @@
         background: transparent;
         color: var(--body-text-color);
         cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-tap-highlight-color: transparent;
 
         svg {
             width: 21px;
@@ -189,16 +204,24 @@
         color: var(--body-text-color);
         cursor: pointer;
         list-style: none;
+        -webkit-tap-highlight-color: transparent;
 
         &::-webkit-details-marker {
             display: none;
         }
 
-        &:focus-visible,
-        &:hover {
+        &:focus-visible {
             color: var(--accent-color);
             background-color: var(--card-background-selected);
             outline: none;
+        }
+
+        // Touch screens keep :hover after a tap; there the open state alone marks the button.
+        @media (hover: hover) {
+            &:hover {
+                color: var(--accent-color);
+                background-color: var(--card-background-selected);
+            }
         }
 
         svg {
@@ -206,6 +229,11 @@
             height: 21px;
             stroke-width: 1.6;
         }
+    }
+
+    &[open] summary {
+        color: var(--accent-color);
+        background-color: var(--card-background-selected);
     }
 }
 
@@ -241,8 +269,17 @@
         font: inherit;
         text-align: start;
         white-space: nowrap;
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-tap-highlight-color: transparent;
 
-        &:hover,
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--card-background-selected);
+                color: var(--accent-color);
+            }
+        }
+
         &:focus-visible,
         &[aria-current="page"],
         &[aria-checked="true"] {
@@ -275,12 +312,24 @@
         gap: 8px;
     }
 
+    // On phones the search button only links to the search page, so the box never opens;
+    // the site name may shrink instead, which keeps the header in one row on narrow screens
+    // and with Safari's page zoom enlarged.
     .site-header-brand {
-        gap: 7px;
+        flex-shrink: 1;
+        min-width: 0;
+        gap: 4px;
     }
 
     .site-header-name {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-size: 1.5rem;
+    }
+
+    .site-header-search input {
+        display: none;
     }
 
     .site-header-actions {

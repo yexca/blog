@@ -21,16 +21,20 @@ function setupDocumentHandlers() {
     documentElement.dataset.stackHeaderDocumentReady = 'true';
 
     document.addEventListener('click', (event) => {
-        const target = event.target as Node;
-
         // An explicit language choice outranks browser-language detection on the home page.
-        const languageChoice = (target as Element).closest?.('a[data-language-choice]') as HTMLAnchorElement | null;
+        const languageChoice = (event.target as Element).closest?.('a[data-language-choice]') as HTMLAnchorElement | null;
         if (languageChoice) {
             try {
                 window.localStorage.setItem(languagePreferenceKey, languageChoice.dataset.languageChoice || '');
             }
             catch (_) {}
         }
+    });
+
+    // Close on pointerdown rather than click: iOS Safari fires no click for a tap on
+    // non-interactive content, so a tap outside would leave the panel open.
+    document.addEventListener('pointerdown', (event) => {
+        const target = event.target as Node;
 
         document.querySelectorAll('details[data-header-popover][open]').forEach((details) => {
             if (!details.contains(target)) closePopover(details as HTMLDetailsElement);
