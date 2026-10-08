@@ -2872,6 +2872,33 @@
       "sourceHash": "sha256:8e533a16d39228aabf350bd789dfa2e63006b51a282e13f8de1e27f88643a7c8",
       "promptVersion": 1
     },
+    "posts/2026/2026-10-08 Kikoto.md": {
+      "translations": {
+        "en": {
+          "sourceHash": "sha256:a575664387caa018c8db08211e59c3bd660e01c14aa0340932754a0bb7a79154",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-10-08T11:46:51.182Z"
+        },
+        "ja": {
+          "sourceHash": "sha256:a575664387caa018c8db08211e59c3bd660e01c14aa0340932754a0bb7a79154",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-10-08T11:47:26.456Z"
+        },
+        "zh-tw": {
+          "sourceHash": "sha256:a575664387caa018c8db08211e59c3bd660e01c14aa0340932754a0bb7a79154",
+          "status": "current",
+          "provider": "gemini-1",
+          "model": "gemini-3.5-flash",
+          "updatedAt": "2026-10-08T11:46:18.263Z"
+        }
+      },
+      "sourceHash": "sha256:a575664387caa018c8db08211e59c3bd660e01c14aa0340932754a0bb7a79154",
+      "promptVersion": 1
+    },
     "posts/Elasticsearch/2025-01-29-Elasticsearch-1.md": {
       "translations": {
         "en": {
@@ -6197,5 +6224,5 @@
       "promptVersion": 1
     }
   },
-  "updatedAt": "2026-09-11T23:02:01.702Z"
+  "updatedAt": "2026-10-08T11:47:26.541Z"
 }
