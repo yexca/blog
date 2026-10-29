@@ -59,11 +59,38 @@ archives:
     past:
         other: 過去
 
-    previousYear:
-        other: 前の年
+    summary:
+        other: "{{ .Since }} 年から、全 {{ .Posts }} 件の記事"
 
-    nextYear:
-        other: 次の年
+    yearNav:
+        other: 年別に見る
+
+    monthNav:
+        other: 月別に見る
+
+    month:
+        other: "{{ .Month }}月"
+
+    monthShort:
+        other: "{{ .Month }}月"
+
+    weekdayMon:
+        other: 月
+
+    weekdayWed:
+        other: 水
+
+    weekdayFri:
+        other: 金
+
+    empty:
+        other: この年は何も書いていません
+
+    less:
+        other: 少
+
+    more:
+        other: 多
 
 taxonomy:
     categoriesSummary:

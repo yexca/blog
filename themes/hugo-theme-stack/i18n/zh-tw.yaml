@@ -62,11 +62,38 @@ archives:
     past:
         other: 過去
 
-    previousYear:
-        other: 上一年
+    summary:
+        other: "自 {{ .Since }} 年起，共 {{ .Posts }} 篇文章"
 
-    nextYear:
-        other: 下一年
+    yearNav:
+        other: 依年份瀏覽
+
+    monthNav:
+        other: 依月份瀏覽
+
+    month:
+        other: "{{ .Month }} 月"
+
+    monthShort:
+        other: "{{ .Month }}月"
+
+    weekdayMon:
+        other: 週一
+
+    weekdayWed:
+        other: 週三
+
+    weekdayFri:
+        other: 週五
+
+    empty:
+        other: 此年沒有創作呢
+
+    less:
+        other: 少
+
+    more:
+        other: 多
 
 taxonomy:
     categoriesSummary:

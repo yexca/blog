@@ -18,7 +18,7 @@ const cardQuery = [
     '.widget.archives .widget-archive--list',
     '.related-content-list',
     '.comment-container',
-    '.archive-page-card',
+    '.archive-page .taxonomy-surface',
     '.glass-card',
     '.not-found-card',
     '.pagination',

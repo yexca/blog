@@ -1,95 +1,168 @@
 {{ define "body-class" }}template-archives{{ end }}
 {{ define "main" }}
-<article class="post post-full archive-page-card">
-    {{/*  <header class="post-header text-center">
-        <a class="post-title" href="{{ .RelPermalink }}">归档</a>
-    </header>  */}}
-    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
-    {{ $filtered := ($pages | intersect $notHidden) }}
-    {{ $archives := $filtered.GroupByDate "2006" }}
-    {{ $currentYear := int (now.Format "2006") }}
-    {{ $latestYear := $currentYear }}
-    {{ $earliestYear := $currentYear }}
-    {{ range $archives }}
-        {{ $yearInt := int .Key }}
-        {{ if gt $yearInt $latestYear }}
-            {{ $latestYear = $yearInt }}
-        {{ end }}
-        {{ if lt $yearInt $earliestYear }}
-            {{ $earliestYear = $yearInt }}
-        {{ end }}
-    {{ end }}
+{{- $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
+{{- $notHidden := where .Site.RegularPages "Params.hidden" "!=" true -}}
+{{- $filtered := $pages | intersect $notHidden -}}
 
-    <header class="archive-year-header">
-        <div class="archive-year-stage" data-archive-stage>
-            <button class="archive-year-control archive-year-control-newer" type="button" data-archive-step="newer" aria-label="{{ T "archives.nextYear" }}">
-                {{ partial "helper/icon" "back" }}
-            </button>
-            <div class="archive-year-rail" data-archive-rail>
-                <div class="archive-year-line" aria-hidden="true"></div>
-                <nav class="archive-year-track" data-archive-track aria-label="Archives by year">
-                    {{ range seq $latestYear -1 $earliestYear }}
-                        {{ $year := printf "%d" . }}
-                        {{ $yearPages := slice }}
-                        {{ range $archives }}
-                            {{ if eq .Key $year }}
-                                {{ $yearPages = .Pages }}
-                            {{ end }}
-                        {{ end }}
-                        <a class="archive-year-link{{ if eq . $currentYear }} is-active{{ end }}" href="#{{ $year }}" data-archive-year="{{ $year }}"{{ if eq . $currentYear }} aria-current="page"{{ end }}>
-                            <span class="archive-year-text">{{ $year }}</span>
-                            <span class="archive-year-dot">
-                                <span class="archive-year-count">{{ len $yearPages }}</span>
-                            </span>
-                        </a>
-                    {{ end }}
-                </nav>
-            </div>
-            <button class="archive-year-control archive-year-control-older" type="button" data-archive-step="older" aria-label="{{ T "archives.previousYear" }}">
-                {{ partial "helper/icon" "back" }}
-            </button>
+{{- /* Year range runs from the first post to the current year, so quiet years still show up. */ -}}
+{{- $currentYear := now.Year -}}
+{{- $latestYear := $currentYear -}}
+{{- $earliestYear := $currentYear -}}
+{{- $defaultYear := "" -}}
+{{- $maxCount := 1 -}}
+{{- $byYear := dict -}}
+{{- range $filtered.GroupByDate "2006" -}}
+    {{- $year := int .Key -}}
+    {{- if gt $year $latestYear }}{{ $latestYear = $year }}{{ end -}}
+    {{- if lt $year $earliestYear }}{{ $earliestYear = $year }}{{ end -}}
+    {{- if not $defaultYear }}{{ $defaultYear = .Key }}{{ end -}}
+    {{- if gt (len .Pages) $maxCount }}{{ $maxCount = len .Pages }}{{ end -}}
+    {{- $byYear = merge $byYear (dict .Key .Pages) -}}
+{{- end -}}
+{{- $defaultYear = $defaultYear | default (string $currentYear) -}}
+
+<section class="archive-page" data-archive-stage data-default-year="{{ $defaultYear }}">
+    <header class="archive-hero taxonomy-surface">
+        <div class="archive-hero-text">
+            <p class="taxonomy-eyebrow">{{ T "widget.archives.title" }}</p>
+            <h1>{{ .Title }}</h1>
+            <p class="taxonomy-summary">{{ T "archives.summary" (dict "Since" $earliestYear "Posts" (len $filtered)) }}</p>
         </div>
+
+        <nav class="archive-years" aria-label="{{ T "archives.yearNav" }}" data-archive-years>
+            {{- range seq $earliestYear $latestYear }}
+                {{- $year := string . -}}
+                {{- $count := len (index $byYear $year | default slice) -}}
+                {{- $ratio := div (float $count) $maxCount -}}
+                <a class="archive-year{{ if eq $year $defaultYear }} is-active{{ end }}{{ if eq $count 0 }} is-empty{{ end }}"
+                    href="#{{ $year }}"
+                    data-archive-year="{{ $year }}"
+                    style="{{ printf "--archive-bar: %.3f" $ratio | safeCSS }}"
+                    aria-label="{{ $year }} · {{ T "taxonomy.postCount" $count }}"
+                    {{- if eq $year $defaultYear }} aria-current="page"{{ end }}>
+                    <span class="archive-year-count" aria-hidden="true">{{ $count }}</span>
+                    <span class="archive-year-bar" aria-hidden="true"></span>
+                    <span class="archive-year-label">{{ $year }}</span>
+                </a>
+            {{- end }}
+        </nav>
     </header>
 
-    <div class="post-content archive-year-content" id="post_content" data-default-year="{{ $currentYear }}">
-        {{ range seq $latestYear -1 $earliestYear }}
-            {{ $year := printf "%d" . }}
-            {{ $yearPages := slice }}
-            {{ range $archives }}
-                {{ if eq .Key $year }}
-                    {{ $yearPages = .Pages }}
-                {{ end }}
-            {{ end }}
+    <div class="archive-panels">
+        {{- range seq $latestYear -1 $earliestYear }}
+            {{- $year := string . -}}
+            {{- $yearPages := index $byYear $year | default slice -}}
+            {{- $months := slice -}}
+            {{- $monthCounts := dict -}}
+            {{- $dayPosts := dict -}}
+            {{- with $yearPages -}}
+                {{- $months = .GroupByDate "01" -}}
+                {{- range $months }}{{ $monthCounts = merge $monthCounts (dict .Key (len .Pages)) }}{{ end -}}
+                {{- range . -}}
+                    {{- $key := .Date.Format "2006-01-02" -}}
+                    {{- $dayPosts = merge $dayPosts (dict $key ((index $dayPosts $key | default slice) | append .)) -}}
+                {{- end -}}
+            {{- end -}}
 
-            <section class="archive-year-panel" data-archive-panel="{{ $year }}" aria-labelledby="archive-year-title-{{ $year }}"{{ if ne . $currentYear }} hidden{{ end }}>
-                <h2 class="archive-panel-title" id="archive-year-title-{{ $year }}">{{ $year }}</h2>
-                <div class='argon-timeline archive-post-timeline'>
-                    {{ if $yearPages }}
-                        {{ $previousMonth := "" }}
-                        {{ range $index, $page := $yearPages }}
-                        {{ $month := $page.Date.Format "2006-01" }}
-                        <div class='argon-timeline-node node-post{{ if or (eq $index 0) (ne $month $previousMonth) }} node-month-start{{ end }}'>
-                            <div class='argon-timeline-time'>{{ .Date.Format "06-01-02" }}</div>
-                            <div class='argon-timeline-card card bg-gradient-secondary archive-timeline-title'>
-                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{- /* Calendar grid: one column per week, Sunday first, like a contribution graph. */ -}}
+            {{- $start := time.AsTime (printf "%s-01-01" $year) -}}
+            {{- $offset := int (printf "%d" $start.Weekday) -}}
+            {{- $days := ($start.AddDate 1 0 -1).YearDay -}}
+            {{- $weeks := div (add (add $offset $days) 6) 7 -}}
+            {{- $today := now.Format "2006-01-02" -}}
+
+            <section class="archive-panel taxonomy-surface" data-archive-panel="{{ $year }}" aria-labelledby="archive-year-{{ $year }}"{{ if ne $year $defaultYear }} hidden{{ end }}>
+                <header class="archive-panel-header">
+                    <div class="archive-panel-heading">
+                        <h2 id="archive-year-{{ $year }}">{{ $year }}</h2>
+                        <span class="archive-panel-count">{{ T "taxonomy.postCount" (len $yearPages) }}</span>
+                    </div>
+
+                    <div class="archive-graph">
+                        <div class="archive-graph-grid" style="{{ printf "--archive-weeks: %d" $weeks | safeCSS }}">
+                            <nav class="archive-graph-months" aria-label="{{ T "archives.monthNav" }}">
+                                {{- range seq 1 12 }}
+                                    {{- $first := time.AsTime (printf "%s-%02d-01" $year .) -}}
+                                    {{- $column := add (div (add $offset (sub $first.YearDay 1)) 7) 1 -}}
+                                    {{- $key := printf "%02d" . -}}
+                                    {{- $count := index $monthCounts $key | default 0 -}}
+                                    {{- $label := T "archives.monthShort" (dict "Month" . "Name" ($first | time.Format "Jan")) -}}
+                                    {{- if $count }}
+                                        <a class="archive-graph-month" href="#{{ $year }}-{{ $key }}" data-archive-month="{{ $year }}-{{ $key }}" style="{{ printf "grid-column-start: %d" $column | safeCSS }}" aria-label="{{ $label }} · {{ T "taxonomy.postCount" $count }}">{{ $label }}</a>
+                                    {{- else }}
+                                        <span class="archive-graph-month" style="{{ printf "grid-column-start: %d" $column | safeCSS }}" aria-hidden="true">{{ $label }}</span>
+                                    {{- end }}
+                                {{- end }}
+                            </nav>
+
+                            <div class="archive-graph-weekdays" aria-hidden="true">
+                                <span></span>
+                                <span>{{ T "archives.weekdayMon" }}</span>
+                                <span></span>
+                                <span>{{ T "archives.weekdayWed" }}</span>
+                                <span></span>
+                                <span>{{ T "archives.weekdayFri" }}</span>
+                                <span></span>
+                            </div>
+
+                            {{- /* Day cells repeat the post list below, so they stay out of the tab order. */ -}}
+                            <div class="archive-graph-days" aria-hidden="true">
+                                {{- if gt $offset 0 }}{{ range seq $offset }}<span class="archive-day is-pad"></span>{{ end }}{{ end -}}
+                                {{- range seq 0 (sub $days 1) -}}
+                                    {{- $date := $start.AddDate 0 0 . -}}
+                                    {{- $key := $date.Format "2006-01-02" -}}
+                                    {{- $posts := index $dayPosts $key | default slice -}}
+                                    {{- $count := len $posts -}}
+                                    {{- if eq $count 1 -}}
+                                        {{- $post := index $posts 0 -}}
+                                        <a class="archive-day" data-level="1" href="{{ $post.RelPermalink }}" title="{{ $key }} · {{ $post.Title }}" tabindex="-1"></a>
+                                    {{- else if $count -}}
+                                        <a class="archive-day" data-level="{{ cond (gt $count 4) 4 $count }}" href="#{{ $year }}-{{ $date.Format "01" }}" data-archive-month="{{ $year }}-{{ $date.Format "01" }}" title="{{ $key }} · {{ T "taxonomy.postCount" $count }}" tabindex="-1"></a>
+                                    {{- else -}}
+                                        <span class="archive-day" data-level="0"{{ if gt $key $today }} data-future{{ end }} title="{{ $key }}"></span>
+                                    {{- end -}}
+                                {{- end -}}
                             </div>
                         </div>
-                        {{ $previousMonth = $month }}
-                        {{ end }}
-                    {{ else }}
-                        <div class='argon-timeline-node node-post node-empty node-month-start'>
-                            <div class='argon-timeline-time'>{{ $year }}</div>
-                            <div class='argon-timeline-card card bg-gradient-secondary archive-timeline-title archive-empty-card'>
-                                此年没有创造呢
-                            </div>
+
+                        <div class="archive-graph-legend" aria-hidden="true">
+                            <span>{{ T "archives.less" }}</span>
+                            {{- range seq 0 4 }}<span class="archive-day" data-level="{{ . }}"></span>{{ end }}
+                            <span>{{ T "archives.more" }}</span>
                         </div>
-                    {{ end }}
-                </div>
+                    </div>
+                </header>
+
+                {{- if $months }}
+                    {{- range $months }}
+                        {{- $first := index .Pages 0 -}}
+                        <section class="archive-month" id="{{ $year }}-{{ .Key }}">
+                            <h3 class="archive-month-title">
+                                <span>{{ T "archives.month" (dict "Month" (int $first.Date.Month) "Name" ($first.Date | time.Format "January")) }}</span>
+                                <span class="archive-month-count">{{ len .Pages }}</span>
+                            </h3>
+                            <ol class="archive-post-list">
+                                {{- range .Pages }}
+                                    <li>
+                                        <a class="archive-post" href="{{ .RelPermalink }}">
+                                            <time class="archive-post-day" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02" }}</time>
+                                            <span class="archive-post-title">{{ .Title }}</span>
+                                            {{- with first 1 (.GetTerms "categories") }}
+                                                <span class="archive-post-category">{{ (index . 0).LinkTitle }}</span>
+                                            {{- end }}
+                                        </a>
+                                    </li>
+                                {{- end }}
+                            </ol>
+                        </section>
+                    {{- end }}
+                {{- else }}
+                    <p class="archive-empty">{{ T "archives.empty" }}</p>
+                {{- end }}
             </section>
-        {{ end }}
+        {{- end }}
     </div>
-</article>
+</section>
 
 {{ partialCached "footer/footer" . }}
 {{ end }}

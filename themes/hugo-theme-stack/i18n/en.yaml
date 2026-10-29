@@ -62,11 +62,38 @@ archives:
     past:
         other: Past
 
-    previousYear:
-        other: Previous year
+    summary:
+        other: "{{ .Posts }} posts since {{ .Since }}"
 
-    nextYear:
-        other: Next year
+    yearNav:
+        other: Browse by year
+
+    monthNav:
+        other: Browse by month
+
+    month:
+        other: "{{ .Name }}"
+
+    monthShort:
+        other: "{{ .Name }}"
+
+    weekdayMon:
+        other: Mon
+
+    weekdayWed:
+        other: Wed
+
+    weekdayFri:
+        other: Fri
+
+    empty:
+        other: Nothing written this year
+
+    less:
+        other: Less
+
+    more:
+        other: More
 
 taxonomy:
     categoriesSummary:
