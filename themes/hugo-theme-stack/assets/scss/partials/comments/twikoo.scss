@@ -36,6 +36,34 @@
     color: var(--twikoo-body-text-color) !important;
 }
 
+// Twikoo 2.0 sizes its form controls in rem against a 16px root, but the theme
+// sets html to 62.5% (10px). Restate them in px, as Element UI did in 1.x.
+// Twikoo injects its CSS after ours at the same specificity, hence !important.
+.twikoo .tk-input,
+.twikoo .tk-input__inner,
+.twikoo .tk-button {
+    font-size: 14px !important;
+}
+
+.twikoo .tk-input--small .tk-input__inner,
+.twikoo .tk-input--small .tk-input-group__prepend,
+.twikoo .tk-input--small .tk-input-group__append {
+    font-size: 13px !important;
+}
+
+.twikoo .tk-input--mini .tk-input__inner,
+.twikoo .tk-input--mini .tk-input-group__prepend,
+.twikoo .tk-input--mini .tk-input-group__append,
+.twikoo .tk-input__count,
+.twikoo .tk-button--small,
+.twikoo .tk-button--mini {
+    font-size: 12px !important;
+}
+
+.twikoo .tk-button--large {
+    font-size: 16px !important;
+}
+
 .OwO .OwO-body {
     background-color: var(--card-background) !important;
     color: var(--body-text-color) !important;
