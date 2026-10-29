@@ -1,4 +1,7 @@
 .twikoo {
+    // The theme leaves body text black, so text Twikoo does not colour itself
+    // (Read more / Collapse, titles, meta) would stay black in dark mode.
+    color: var(--card-text-color-main);
     background-color: var(--card-background);
     border-radius: var(--card-border-radius);
     box-shadow: var(--shadow-l1);
