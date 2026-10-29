@@ -31,8 +31,9 @@
 - The `homepage` widget scope (theme `config.yaml`) is shared by `home.html` and
   `list.html` (section and term pages; not the `/categories/` and `/tags/` overviews).
   It holds only `widget/overview.html`: build-time post/category/tag/year stats, a
-  posts-per-year strip on the archives year axis linking to `/archives/#YYYY`, and
-  links to archives, categories, tags and search. The archives, categories and
+  posts-per-year strip on the archives year axis linking to `/archives/#YYYY`, and a
+  category share bar with the five largest categories. It displays the blog rather
+  than repeating page entries, which stay in the left sidebar. The archives, categories and
   tag-cloud widget partials remain available but are no longer configured. The
   right sidebar is shown from the `lg` breakpoint up, so phones see no overview.
 - Sidebar markup affects both desktop fixed layout and mobile behavior.

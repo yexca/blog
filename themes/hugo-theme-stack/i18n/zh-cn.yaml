@@ -270,5 +270,7 @@ home:
         other: 写作年数
     postsPerYear:
         other: 每年文章数
-    browse:
-        other: 浏览博客
+    categoryShare:
+        other: 分类分布
+    otherCategories:
+        other: "另有 {{ . }} 个分类"

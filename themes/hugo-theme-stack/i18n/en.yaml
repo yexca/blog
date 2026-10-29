@@ -278,5 +278,7 @@ home:
         other: Years writing
     postsPerYear:
         other: Posts per year
-    browse:
-        other: Browse the blog
+    categoryShare:
+        other: Posts by category
+    otherCategories:
+        other: "+{{ . }} more"

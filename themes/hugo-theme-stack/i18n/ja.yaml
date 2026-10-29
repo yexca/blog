@@ -273,5 +273,7 @@ home:
         other: 執筆年数
     postsPerYear:
         other: 年ごとの記事数
-    browse:
-        other: ブログを見る
+    categoryShare:
+        other: カテゴリ別の記事
+    otherCategories:
+        other: "ほか {{ . }} カテゴリ"
