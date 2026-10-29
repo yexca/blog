@@ -121,7 +121,7 @@
       { "date": "2024-12-27", "kind": "main", "label": "Hugo", "title": "A multilingual knowledge base", "body": "Hugo brought internationalization, a translation workflow, and a structure that suits notes across languages. ( •̀ ω •́ )✧" },
       { "date": "2025-02-28", "kind": "branch", "label": "Counter", "title": "A small sign of life", "body": "A cute visitor counter makes the page feel visited and alive." },
       { "date": "2026-05-31", "kind": "main", "label": "Stack", "title": "Introducing the blog again", "body": "Refactoring the Stack theme became a chance to rethink what this blog records now: code, tools, notes, and life." },
-      { "date": "2026-10-29", "kind": "branch", "label": "Redesign", "title": "Quieter pages", "body": "Archives, links, and this page were redesigned: less decoration, more to read." }
+      { "date": "2026-10-30", "kind": "main", "label": "Redesign", "title": "A redesign, page by page", "body": "Home, archives, categories, tags, search, links, and this page were redesigned with the same quiet cards." }
     ]
   },
   "footer": "Life is an adventure game, with a new map and new quests every day. Stay curious, and keep exploring!"

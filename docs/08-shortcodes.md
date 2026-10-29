@@ -37,7 +37,7 @@ registered through `assets/ts/core/pageInit.ts`.
 
 ## About Profile
 
-`about-profile.html` renders the current (2026-10-29) About version: profile,
+`about-profile.html` renders the current (2026-10-30) About version: profile,
 stats, current focus, projects, and the site timeline. Copy comes from a JSON
 file passed with `src`:
 
