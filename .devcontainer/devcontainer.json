@@ -15,5 +15,12 @@
         }
     },
 
+    // 启动预览：hugo server --bind 0.0.0.0 --poll 700ms
+    // Windows 宿主机挂载的目录收不到文件变更事件，需要 --poll 才能热重载
+    "forwardPorts": [1313],
+    "portsAttributes": {
+        "1313": { "label": "Hugo" }
+    },
+
     "remoteUser": "vscode"
 }
