@@ -47,6 +47,8 @@ params:
         provider: twikoo
 
         twikoo:
+            # Keep in sync with the backend's twikoo-vercel version (github.com/yexca/twikoo)
+            version: 2.0.17
             envId: https://twikoo-jade-one.vercel.app/
             el: '#tcomment'
             region:

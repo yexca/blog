@@ -2,7 +2,7 @@
 <div
     id="tcomment"
     data-twikoo
-    data-twikoo-cdn="https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js"
+    data-twikoo-cdn="https://cdn.jsdelivr.net/npm/twikoo@{{ .version | default "2.0.17" }}/dist/twikoo.all.min.js"
     data-env-id="{{ .envId }}"
     {{ with .region }}data-region="{{ . }}"{{ end }}
     {{ with .path }}data-path="{{ . }}"{{ end }}
