@@ -38,6 +38,11 @@ renders verbatim. Do not add manual spaces in content just for this effect.
 - Prefer reusable component partials for repeated UI.
 - Keep page-specific layout rules under `partials/layout/`.
 - Avoid changing base typography from one feature file.
+- The redesigned pages (archives, links, categories, tags, search, home) share a
+  pink accent `#F39EB6` for bars, dots and pills, plus a darker `#C2456E` "ink"
+  token for pink text on light cards, reset to the accent under
+  `[data-scheme="dark"]`. Each page scopes its own copy (for example `--home-accent`
+  and `--home-ink` in `layout/home.scss`); reuse that pattern for new pages.
 - Test mobile and desktop when changing cards, sidebars, taxonomy pages, or article content.
 - Keep Header controls within the fixed action area at narrow widths; the site
   name may truncate, but controls must not overlap or expand the viewport.

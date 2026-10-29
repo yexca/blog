@@ -289,3 +289,23 @@ links:
         other: "{{ .Sections }} カテゴリ・{{ .Sites }} サイト"
     sectionNav:
         other: カテゴリで見る
+
+home:
+    latest:
+        other: 最新の記事
+    readMore:
+        other: 記事を読む
+    overview:
+        other: ブログの概要
+    statPosts:
+        other: 記事
+    statYears:
+        other: 執筆年数
+    postsPerYear:
+        other: 年ごとの記事数
+    categoryShare:
+        other: カテゴリ別の記事
+    otherCategories:
+        other: "ほか {{ . }} カテゴリ"
+    popularTags:
+        other: よく使うタグ

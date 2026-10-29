@@ -20,7 +20,7 @@
   flex-shrink: 0;
 }
 
-// 列表卡片：分类与标签同一行，各自带图标，分组整体换行
+// 文章页标签组：图标与标签同一行，整体换行（列表卡片改用 .card-meta，见 home.scss）
 .post-tags-group {
   display: flex;
   align-items: center;
@@ -40,11 +40,6 @@
     text-decoration: none;
     border: 1px solid var(--card-border-color);
     transition: background-color 0.3s, color 0.3s;
-}
-
-.post-tags a.post-category {
-    border-radius: var(--tag-border-radius);
-    color: var(--card-text-color-secondary);
 }
 
 .post-tags a:hover {

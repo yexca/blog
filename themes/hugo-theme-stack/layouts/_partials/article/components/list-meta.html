@@ -1,0 +1,29 @@
+{{- /* Compact meta row for post cards in feeds: the date (day only), the first
+       category as a pill, and up to three tags. Called with a Page. Matches the
+       meta on the archives, categories and taxonomy cards. */ -}}
+{{- $page := . -}}
+{{- $categories := first 1 ($page.GetTerms "categories") -}}
+{{- $tags := $page.GetTerms "tags" -}}
+<footer class="card-meta">
+    {{- if not $page.Date.IsZero }}
+        <time class="card-meta-date" datetime="{{ $page.Date.Format "2006-01-02" }}">
+            {{- partial "helper/icon" "date" -}}
+            {{- $page.Date.Format "2006-01-02" -}}
+        </time>
+    {{- end }}
+    {{- range $categories }}
+        <a class="card-meta-category" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{- end }}
+    {{- with $tags }}
+        <span class="card-meta-tags">
+            {{- range first 3 . }}
+                <a class="card-meta-tag" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+            {{- end }}
+            {{- if gt (len .) 3 }}
+                {{- $rest := slice -}}
+                {{- range after 3 . }}{{ $rest = $rest | append .LinkTitle }}{{ end }}
+                <span class="card-meta-more" title="{{ delimit $rest ", " }}">+{{ sub (len .) 3 }}</span>
+            {{- end }}
+        </span>
+    {{- end }}
+</footer>

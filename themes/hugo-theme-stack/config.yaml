@@ -57,16 +57,11 @@ params:
 
 
     widgets:
-        homepage: 
-          - type: archives
-            params:
-              limit: 5
-          - type: categories
-            params:
-              limit: 11
-          - type: tag-cloud
-            params:
-              limit: 11
+        # Used by the home page and by list.html (section and term pages).
+        # `overview` replaces the archives, categories and tag-cloud widgets, which
+        # repeat the dedicated /archives/, /categories/ and /tags/ pages.
+        homepage:
+          - type: overview
         page: 
           - type: toc
 

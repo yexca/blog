@@ -1,0 +1,132 @@
+{{- /* Site overview panel for the home and list sidebars: build-time stats, a
+       posts-per-year strip on the archives year axis (first post to the current
+       year), how the posts split across categories, and the most used tags. It shows the blog rather
+       than linking around it: the left sidebar already holds the page entries. It
+       replaces the archives, categories and tag-cloud widgets. */ -}}
+{{- $context := .Context -}}
+{{- $site := $context.Site -}}
+{{- $pages := where $site.RegularPages "Type" "in" $site.Params.mainSections -}}
+{{- $notHidden := where $site.RegularPages "Params.hidden" "!=" true -}}
+{{- $filtered := $pages | intersect $notHidden -}}
+
+{{- $currentYear := now.Year -}}
+{{- $latestYear := $currentYear -}}
+{{- $earliestYear := $currentYear -}}
+{{- $maxCount := 1 -}}
+{{- $byYear := dict -}}
+{{- range $filtered.GroupByDate "2006" -}}
+    {{- $year := int .Key -}}
+    {{- if gt $year $latestYear }}{{ $latestYear = $year }}{{ end -}}
+    {{- if lt $year $earliestYear }}{{ $earliestYear = $year }}{{ end -}}
+    {{- if gt (len .Pages) $maxCount }}{{ $maxCount = len .Pages }}{{ end -}}
+    {{- $byYear = merge $byYear (dict .Key (len .Pages)) -}}
+{{- end -}}
+
+{{- $archivesPage := false -}}
+{{- with first 1 (where $site.Pages "Layout" "archives") }}{{ $archivesPage = index . 0 }}{{ end -}}
+{{- /* Category shares, largest first; tones fade from the accent as on /categories/. */ -}}
+{{- $categories := slice -}}
+{{- range $site.Taxonomies.categories.ByCount -}}
+    {{- $count := len (where .Pages "Params.hidden" "!=" true) -}}
+    {{- if $count }}{{ $categories = $categories | append (dict "Page" .Page "Count" $count) }}{{ end -}}
+{{- end -}}
+{{- $categories = sort $categories "Count" "desc" -}}
+{{- $toneStep := 0.0 -}}
+{{- if gt (len $categories) 1 }}{{ $toneStep = div 0.65 (sub (len $categories) 1) }}{{ end -}}
+{{- $legendSize := 5 -}}
+
+{{- /* Most used tags, counting visible posts only. */ -}}
+{{- $tags := slice -}}
+{{- range $site.Taxonomies.tags.ByCount -}}
+    {{- $count := len (where .Pages "Params.hidden" "!=" true) -}}
+    {{- if $count }}{{ $tags = $tags | append (dict "Page" .Page "Count" $count) }}{{ end -}}
+{{- end -}}
+{{- $tags = sort $tags "Count" "desc" -}}
+{{- $tagLimit := 8 -}}
+
+<section class="widget home-overview taxonomy-surface">
+    <p class="taxonomy-eyebrow">{{ T "home.overview" }}</p>
+
+    <dl class="home-overview-stats">
+        <div>
+            <dt>{{ T "home.statPosts" }}</dt>
+            <dd>{{ len $filtered }}</dd>
+        </div>
+        <div>
+            <dt>{{ T "taxonomyMenu.categories" }}</dt>
+            <dd>{{ len $site.Taxonomies.categories }}</dd>
+        </div>
+        <div>
+            <dt>{{ T "taxonomyMenu.tags" }}</dt>
+            <dd>{{ len $site.Taxonomies.tags }}</dd>
+        </div>
+        <div>
+            <dt>{{ T "home.statYears" }}</dt>
+            <dd>{{ add (sub $currentYear $earliestYear) 1 }}</dd>
+        </div>
+    </dl>
+
+    <figure class="home-overview-years">
+        <figcaption>{{ T "home.postsPerYear" }}</figcaption>
+        <div class="home-overview-bars">
+            {{- range seq $earliestYear $latestYear }}
+                {{- $year := string . -}}
+                {{- $count := index $byYear $year | default 0 -}}
+                {{- $label := printf "%s · %s" $year (T "taxonomy.postCount" $count) -}}
+                {{- $style := printf "--home-bar: %.3f" (div (float $count) $maxCount) | safeCSS -}}
+                {{- if and $archivesPage $count }}
+                    <a class="home-overview-bar{{ if eq . $currentYear }} is-current{{ end }}" href="{{ $archivesPage.RelPermalink }}#{{ $year }}" style="{{ $style }}" title="{{ $label }}" aria-label="{{ $label }}"></a>
+                {{- else }}
+                    <span class="home-overview-bar{{ if eq . $currentYear }} is-current{{ end }}{{ if eq $count 0 }} is-empty{{ end }}" style="{{ $style }}" title="{{ $label }}" role="img" aria-label="{{ $label }}"></span>
+                {{- end }}
+            {{- end }}
+        </div>
+        <div class="home-overview-axis" aria-hidden="true">
+            <span>{{ $earliestYear }}</span>
+            <span>{{ $latestYear }}</span>
+        </div>
+    </figure>
+
+    {{- with $categories }}
+    <figure class="home-overview-share">
+        <figcaption>{{ T "home.categoryShare" }}</figcaption>
+        {{- /* The legend links to the same pages, so the bar stays out of the tab order. */ -}}
+        <div class="home-overview-share-bar" aria-hidden="true">
+            {{- range $index, $item := . }}
+                <span class="home-overview-share-segment" title="{{ $item.Page.Title }} · {{ T "taxonomy.postCount" $item.Count }}"
+                    style="{{ printf "flex-grow: %d; --home-tone: %.2f" $item.Count (sub 1 (mul $index $toneStep)) | safeCSS }}"></span>
+            {{- end }}
+        </div>
+        <ul class="home-overview-share-legend">
+            {{- range $index, $item := first $legendSize . }}
+                <li style="{{ printf "--home-tone: %.2f" (sub 1 (mul $index $toneStep)) | safeCSS }}">
+                    <a href="{{ $item.Page.RelPermalink }}">
+                        <span class="home-overview-share-dot" aria-hidden="true"></span>
+                        <span class="home-overview-share-name">{{ $item.Page.Title }}</span>
+                        <span class="home-overview-share-count">{{ $item.Count }}</span>
+                    </a>
+                </li>
+            {{- end }}
+            {{- if gt (len .) $legendSize }}
+                <li class="home-overview-share-rest">{{ T "home.otherCategories" (sub (len .) $legendSize) }}</li>
+            {{- end }}
+        </ul>
+    </figure>
+    {{- end }}
+
+    {{- with $tags }}
+    <figure class="home-overview-tags">
+        <figcaption>{{ T "home.popularTags" }}</figcaption>
+        <ul>
+            {{- range first $tagLimit . }}
+                <li>
+                    <a href="{{ .Page.RelPermalink }}">
+                        <span>#{{ .Page.Title }}</span>
+                        <span class="home-overview-tag-count">{{ .Count }}</span>
+                    </a>
+                </li>
+            {{- end }}
+        </ul>
+    </figure>
+    {{- end }}
+</section>

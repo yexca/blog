@@ -286,3 +286,23 @@ links:
         other: "{{ .Sections }} 个分区，共 {{ .Sites }} 个站点"
     sectionNav:
         other: 按分区浏览
+
+home:
+    latest:
+        other: 最新文章
+    readMore:
+        other: 阅读全文
+    overview:
+        other: 博客概览
+    statPosts:
+        other: 文章
+    statYears:
+        other: 写作年数
+    postsPerYear:
+        other: 每年文章数
+    categoryShare:
+        other: 分类分布
+    otherCategories:
+        other: "另有 {{ . }} 个分类"
+    popularTags:
+        other: 热门标签

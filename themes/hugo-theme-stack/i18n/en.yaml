@@ -294,3 +294,23 @@ links:
         other: "{{ .Sites }} sites in {{ .Sections }} sections"
     sectionNav:
         other: Browse by section
+
+home:
+    latest:
+        other: Latest post
+    readMore:
+        other: Read the post
+    overview:
+        other: Blog overview
+    statPosts:
+        other: Posts
+    statYears:
+        other: Years writing
+    postsPerYear:
+        other: Posts per year
+    categoryShare:
+        other: Posts by category
+    otherCategories:
+        other: "+{{ . }} more"
+    popularTags:
+        other: Popular tags

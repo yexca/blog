@@ -14,7 +14,7 @@ Hugo resolves pages through the theme layouts:
 
 | Page type | Primary files |
 | --- | --- |
-| Home | `layouts/home.html`, `_partials/article-list/*` |
+| Home | `layouts/home.html`, `_partials/article-list/featured.html`, `_partials/article-list/*`, `_partials/widget/overview.html` (sidebar overview: stats, posts per year, category share, popular tags), `assets/scss/partials/layout/home.scss` |
 | Section/list | `layouts/list.html`, `_partials/article-list/*` |
 | Article | `layouts/single.html`, `_partials/article/*` |
 | Archives | `layouts/archives.html`, `assets/ts/features/archives.ts` |

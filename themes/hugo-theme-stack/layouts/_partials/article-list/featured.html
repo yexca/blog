@@ -1,0 +1,58 @@
+{{- /* Featured card for the newest post on the first home page: a glass hero with the
+       title, a longer summary, the list-meta row and a read link, and the cover image
+       beside it (above it on phones) when the post has one. Called with
+       (dict "Page" $page). The image is the page's LCP element, so it loads eagerly. */ -}}
+{{- $page := .Page -}}
+{{- $image := partialCached "helper/image" (dict "Context" $page "Type" "articleList") $page.RelPermalink "articleList" -}}
+<article class="home-featured taxonomy-surface{{ if $image.exists }} has-image{{ end }}">
+    <a class="home-featured-link" href="{{ $page.RelPermalink }}" aria-hidden="true" tabindex="-1"></a>
+
+    {{- if $image.exists }}
+        <div class="home-featured-image">
+            {{- if $image.resource }}
+                {{- $Permalink := $image.resource.RelPermalink -}}
+                {{- $Width := $image.resource.Width -}}
+                {{- $Height := $image.resource.Height -}}
+                {{- $Srcset := "" -}}
+
+                {{- if (default true $page.Site.Params.imageProcessing.cover.enabled) -}}
+                    {{- $thumbnail := $image.resource.Resize "640x" -}}
+                    {{- $thumbnailRetina := $image.resource.Resize "1200x" -}}
+                    {{- $Srcset = printf "%s 640w, %s 1200w" $thumbnail.RelPermalink $thumbnailRetina.RelPermalink -}}
+                    {{- $Permalink = $thumbnail.RelPermalink -}}
+                    {{- $Width = $thumbnail.Width -}}
+                    {{- $Height = $thumbnail.Height -}}
+                {{- end }}
+
+                <img src="{{ $Permalink }}"
+                    {{ with $Srcset }}srcset="{{ . }}" sizes="(min-width: 768px) 40vw, 100vw"{{ end }}
+                    width="{{ $Width }}"
+                    height="{{ $Height }}"
+                    loading="eager"
+                    fetchpriority="high"
+                    alt="Featured image of post {{ $page.Title }}" />
+            {{- else }}
+                <img src="{{ $image.permalink }}" loading="eager" fetchpriority="high" alt="Featured image of post {{ $page.Title }}" />
+            {{- end }}
+        </div>
+    {{- end }}
+
+    <div class="home-featured-body">
+        <p class="taxonomy-eyebrow home-featured-eyebrow">{{ T "home.latest" }}</p>
+        <h2 class="home-featured-title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h2>
+        {{- with $page.Params.description }}
+            <p class="home-featured-summary">{{ . }}</p>
+        {{- else }}
+            {{- with partial "helper/summary" (dict "Page" $page "Length" 200) }}
+                <p class="home-featured-summary">{{ . }}</p>
+            {{- end }}
+        {{- end }}
+
+        {{ partial "article/components/list-meta" $page }}
+
+        <a class="home-featured-more" href="{{ $page.RelPermalink }}">
+            <span>{{ T "home.readMore" }}</span>
+            {{ partial "helper/icon" "chevron-right" }}
+        </a>
+    </div>
+</article>
