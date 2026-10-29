@@ -28,7 +28,7 @@ const features: Feature[] = [
     { selector: '.github-info-card', setup: setupGithubInfoCards },
     { selector: '[data-about-versions]', setup: setupAboutVersions },
     { selector: '[data-about-2026]', setup: setupAbout2026 },
-    { selector: '[data-taxonomy-categories], [data-taxonomy-tags], .taxonomy-post-card', setup: setupTaxonomyPages },
+    { selector: '[data-taxonomy-tags], .taxonomy-post-card', setup: setupTaxonomyPages },
     { selector: '[data-archive-stage]', setup: setupArchives },
     { selector: '[data-links-page]', setup: setupLinks },
     { selector: '[data-pagination]', setup: setupPagination },

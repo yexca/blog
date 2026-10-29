@@ -269,3 +269,371 @@
         transition-delay: 0.15s, 0.15s, 0s;
     }
 }
+
+/* Search page */
+.search-page,
+.search-result {
+    --search-accent: #F39EB6;
+    --search-accent-rgb: 243, 158, 182;
+    /// Text-weight accent: the pastel pink is too light to read on light cards.
+    --search-ink: #C2456E;
+
+    [data-scheme="dark"] & {
+        --search-ink: var(--search-accent);
+    }
+}
+
+.search-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Hero: title, then the search box across the whole card. */
+.search-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: var(--card-padding);
+    /// The full-text hint pops out below the box, over the next card.
+    position: relative;
+    z-index: 2;
+
+    h1 {
+        margin: 4px 0 0;
+        color: var(--card-text-color-main);
+        font-size: 3rem;
+        line-height: 1.15;
+    }
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+    border: 1px solid var(--card-border-color);
+    border-radius: 999px;
+    background-color: var(--card-background-secondary);
+    transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+
+    &:focus-within {
+        border-color: rgba(var(--search-accent-rgb), 0.75);
+        background-color: var(--card-background-selected);
+        box-shadow: 0 0 0 4px rgba(var(--search-accent-rgb), 0.14);
+    }
+
+    /// Sits in the row instead of floating inside the widget-style input.
+    .search-full-text {
+        position: relative;
+        inset: auto;
+        flex-shrink: 0;
+    }
+}
+
+.search-box-field {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    padding-inline-start: 14px;
+    cursor: text;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        color: var(--card-text-color-tertiary);
+    }
+
+    input {
+        width: 100%;
+        min-width: 0;
+        padding: 10px 0;
+        color: var(--card-text-color-main);
+        font: inherit;
+        font-size: 1.8rem;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        -webkit-appearance: none;
+        appearance: none;
+
+        &::placeholder {
+            color: var(--card-text-color-tertiary);
+        }
+
+        &::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+    }
+}
+
+.search-box-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--search-accent);
+    color: #2b1a20;
+    font: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter 0.2s, transform 0.2s;
+
+    svg {
+        width: 18px;
+        height: 18px;
+        stroke-width: 2;
+    }
+
+    &:hover {
+        filter: brightness(1.05);
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--search-accent);
+        outline-offset: 3px;
+    }
+}
+
+.search-hint {
+    margin: -6px 0 0;
+    padding-inline-start: 20px;
+    color: var(--card-text-color-tertiary);
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+/* Starting points, shown only while there is nothing to list. */
+.search-explore {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: var(--card-padding);
+
+    .search-page:has(.search-result:not([hidden])) & {
+        display: none;
+    }
+
+    h2 {
+        margin: 0 0 12px;
+        color: var(--card-text-color-secondary);
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+}
+
+.search-explore-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.search-explore-chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    padding: 6px 12px;
+    border: 1px solid var(--card-border-color);
+    border-radius: 999px;
+    background-color: var(--card-background-secondary);
+    color: var(--card-text-color-main);
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: border-color 0.2s, background-color 0.2s, transform 0.2s;
+
+    &:hover {
+        border-color: rgba(var(--search-accent-rgb), 0.75);
+        background-color: rgba(var(--search-accent-rgb), 0.16);
+        transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--search-accent);
+        outline-offset: 2px;
+    }
+}
+
+.search-explore-hash {
+    color: var(--search-ink);
+    font-weight: 700;
+}
+
+.search-explore-count {
+    margin-inline-start: 4px;
+    color: var(--card-text-color-tertiary);
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Results, shared with the 404 page */
+.search-result--title.section-title {
+    margin-bottom: 0;
+}
+
+.search-result--message,
+.search-hit-list {
+    border: 1px solid var(--card-border-color);
+    border-radius: var(--card-border-radius);
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-l1);
+    backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+    -webkit-backdrop-filter: saturate(var(--glass-saturation)) blur(var(--glass-blur));
+}
+
+.search-result--message {
+    padding: 28px var(--card-padding);
+    text-align: center;
+}
+
+.search-hit-list {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.search-hit + .search-hit {
+    border-top: 1px solid var(--card-separator-color);
+}
+
+.search-hit-link {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+    padding: 16px;
+    border-radius: calc(var(--card-border-radius) - 4px);
+    color: var(--card-text-color-main);
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: var(--card-background-selected);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--search-accent);
+        outline-offset: -2px;
+    }
+
+    mark {
+        padding: 0 2px;
+        border-radius: 3px;
+        background-color: rgba(var(--search-accent-rgb), 0.38);
+        color: inherit;
+    }
+}
+
+.search-hit-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.search-hit-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+    color: var(--card-text-color-tertiary);
+    font-size: 1.25rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.search-hit-category {
+    padding: 1px 8px;
+    border-radius: var(--tag-border-radius);
+    background-color: rgba(var(--search-accent-rgb), 0.16);
+    color: var(--card-text-color-secondary);
+    font-weight: 600;
+}
+
+.search-hit-title {
+    margin: 0;
+    font-size: 1.9rem;
+    line-height: 1.4;
+}
+
+.search-hit-preview {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    color: var(--card-text-color-secondary);
+    font-size: 1.45rem;
+    line-height: 1.7;
+    word-break: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.search-hit-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    color: var(--card-text-color-tertiary);
+    font-size: 1.25rem;
+}
+
+.search-hit-image {
+    width: 88px;
+    height: 88px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 640px) {
+    .search-box {
+        flex-wrap: wrap;
+        border-radius: var(--card-border-radius);
+    }
+
+    .search-box-field {
+        flex-basis: 100%;
+        padding-inline: 8px;
+    }
+
+    .search-box .search-full-text {
+        margin-inline-end: auto;
+    }
+
+    .search-hint {
+        padding-inline-start: 4px;
+    }
+
+    .search-hit-link {
+        gap: 12px;
+        padding: 14px 10px;
+    }
+
+    .search-hit-image {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .search-box,
+    .search-box-submit,
+    .search-explore-chip,
+    .search-hit-link {
+        transition: none;
+    }
+}

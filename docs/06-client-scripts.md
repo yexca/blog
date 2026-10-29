@@ -11,7 +11,7 @@
 | `assets/ts/features/mermaid.ts` | Opt-in Mermaid loading and rendering. |
 | `assets/ts/features/header.ts` | Header search expansion, mobile search navigation, and popover behavior. |
 | `assets/ts/features/pagination.ts` | List pagination jump input opened from the ellipsis or the mobile page status. |
-| `assets/ts/pageTransitions.ts` | Same-origin soft navigation. |
+| `assets/ts/pageTransitions.ts` | Same-origin soft navigation. `#fragment` links on the current page stay native: its popstate fallback only records the new URL when path and query are unchanged, instead of swapping the page and resetting the scroll. |
 | `assets/ts/search.tsx` | Search UI, snippet/full-text index switching, ranking, and client-side result pagination. |
 
 ## Feature Pattern
@@ -40,7 +40,8 @@ search form deliberately uses a different selector because it only navigates
 to the search page. The result shell starts hidden and distinguishes loading,
 results, no matches, and index-loading failures. Keep those states intact when
 changing result markup; an empty query must not reserve result or pagination
-space.
+space. Links with `data-search-keyword` (the search page starting points) fill
+the box and search in place instead of navigating.
 
 Color-scheme choices are rendered in the Header and bound by
 `assets/ts/colorScheme.ts`. Preserve the `StackColorScheme` storage key and the

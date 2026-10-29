@@ -97,25 +97,10 @@ taxonomy:
         other: "{{ .Categories }} 個のカテゴリ、合計 {{ .Posts }} 件の記事"
 
     tagsSummary:
-        other: "{{ .Count }} 個のタグを頭文字で整理しています"
+        other: "{{ .Tags }} 個のタグ、{{ .Posts }} 件の記事に付いています"
 
     postCount:
         other: "{{ .Count }} 件の記事"
-
-    categoryPosts:
-        other: "{{ .Count }} 件の記事"
-
-    openCategory:
-        other: カテゴリを開く
-
-    expandCategories:
-        other: カテゴリを展開
-
-    collapseCategories:
-        other: カテゴリを閉じる
-
-    showAllCategories:
-        other: "全 {{ .Count }} 件を見る"
 
     pagination:
         other: ページ送り
@@ -126,9 +111,54 @@ taxonomy:
     noMatchingTags:
         other: 一致するタグがありません
 
+    shareNav:
+        other: カテゴリ一覧
+
+    share:
+        other: "全体の {{ . }}%"
+
+    lastUpdated:
+        other: "最終更新 {{ . }}"
+
+    viewAll:
+        other: "全 {{ .Count }} 件を見る"
+
+    yearlyTrend:
+        other: 年ごとの記事数
+
+    popularTags:
+        other: 人気のタグ
+
+    popularTagsHint:
+        other: "使用回数の多い {{ . }} 個"
+
+    tagIndex:
+        other: すべてのタグ
+
+    tagIndexHint:
+        other: 頭文字順
+
+    letterNav:
+        other: 頭文字へ移動
+
+    matchingTags:
+        other: "一致するタグ #COUNT 個"
+
 search:
     title:
         other: 検索
+
+    summary:
+        other: "{{ .Posts }} 件の記事のタイトル・本文・タグ・カテゴリから検索"
+
+    hint:
+        other: スペース区切りで複数のキーワードを指定できます。多く一致する記事ほど上位に表示されます
+
+    exploreTags:
+        other: タグから探す
+
+    exploreCategories:
+        other: カテゴリから探す
 
     placeholder:
         other: 入力...

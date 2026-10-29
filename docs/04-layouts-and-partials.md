@@ -13,7 +13,7 @@
 | Sidebars | `_partials/sidebar/left.html`, `_partials/sidebar/right.html` | Navigation, profile, widgets, TOC. |
 | Widgets | `_partials/widget/*` | Archives, categories, search, tag cloud, TOC, and desktop related posts. |
 | Search | `layouts/page/search.*`, `_partials/search/index-data.html`, `_partials/search/results.html`, `assets/ts/search.tsx` | Snippet and full-text indexes, ranking, and client-side pagination. |
-| Taxonomy cards | `_partials/taxonomy/post-card.html` | Category/tag listing cards. |
+| Taxonomy | `_partials/taxonomy/categories.html`, `_partials/taxonomy/tags.html`, `_partials/taxonomy/post-card.html` | `/categories/` overview (share bar, one card per category with a posts-per-year trend and its latest posts), `/tags/` overview (filter, weighted cloud of the 30 most used tags, A–Z directory), and the post cards on term pages. |
 | Comments | `_partials/comments/*` | Provider containers and lazy-loading hooks. |
 | Shortcodes | `layouts/_shortcodes/*` | Inline content features. |
 
@@ -69,3 +69,16 @@
   only passes translated PhotoSwipe labels (`lightbox.*` in `i18n/`) as
   `data-lightbox-labels`. Wrap content in `data-no-lightbox` to opt images out.
 - Taxonomy overview pages (`/categories/`, `/tags/`) render without the widget column.
+- The categories overview is server-rendered only. Its trend bars share one year
+  axis (first post to the current year) and the tones fade by post-count rank, so
+  the hero share bar, legend and card stripes match.
+- The tags directory rows are filled client-side: `taxonomyPages.ts` moves the
+  hidden `[data-tag-source]` links into `[data-tag-group-key]` rows and dims empty
+  letters in the jump bar. `features/tagGroups.ts` picks the row: pinyin initials for
+  Chinese and gojūon rows (then A–Z) for Japanese, read from the browser's
+  `Intl.Collator` data (pinyin collation; JIS level-1 kanji order for `ja`), so no
+  character table is kept in the repo. Level-2 kanji and unknown scripts go to `#`.
+- The search page hero holds the `.search-box` form; `.search-form` stays the
+  widget/404 style. `.search-explore` (tag and category starting points) hides
+  itself with `:has()` once the result shell is visible. Result markup comes from
+  `Search.render()` in `search.tsx` and is shared with the 404 page.

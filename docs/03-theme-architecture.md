@@ -19,8 +19,8 @@ Hugo resolves pages through the theme layouts:
 | Article | `layouts/single.html`, `_partials/article/*` |
 | Archives | `layouts/archives.html`, `assets/ts/features/archives.ts` |
 | Links | `layouts/links.html`, `assets/ts/features/links.ts` |
-| Search | `layouts/page/search.html`, `layouts/page/search.json`, `assets/ts/search.tsx` |
-| Taxonomy | `_partials/taxonomy/post-card.html`, `assets/ts/features/taxonomyPages.ts` |
+| Search | `layouts/page/search.html`, `layouts/page/search.json`, `assets/ts/search.tsx`, `assets/scss/partials/layout/search.scss` |
+| Taxonomy | `layouts/list.html`, `_partials/taxonomy/{categories,tags,post-card}.html`, `assets/ts/features/taxonomyPages.ts`, `assets/scss/partials/layout/{categories,tags,list}.scss` |
 | About versions | `layouts/_shortcodes/about*.html`, `assets/ts/features/about*.ts` |
 | Mermaid diagrams | `layouts/_markup/render-codeblock-mermaid.html`, `assets/ts/features/mermaid.ts` |
 

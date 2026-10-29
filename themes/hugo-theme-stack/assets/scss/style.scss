@@ -23,6 +23,8 @@
 @import "partials/page-transitions.scss";
 @import "partials/layout/article.scss";
 @import "partials/layout/list.scss";
+@import "partials/layout/categories.scss";
+@import "partials/layout/tags.scss";
 @import "partials/layout/404.scss";
 @import "partials/layout/search.scss";
 
@@ -30,6 +32,7 @@
 @import "partials/layout/links.scss";
 @import "partials/comments/twikoo.scss";
 @import "partials/components/glass.scss";
+@import "partials/components/search-field.scss";
 @import "partials/components/github-info-card.scss";
 @import "partials/components/mermaid.scss";
 @import "partials/components/shortcodes.scss";

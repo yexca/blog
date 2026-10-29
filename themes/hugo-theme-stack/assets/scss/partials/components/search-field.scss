@@ -1,0 +1,23 @@
+/// Clear button of the search page box and the tag filter. The native one is a
+/// small grey glyph that ignores the theme, so draw a round icon in the card text
+/// colours instead (a filled circle with the cross knocked out, via mask).
+.search-box-field input,
+.tag-search input {
+    &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        appearance: none;
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        margin-inline: 8px 2px;
+        background-color: var(--card-text-color-tertiary);
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2a10 10 0 1 0 0 20a10 10 0 1 0 0-20zM7.3 8.7L8.7 7.3L12 10.6L15.3 7.3L16.7 8.7L13.4 12L16.7 15.3L15.3 16.7L12 13.4L8.7 16.7L7.3 15.3L10.6 12z'/%3E%3C/svg%3E") center / contain no-repeat;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2a10 10 0 1 0 0 20a10 10 0 1 0 0-20zM7.3 8.7L8.7 7.3L12 10.6L15.3 7.3L16.7 8.7L13.4 12L16.7 15.3L15.3 16.7L12 13.4L8.7 16.7L7.3 15.3L10.6 12z'/%3E%3C/svg%3E") center / contain no-repeat;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    &::-webkit-search-cancel-button:hover {
+        background-color: var(--card-text-color-main);
+    }
+}

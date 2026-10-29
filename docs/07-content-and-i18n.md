@@ -61,6 +61,11 @@ localized page titles for the taxonomy overview pages. Without them Hugo falls
 back to the English taxonomy name. They are not part of the translation
 workflow (`sourceGlobs` only covers `posts/**`), so edit each language by hand.
 
+A tag that lands in the wrong row of the `/tags/` directory (or in `#`) can get a
+`reading` in its own term page, `content/<lang>/tags/<tag>/_index.md`: kana for
+Japanese (`reading: ぷろせか`) or Latin letters for other languages
+(`reading: purosekai`). Only its first character is used.
+
 ## Theme I18n
 
 Theme UI strings live in `themes/hugo-theme-stack/i18n/`. Add or update theme

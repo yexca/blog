@@ -1,0 +1,88 @@
+{{- /* Tags overview: search in the hero, a weighted cloud of the most used tags, then
+       an A–Z directory. taxonomyPages.ts sorts the hidden source links into the
+       directory rows by first letter (see ts/features/tagGroups.ts); a tag page can set
+       `reading` in its front matter to override the guessed row. */ -}}
+{{- $terms := .Site.Taxonomies.tags.ByCount -}}
+{{- $mainPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
+{{- $notHidden := where .Site.RegularPages "Params.hidden" "!=" true -}}
+{{- $taggedPosts := where ($mainPages | intersect $notHidden) "Params.tags" "!=" nil -}}
+{{- $popular := first 30 $terms -}}
+{{- $maxCount := 1 -}}
+{{- with $terms }}{{ $maxCount = (index . 0).Count }}{{ end -}}
+
+{{- $groups := split "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,#" "," -}}
+{{- if eq .Site.Language.Name "ja" -}}
+    {{- $groups = slice "あ" "か" "さ" "た" "な" "は" "ま" "や" "ら" "わ" | append $groups -}}
+{{- end -}}
+
+<section class="taxonomy-page tag-page" data-taxonomy-tags>
+    <header class="tag-hero taxonomy-surface">
+        <div class="tag-hero-text">
+            <p class="taxonomy-eyebrow">{{ T "widget.tagCloud.title" }}</p>
+            <h1>{{ .Title }}</h1>
+            <p class="taxonomy-summary">{{ T "taxonomy.tagsSummary" (dict "Tags" (len $terms) "Posts" (len $taggedPosts)) }}</p>
+        </div>
+
+        <div class="tag-hero-search">
+            <label class="tag-search" for="tag-search-input">
+                {{ partial "helper/icon" "search" }}
+                <input id="tag-search-input" type="search" placeholder="{{ T "taxonomy.searchTags" }}" autocomplete="off" data-tag-search>
+            </label>
+            <p class="tag-search-status" data-tag-status data-template="{{ T "taxonomy.matchingTags" }}" aria-live="polite"></p>
+        </div>
+    </header>
+
+    <section class="tag-cloud-card taxonomy-surface" aria-labelledby="tag-cloud-title" data-tag-cloud>
+        <header class="tag-card-header">
+            <h2 id="tag-cloud-title">{{ T "taxonomy.popularTags" }}</h2>
+            <span>{{ T "taxonomy.popularTagsHint" (string (len $popular)) }}</span>
+        </header>
+
+        <div class="tag-cloud">
+            {{- range $popular }}
+                {{- /* Five size steps on a log scale, so a few heavy tags do not flatten the rest. */ -}}
+                {{- $weight := 1 -}}
+                {{- if gt $maxCount 1 -}}
+                    {{- $weight = math.Max 1 (math.Round (mul 5 (div (math.Log .Count) (math.Log $maxCount)))) | int -}}
+                {{- end -}}
+                <a class="tag-cloud-link" href="{{ .Page.RelPermalink }}" data-weight="{{ $weight }}" data-tag-item data-tag-name="{{ .Page.Title | lower }}">
+                    <span>{{ .Page.Title }}</span>
+                    <strong>{{ .Count }}</strong>
+                </a>
+            {{- end }}
+        </div>
+    </section>
+
+    <section class="tag-directory taxonomy-surface" aria-labelledby="tag-directory-title">
+        <header class="tag-card-header">
+            <h2 id="tag-directory-title">{{ T "taxonomy.tagIndex" }}</h2>
+            <span>{{ T "taxonomy.tagIndexHint" }}</span>
+        </header>
+
+        <nav class="tag-letters" aria-label="{{ T "taxonomy.letterNav" }}">
+            {{- range $index, $group := $groups }}
+                <a href="#tag-group-{{ $index }}" data-tag-letter="{{ $group }}">{{ $group }}</a>
+            {{- end }}
+        </nav>
+
+        <div class="tag-index">
+            {{- range $index, $group := $groups }}
+                <section class="tag-index-group" id="tag-group-{{ $index }}" data-tag-group data-tag-group-key="{{ $group }}" aria-label="{{ $group }}">
+                    <h3 aria-hidden="true">{{ $group }}</h3>
+                    <div class="tag-index-list"></div>
+                </section>
+            {{- end }}
+        </div>
+
+        <p class="tag-empty-state" data-tag-empty hidden>{{ T "taxonomy.noMatchingTags" }}</p>
+    </section>
+
+    <div class="tag-source" data-tag-source hidden>
+        {{- range $terms }}
+            <a class="tag-index-link{{ if ge .Count 10 }} is-frequent{{ end }}" href="{{ .Page.RelPermalink }}" data-tag-item data-tag-name="{{ .Page.Title | lower }}" data-tag-title="{{ .Page.Title }}"{{ with .Page.Params.reading }} data-tag-reading="{{ . }}"{{ end }}>
+                <span>{{ .Page.Title }}</span>
+                <strong>{{ .Count }}</strong>
+            </a>
+        {{- end }}
+    </div>
+</section>

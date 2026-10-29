@@ -94,25 +94,10 @@ taxonomy:
         other: "{{ .Categories }} 个分类，共 {{ .Posts }} 篇文章"
 
     tagsSummary:
-        other: "{{ .Count }} 个标签，已按首字符分组"
+        other: "{{ .Tags }} 个标签，标记了 {{ .Posts }} 篇文章"
 
     postCount:
         other: "{{ .Count }} 篇文章"
-
-    categoryPosts:
-        other: "{{ .Count }} 篇文章收录于"
-
-    openCategory:
-        other: 打开分类
-
-    expandCategories:
-        other: 展开分类
-
-    collapseCategories:
-        other: 收起分类
-
-    showAllCategories:
-        other: "查看全部 {{ .Count }} 个"
 
     pagination:
         other: 分页
@@ -123,9 +108,54 @@ taxonomy:
     noMatchingTags:
         other: 没有匹配的标签
 
+    shareNav:
+        other: 按分类浏览
+
+    share:
+        other: "占 {{ . }}%"
+
+    lastUpdated:
+        other: "最近更新 {{ . }}"
+
+    viewAll:
+        other: "查看全部 {{ .Count }} 篇"
+
+    yearlyTrend:
+        other: 每年文章数
+
+    popularTags:
+        other: 热门标签
+
+    popularTagsHint:
+        other: "按使用次数排序，前 {{ . }} 个"
+
+    tagIndex:
+        other: 全部标签
+
+    tagIndexHint:
+        other: 按首字母排列
+
+    letterNav:
+        other: 按首字母跳转
+
+    matchingTags:
+        other: "#COUNT 个匹配的标签"
+
 search:
     title:
         other: 搜索
+
+    summary:
+        other: "在 {{ .Posts }} 篇文章的标题、正文、标签与分类中查找"
+
+    hint:
+        other: 多个关键词用空格分隔，命中越多排名越靠前
+
+    exploreTags:
+        other: 试试这些标签
+
+    exploreCategories:
+        other: 或者按分类
 
     placeholder:
         other: 输入关键词...

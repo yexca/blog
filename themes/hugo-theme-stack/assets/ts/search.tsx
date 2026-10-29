@@ -601,6 +601,15 @@ class Search {
             this.doSearch(query, 1);
         };
 
+        document.querySelectorAll('[data-search-keyword]').forEach((chip: HTMLAnchorElement) => {
+            chip.addEventListener('click', (event) => {
+                event.preventDefault();
+                this.input.value = chip.dataset.searchKeyword || '';
+                runSearch();
+                this.input.focus();
+            });
+        });
+
         this.input.addEventListener('input', runSearch);
         this.input.addEventListener('compositionend', runSearch);
         this.form.addEventListener('submit', (event) => {
@@ -708,19 +717,34 @@ class Search {
     }
 
     public static render(item: pageData): HTMLElement {
-        return <article>
-            <a href={item.permalink}>
-                <div class="article-details">
-                    <h2 class="article-title" dangerouslySetInnerHTML={{ __html: item.title }}></h2>
-                    <section class="article-preview" dangerouslySetInnerHTML={{ __html: item.preview || '' }}></section>
+        const date = (item.date || '').substring(0, 10);
+        const category = item.categories?.[0];
+        const hit = <article class="search-hit">
+            <a class="search-hit-link" href={item.permalink}>
+                <div class="search-hit-body">
+                    <div class="search-hit-meta">
+                        {date && <time datetime={date}>{date}</time>}
+                        {category && <span class="search-hit-category">{category}</span>}
+                    </div>
+                    <h2 class="search-hit-title" dangerouslySetInnerHTML={{ __html: item.title }}></h2>
+                    <p class="search-hit-preview" dangerouslySetInnerHTML={{ __html: item.preview || '' }}></p>
                 </div>
                 {item.image &&
-                    <div class="article-image">
-                        <img src={item.image} loading="lazy" />
+                    <div class="search-hit-image">
+                        <img src={item.image} loading="lazy" alt="" />
                     </div>
                 }
             </a>
         </article>;
+
+        const tags = (item.tags || []).slice(0, 4);
+        if (tags.length) {
+            const tagList = <div class="search-hit-tags"></div>;
+            tags.forEach(tag => tagList.append(<span>#{tag}</span>));
+            hit.querySelector('.search-hit-body')?.append(tagList);
+        }
+
+        return hit;
     }
 }
 

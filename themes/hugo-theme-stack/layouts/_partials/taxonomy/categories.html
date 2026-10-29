@@ -1,0 +1,118 @@
+{{- /* Categories overview: a share bar in the hero, then one card per category with
+       its yearly trend and latest posts. Called with the taxonomy page as context. */ -}}
+{{- $terms := .Site.Taxonomies.categories.ByCount -}}
+{{- $mainPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
+{{- $notHidden := where .Site.RegularPages "Params.hidden" "!=" true -}}
+{{- $visiblePosts := $mainPages | intersect $notHidden -}}
+{{- $total := len $visiblePosts -}}
+
+{{- /* Trend bars share one year axis: the first post to the current year. */ -}}
+{{- $latestYear := now.Year -}}
+{{- $earliestYear := $latestYear -}}
+{{- with $visiblePosts.ByDate -}}
+    {{- $earliestYear = (index . 0).Date.Year -}}
+{{- end -}}
+
+{{- /* Category tones fade from the accent down, in post-count order. */ -}}
+{{- $toneStep := 0.0 -}}
+{{- if gt (len $terms) 1 }}{{ $toneStep = div 0.65 (sub (len $terms) 1) }}{{ end -}}
+
+<section class="taxonomy-page category-page" data-taxonomy-categories>
+    <header class="category-hero taxonomy-surface">
+        <div class="category-hero-text">
+            <p class="taxonomy-eyebrow">{{ T "widget.categoriesCloud.title" }}</p>
+            <h1>{{ .Title }}</h1>
+            <p class="taxonomy-summary">{{ T "taxonomy.categoriesSummary" (dict "Categories" (len $terms) "Posts" $total) }}</p>
+        </div>
+
+        <div class="category-share">
+            {{- /* The legend below repeats these links, so the bar stays out of the tab order. */ -}}
+            <div class="category-share-bar" aria-hidden="true">
+                {{- range $index, $term := $terms }}
+                    {{- $count := len (where $term.Pages "Params.hidden" "!=" true) -}}
+                    <a class="category-share-segment" href="#{{ $term.Page.Title | anchorize }}" tabindex="-1"
+                        style="{{ printf "flex-grow: %d; --category-tone: %.2f" $count (sub 1 (mul $index $toneStep)) | safeCSS }}"
+                        title="{{ $term.Page.Title }} · {{ T "taxonomy.postCount" $count }}"></a>
+                {{- end }}
+            </div>
+
+            <nav class="category-share-legend" aria-label="{{ T "taxonomy.shareNav" }}">
+                {{- range $index, $term := $terms }}
+                    {{- $count := len (where $term.Pages "Params.hidden" "!=" true) -}}
+                    <a href="#{{ $term.Page.Title | anchorize }}" style="{{ printf "--category-tone: %.2f" (sub 1 (mul $index $toneStep)) | safeCSS }}">
+                        <span class="category-share-dot" aria-hidden="true"></span>
+                        <span>{{ $term.Page.Title }}</span>
+                        <span class="category-share-count">{{ $count }}</span>
+                    </a>
+                {{- end }}
+            </nav>
+        </div>
+    </header>
+
+    <div class="category-grid">
+        {{- range $index, $term := $terms }}
+            {{- $posts := (where $term.Pages "Params.hidden" "!=" true).ByDate.Reverse -}}
+            {{- $count := len $posts -}}
+            {{- $byYear := dict -}}
+            {{- $yearMax := 1 -}}
+            {{- range $posts.GroupByDate "2006" -}}
+                {{- $byYear = merge $byYear (dict .Key (len .Pages)) -}}
+                {{- if gt (len .Pages) $yearMax }}{{ $yearMax = len .Pages }}{{ end -}}
+            {{- end -}}
+            {{- $percent := "0" -}}
+            {{- if $total -}}
+                {{- $raw := mul 100 (div (float $count) $total) -}}
+                {{- $percent = cond (and (lt $raw 1) (gt $count 0)) "<1" (string (int (math.Round $raw))) -}}
+            {{- end -}}
+            {{- $id := $term.Page.Title | anchorize -}}
+
+            <article class="category-card taxonomy-surface" id="{{ $id }}" aria-labelledby="{{ $id }}-title"
+                style="{{ printf "--category-tone: %.2f" (sub 1 (mul $index $toneStep)) | safeCSS }}">
+                <header class="category-card-header">
+                    <div class="category-card-heading">
+                        <h2 id="{{ $id }}-title"><a href="{{ $term.Page.RelPermalink }}">{{ $term.Page.Title }}</a></h2>
+                        <p class="category-card-meta">
+                            <span>{{ T "taxonomy.share" $percent }}</span>
+                            {{- with $posts }}
+                                {{- $first := index (last 1 .) 0 -}}
+                                {{- $latest := index . 0 -}}
+                                <span>{{ $first.Date.Year }}{{ if ne $first.Date.Year $latest.Date.Year }} – {{ $latest.Date.Year }}{{ end }}</span>
+                                <span>{{ T "taxonomy.lastUpdated" ($latest.Date.Format "2006-01-02") }}</span>
+                            {{- end }}
+                        </p>
+                    </div>
+                    <span class="category-card-count">{{ $count }}</span>
+                </header>
+
+                <figure class="category-trend" aria-label="{{ T "taxonomy.yearlyTrend" }}">
+                    {{- range seq $earliestYear $latestYear }}
+                        {{- $yearCount := index $byYear (string .) | default 0 -}}
+                        <span class="category-trend-year{{ if eq $yearCount 0 }} is-empty{{ end }}" title="{{ . }} · {{ T "taxonomy.postCount" $yearCount }}"
+                            style="{{ printf "--trend: %.3f" (div (float $yearCount) $yearMax) | safeCSS }}"
+                            role="img" aria-label="{{ . }} · {{ T "taxonomy.postCount" $yearCount }}">
+                            <span class="category-trend-count" aria-hidden="true">{{ $yearCount }}</span>
+                            <span class="category-trend-bar" aria-hidden="true"></span>
+                            <span class="category-trend-label" aria-hidden="true">{{ . }}</span>
+                        </span>
+                    {{- end }}
+                </figure>
+
+                <ol class="category-card-posts">
+                    {{- range first 3 $posts }}
+                        <li>
+                            <a class="category-card-post" href="{{ .RelPermalink }}">
+                                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+                                <span>{{ .Title }}</span>
+                            </a>
+                        </li>
+                    {{- end }}
+                </ol>
+
+                <a class="category-card-more" href="{{ $term.Page.RelPermalink }}">
+                    <span>{{ T "taxonomy.viewAll" $count }}</span>
+                    {{ partial "helper/icon" "chevron-right" }}
+                </a>
+            </article>
+        {{- end }}
+    </div>
+</section>

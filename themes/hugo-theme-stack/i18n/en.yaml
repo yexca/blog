@@ -100,27 +100,11 @@ taxonomy:
         other: "{{ .Categories }} categories, {{ .Posts }} posts in total"
 
     tagsSummary:
-        other: "{{ .Count }} tags, grouped by first character"
+        other: "{{ .Tags }} tags across {{ .Posts }} posts"
 
     postCount:
         one: "{{ .Count }} post"
         other: "{{ .Count }} posts"
-
-    categoryPosts:
-        one: "{{ .Count }} post in"
-        other: "{{ .Count }} posts in"
-
-    openCategory:
-        other: Open category
-
-    expandCategories:
-        other: Show categories
-
-    collapseCategories:
-        other: Hide categories
-
-    showAllCategories:
-        other: "Show all {{ .Count }}"
 
     pagination:
         other: Pagination
@@ -131,9 +115,55 @@ taxonomy:
     noMatchingTags:
         other: No matching tags
 
+    shareNav:
+        other: Browse by category
+
+    share:
+        other: "{{ . }}% of posts"
+
+    lastUpdated:
+        other: "Updated {{ . }}"
+
+    viewAll:
+        one: "View the post"
+        other: "View all {{ .Count }} posts"
+
+    yearlyTrend:
+        other: Posts per year
+
+    popularTags:
+        other: Popular tags
+
+    popularTagsHint:
+        other: "Top {{ . }} by use"
+
+    tagIndex:
+        other: All tags
+
+    tagIndexHint:
+        other: Sorted by first letter
+
+    letterNav:
+        other: Jump to letter
+
+    matchingTags:
+        other: "#COUNT matching tags"
+
 search:
     title:
         other: Search
+
+    summary:
+        other: "Search titles, text, tags and categories across {{ .Posts }} posts"
+
+    hint:
+        other: Separate keywords with spaces; posts that match more of them rank higher.
+
+    exploreTags:
+        other: Try a tag
+
+    exploreCategories:
+        other: Or pick a category
 
     placeholder:
         other: Type something...

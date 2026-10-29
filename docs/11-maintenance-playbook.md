@@ -52,7 +52,8 @@ Check:
 - `layouts/_partials/search/results.html` for the result and pagination shell.
 - `assets/ts/search.tsx` for OR matching, CJK/Latin spacing, ranking, and
   client-side pagination.
-- `assets/scss/partials/layout/search.scss` for the result controls.
+- `assets/scss/partials/layout/search.scss` for the search box, starting points,
+  result cards, and pagination controls.
 
 Verify title-vs-body ordering, a mixed query such as `学习Linux` and
 `学习 Linux`, punctuation such as `docker-compose`, a result set larger than

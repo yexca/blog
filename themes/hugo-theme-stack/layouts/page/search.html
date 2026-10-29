@@ -1,31 +1,73 @@
 {{ define "body-class" }}template-search{{ end }}
 {{ define "main" }}
-<form action="{{ .RelPermalink }}" class="search-form{{ if .OutputFormats.Get "searchfull" }} has-full-text{{ end }}" data-search-page-form{{ with .OutputFormats.Get "json" }} data-json="{{ .RelPermalink }}"{{ end }}{{ with .OutputFormats.Get "searchfull" }} data-json-full="{{ .RelPermalink }}"{{ end }}>
-    <p>
-        <label>{{ T "search.title" }}</label>
-        <input name="keyword" placeholder="{{ T `search.placeholder` }}" />
-    </p>
+{{- $mainPages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
+{{- $notHidden := where .Site.RegularPages "Params.hidden" "!=" true -}}
+{{- $posts := $mainPages | intersect $notHidden -}}
 
-    {{ if .OutputFormats.Get "searchfull" }}
-    <div class="search-full-text">
-        <label class="search-full-text-toggle">
-            <input type="checkbox" role="switch" data-search-full-text aria-describedby="search-full-text-hint">
-            <span class="search-full-text-switch" aria-hidden="true"></span>
-            <span class="search-full-text-label">{{ T "searchFullTextShort" }}</span>
-        </label>
-        <div class="search-full-text-tooltip" id="search-full-text-hint" role="tooltip">
-            <strong>{{ T "searchFullText" }}</strong>
-            <span>{{ T "searchFullTextHint" }}</span>
+<section class="search-page">
+    <header class="search-hero taxonomy-surface">
+        <div class="search-hero-text">
+            <p class="taxonomy-eyebrow">{{ T "search.title" }}</p>
+            <h1>{{ .Title }}</h1>
+            <p class="taxonomy-summary">{{ T "search.summary" (dict "Posts" (len $posts)) }}</p>
         </div>
-    </div>
-    {{ end }}
 
-    <button title="{{ T `search.title` }}">
-        {{ partial "helper/icon" "search" }}
-    </button>
-</form>
+        <form action="{{ .RelPermalink }}" role="search" class="search-box{{ if .OutputFormats.Get "searchfull" }} has-full-text{{ end }}" data-search-page-form{{ with .OutputFormats.Get "json" }} data-json="{{ .RelPermalink }}"{{ end }}{{ with .OutputFormats.Get "searchfull" }} data-json-full="{{ .RelPermalink }}"{{ end }}>
+            <label class="search-box-field">
+                {{ partial "helper/icon" "search" }}
+                <input name="keyword" type="search" placeholder="{{ T `search.placeholder` }}" aria-label="{{ T `search.title` }}" autocomplete="off" enterkeyhint="search" />
+            </label>
 
-{{ partial "search/results.html" . }}
+            {{ if .OutputFormats.Get "searchfull" }}
+            <div class="search-full-text">
+                <label class="search-full-text-toggle">
+                    <input type="checkbox" role="switch" data-search-full-text aria-describedby="search-full-text-hint">
+                    <span class="search-full-text-switch" aria-hidden="true"></span>
+                    <span class="search-full-text-label">{{ T "searchFullTextShort" }}</span>
+                </label>
+                <div class="search-full-text-tooltip" id="search-full-text-hint" role="tooltip">
+                    <strong>{{ T "searchFullText" }}</strong>
+                    <span>{{ T "searchFullTextHint" }}</span>
+                </div>
+            </div>
+            {{ end }}
+
+            <button class="search-box-submit" title="{{ T `search.title` }}">
+                {{ partial "helper/icon" "search" }}
+                <span>{{ T "search.title" }}</span>
+            </button>
+        </form>
+
+        <p class="search-hint">{{ T "search.hint" }}</p>
+    </header>
+
+    {{- /* Starting points while the box is empty; search.scss hides this once results show. */ -}}
+    <section class="search-explore taxonomy-surface">
+        <div class="search-explore-group">
+            <h2>{{ T "search.exploreTags" }}</h2>
+            <div class="search-explore-list">
+                {{- range first 16 .Site.Taxonomies.tags.ByCount }}
+                    <a class="search-explore-chip" href="{{ $.RelPermalink }}?keyword={{ .Page.Title | urlquery }}" data-search-keyword="{{ .Page.Title }}">
+                        <span class="search-explore-hash" aria-hidden="true">#</span>{{ .Page.Title }}
+                    </a>
+                {{- end }}
+            </div>
+        </div>
+
+        <div class="search-explore-group">
+            <h2>{{ T "search.exploreCategories" }}</h2>
+            <div class="search-explore-list">
+                {{- range .Site.Taxonomies.categories.ByCount }}
+                    <a class="search-explore-chip is-category" href="{{ .Page.RelPermalink }}">
+                        {{ .Page.Title }}<span class="search-explore-count">{{ len (where .Pages "Params.hidden" "!=" true) }}</span>
+                    </a>
+                {{- end }}
+            </div>
+        </div>
+    </section>
+
+    {{ partial "search/results.html" . }}
+</section>
 
 {{- $opts := dict "minify" hugo.IsProduction "JSXFactory" "createElement" -}}
 {{- $searchScript := resources.Get "ts/search.tsx" | js.Build $opts -}}

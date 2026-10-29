@@ -364,6 +364,16 @@ function setupNavigationAPI() {
 function setupPopstateFallback() {
     window.addEventListener('popstate', () => {
         const url = new URL(window.location.href);
+
+        /// Chromium also fires popstate for #fragment links. The browser has already
+        /// scrolled to the target, so only track the new URL instead of swapping the
+        /// page and restoring a scroll position that was never saved for it.
+        const rendered = new URL(renderedURL);
+        if (url.pathname === rendered.pathname && url.search === rendered.search) {
+            renderedURL = url.href;
+            return;
+        }
+
         if (!shouldHandleURL(url, true)) return;
         if (url.href === renderedURL || url.href === activeNavigationURL) return;
 

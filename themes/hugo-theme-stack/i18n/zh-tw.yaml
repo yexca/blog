@@ -100,25 +100,10 @@ taxonomy:
         other: "{{ .Categories }} 個分類，共 {{ .Posts }} 篇文章"
 
     tagsSummary:
-        other: "{{ .Count }} 個標籤，已按首字分組"
+        other: "{{ .Tags }} 個標籤，標記了 {{ .Posts }} 篇文章"
 
     postCount:
         other: "{{ .Count }} 篇文章"
-
-    categoryPosts:
-        other: "{{ .Count }} 篇文章收錄於"
-
-    openCategory:
-        other: 打開分類
-
-    expandCategories:
-        other: 展開分類
-
-    collapseCategories:
-        other: 收起分類
-
-    showAllCategories:
-        other: "查看全部 {{ .Count }} 個"
 
     pagination:
         other: 分頁
@@ -129,9 +114,54 @@ taxonomy:
     noMatchingTags:
         other: 沒有符合的標籤
 
+    shareNav:
+        other: 按分類瀏覽
+
+    share:
+        other: "佔 {{ . }}%"
+
+    lastUpdated:
+        other: "最近更新 {{ . }}"
+
+    viewAll:
+        other: "查看全部 {{ .Count }} 篇"
+
+    yearlyTrend:
+        other: 每年文章數
+
+    popularTags:
+        other: 熱門標籤
+
+    popularTagsHint:
+        other: "依使用次數排序，前 {{ . }} 個"
+
+    tagIndex:
+        other: 全部標籤
+
+    tagIndexHint:
+        other: 依首字母排列
+
+    letterNav:
+        other: 依首字母跳轉
+
+    matchingTags:
+        other: "#COUNT 個符合的標籤"
+
 search:
     title:
         other: 搜尋
+
+    summary:
+        other: "在 {{ .Posts }} 篇文章的標題、內文、標籤與分類中查找"
+
+    hint:
+        other: 多個關鍵字以空格分隔，命中越多排名越前面
+
+    exploreTags:
+        other: 試試這些標籤
+
+    exploreCategories:
+        other: 或者依分類
 
     placeholder:
         other: 輸入關鍵字...
