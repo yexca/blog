@@ -3,7 +3,7 @@ title: 關於
 slug: /about
 # description: Hugo, the world's fastest framework for building websites
 date: '2021-11-04T20:20:20+08:00'
-lastmod: '2026-05-31T23:28:01+0900'
+lastmod: '2026-10-29T00:00:00+0900'
 aliases:
   - about-us
   - about-hugo
@@ -18,6 +18,11 @@ menu:
 ---
 
 {{< about_versions >}}
+{{< about_version id="2026-10-29" label="2026-10-29" >}}
+
+{{< about-profile src="content/zh-tw/page/about/about-profile.json" >}}
+
+{{< /about_version >}}
 {{< about_version id="2026-05-31" label="2026-05-31" >}}
 
 {{< about-2026 src="content/zh-tw/page/about/about-2026.json" >}}

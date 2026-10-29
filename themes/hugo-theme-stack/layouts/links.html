@@ -1,0 +1,81 @@
+{{ define "body-class" }}template-links{{ end }}
+{{ define "main" }}
+{{- $sections := .Params.linkSections -}}
+{{- if and (not $sections) .Params.links -}}
+    {{- $sections = slice (dict "title" .Title "links" .Params.links "legacy" true) -}}
+{{- end -}}
+{{- $total := 0 -}}
+{{- range $sections }}{{ $total = add $total (len .links) }}{{ end -}}
+
+<section class="links-page" data-links-page>
+    <header class="links-hero taxonomy-surface">
+        <div class="links-hero-text">
+            <p class="taxonomy-eyebrow">{{ T "links.eyebrow" }}</p>
+            <h1>{{ .Title }}</h1>
+            <p class="taxonomy-summary">{{ T "links.summary" (dict "Sites" $total "Sections" (len $sections)) }}</p>
+        </div>
+
+        {{- if gt (len $sections) 1 }}
+            <nav class="links-jump" aria-label="{{ T "links.sectionNav" }}">
+                {{- range $sections }}
+                    <a href="#{{ .title | anchorize }}">
+                        {{- with .icon }}{{ partial "helper/icon" . }}{{ end -}}
+                        <span>{{ .title }}</span>
+                        <span class="links-jump-count">{{ len .links }}</span>
+                    </a>
+                {{- end }}
+            </nav>
+        {{- end }}
+    </header>
+
+    {{- range $section := $sections }}
+        <section class="links-group taxonomy-surface" id="{{ $section.title | anchorize }}" aria-labelledby="{{ $section.title | anchorize }}-title">
+            <header class="links-group-header">
+                {{- with $section.icon }}
+                    <span class="links-group-icon" aria-hidden="true">{{ partial "helper/icon" . }}</span>
+                {{- end }}
+                <div class="links-group-heading">
+                    <h2 id="{{ $section.title | anchorize }}-title">{{ $section.title }}<span class="links-group-count">{{ len $section.links }}</span></h2>
+                    {{- with $section.description }}<p>{{ . }}</p>{{ end }}
+                </div>
+            </header>
+
+            <ul class="links-grid">
+                {{- range $link := $section.links }}
+                    {{- $external := or $section.legacy $link.external -}}
+                    {{- $icon := default "link" $link.icon -}}
+                    {{- if eq $icon "tags" }}{{ $icon = "tag" }}{{ end -}}
+                    {{- $host := (urls.Parse $link.website).Host | strings.TrimPrefix "www." -}}
+                    <li>
+                        <a class="links-card" href="{{ $link.website }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>
+                            <span class="links-card-avatar" data-initial="{{ substr $link.title 0 1 | upper }}" aria-hidden="true">
+                                {{- with $link.image }}
+                                    {{- $src := . -}}
+                                    {{- with $.Resources.GetMatch (printf "%s" (. | safeURL)) }}{{ $src = .RelPermalink }}{{ end -}}
+                                    <img src="{{ $src }}" loading="lazy" decoding="async" alt="" referrerpolicy="no-referrer">
+                                {{- else }}
+                                    {{- partial "helper/icon" $icon }}
+                                {{- end }}
+                            </span>
+                            <span class="links-card-body">
+                                <strong>{{ $link.title }}</strong>
+                                {{- with $link.description }}<span class="links-card-desc">{{ . }}</span>{{ end }}
+                                {{- with $host }}<span class="links-card-host">{{ . }}</span>{{ end }}
+                            </span>
+                            {{- if $external }}
+                                <span class="links-card-arrow" aria-hidden="true">{{ partial "helper/icon" "arrow-up-right" }}</span>
+                            {{- end }}
+                        </a>
+                    </li>
+                {{- end }}
+            </ul>
+        </section>
+    {{- end }}
+
+    {{- with .Content }}
+        <div class="links-note taxonomy-surface article-content">{{ . }}</div>
+    {{- end }}
+</section>
+
+{{ partialCached "footer/footer" . }}
+{{ end }}

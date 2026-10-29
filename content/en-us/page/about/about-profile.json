@@ -1,0 +1,128 @@
+{
+  "identity": {
+    "avatar_alt": "Avatar",
+    "name": "yexca",
+    "english": "",
+    "reading": "/jɛkɑ/",
+    "tagline": "I build local-first tools, agent workflows, and knowledge systems.",
+    "description": "A Master's student exploring how AI, agents, and local software can become dependable personal systems. Most of my work starts with a small, recurring friction: preparing data, running models locally, organizing media, or keeping notes usable across four languages. This blog is where I write those down, along with what I'm thinking about life."
+  },
+  "contacts": [
+    { "label": "GitHub", "url": "https://github.com/yexca", "icon": "brand-github" },
+    { "label": "Homepage", "url": "https://yexca.net/", "icon": "home" },
+    { "label": "Email", "url": "mailto:blog@yexca.net", "icon": "mail" },
+    { "label": "RSS", "url": "/en/index.xml", "icon": "rss" },
+    { "label": "Links", "url": "/en/links/", "icon": "link" }
+  ],
+  "stats": {
+    "posts": "Posts",
+    "categories": "Categories",
+    "tags": "Tags",
+    "languages": "Languages",
+    "since": "Since",
+    "since_date": "2021-11-04"
+  },
+  "now": {
+    "eyebrow": "Now",
+    "updated": "Updated October 2026",
+    "title": "What I'm working on",
+    "items": [
+      {
+        "title": "Agents and the harness around them",
+        "text": "A fully local assistant on ZeroClaw, Ollama and Matrix, tools wired in through an MCP gateway, and a lot of building with Codex and Claude Code.",
+        "links": [
+          { "label": "ZeroClaw", "url": "/en/archives/285/" },
+          { "label": "Harness", "url": "/en/archives/293/" },
+          { "label": "Vibe coding", "url": "/en/archives/284/" }
+        ]
+      },
+      {
+        "title": "Local AI pipelines",
+        "text": "ComfyUI image workflows, audio prep for AI covers, YOLO experiments, and models that run on my own machines.",
+        "links": [
+          { "label": "Image modes", "url": "/en/archives/291/" },
+          { "label": "AI cover audio", "url": "/en/archives/283/" },
+          { "label": "YOLO26", "url": "/en/archives/278/" }
+        ]
+      },
+      {
+        "title": "A self-hosted home stack",
+        "text": "Small services on my NAS for voice works, music, RSS, and images, plus a start page that ties them together.",
+        "links": [
+          { "label": "Kikoto", "url": "/en/archives/294/" },
+          { "label": "NAS", "url": "/en/archives/261/" }
+        ]
+      }
+    ]
+  },
+  "principles": {
+    "eyebrow": "Principles",
+    "title": "What I care about",
+    "items": [
+      { "title": "Local-first", "text": "Keep data, models, and control close when that makes the system clearer and more dependable." },
+      { "title": "Inspectable", "text": "Make inputs, state, and failures visible enough to debug and improve." },
+      { "title": "Composable", "text": "Connect models, tools, storage, and human decisions into one workflow." },
+      { "title": "Worth maintaining", "text": "Prefer small systems that stay useful after the first experiment." }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "Repeated problems, reusable tools",
+    "groups": [
+      {
+        "title": "Self-hosted at home",
+        "items": [
+          { "name": "kikoto", "url": "https://github.com/yexca/kikoto", "desc": "A personal DLsite audio library and player: browse by cover, search by voice actor and tag, show lyrics, and resume where you left off.", "tags": ["TypeScript", "Docker", "NAS"] },
+          { "name": "rainy", "url": "https://github.com/yexca/rainy", "desc": "A self-hosted music server for your NAS.", "tags": ["Go", "Music"] },
+          { "name": "pikapu", "url": "https://github.com/yexca/pikapu", "desc": "A quiet, self-hosted RSS reader for one person.", "tags": ["TypeScript", "RSS"] },
+          { "name": "harbor", "url": "https://github.com/yexca/harbor", "desc": "A lightweight start page for the services running on a NAS.", "tags": ["JavaScript", "Dashboard"] },
+          { "name": "kumo", "url": "https://github.com/yexca/kumo", "desc": "A lightweight image hosting service for personal workflows.", "tags": ["Go", "Images"] }
+        ]
+      },
+      {
+        "title": "Agents and AI pipelines",
+        "items": [
+          { "name": "home-mcp", "url": "https://github.com/yexca/home-mcp", "desc": "A local MCP gateway for ZeroClaw and other MCP clients.", "tags": ["Python", "MCP"] },
+          { "name": "zeroclaw-dockyard", "url": "https://github.com/yexca/zeroclaw-dockyard", "desc": "A local WebUI for creating and running multiple ZeroClaw Matrix agents with Docker.", "tags": ["ZeroClaw", "Docker", "Matrix"] },
+          { "name": "AI-Cover-Tools", "url": "https://github.com/yexca/AI-Cover-Tools", "desc": "Vocal separation, slicing, quality checks, pitch analysis, and normalization for AI cover training material.", "tags": ["Audio", "AI", "Windows"] },
+          { "name": "YOLO-Multi", "url": "https://github.com/yexca/YOLO-Multi", "desc": "Prepare and train several YOLO experiments from one dataset.", "tags": ["YOLO", "Python"] },
+          { "name": "lyric-video-template", "url": "https://github.com/yexca/lyric-video-template", "desc": "Lyric videos built as a web page with Claude Code: canvas scenes synced to lyrics and beat, exported to MP4.", "tags": ["Claude Code", "Canvas"] }
+        ]
+      },
+      {
+        "title": "Apps and archives",
+        "items": [
+          { "name": "quest-manager", "url": "https://github.com/yexca/quest-manager", "desc": "A Windows desktop app for managing Meta Quest apps and files, with APK preview and compatibility signing.", "tags": ["Rust", "Desktop"] },
+          { "name": "PixivDownloader-WebUI", "url": "https://github.com/yexca/PixivDownloader-WebUI", "desc": "A local WebUI for Pixiv artwork backup and workflow automation.", "tags": ["Pixiv", "WebUI", "SQLite"] },
+          { "name": "yasumi", "url": "https://github.com/yexca/yasumi-project-deploy", "desc": "A local-first planning app for focused personal task management.", "tags": ["Go", "TypeScript"] },
+          { "name": "kano-navi", "url": "https://kano.yexca.net/", "desc": "A fan-made website for kano.", "tags": ["Go", "Fan site"] }
+        ]
+      }
+    ]
+  },
+  "writing": {
+    "eyebrow": "Writing",
+    "title": "Recently on the blog",
+    "count": 5,
+    "more": { "label": "All posts", "url": "/en/archives/" }
+  },
+  "timeline": {
+    "eyebrow": "Timeline",
+    "title": "The story of this site",
+    "today": "And then there is today. The story keeps going.",
+    "items": [
+      { "date": "2021-11-04", "kind": "main", "label": "WordPress", "title": "A place to write things down", "body": "The blog began as a small place for learning notes, fixes, and experiments I did not want to lose. A place to create freely? Sounds cool, doesn't it? ＼(~o~)／" },
+      { "date": "2021-11-12", "kind": "branch", "label": "Astra", "title": "The first version went live", "body": "Several days and a couple of resets later, the Astra theme finally made it look decent." },
+      { "date": "2021-11-22", "kind": "branch", "label": "Sakurairo", "title": "Learning by changing themes", "body": "Early theme changes were not just decoration. They were how I learned what kind of site felt like mine. Adorable, isn't it?" },
+      { "date": "2022-01-30", "kind": "branch", "label": "Argon", "title": "A blog that could stay around", "body": "Argon was pretty and practical enough for long-term writing, problem solving, and daily maintenance." },
+      { "date": "2023-04-04", "kind": "main", "label": "Docker", "title": "Deployment became reproducible", "body": "Moving everything to Docker turned server setup from memory work into infrastructure notes I could repeat." },
+      { "date": "2023-05-05", "kind": "branch", "label": "XP +1", "title": "The first server crash", "body": "A day worth remembering." },
+      { "date": "2023-07-03", "kind": "main", "label": "Jekyll", "title": "Toward static generation", "body": "Jekyll was lighter and geekier, and moved the blog from a themed website toward a static publishing workflow." },
+      { "date": "2024-12-27", "kind": "main", "label": "Hugo", "title": "A multilingual knowledge base", "body": "Hugo brought internationalization, a translation workflow, and a structure that suits notes across languages. ( •̀ ω •́ )✧" },
+      { "date": "2025-02-28", "kind": "branch", "label": "Counter", "title": "A small sign of life", "body": "A cute visitor counter makes the page feel visited and alive." },
+      { "date": "2026-05-31", "kind": "main", "label": "Stack", "title": "Introducing the blog again", "body": "Refactoring the Stack theme became a chance to rethink what this blog records now: code, tools, notes, and life." },
+      { "date": "2026-10-29", "kind": "branch", "label": "Redesign", "title": "Quieter pages", "body": "Archives, links, and this page were redesigned: less decoration, more to read." }
+    ]
+  },
+  "footer": "Life is an adventure game, with a new map and new quests every day. Stay curious, and keep exploring!"
+}

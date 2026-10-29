@@ -248,3 +248,11 @@ lightbox:
 
     error:
         other: 图片加载失败
+
+links:
+    eyebrow:
+        other: 链接
+    summary:
+        other: "{{ .Sections }} 个分区，共 {{ .Sites }} 个站点"
+    sectionNav:
+        other: 按分区浏览

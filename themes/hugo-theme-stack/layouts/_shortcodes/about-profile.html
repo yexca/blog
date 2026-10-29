@@ -1,0 +1,169 @@
+{{- /* About page, 2026-10 version. Copy lives in the JSON file passed with `src`;
+       the stats row is counted from the current language's site. */ -}}
+{{- $src := .Get "src" -}}
+{{- if not $src -}}
+{{- errorf "about-profile shortcode requires a src parameter in %s" .Page.File.Path -}}
+{{- end -}}
+{{- $cfg := readFile $src | transform.Unmarshal -}}
+{{- $identity := index $cfg "identity" -}}
+{{- $stats := index $cfg "stats" -}}
+{{- $now := index $cfg "now" -}}
+{{- $projects := index $cfg "projects" -}}
+{{- $timeline := index $cfg "timeline" -}}
+
+{{- $avatarURL := "" -}}
+{{- with resources.Get "img/avatar.png" }}{{ $avatarURL = (.Resize "320x").RelPermalink }}{{ end -}}
+
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{{- $posts := where $pages "Params.hidden" "!=" true -}}
+{{- $since := time.AsTime (index $stats "since_date") -}}
+
+{{- /* Timeline entries grouped by year, oldest first. */ -}}
+{{- $years := slice -}}
+{{- $byYear := dict -}}
+{{- range index $timeline "items" -}}
+    {{- $year := substr (index . "date") 0 4 -}}
+    {{- if not (index $byYear $year) }}{{ $years = $years | append $year }}{{ end -}}
+    {{- $byYear = merge $byYear (dict $year ((index $byYear $year | default slice) | append .)) -}}
+{{- end -}}
+
+<div class="about-profile" data-no-lightbox>
+<section class="about-profile-hero">
+<div class="about-profile-avatar">
+{{- with $avatarURL }}<img src="{{ . }}" width="320" height="320" alt="{{ index $identity "avatar_alt" }}">{{ end }}
+</div>
+<div class="about-profile-intro">
+<h2 class="about-profile-name">
+<span>{{ index $identity "name" }}</span>
+{{- with index $identity "english" }}<span class="about-profile-alias">{{ . }}</span>{{ end }}
+{{- with index $identity "reading" }}<span class="about-profile-reading">{{ . }}</span>{{ end }}
+</h2>
+<p class="about-profile-tagline">{{ index $identity "tagline" }}</p>
+<p class="about-profile-desc">{{ index $identity "description" }}</p>
+<ul class="about-profile-contacts">
+{{- range index $cfg "contacts" }}
+<li><a href="{{ index . "url" }}"{{ if hasPrefix (index . "url") "http" }} target="_blank" rel="noopener"{{ end }}>{{ partial "helper/icon" (index . "icon") }}<span>{{ index . "label" }}</span></a></li>
+{{- end }}
+</ul>
+</div>
+</section>
+
+<dl class="about-profile-stats">
+<div><dt>{{ index $stats "posts" }}</dt><dd>{{ len $posts }}</dd></div>
+<div><dt>{{ index $stats "categories" }}</dt><dd>{{ len site.Taxonomies.categories }}</dd></div>
+<div><dt>{{ index $stats "tags" }}</dt><dd>{{ len site.Taxonomies.tags }}</dd></div>
+<div><dt>{{ index $stats "languages" }}</dt><dd>{{ len hugo.Sites }}</dd></div>
+<div><dt>{{ index $stats "since" }}</dt><dd><time datetime="{{ $since.Format "2006-01-02" }}">{{ $since.Year }}</time></dd></div>
+</dl>
+
+<section class="about-profile-section">
+<header class="about-profile-heading">
+<p class="about-profile-eyebrow">{{ index $now "eyebrow" }}{{ with index $now "updated" }}<span class="about-profile-updated">{{ . }}</span>{{ end }}</p>
+<h3>{{ index $now "title" }}</h3>
+</header>
+<ol class="about-profile-now">
+{{- range $index, $item := index $now "items" }}
+<li>
+<span class="about-profile-index">{{ printf "%02d" (add $index 1) }}</span>
+<strong>{{ index $item "title" }}</strong>
+<span class="about-profile-now-text">{{ index $item "text" }}</span>
+{{- with index $item "links" }}
+<span class="about-profile-now-links">{{ range . }}<a href="{{ index . "url" }}">{{ index . "label" }}</a>{{ end }}</span>
+{{- end }}
+</li>
+{{- end }}
+</ol>
+</section>
+
+{{- /* Optional sections below (principles, project groups, recent writing) render only when the JSON has them. */ -}}
+{{- with index $cfg "principles" }}
+<section class="about-profile-section">
+<header class="about-profile-heading">
+<p class="about-profile-eyebrow">{{ index . "eyebrow" }}</p>
+<h3>{{ index . "title" }}</h3>
+</header>
+<dl class="about-profile-principles">
+{{- range index . "items" }}
+<div>
+<dt>{{ index . "title" }}</dt>
+<dd>{{ index . "text" }}</dd>
+</div>
+{{- end }}
+</dl>
+</section>
+{{- end }}
+
+<section class="about-profile-section">
+<header class="about-profile-heading">
+<p class="about-profile-eyebrow">{{ index $projects "eyebrow" }}</p>
+<h3>{{ index $projects "title" }}</h3>
+</header>
+{{- $groups := index $projects "groups" | default (slice (dict "items" (index $projects "items"))) }}
+{{- range $groups }}
+{{- with index . "title" }}<h4 class="about-profile-group-title">{{ . }}</h4>{{ end }}
+<ul class="about-profile-projects">
+{{- range index . "items" }}
+<li>
+<a href="{{ index . "url" }}" target="_blank" rel="noopener">
+<strong>{{ index . "name" }}</strong>
+<span class="about-profile-project-desc">{{ index . "desc" }}</span>
+<span class="about-profile-tags">{{ range index . "tags" }}<em>{{ . }}</em>{{ end }}</span>
+<span class="about-profile-arrow" aria-hidden="true">{{ partial "helper/icon" "arrow-up-right" }}</span>
+</a>
+</li>
+{{- end }}
+</ul>
+{{- end }}
+</section>
+
+{{- with index $cfg "writing" }}
+<section class="about-profile-section">
+<header class="about-profile-heading">
+<p class="about-profile-eyebrow">{{ index . "eyebrow" }}</p>
+<h3>{{ index . "title" }}</h3>
+</header>
+<ol class="about-profile-writing">
+{{- range first (int (index . "count" | default 5)) $posts.ByDate.Reverse }}
+<li>
+<a href="{{ .RelPermalink }}">
+<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+<span>{{ .Title }}</span>
+{{- with first 1 (.GetTerms "categories") }}<em>{{ (index . 0).LinkTitle }}</em>{{ end }}
+</a>
+</li>
+{{- end }}
+</ol>
+{{- with index . "more" }}<a class="about-profile-more" href="{{ index . "url" }}">{{ index . "label" }} {{ partial "helper/icon" "chevron-right" }}</a>{{ end }}
+</section>
+{{- end }}
+
+<section class="about-profile-section">
+<header class="about-profile-heading">
+<p class="about-profile-eyebrow">{{ index $timeline "eyebrow" }}</p>
+<h3>{{ index $timeline "title" }}</h3>
+</header>
+<div class="about-profile-timeline">
+{{- range $years }}
+<section class="about-profile-year">
+<h4>{{ . }}</h4>
+<ol>
+{{- range index $byYear . }}
+<li class="about-profile-event is-{{ index . "kind" | default "branch" }}">
+<time datetime="{{ index . "date" }}">{{ substr (index . "date") 5 5 }}</time>
+<div>
+<p class="about-profile-event-title">{{ index . "title" }}{{ with index . "label" }}<em>{{ . }}</em>{{ end }}</p>
+<p>{{ index . "body" }}</p>
+</div>
+</li>
+{{- end }}
+</ol>
+</section>
+{{- end }}
+<p class="about-profile-today">{{ index $timeline "today" }}</p>
+</div>
+</section>
+
+<footer class="about-profile-footer">
+<p>{{ index $cfg "footer" }}</p>
+</footer>
+</div>

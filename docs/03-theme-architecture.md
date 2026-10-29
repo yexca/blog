@@ -18,6 +18,7 @@ Hugo resolves pages through the theme layouts:
 | Section/list | `layouts/list.html`, `_partials/article-list/*` |
 | Article | `layouts/single.html`, `_partials/article/*` |
 | Archives | `layouts/archives.html`, `assets/ts/features/archives.ts` |
+| Links | `layouts/links.html`, `assets/ts/features/links.ts` |
 | Search | `layouts/page/search.html`, `layouts/page/search.json`, `assets/ts/search.tsx` |
 | Taxonomy | `_partials/taxonomy/post-card.html`, `assets/ts/features/taxonomyPages.ts` |
 | About versions | `layouts/_shortcodes/about*.html`, `assets/ts/features/about*.ts` |

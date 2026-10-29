@@ -1,0 +1,128 @@
+{
+  "identity": {
+    "avatar_alt": "アバター",
+    "name": "いえか",
+    "english": "yexca",
+    "reading": "ieka",
+    "tagline": "ローカルファーストなツールとエージェントのワークフロー、知識システムを作っている。",
+    "description": "AI やエージェント、ローカルのソフトウェアを、信頼できる個人用システムにするにはどうすればいいか、を探っている修士の学生。作るものはたいてい、身近な小さな困りごとから始まる。データの準備、モデルのローカル実行、メディアの整理、四つの言語にまたがるノートを使える状態に保つこと、など。このブログには、そうしたことと、人生について考えていることを書き留めている。"
+  },
+  "contacts": [
+    { "label": "GitHub", "url": "https://github.com/yexca", "icon": "brand-github" },
+    { "label": "ホーム", "url": "https://yexca.net/", "icon": "home" },
+    { "label": "メール", "url": "mailto:blog@yexca.net", "icon": "mail" },
+    { "label": "RSS", "url": "/ja/index.xml", "icon": "rss" },
+    { "label": "リンク", "url": "/ja/links/", "icon": "link" }
+  ],
+  "stats": {
+    "posts": "記事",
+    "categories": "カテゴリ",
+    "tags": "タグ",
+    "languages": "言語",
+    "since": "開設",
+    "since_date": "2021-11-04"
+  },
+  "now": {
+    "eyebrow": "いま",
+    "updated": "2026年10月更新",
+    "title": "最近取り組んでいること",
+    "items": [
+      {
+        "title": "エージェントと、それを支える仕組み",
+        "text": "ZeroClaw、Ollama、Matrix で組んだ完全ローカルのアシスタント。ツールは MCP ゲートウェイでつないでいて、Codex や Claude Code でとにかくいろいろ作っている。",
+        "links": [
+          { "label": "ZeroClaw", "url": "/ja/archives/285/" },
+          { "label": "ハーネス", "url": "/ja/archives/293/" },
+          { "label": "バイブコーディング", "url": "/ja/archives/284/" }
+        ]
+      },
+      {
+        "title": "ローカル AI パイプライン",
+        "text": "ComfyUI の画像ワークフロー、AI カバー用の音声準備、YOLO の実験、そして自分のマシンで動かすモデルたち。",
+        "links": [
+          { "label": "画像モード", "url": "/ja/archives/291/" },
+          { "label": "AI カバー用音声", "url": "/ja/archives/283/" },
+          { "label": "YOLO26", "url": "/ja/archives/278/" }
+        ]
+      },
+      {
+        "title": "セルフホストのホームスタック",
+        "text": "NAS 上で動かす小さなサービス群。音声作品、音楽、RSS、画像を扱っていて、それらをまとめるスタートページもある。",
+        "links": [
+          { "label": "Kikoto", "url": "/ja/archives/294/" },
+          { "label": "NAS", "url": "/ja/archives/261/" }
+        ]
+      }
+    ]
+  },
+  "principles": {
+    "eyebrow": "大切にしていること",
+    "title": "こだわっていること",
+    "items": [
+      { "title": "ローカルファースト", "text": "データもモデルも主導権も手元に置く。その方がシステムが分かりやすく、頼れるものになるときは特に。" },
+      { "title": "中身が見える", "text": "入力、状態、失敗を十分に見えるようにして、デバッグや改善ができるようにする。" },
+      { "title": "組み合わせられる", "text": "モデル、ツール、ストレージ、人の判断を、ひとつのワークフローにつなぐ。" },
+      { "title": "続けて保守できる", "text": "最初の実験で終わらず、その後も役に立ち続ける小さなシステムを選ぶ。" }
+    ]
+  },
+  "projects": {
+    "eyebrow": "プロジェクト",
+    "title": "繰り返す問題を、繰り返し使えるツールへ",
+    "groups": [
+      {
+        "title": "家でセルフホスト",
+        "items": [
+          { "name": "kikoto", "url": "https://github.com/yexca/kikoto", "desc": "個人用の DLsite 音声ライブラリ兼プレーヤー。ジャケット画像で一覧し、声優やタグで検索でき、歌詞表示や続きから再生にも対応。", "tags": ["TypeScript", "Docker", "NAS"] },
+          { "name": "rainy", "url": "https://github.com/yexca/rainy", "desc": "NAS 向けのセルフホスト音楽サーバー。", "tags": ["Go", "音楽"] },
+          { "name": "pikapu", "url": "https://github.com/yexca/pikapu", "desc": "ひとりのための、静かなセルフホスト RSS リーダー。", "tags": ["TypeScript", "RSS"] },
+          { "name": "harbor", "url": "https://github.com/yexca/harbor", "desc": "NAS で動いているサービスのための軽量スタートページ。", "tags": ["JavaScript", "スタートページ"] },
+          { "name": "kumo", "url": "https://github.com/yexca/kumo", "desc": "個人ワークフロー向けの軽量な画像ホスティングサービス。", "tags": ["Go", "画像"] }
+        ]
+      },
+      {
+        "title": "エージェントと AI パイプライン",
+        "items": [
+          { "name": "home-mcp", "url": "https://github.com/yexca/home-mcp", "desc": "ZeroClaw などの MCP クライアント向けのローカル MCP ゲートウェイ。", "tags": ["Python", "MCP"] },
+          { "name": "zeroclaw-dockyard", "url": "https://github.com/yexca/zeroclaw-dockyard", "desc": "複数の ZeroClaw Matrix エージェントを Docker で作成・実行するためのローカル WebUI。", "tags": ["ZeroClaw", "Docker", "Matrix"] },
+          { "name": "AI-Cover-Tools", "url": "https://github.com/yexca/AI-Cover-Tools", "desc": "AI カバーの学習素材向けに、音声分離、分割、品質チェック、ピッチ解析、正規化を行う。", "tags": ["音声", "AI", "Windows"] },
+          { "name": "YOLO-Multi", "url": "https://github.com/yexca/YOLO-Multi", "desc": "ひとつのデータセットから複数の YOLO 実験を準備して学習する。", "tags": ["YOLO", "Python"] },
+          { "name": "lyric-video-template", "url": "https://github.com/yexca/lyric-video-template", "desc": "Claude Code で作る、Web ページ製のリリックビデオ。歌詞とビートに合わせた canvas シーンを MP4 に書き出す。", "tags": ["Claude Code", "Canvas"] }
+        ]
+      },
+      {
+        "title": "アプリとアーカイブ",
+        "items": [
+          { "name": "quest-manager", "url": "https://github.com/yexca/quest-manager", "desc": "Meta Quest のアプリとファイルを管理する Windows デスクトップアプリ。APK のプレビューと互換性署名に対応。", "tags": ["Rust", "デスクトップ"] },
+          { "name": "PixivDownloader-WebUI", "url": "https://github.com/yexca/PixivDownloader-WebUI", "desc": "Pixiv 作品のバックアップとワークフロー自動化のためのローカル WebUI。", "tags": ["Pixiv", "WebUI", "SQLite"] },
+          { "name": "yasumi", "url": "https://github.com/yexca/yasumi-project-deploy", "desc": "集中して個人のタスクを管理するための、ローカルファーストな計画アプリ。", "tags": ["Go", "TypeScript"] },
+          { "name": "kano-navi", "url": "https://kano.yexca.net/", "desc": "kano のファンサイト。", "tags": ["Go", "ファンサイト"] }
+        ]
+      }
+    ]
+  },
+  "writing": {
+    "eyebrow": "執筆",
+    "title": "最近のブログ記事",
+    "count": 5,
+    "more": { "label": "すべての記事", "url": "/ja/archives/" }
+  },
+  "timeline": {
+    "eyebrow": "タイムライン",
+    "title": "このサイトの物語",
+    "today": "そして今日へ。物語はまだ続いている。",
+    "items": [
+      { "date": "2021-11-04", "kind": "main", "label": "WordPress", "title": "問題を書き留める場所", "body": "ブログは最初、忘れたくない学習メモ、修正、実験を置いておく小さな場所として始まった。自分だけの創作の場所って、めっちゃカッコよくない！？＼(~o~)／" },
+      { "date": "2021-11-12", "kind": "branch", "label": "Astra", "title": "最初のバージョンが完成", "body": "何日もかかって、何度もやり直して、Astra テーマでようやく形になった。" },
+      { "date": "2021-11-22", "kind": "branch", "label": "Sakurairo", "title": "テーマ変更から学ぶ", "body": "初期のテーマ変更はただの装飾ではなく、自分らしいサイトを探すための試行錯誤だった。可愛いニャ〜！" },
+      { "date": "2022-01-30", "kind": "branch", "label": "Argon", "title": "長く残せるブログへ", "body": "Argon は見た目も実用性もよく、長く書き、問題を記録し、日々保守できる場所になった。" },
+      { "date": "2023-04-04", "kind": "main", "label": "Docker", "title": "デプロイが再現可能に", "body": "すべてを Docker に移し、サーバー設定は記憶頼りの作業から繰り返せるインフラメモになった。" },
+      { "date": "2023-05-05", "kind": "branch", "label": "経験値 +1", "title": "サーバーが初めてクラッシュ", "body": "記念すべき一日。" },
+      { "date": "2023-07-03", "kind": "main", "label": "Jekyll", "title": "静的生成へ向かう", "body": "Jekyll への移行で、軽くてより geek に。ブログはテーマサイトから静的公開ワークフローへ進んだ。" },
+      { "date": "2024-12-27", "kind": "main", "label": "Hugo", "title": "多言語の知識ベース", "body": "Hugo は国際化、翻訳ワークフロー、そして多言語ノートを保守しやすい構造をもたらした ( •̀ ω •́ )✧" },
+      { "date": "2025-02-28", "kind": "branch", "label": "Counter", "title": "小さな生命のしるし", "body": "可愛いカウンターが、ページに訪問の気配と生きている感じを与えてくれる。" },
+      { "date": "2026-05-31", "kind": "main", "label": "Stack", "title": "ブログをもう一度紹介する", "body": "Stack テーマのリファクタは、このブログがコード、ツール、ノート、そして生活を記録する場所だと考え直す機会になった。" },
+      { "date": "2026-10-29", "kind": "branch", "label": "Redesign", "title": "もっと静かなページへ", "body": "アーカイブ、リンク、このページをリデザイン。装飾を減らし、読める情報を増やした。" }
+    ]
+  },
+  "footer": "人生は冒険ゲーム。毎日新しいマップと新しいクエストがある。好奇心を持ち続けて、もっと可能性を探ろう！"
+}

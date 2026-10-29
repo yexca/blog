@@ -3,6 +3,7 @@ title: 連結
 slug: /links
 date: 2024-12-27T18:20:25+0900
 lastmod: 2026-05-30T00:00:00+0900
+layout: links
 readingTime: false
 linkSections:
   - title: 我的網站

@@ -254,3 +254,11 @@ lightbox:
 
     error:
         other: 圖片載入失敗
+
+links:
+    eyebrow:
+        other: 連結
+    summary:
+        other: "{{ .Sections }} 個分區，共 {{ .Sites }} 個網站"
+    sectionNav:
+        other: 依分區瀏覽

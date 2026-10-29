@@ -251,3 +251,11 @@ lightbox:
 
     error:
         other: 画像を読み込めませんでした
+
+links:
+    eyebrow:
+        other: リンク
+    summary:
+        other: "{{ .Sections }} カテゴリ・{{ .Sites }} サイト"
+    sectionNav:
+        other: カテゴリで見る

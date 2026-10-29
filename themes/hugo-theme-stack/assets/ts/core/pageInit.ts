@@ -8,6 +8,7 @@ import { setupContentClip } from "ts/features/contentClip";
 import { setupAbout2026 } from "ts/features/about2026";
 import { setupAboutVersions } from "ts/features/aboutVersions";
 import { setupArchives } from "ts/features/archives";
+import { setupLinks } from "ts/features/links";
 import { setupCodeBlocks } from "ts/features/codeBlocks";
 import { setupGithubInfoCards } from "ts/features/githubInfoCards";
 import { setupMermaid } from "ts/features/mermaid";
@@ -29,6 +30,7 @@ const features: Feature[] = [
     { selector: '[data-about-2026]', setup: setupAbout2026 },
     { selector: '[data-taxonomy-categories], [data-taxonomy-tags], .taxonomy-post-card', setup: setupTaxonomyPages },
     { selector: '[data-archive-stage]', setup: setupArchives },
+    { selector: '[data-links-page]', setup: setupLinks },
     { selector: '[data-pagination]', setup: setupPagination },
     { selector: '.article-content div.highlight', setup: setupCodeBlocks },
     { selector: '.article-content .mermaid', setup: setupMermaid },

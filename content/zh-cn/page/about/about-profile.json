@@ -1,0 +1,128 @@
+{
+  "identity": {
+    "avatar_alt": "头像",
+    "name": "叶卡",
+    "english": "yexca",
+    "reading": "yè kǎ",
+    "tagline": "我做本地优先的工具、智能体工作流，以及知识系统。",
+    "description": "一名硕士研究生，在探索 AI、智能体和本地软件如何成为可靠的个人系统。我做的东西大多源于一个反复出现的小麻烦：整理数据、在本地跑模型、归档媒体，或是让笔记在四种语言之间保持可用。这个博客用来记下这些，也记下我对生活的一些想法。"
+  },
+  "contacts": [
+    { "label": "GitHub", "url": "https://github.com/yexca", "icon": "brand-github" },
+    { "label": "主页", "url": "https://yexca.net/", "icon": "home" },
+    { "label": "邮箱", "url": "mailto:blog@yexca.net", "icon": "mail" },
+    { "label": "RSS", "url": "/index.xml", "icon": "rss" },
+    { "label": "链接", "url": "/links/", "icon": "link" }
+  ],
+  "stats": {
+    "posts": "文章",
+    "categories": "分类",
+    "tags": "标签",
+    "languages": "语言",
+    "since": "建站",
+    "since_date": "2021-11-04"
+  },
+  "now": {
+    "eyebrow": "现在",
+    "updated": "更新于 2026 年 10 月",
+    "title": "最近在忙什么",
+    "items": [
+      {
+        "title": "智能体，以及它周围的 Harness",
+        "text": "用 ZeroClaw、Ollama 和 Matrix 搭了一个完全本地的助手，通过 MCP 网关接入各种工具，还用 Codex 和 Claude Code 做了不少东西。",
+        "links": [
+          { "label": "ZeroClaw", "url": "/archives/285/" },
+          { "label": "Harness", "url": "/archives/293/" },
+          { "label": "Vibe coding", "url": "/archives/284/" }
+        ]
+      },
+      {
+        "title": "本地 AI 流水线",
+        "text": "ComfyUI 图像工作流、AI 翻唱的音频预处理、YOLO 实验，以及在自己机器上跑的各种模型。",
+        "links": [
+          { "label": "图像模式", "url": "/archives/291/" },
+          { "label": "AI 翻唱音频", "url": "/archives/283/" },
+          { "label": "YOLO26", "url": "/archives/278/" }
+        ]
+      },
+      {
+        "title": "自托管的家用服务",
+        "text": "NAS 上跑着一些小服务，管音声作品、音乐、RSS 和图片，再用一个起始页把它们串在一起。",
+        "links": [
+          { "label": "Kikoto", "url": "/archives/294/" },
+          { "label": "NAS", "url": "/archives/261/" }
+        ]
+      }
+    ]
+  },
+  "principles": {
+    "eyebrow": "原则",
+    "title": "我在意的事",
+    "items": [
+      { "title": "本地优先", "text": "只要能让系统更清晰、更可靠，就把数据、模型和控制权留在身边。" },
+      { "title": "可检视", "text": "让输入、状态和失败足够可见，方便排查和改进。" },
+      { "title": "可组合", "text": "把模型、工具、存储和人的判断连成一条完整的工作流。" },
+      { "title": "值得长期维护", "text": "宁可做小而精的系统，让它在第一次实验之后依然好用。" }
+    ]
+  },
+  "projects": {
+    "eyebrow": "项目",
+    "title": "反复出现的问题，可以变成反复使用的工具",
+    "groups": [
+      {
+        "title": "家里的自托管服务",
+        "items": [
+          { "name": "kikoto", "url": "https://github.com/yexca/kikoto", "desc": "个人的 DLsite 音声库与播放器：按封面浏览，按声优和标签搜索，显示歌词，并能接着上次的进度继续听。", "tags": ["TypeScript", "Docker", "NAS"] },
+          { "name": "rainy", "url": "https://github.com/yexca/rainy", "desc": "跑在 NAS 上的自托管音乐服务器。", "tags": ["Go", "音乐"] },
+          { "name": "pikapu", "url": "https://github.com/yexca/pikapu", "desc": "一个安静的、只给一个人用的自托管 RSS 阅读器。", "tags": ["TypeScript", "RSS"] },
+          { "name": "harbor", "url": "https://github.com/yexca/harbor", "desc": "给 NAS 上各项服务准备的轻量起始页。", "tags": ["JavaScript", "起始页"] },
+          { "name": "kumo", "url": "https://github.com/yexca/kumo", "desc": "面向个人工作流的轻量图床服务。", "tags": ["Go", "图片"] }
+        ]
+      },
+      {
+        "title": "智能体与 AI 流水线",
+        "items": [
+          { "name": "home-mcp", "url": "https://github.com/yexca/home-mcp", "desc": "给 ZeroClaw 和其他 MCP 客户端用的本地 MCP 网关。", "tags": ["Python", "MCP"] },
+          { "name": "zeroclaw-dockyard", "url": "https://github.com/yexca/zeroclaw-dockyard", "desc": "本地 WebUI，用 Docker 创建并运行多个 ZeroClaw Matrix 智能体。", "tags": ["ZeroClaw", "Docker", "Matrix"] },
+          { "name": "AI-Cover-Tools", "url": "https://github.com/yexca/AI-Cover-Tools", "desc": "为 AI 翻唱训练素材提供人声分离、切片、质量检查、音高分析和响度标准化。", "tags": ["音频", "AI", "Windows"] },
+          { "name": "YOLO-Multi", "url": "https://github.com/yexca/YOLO-Multi", "desc": "用同一份数据集准备并训练多组 YOLO 实验。", "tags": ["YOLO", "Python"] },
+          { "name": "lyric-video-template", "url": "https://github.com/yexca/lyric-video-template", "desc": "用 Claude Code 把歌词视频做成网页：Canvas 场景与歌词、节拍同步，最后导出为 MP4。", "tags": ["Claude Code", "Canvas"] }
+        ]
+      },
+      {
+        "title": "应用与归档",
+        "items": [
+          { "name": "quest-manager", "url": "https://github.com/yexca/quest-manager", "desc": "用来管理 Meta Quest 应用和文件的 Windows 桌面应用，支持 APK 预览和兼容性签名。", "tags": ["Rust", "桌面端"] },
+          { "name": "PixivDownloader-WebUI", "url": "https://github.com/yexca/PixivDownloader-WebUI", "desc": "用于 Pixiv 插画备份与工作流自动化的本地 WebUI。", "tags": ["Pixiv", "WebUI", "SQLite"] },
+          { "name": "yasumi", "url": "https://github.com/yexca/yasumi-project-deploy", "desc": "本地优先的计划应用，专注于个人任务管理。", "tags": ["Go", "TypeScript"] },
+          { "name": "kano-navi", "url": "https://kano.yexca.net/", "desc": "为 kano 做的粉丝站。", "tags": ["Go", "粉丝站"] }
+        ]
+      }
+    ]
+  },
+  "writing": {
+    "eyebrow": "写作",
+    "title": "博客近期文章",
+    "count": 5,
+    "more": { "label": "全部文章", "url": "/archives/" }
+  },
+  "timeline": {
+    "eyebrow": "时间线",
+    "title": "网站的故事",
+    "today": "然后就是今天，故事还在继续。",
+    "items": [
+      { "date": "2021-11-04", "kind": "main", "label": "WordPress", "title": "一个写下问题的地方", "body": "博客一开始只是一个小地方，用来存放不想忘掉的学习笔记、问题修复和实验记录。有一个可以随心所欲创作的地方，它不酷吗＼(~o~)／" },
+      { "date": "2021-11-12", "kind": "branch", "label": "Astra", "title": "第一版上线", "body": "折腾了好几天，崩溃重装过，最终用 Astra 主题整出了像样的页面。" },
+      { "date": "2021-11-22", "kind": "branch", "label": "Sakurairo", "title": "通过换主题学习", "body": "早期换主题不只是装饰，而是在摸索什么样的网站更像我自己。可爱捏 ~" },
+      { "date": "2022-01-30", "kind": "branch", "label": "Argon", "title": "可以长期留下来的博客", "body": "Argon 好看又实用，适合长期写作、记录问题和日常维护。" },
+      { "date": "2023-04-04", "kind": "main", "label": "Docker", "title": "部署开始可复现", "body": "转为全 Docker 部署，服务器配置从记忆工作变成了可以重复执行的基础设施笔记。" },
+      { "date": "2023-05-05", "kind": "branch", "label": "经验 +1", "title": "服务器第一次崩溃", "body": "值得纪念的一天。" },
+      { "date": "2023-07-03", "kind": "main", "label": "Jekyll", "title": "走向静态生成", "body": "迁移到 Jekyll，更轻便也更 geek，博客从主题站点走向静态发布流程。" },
+      { "date": "2024-12-27", "kind": "main", "label": "Hugo", "title": "多语言知识库", "body": "迁移到 Hugo，带来国际化、翻译流程，以及更适合维护多语言笔记的结构 ( •̀ ω •́ )✧" },
+      { "date": "2025-02-28", "kind": "branch", "label": "Counter", "title": "一个小小的生命迹象", "body": "找了个可爱的计数器，让页面显得有人来过、还活着。" },
+      { "date": "2026-05-31", "kind": "main", "label": "Stack", "title": "重新介绍这个博客", "body": "重构 Stack 主题，也借机重新思考：这个博客记录代码、工具、笔记，也记录生活。" },
+      { "date": "2026-10-29", "kind": "branch", "label": "Redesign", "title": "更安静的页面", "body": "归档、链接和关于页重新设计：少一点装饰，多一点可以读的信息。" }
+    ]
+  },
+  "footer": "生活就像一场冒险游戏，每天都有新地图、新任务。保持好奇心，去探索更多可能性！"
+}

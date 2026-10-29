@@ -256,3 +256,11 @@ lightbox:
 
     error:
         other: The image could not be loaded
+
+links:
+    eyebrow:
+        other: Links
+    summary:
+        other: "{{ .Sites }} sites in {{ .Sections }} sections"
+    sectionNav:
+        other: Browse by section

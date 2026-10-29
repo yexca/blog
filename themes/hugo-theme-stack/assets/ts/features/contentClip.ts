@@ -19,6 +19,7 @@ const cardQuery = [
     '.related-content-list',
     '.comment-container',
     '.archive-page .taxonomy-surface',
+    '.links-page .taxonomy-surface',
     '.glass-card',
     '.not-found-card',
     '.pagination',
