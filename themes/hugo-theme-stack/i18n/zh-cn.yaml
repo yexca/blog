@@ -274,3 +274,5 @@ home:
         other: 分类分布
     otherCategories:
         other: "另有 {{ . }} 个分类"
+    popularTags:
+        other: 热门标签

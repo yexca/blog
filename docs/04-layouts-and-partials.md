@@ -32,8 +32,10 @@
   `list.html` (section and term pages; not the `/categories/` and `/tags/` overviews).
   It holds only `widget/overview.html`: build-time post/category/tag/year stats, a
   posts-per-year strip on the archives year axis linking to `/archives/#YYYY`, and a
-  category share bar with the five largest categories. It displays the blog rather
-  than repeating page entries, which stay in the left sidebar. The archives, categories and
+  category share bar with the five largest categories, and the eight most used tags.
+  It displays the blog rather than repeating page entries, which stay in the left
+  sidebar. On windows too short to show the whole panel (see the media query in
+  `layout/home.scss`) the right sidebar scrolls with the page instead of sticking. The archives, categories and
   tag-cloud widget partials remain available but are no longer configured. The
   right sidebar is shown from the `lg` breakpoint up, so phones see no overview.
 - Sidebar markup affects both desktop fixed layout and mobile behavior.

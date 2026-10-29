@@ -277,3 +277,5 @@ home:
         other: カテゴリ別の記事
     otherCategories:
         other: "ほか {{ . }} カテゴリ"
+    popularTags:
+        other: よく使うタグ

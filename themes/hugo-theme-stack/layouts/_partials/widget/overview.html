@@ -1,6 +1,6 @@
 {{- /* Site overview panel for the home and list sidebars: build-time stats, a
        posts-per-year strip on the archives year axis (first post to the current
-       year), and how the posts split across categories. It shows the blog rather
+       year), how the posts split across categories, and the most used tags. It shows the blog rather
        than linking around it: the left sidebar already holds the page entries. It
        replaces the archives, categories and tag-cloud widgets. */ -}}
 {{- $context := .Context -}}
@@ -34,6 +34,15 @@
 {{- $toneStep := 0.0 -}}
 {{- if gt (len $categories) 1 }}{{ $toneStep = div 0.65 (sub (len $categories) 1) }}{{ end -}}
 {{- $legendSize := 5 -}}
+
+{{- /* Most used tags, counting visible posts only. */ -}}
+{{- $tags := slice -}}
+{{- range $site.Taxonomies.tags.ByCount -}}
+    {{- $count := len (where .Pages "Params.hidden" "!=" true) -}}
+    {{- if $count }}{{ $tags = $tags | append (dict "Page" .Page "Count" $count) }}{{ end -}}
+{{- end -}}
+{{- $tags = sort $tags "Count" "desc" -}}
+{{- $tagLimit := 8 -}}
 
 <section class="widget home-overview taxonomy-surface">
     <p class="taxonomy-eyebrow">{{ T "home.overview" }}</p>
@@ -100,6 +109,22 @@
             {{- end }}
             {{- if gt (len .) $legendSize }}
                 <li class="home-overview-share-rest">{{ T "home.otherCategories" (sub (len .) $legendSize) }}</li>
+            {{- end }}
+        </ul>
+    </figure>
+    {{- end }}
+
+    {{- with $tags }}
+    <figure class="home-overview-tags">
+        <figcaption>{{ T "home.popularTags" }}</figcaption>
+        <ul>
+            {{- range first $tagLimit . }}
+                <li>
+                    <a href="{{ .Page.RelPermalink }}">
+                        <span>#{{ .Page.Title }}</span>
+                        <span class="home-overview-tag-count">{{ .Count }}</span>
+                    </a>
+                </li>
             {{- end }}
         </ul>
     </figure>

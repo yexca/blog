@@ -280,3 +280,5 @@ home:
         other: 分類分布
     otherCategories:
         other: "另有 {{ . }} 個分類"
+    popularTags:
+        other: 熱門標籤
