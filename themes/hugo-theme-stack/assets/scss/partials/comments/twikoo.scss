@@ -10,7 +10,6 @@
     --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
 }
 
-.twikoo .el-input-group__prepend,
 .twikoo .tk-action-icon,
 .twikoo .tk-submit-action-icon,
 .twikoo .tk-time,
@@ -19,20 +18,21 @@
     color: var(--twikoo-body-text-color);
 }
 
-.twikoo .el-input__inner,
-.twikoo .el-textarea__inner,
+.twikoo .tk-input__inner,
+.twikoo .tk-textarea__inner,
 .twikoo .tk-preview-container,
 .twikoo .tk-content,
 .twikoo .tk-nick,
 .twikoo .tk-send,
 .twikoo .tk-comments-no,
-.twikoo .el-input__count,
+.twikoo .tk-input__count,
 .twikoo .tk-submit-action-icon {
     color: var(--twikoo-body-text-color-main) !important;
 }
 
-.twikoo .el-button,
-.twikoo .el-input__count {
+.twikoo .tk-input-group__prepend,
+.twikoo .tk-button,
+.twikoo .tk-input__count {
     color: var(--twikoo-body-text-color) !important;
 }
 
