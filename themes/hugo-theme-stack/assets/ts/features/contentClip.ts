@@ -16,6 +16,8 @@ const cardQuery = [
     '.sidebar-panel',
     '.widget--toc',
     '.widget.archives .widget-archive--list',
+    '.home-featured',
+    '.home-overview',
     '.related-content-list',
     '.comment-container',
     '.archive-page .taxonomy-surface',

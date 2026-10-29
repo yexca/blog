@@ -256,3 +256,19 @@ links:
         other: "{{ .Sections }} 个分区，共 {{ .Sites }} 个站点"
     sectionNav:
         other: 按分区浏览
+
+home:
+    latest:
+        other: 最新文章
+    readMore:
+        other: 阅读全文
+    overview:
+        other: 博客概览
+    statPosts:
+        other: 文章
+    statYears:
+        other: 写作年数
+    postsPerYear:
+        other: 每年文章数
+    browse:
+        other: 浏览博客

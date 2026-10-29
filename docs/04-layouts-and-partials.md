@@ -8,7 +8,7 @@
 | Header | `_partials/header/site.html` | Sticky site title, search, language, theme, and mobile menu controls. |
 | Head | `_partials/head/*` | Metadata, styles, per-language font link, hreflang, JSON-LD, language redirect (zh-cn home only). |
 | Footer | `_partials/footer/*` | Script loading and footer UI. |
-| Home/list cards | `_partials/article-list/*` | Default, compact, tile, and cover variants. List cards call `article/components/details` with `(dict "Page" . "IsList" true)`, which shows a summary and hides the translation row. |
+| Home/list cards | `_partials/article-list/*` | Default, compact, tile, cover, and featured variants. Home page 1 leads with `featured.html` (newest post: eyebrow, title, longer summary, cover beside it); the rest use `default.html`. Default cards call `article/components/details` with `(dict "Page" . "IsList" true)`, which shows a summary, swaps the article date/reading-time/tags footers for `article/components/list-meta.html` (`2006-01-02` date, first category as a pill, up to three tags), and hides the translation row. Only the home page renders `default.html`; section lists use `compact.html`. |
 | Article page | `_partials/article/article.html`, `_partials/article/components/*` | Header, content, tags, related content, math, comments. |
 | Sidebars | `_partials/sidebar/left.html`, `_partials/sidebar/right.html` | Navigation, profile, widgets, TOC. |
 | Widgets | `_partials/widget/*` | Archives, categories, search, tag cloud, TOC, and desktop related posts. |
@@ -28,6 +28,13 @@
 ## Common Risk Points
 
 - Article cards are used in multiple contexts and can affect layout density.
+- The `homepage` widget scope (theme `config.yaml`) is shared by `home.html` and
+  `list.html` (section and term pages; not the `/categories/` and `/tags/` overviews).
+  It holds only `widget/overview.html`: build-time post/category/tag/year stats, a
+  posts-per-year strip on the archives year axis linking to `/archives/#YYYY`, and
+  links to archives, categories, tags and search. The archives, categories and
+  tag-cloud widget partials remain available but are no longer configured. The
+  right sidebar is shown from the `lg` breakpoint up, so phones see no overview.
 - Sidebar markup affects both desktop fixed layout and mobile behavior.
 - The Header sits above the `.page-columns` wrapper so the original three-column
   width calculations remain intact.

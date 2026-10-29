@@ -27,7 +27,7 @@ docker run --rm -v "${PWD}:/src" -w /src blog-hugo:0.166.0 hugo --gc --minify
 
 After theme changes, check:
 
-- Home page.
+- Home page: page 1 featured card (with and without a cover), page 2 plain list, and the sidebar overview panel.
 - One article page with code blocks.
 - One article page with Mermaid enabled and one with Mermaid disabled.
 - One article page with images.

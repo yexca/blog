@@ -264,3 +264,19 @@ links:
         other: "{{ .Sites }} sites in {{ .Sections }} sections"
     sectionNav:
         other: Browse by section
+
+home:
+    latest:
+        other: Latest post
+    readMore:
+        other: Read the post
+    overview:
+        other: Blog overview
+    statPosts:
+        other: Posts
+    statYears:
+        other: Years writing
+    postsPerYear:
+        other: Posts per year
+    browse:
+        other: Browse the blog

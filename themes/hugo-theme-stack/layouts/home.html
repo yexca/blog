@@ -1,14 +1,27 @@
+{{ define "body-class" }}template-home{{ end }}
 {{ define "main" }}
     {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
     {{ $notHidden := where .Site.RegularPages "Params.hidden" "!=" true }}
     {{ $filtered := ($pages | intersect $notHidden) }}
     {{ $pag := .Paginate ($filtered) }}
+    {{ $isFirstPage := eq $pag.PageNumber 1 }}
+    {{ $posts := $pag.Pages }}
 
-    <section class="article-list">
-        {{ range $index, $element := $pag.Pages }}
-            {{ partial "article-list/default" (dict "Page" . "Index" $index "IsHome" true) }}
+    <div class="home-page">
+        {{- /* The newest post leads page 1 as a featured card; later pages are a plain list. */ -}}
+        {{ if and $isFirstPage $posts }}
+            {{ partial "article-list/featured" (dict "Page" (index $posts 0)) }}
+            {{ $posts = after 1 $posts }}
         {{ end }}
-    </section>
+
+        {{ with $posts }}
+            <section class="article-list">
+                {{ range $index, $element := . }}
+                    {{ partial "article-list/default" (dict "Page" . "Index" $index "IsHome" (not $isFirstPage)) }}
+                {{ end }}
+            </section>
+        {{ end }}
+    </div>
 
     {{- partial "pagination.html" . -}}
     {{- partial "footer/footer" . -}}

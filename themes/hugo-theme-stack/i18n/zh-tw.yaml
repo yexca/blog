@@ -262,3 +262,19 @@ links:
         other: "{{ .Sections }} 個分區，共 {{ .Sites }} 個網站"
     sectionNav:
         other: 依分區瀏覽
+
+home:
+    latest:
+        other: 最新文章
+    readMore:
+        other: 閱讀全文
+    overview:
+        other: 部落格概覽
+    statPosts:
+        other: 文章
+    statYears:
+        other: 寫作年數
+    postsPerYear:
+        other: 每年文章數
+    browse:
+        other: 瀏覽部落格
