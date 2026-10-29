@@ -657,22 +657,28 @@
     "posts/2022/2022-03-22-VRchat在中文吧自动弹钢琴.md": {
       "translations": {
         "en": {
-          "sourceHash": "sha256:c7f16f1f37b6078de4350de6ea7fc00247d3242b1c31f637235edbe62ab5c233",
+          "sourceHash": "sha256:1d55c0053796dbe07ad9cf85df4ab3732d65071afffb7673acac37bdbe706fa9",
           "status": "current",
-          "updatedAt": "2026-06-27T15:27:58.776Z"
+          "provider": "gemini-kano",
+          "model": "gemini-3.6-flash",
+          "updatedAt": "2026-10-29T16:02:38.708Z"
         },
         "ja": {
-          "sourceHash": "sha256:c7f16f1f37b6078de4350de6ea7fc00247d3242b1c31f637235edbe62ab5c233",
+          "sourceHash": "sha256:1d55c0053796dbe07ad9cf85df4ab3732d65071afffb7673acac37bdbe706fa9",
           "status": "current",
-          "updatedAt": "2026-06-27T15:27:58.776Z"
+          "provider": "deepseek",
+          "model": "deepseek-flash",
+          "updatedAt": "2026-10-29T16:04:01.803Z"
         },
         "zh-tw": {
-          "sourceHash": "sha256:c7f16f1f37b6078de4350de6ea7fc00247d3242b1c31f637235edbe62ab5c233",
+          "sourceHash": "sha256:1d55c0053796dbe07ad9cf85df4ab3732d65071afffb7673acac37bdbe706fa9",
           "status": "current",
-          "updatedAt": "2026-06-27T15:27:58.776Z"
+          "provider": "deepseek",
+          "model": "deepseek-flash",
+          "updatedAt": "2026-10-29T16:02:02.424Z"
         }
       },
-      "sourceHash": "sha256:c7f16f1f37b6078de4350de6ea7fc00247d3242b1c31f637235edbe62ab5c233",
+      "sourceHash": "sha256:1d55c0053796dbe07ad9cf85df4ab3732d65071afffb7673acac37bdbe706fa9",
       "promptVersion": 1
     },
     "posts/2022/2022-03-22-使用PicX图床上传图片提示“Bad credentials”.md": {
@@ -6224,5 +6230,5 @@
       "promptVersion": 1
     }
   },
-  "updatedAt": "2026-10-08T11:47:26.541Z"
+  "updatedAt": "2026-10-29T16:04:01.929Z"
 }
