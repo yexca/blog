@@ -30,7 +30,7 @@
             <div class="site-meta">
                 <h1 class="site-name"><a href="{{ .Site.BaseURL | relLangURL }}">{{ $authorName }}</a></h1>
                 {{- $subtitle := .Site.Params.sidebar.subtitle -}}
-                {{- with index .Site.Params.sidebar.subtitles .Site.Language.Lang -}}
+                {{- with index .Site.Params.sidebar.subtitles .Site.Language.Name -}}
                     {{- $subtitle = . -}}
                 {{- end -}}
                 <h2 class="site-description">{{ $subtitle }}</h2>

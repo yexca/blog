@@ -57,9 +57,9 @@
     {{- else if and (eq .Kind "taxonomy") (eq .Data.Plural "tags") -}}
         {{- $terms := .Site.Taxonomies.tags.ByCount -}}
         {{- $groups := slice -}}
-        {{- if eq .Site.Language.Lang "ja" -}}
+        {{- if eq .Site.Language.Name "ja" -}}
             {{- $groups = slice "あ" "か" "さ" "た" "な" "は" "ま" "や" "ら" "わ" "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" "#" -}}
-        {{- else if or (eq .Site.Language.Lang "zh-cn") (eq .Site.Language.Lang "zh-tw") -}}
+        {{- else if or (eq .Site.Language.Name "zh-cn") (eq .Site.Language.Name "zh-tw") -}}
             {{- $groups = split "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,#" "," -}}
         {{- else -}}
             {{- $groups = split "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,#" "," -}}

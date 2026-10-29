@@ -28,15 +28,15 @@
                     {{ partial "helper/icon" "language" }}
                 </summary>
                 <div class="site-header-popover-panel" role="menu">
-                    {{- $currentLanguageCode := .Language.Lang -}}
+                    {{- $currentLanguageCode := .Language.Name -}}
                     {{ range .Site.Home.AllTranslations }}
                         {{ $target := . }}
                         {{ range $.AllTranslations }}
-                            {{ if eq .Language.Lang $target.Language.Lang }}
+                            {{ if eq .Language.Name $target.Language.Name }}
                                 {{ $target = . }}
                             {{ end }}
                         {{ end }}
-                        <a href="{{ $target.RelPermalink }}" role="menuitem" data-language-choice="{{ $target.Language.Lang }}"{{ if eq $target.Language.Lang $currentLanguageCode }} aria-current="page"{{ end }}>
+                        <a href="{{ $target.RelPermalink }}" role="menuitem" data-language-choice="{{ $target.Language.Name }}"{{ if eq $target.Language.Name $currentLanguageCode }} aria-current="page"{{ end }}>
                             {{ .Language.Label }}
                         </a>
                     {{ end }}

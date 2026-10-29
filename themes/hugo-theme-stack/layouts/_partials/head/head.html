@@ -1,6 +1,6 @@
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-{{- if and .IsHome (eq .Site.Language.Lang "zh-cn") -}}
+{{- if and .IsHome (eq .Site.Language.Name "zh-cn") -}}
     {{- partial "head/language-redirect.html" . -}}
 {{- end -}}
 
@@ -25,5 +25,4 @@
     <link rel="shortcut icon" href="{{ . | relURL }}" />
 {{ end }}
 
-{{- template "_internal/google_analytics.html" . -}}
 {{- partial "head/custom.html" . -}}

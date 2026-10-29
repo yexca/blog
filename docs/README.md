@@ -20,7 +20,7 @@ client scripts, content rules, translation automation, or performance budgets.
 - [Performance](./09-performance.md): budgets, assets, search, fonts, and lazy loading.
 - [Build Deploy Verify](./10-build-deploy-verify.md): local commands and release checks.
 - [Maintenance Playbook](./11-maintenance-playbook.md): common change recipes.
-- [Upstream Theme Risk](./12-upstream-theme-risk.md): how to handle Stack theme updates.
+- [Upstream Theme Risk](./12-upstream-theme-risk.md): how to handle Stack theme updates, and the last upstream sync baseline.
 - [Mermaid Diagrams](./13-mermaid.md): opt-in Mermaid rendering and verification.
 
 ## Archived Notes
