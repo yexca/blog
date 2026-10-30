@@ -194,10 +194,25 @@
 
         a {
             height: 100%;
-            display: inline-flex;
+            width: 100%;
+            display: flex;
             align-items: center;
             color: var(--body-text-color);
             gap: var(--menu-icon-separation);
+            padding: 4px 0;
+            border-radius: 10px;
+            transition: color 0.2s, background-color 0.2s, transform 0.2s;
+
+            &:hover {
+                color: var(--accent-color);
+                background-color: var(--card-background-selected);
+                transform: translateX(3px);
+            }
+
+            &:focus-visible {
+                outline: 2px solid var(--accent-color);
+                outline-offset: 2px;
+            }
         }
 
         span {
@@ -208,6 +223,8 @@
             a {
                 color: var(--accent-color);
                 font-weight: bold;
+                background-color: color-mix(in srgb, var(--accent-color) 14%, transparent);
+                box-shadow: inset 3px 0 0 var(--accent-color);
             }
         }
 
@@ -222,10 +239,32 @@
     flex-direction: row;
     gap: 10px;
 
+    a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        color: var(--body-text-color);
+        transition: color 0.2s, background-color 0.2s, transform 0.2s;
+
+        &:hover {
+            color: var(--accent-color);
+            background-color: var(--card-background-selected);
+            transform: translateY(-2px);
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+    }
+
     svg {
         width: 24px;
         height: 24px;
-        stroke: var(--body-text-color);
+        stroke: currentColor;
         stroke-width: 1.33;
     }
 }

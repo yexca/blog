@@ -36,8 +36,8 @@ linkSections:
     links:
       - title: "linF Blog & Music"
         description: "LinF's Blog"
-        website: https://linf.0617234.xyz/
-        image: https://linf.0617234.xyz/uploads/images/1779467078265-tkp4dc.png
+        website: https://fenglin.online/
+        image: https://fenglin.online/uploads/images/1779467078265-tkp4dc.png
         external: true
       - title: "Hiyoung'Blog"
         description: "Hiyoung's Blog (Only Simplified Chinese)"
