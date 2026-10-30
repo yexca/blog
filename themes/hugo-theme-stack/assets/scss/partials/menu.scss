@@ -146,11 +146,8 @@
 
     & {
         flex-direction: column;
-        gap: var(--sidebar-element-separation);
-
-        @include respond(xl) {
-            gap: var(--sidebar-element-separation);
-        }
+        /// Menu links carry their own padding, so the list only needs a small gap.
+        gap: 4px;
     }
 
     &.show {
@@ -192,26 +189,26 @@
             height: 20px;
         }
 
+        /// Links bleed into the panel padding so the highlight has room around the icon
+        /// while the icons stay aligned with the profile above.
         a {
-            height: 100%;
-            width: 100%;
             display: flex;
             align-items: center;
+            margin-inline: -10px;
+            padding: 6px 10px;
+            border-radius: 8px;
             color: var(--body-text-color);
             gap: var(--menu-icon-separation);
-            padding: 4px 0;
-            border-radius: 10px;
-            transition: color 0.2s, background-color 0.2s, transform 0.2s;
+            transition: background-color 0.2s ease;
 
             &:hover {
-                color: var(--accent-color);
-                background-color: var(--card-background-selected);
-                transform: translateX(3px);
+                color: var(--body-text-color);
+                background-color: rgba(var(--link-background-color), 0.25);
             }
 
             &:focus-visible {
-                outline: 2px solid var(--accent-color);
-                outline-offset: 2px;
+                outline: 2px solid rgba(var(--link-background-color), var(--link-background-opacity-hover));
+                outline-offset: 0;
             }
         }
 
@@ -220,11 +217,22 @@
         }
 
         &.current {
+            /// An inset shadow draws the border without shifting the layout; the bar is a
+            /// separate element so the rounded corners do not clip it.
             a {
-                color: var(--accent-color);
-                font-weight: bold;
-                background-color: color-mix(in srgb, var(--accent-color) 14%, transparent);
-                box-shadow: inset 3px 0 0 var(--accent-color);
+                position: relative;
+                font-weight: 600;
+                box-shadow: inset 0 0 0 1px rgba(var(--link-background-color), var(--link-background-opacity-hover));
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset-block: 7px;
+                    inset-inline-start: 3px;
+                    width: 3px;
+                    border-radius: 3px;
+                    background-color: rgba(var(--link-background-color), 1);
+                }
             }
         }
 
@@ -247,17 +255,16 @@
         height: 32px;
         border-radius: 50%;
         color: var(--body-text-color);
-        transition: color 0.2s, background-color 0.2s, transform 0.2s;
+        transition: background-color 0.2s ease;
 
         &:hover {
-            color: var(--accent-color);
-            background-color: var(--card-background-selected);
-            transform: translateY(-2px);
+            color: var(--body-text-color);
+            background-color: rgba(var(--link-background-color), var(--link-background-opacity));
         }
 
         &:focus-visible {
-            outline: 2px solid var(--accent-color);
-            outline-offset: 2px;
+            outline: 2px solid rgba(var(--link-background-color), var(--link-background-opacity-hover));
+            outline-offset: 0;
         }
     }
 
