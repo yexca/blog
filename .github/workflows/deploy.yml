@@ -50,8 +50,10 @@ jobs:
               deploy=false
               reason="translated content commit from GITHUB_TOKEN does not trigger deploy"
             else
-              changed_files="$(git diff --name-only HEAD^ HEAD)"
-              if echo "$changed_files" | grep -Eq '^(content/zh-cn/posts/|translation/translate\.config\.json|scripts/translate/|\.github/workflows/translate\.yml$)'; then
+              # Use NUL-delimited raw paths so non-ASCII filenames are not
+              # C-quoted by Git before the translation-input check.
+              if git diff --name-only -z HEAD^ HEAD |
+                grep -zEq '^(content/zh-cn/posts/|translation/translate\.config\.json$|scripts/translate/|\.github/workflows/translate\.yml$)'; then
                 deploy=false
                 reason="translation inputs changed; wait for translation workflow"
               else
