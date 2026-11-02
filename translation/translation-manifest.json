@@ -2881,28 +2881,28 @@
     "posts/2026/2026-10-08 Kikoto.md": {
       "translations": {
         "en": {
-          "sourceHash": "sha256:a575664387caa018c8db08211e59c3bd660e01c14aa0340932754a0bb7a79154",
+          "sourceHash": "sha256:e23c07922492e61ca27b3a6b66ae9e20b404b2e2c1bf10805bc7a5417c28e651",
           "status": "current",
-          "provider": "gemini-1",
-          "model": "gemini-3.5-flash",
-          "updatedAt": "2026-10-08T11:46:51.182Z"
+          "provider": "gemini-maple",
+          "model": "gemini-3.6-flash",
+          "updatedAt": "2026-11-02T15:33:55.157Z"
         },
         "ja": {
-          "sourceHash": "sha256:a575664387caa018c8db08211e59c3bd660e01c14aa0340932754a0bb7a79154",
+          "sourceHash": "sha256:e23c07922492e61ca27b3a6b66ae9e20b404b2e2c1bf10805bc7a5417c28e651",
           "status": "current",
-          "provider": "gemini-1",
-          "model": "gemini-3.5-flash",
-          "updatedAt": "2026-10-08T11:47:26.456Z"
+          "provider": "gemini-kano",
+          "model": "gemini-3.6-flash",
+          "updatedAt": "2026-11-02T15:34:52.887Z"
         },
         "zh-tw": {
-          "sourceHash": "sha256:a575664387caa018c8db08211e59c3bd660e01c14aa0340932754a0bb7a79154",
+          "sourceHash": "sha256:e23c07922492e61ca27b3a6b66ae9e20b404b2e2c1bf10805bc7a5417c28e651",
           "status": "current",
-          "provider": "gemini-1",
-          "model": "gemini-3.5-flash",
-          "updatedAt": "2026-10-08T11:46:18.263Z"
+          "provider": "gemini-kano",
+          "model": "gemini-3.6-flash",
+          "updatedAt": "2026-11-02T15:33:02.707Z"
         }
       },
-      "sourceHash": "sha256:a575664387caa018c8db08211e59c3bd660e01c14aa0340932754a0bb7a79154",
+      "sourceHash": "sha256:e23c07922492e61ca27b3a6b66ae9e20b404b2e2c1bf10805bc7a5417c28e651",
       "promptVersion": 1
     },
     "posts/Elasticsearch/2025-01-29-Elasticsearch-1.md": {
@@ -6230,5 +6230,5 @@
       "promptVersion": 1
     }
   },
-  "updatedAt": "2026-10-29T16:04:01.929Z"
+  "updatedAt": "2026-11-02T15:34:53.025Z"
 }
