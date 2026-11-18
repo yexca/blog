@@ -7,3 +7,5 @@ note/
 myenv/
 .secrets/
 *.local.json
+.DS_Store
+
